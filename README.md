@@ -148,4 +148,4 @@ Reference: Remy W. Which patients or which days? Separating within-patient and b
 
 Software: Remy W. when-who: code for “Which patients or which days?” Version 1.0.0. Zenodo; 2026. doi:10.5281/zenodo.23269934. The concept DOI 10.5281/zenodo.23269933 always resolves to the latest version.
 
-The DOI will be added when assigned.
+The preprint DOI will be added once the preprint is posted.
