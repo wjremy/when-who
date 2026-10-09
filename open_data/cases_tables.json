@@ -1,0 +1,5233 @@
+{
+  "ces": {
+    "file": "forecasts_ces.csv",
+    "patients": 38,
+    "scored_observations": 6361,
+    "event_rate": 0.39883666090237385,
+    "patient_event_rate_mean": 0.443018030118303,
+    "patient_event_rate_sd": 0.3192043257590822,
+    "threshold": 0.3939795636564485,
+    "forecasts": {
+      "training_cohort_rate": {
+        "pooled_auc": 0.5,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 37,
+        "within_auc_excluded_patients": 1,
+        "threshold": {
+          "threshold": 0.3939795636564485,
+          "pooled": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "ppv": 0.39883666090237385,
+            "npv": null,
+            "youden": 0.0
+          },
+          "patient_mean": {
+            "sensitivity": 1.0,
+            "specificity": 0.0
+          },
+          "within_patient": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 37,
+            "specificity": 38,
+            "both": 37
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 30.0,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 167.39473684210526,
+            "median": 159.0,
+            "total": 6361
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.2397895702162751,
+        "brier_patient_mean": 0.24915782630133174,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "runin_rate": {
+        "pooled_auc": 0.6950602319974009,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 37,
+        "within_auc_excluded_patients": 1,
+        "threshold": {
+          "threshold": 0.3939795636564485,
+          "pooled": {
+            "sensitivity": 0.4316121403232164,
+            "specificity": 0.7811192468619247,
+            "ppv": 0.5667701863354038,
+            "npv": 0.6744186046511628,
+            "youden": 0.21273138718514106
+          },
+          "patient_mean": {
+            "sensitivity": 0.3783783783783784,
+            "specificity": 0.631578947368421
+          },
+          "within_patient": {
+            "sensitivity": 0.3783783783783784,
+            "specificity": 0.6216216216216216,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 37,
+            "specificity": 38,
+            "both": 37
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 11.052631578947368,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 50.8421052631579,
+            "median": 0.0,
+            "total": 1932
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.23703933815448783,
+        "brier_patient_mean": 0.23606484854382156,
+        "brier_skill": {},
+        "calibration_slopes": {},
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.5765022729201996,
+            0.7974939639117918
+          ],
+          "within_patient_auc": [
+            0.5,
+            0.5
+          ],
+          "pooled_sensitivity": [
+            0.2296114514483052,
+            0.6251507903915026
+          ],
+          "pooled_specificity": [
+            0.5838683592612471,
+            0.9202145800767372
+          ],
+          "within_patient_sensitivity": [
+            0.21052631578947367,
+            0.546888335704125
+          ],
+          "within_patient_specificity": [
+            0.45311166429587485,
+            0.7894736842105263
+          ],
+          "pooled_youden": [
+            0.00809319340648515,
+            0.3984951400743641
+          ],
+          "within_patient_youden": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "runin_rate_shrunk_10": {
+        "pooled_auc": 0.6950602319974009,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 37,
+        "within_auc_excluded_patients": 1,
+        "threshold": {
+          "threshold": 0.3939795636564485,
+          "pooled": {
+            "sensitivity": 0.4316121403232164,
+            "specificity": 0.7811192468619247,
+            "ppv": 0.5667701863354038,
+            "npv": 0.6744186046511628,
+            "youden": 0.21273138718514106
+          },
+          "patient_mean": {
+            "sensitivity": 0.3783783783783784,
+            "specificity": 0.631578947368421
+          },
+          "within_patient": {
+            "sensitivity": 0.3783783783783784,
+            "specificity": 0.6216216216216216,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 37,
+            "specificity": 38,
+            "both": 37
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 11.052631578947368,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 50.8421052631579,
+            "median": 0.0,
+            "total": 1932
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.22069769155445632,
+        "brier_patient_mean": 0.2220529675094993,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "expanding_rate": {
+        "pooled_auc": 0.8424691655548098,
+        "within_patient_auc": 0.5782657484604353,
+        "within_auc_eligible_patients": 37,
+        "within_auc_excluded_patients": 1,
+        "threshold": {
+          "threshold": 0.3939795636564485,
+          "pooled": {
+            "sensitivity": 0.6771777690185258,
+            "specificity": 0.8140690376569037,
+            "ppv": 0.7072869493618773,
+            "npv": 0.7917090539165819,
+            "youden": 0.4912468066754294
+          },
+          "patient_mean": {
+            "sensitivity": 0.4815103087420272,
+            "specificity": 0.5844322174578549
+          },
+          "within_patient": {
+            "sensitivity": 0.4815103087420272,
+            "specificity": 0.5732006557675267,
+            "youden": 0.054710964509553775
+          },
+          "eligible": {
+            "sensitivity": 37,
+            "specificity": 38,
+            "both": 37
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 13.47414449324099,
+            "median": 7.382660751056106
+          },
+          "alarm_counts": {
+            "mean": 63.921052631578945,
+            "median": 48.5,
+            "total": 2429
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.1609237066340533,
+        "brier_patient_mean": 0.16155256588149905,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "last12_rate": {
+        "pooled_auc": 0.9051800610380594,
+        "within_patient_auc": 0.7040164428982489,
+        "within_auc_eligible_patients": 37,
+        "within_auc_excluded_patients": 1,
+        "threshold": {
+          "threshold": 0.3939795636564485,
+          "pooled": {
+            "sensitivity": 0.8206543161214033,
+            "specificity": 0.8234832635983264,
+            "ppv": 0.7551686615886833,
+            "npv": 0.8737513873473918,
+            "youden": 0.6441375797197297
+          },
+          "patient_mean": {
+            "sensitivity": 0.6185749562807564,
+            "specificity": 0.6165372947209584
+          },
+          "within_patient": {
+            "sensitivity": 0.6185749562807564,
+            "specificity": 0.6061734378215249,
+            "youden": 0.22474839410228134
+          },
+          "eligible": {
+            "sensitivity": 37,
+            "specificity": 38,
+            "both": 37
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 14.513900165636716,
+            "median": 15.120967741935484
+          },
+          "alarm_counts": {
+            "mean": 72.55263157894737,
+            "median": 69.5,
+            "total": 2757
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.12025206777458358,
+        "brier_patient_mean": 0.12598048279055774,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "persistence": {
+        "pooled_auc": 0.9055509835192292,
+        "within_patient_auc": 0.7764710853864096,
+        "within_auc_eligible_patients": 37,
+        "within_auc_excluded_patients": 1,
+        "not_a_probability": true
+      },
+      "retrospective_rate": {
+        "pooled_auc": 0.8549228221485199,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 37,
+        "within_auc_excluded_patients": 1,
+        "threshold": {
+          "threshold": 0.3939795636564485,
+          "pooled": {
+            "sensitivity": 0.8175009854158455,
+            "specificity": 0.7123430962343096,
+            "ppv": 0.6534341524889729,
+            "npv": 0.8547223093818638,
+            "youden": 0.5298440816501551
+          },
+          "patient_mean": {
+            "sensitivity": 0.5675675675675675,
+            "specificity": 0.4473684210526316
+          },
+          "within_patient": {
+            "sensitivity": 0.5675675675675675,
+            "specificity": 0.43243243243243246,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 37,
+            "specificity": 38,
+            "both": 37
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 16.57894736842105,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 83.52631578947368,
+            "median": 72.0,
+            "total": 3174
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.14951586258369895,
+        "brier_patient_mean": 0.14754300619836244,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "logistic_regression": {
+        "pooled_auc": 0.9339318875619905,
+        "within_patient_auc": 0.8055983136687709,
+        "within_auc_eligible_patients": 37,
+        "within_auc_excluded_patients": 1,
+        "threshold": {
+          "threshold": 0.3939795636564485,
+          "pooled": {
+            "sensitivity": 0.8517934568387859,
+            "specificity": 0.8726464435146444,
+            "ppv": 0.8160876132930514,
+            "npv": 0.8987341772151899,
+            "youden": 0.7244399003534303
+          },
+          "patient_mean": {
+            "sensitivity": 0.6805187119065234,
+            "specificity": 0.6741591222266908
+          },
+          "within_patient": {
+            "sensitivity": 0.6805187119065234,
+            "specificity": 0.6653526120166013,
+            "youden": 0.3458713239231246
+          },
+          "eligible": {
+            "sensitivity": 37,
+            "specificity": 38,
+            "both": 37
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 13.949840010668789,
+            "median": 14.157097288676237
+          },
+          "alarm_counts": {
+            "mean": 69.6842105263158,
+            "median": 63.5,
+            "total": 2648
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.0980889715520698,
+        "brier_patient_mean": 0.10261994199611772,
+        "brier_skill": {
+          "runin_rate": 0.586191242554029,
+          "updating_rate": 0.390462891781687,
+          "retrospective_rate": 0.34395608695254054
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.062389931051896,
+          "between_slope": 1.1157787802104056,
+          "within_slope": 0.9962545917121238
+        }
+      },
+      "gradient_boosting": {
+        "pooled_auc": 0.9352484897162168,
+        "within_patient_auc": 0.800308448089229,
+        "within_auc_eligible_patients": 37,
+        "within_auc_excluded_patients": 1,
+        "threshold": {
+          "threshold": 0.3939795636564485,
+          "pooled": {
+            "sensitivity": 0.8577059519117067,
+            "specificity": 0.8621861924686193,
+            "ppv": 0.8050314465408805,
+            "npv": 0.9013121924548934,
+            "youden": 0.7198921443803261
+          },
+          "patient_mean": {
+            "sensitivity": 0.7035935703890732,
+            "specificity": 0.670595901910966
+          },
+          "within_patient": {
+            "sensitivity": 0.7035935703890732,
+            "specificity": 0.6616930884491001,
+            "youden": 0.3652866588381735
+          },
+          "eligible": {
+            "sensitivity": 37,
+            "specificity": 38,
+            "both": 37
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 14.229198587840104,
+            "median": 14.488437001594896
+          },
+          "alarm_counts": {
+            "mean": 71.13157894736842,
+            "median": 66.5,
+            "total": 2703
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.09723059399018717,
+        "brier_patient_mean": 0.10152682049329076,
+        "brier_skill": {
+          "runin_rate": 0.5898124870903079,
+          "updating_rate": 0.39579695705478124,
+          "retrospective_rate": 0.3496971337354674
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.0716269626915147,
+          "between_slope": 1.1380765898814407,
+          "within_slope": 1.003394843866077
+        },
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.9045017932517008,
+            0.9575780563740975
+          ],
+          "within_patient_auc": [
+            0.7593642626374034,
+            0.8428041960755774
+          ],
+          "pooled_sensitivity": [
+            0.8027246376811594,
+            0.9038801288774472
+          ],
+          "pooled_specificity": [
+            0.8003086450330176,
+            0.9119895406103682
+          ],
+          "within_patient_sensitivity": [
+            0.5966584522458437,
+            0.8099065536476181
+          ],
+          "within_patient_specificity": [
+            0.5373370495907084,
+            0.7662482319391168
+          ],
+          "pooled_youden": [
+            0.643553346988313,
+            0.7861083588505221
+          ],
+          "within_patient_youden": [
+            0.28740129641141193,
+            0.45015397078729324
+          ],
+          "brier_skill_vs": {
+            "runin_rate": [
+              0.46458820844085913,
+              0.6958461354399558
+            ],
+            "updating_rate": [
+              0.2887205644038871,
+              0.5064713831356408
+            ],
+            "retrospective_rate": [
+              0.240450771043178,
+              0.46740009323713816
+            ]
+          },
+          "calibration_slopes": {
+            "pooled_slope": {
+              "ci95": [
+                0.9857735425442286,
+                1.1516966380626654
+              ],
+              "skipped": 0
+            },
+            "between_slope": {
+              "ci95": [
+                1.0487801369509826,
+                1.215861068505165
+              ],
+              "skipped": 0
+            },
+            "within_slope": {
+              "ci95": [
+                0.8946494353092519,
+                1.1105655777440135
+              ],
+              "skipped": 0
+            }
+          }
+        }
+      },
+      "within_centred_gradient_boosting": {
+        "pooled_auc": 0.8927501636862304,
+        "within_patient_auc": 0.7965719147777331,
+        "within_auc_eligible_patients": 37,
+        "within_auc_excluded_patients": 1,
+        "threshold": {
+          "threshold": 0.3939795636564485,
+          "pooled": {
+            "sensitivity": 0.795821836815136,
+            "specificity": 0.8289748953974896,
+            "ppv": 0.755331088664422,
+            "npv": 0.8595444685466378,
+            "youden": 0.6247967322126255
+          },
+          "patient_mean": {
+            "sensitivity": 0.7109949227559088,
+            "specificity": 0.7024411543744751
+          },
+          "within_patient": {
+            "sensitivity": 0.7109949227559088,
+            "specificity": 0.694399023411623,
+            "youden": 0.40539394616753205
+          },
+          "eligible": {
+            "sensitivity": 37,
+            "specificity": 38,
+            "both": 37
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 13.81620072529099,
+            "median": 13.709575142675966
+          },
+          "alarm_counts": {
+            "mean": 70.34210526315789,
+            "median": 67.5,
+            "total": 2673
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.12885951157605266,
+        "brier_patient_mean": 0.1437970652259363,
+        "brier_skill": {
+          "runin_rate": 0.45637931026654865,
+          "updating_rate": 0.19925091669661843,
+          "retrospective_rate": 0.13815491313555184
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.1433477115547839,
+          "between_slope": 1.5187242686156326,
+          "within_slope": 0.962211608528073
+        }
+      }
+    }
+  },
+  "ctn_daily_self_reported": {
+    "file": "forecasts_ctn_daily_self_reported.csv",
+    "patients": 380,
+    "scored_observations": 66114,
+    "event_rate": 0.1672868076352966,
+    "patient_event_rate_mean": 0.174154833629225,
+    "patient_event_rate_sd": 0.19466373852816102,
+    "threshold": 0.1665014300322341,
+    "forecasts": {
+      "training_cohort_rate": {
+        "pooled_auc": 0.5,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "ppv": 0.1672868076352966,
+            "npv": null,
+            "youden": 0.0
+          },
+          "patient_mean": {
+            "sensitivity": 1.0,
+            "specificity": 0.0
+          },
+          "within_patient": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 30.0,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 173.9842105263158,
+            "median": 199.5,
+            "total": 66114
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.13930254844446727,
+        "brier_patient_mean": 0.14388350213942044,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "runin_rate": {
+        "pooled_auc": 0.5502728966220967,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.9999095840867993,
+            "specificity": 0.003324009154648164,
+            "ppv": 0.1677385105414834,
+            "npv": 0.9945652173913043,
+            "youden": 0.003233593241447563
+          },
+          "patient_mean": {
+            "sensitivity": 0.9973333333333333,
+            "specificity": 0.002631578947368421
+          },
+          "within_patient": {
+            "sensitivity": 0.9973333333333333,
+            "specificity": 0.0026666666666666666,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 29.92105263157895,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 173.5,
+            "median": 199.5,
+            "total": 65930
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.7515992649820962,
+        "brier_patient_mean": 0.7432554053127354,
+        "brier_skill": {},
+        "calibration_slopes": {},
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.5212675478624702,
+            0.5758170722928314
+          ],
+          "within_patient_auc": [
+            0.5,
+            0.5
+          ],
+          "pooled_sensitivity": [
+            0.999709853752738,
+            1.0
+          ],
+          "pooled_specificity": [
+            0.0,
+            0.01018289621417485
+          ],
+          "within_patient_sensitivity": [
+            0.9919786096256684,
+            1.0
+          ],
+          "within_patient_specificity": [
+            0.0,
+            0.008021390374331552
+          ],
+          "pooled_youden": [
+            0.0,
+            0.009930599872317902
+          ],
+          "within_patient_youden": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "runin_shrunk": {
+        "pooled_auc": 0.5502728966220967,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.9999095840867993,
+            "specificity": 0.003324009154648164,
+            "ppv": 0.1677385105414834,
+            "npv": 0.9945652173913043,
+            "youden": 0.003233593241447563
+          },
+          "patient_mean": {
+            "sensitivity": 0.9973333333333333,
+            "specificity": 0.002631578947368421
+          },
+          "within_patient": {
+            "sensitivity": 0.9973333333333333,
+            "specificity": 0.0026666666666666666,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 29.92105263157895,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 173.5,
+            "median": 199.5,
+            "total": 65930
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.4699850627832753,
+        "brier_patient_mean": 0.46549196316226815,
+        "brier_skill": {
+          "runin_rate": 0.3746866386378507,
+          "updating_rate": -1.4578327344731092,
+          "retrospective_rate": -3.6674059769892082
+        },
+        "calibration_slopes": {
+          "pooled_slope": 0.6300617842225104,
+          "between_slope": null,
+          "within_slope": null
+        }
+      },
+      "updating_rate": {
+        "pooled_auc": 0.7371275816589348,
+        "within_patient_auc": 0.6355252536966556,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.9672694394213381,
+            "specificity": 0.14899916445671524,
+            "ppv": 0.18589376010008862,
+            "npv": 0.957734967892586,
+            "youden": 0.11626860387805338
+          },
+          "patient_mean": {
+            "sensitivity": 0.933917149762676,
+            "specificity": 0.09870478935245776
+          },
+          "within_patient": {
+            "sensitivity": 0.933917149762676,
+            "specificity": 0.09388234117982991,
+            "youden": 0.02779949094250598
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 27.045484017544133,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 151.44473684210527,
+            "median": 158.0,
+            "total": 57549
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.1912193031654886,
+        "brier_patient_mean": 0.21859028126742125,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "recent_window_rate": {
+        "pooled_auc": 0.8669558766599106,
+        "within_patient_auc": 0.7446143157597437,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.839240506329114,
+            "specificity": 0.7294837795618847,
+            "ppv": 0.3839503619441572,
+            "npv": 0.9576050931114237,
+            "youden": 0.5687242858909987
+          },
+          "patient_mean": {
+            "sensitivity": 0.7235377461768817,
+            "specificity": 0.6206739392402016
+          },
+          "within_patient": {
+            "sensitivity": 0.7235377461768817,
+            "specificity": 0.6173979445576131,
+            "youden": 0.34093569073449476
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 12.61142334063634,
+            "median": 10.453164556962026
+          },
+          "alarm_counts": {
+            "mean": 63.61842105263158,
+            "median": 47.0,
+            "total": 24175
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.11359335373640374,
+        "brier_patient_mean": 0.1351487049568449,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "persistence": {
+        "pooled_auc": 0.8349268654921149,
+        "within_patient_auc": 0.7748506287032296,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.727124773960217,
+            "specificity": 0.9427289570240128,
+            "ppv": 0.7183564091112103,
+            "npv": 0.9450463409748903,
+            "youden": 0.6698537309842298
+          },
+          "patient_mean": {
+            "sensitivity": 0.6253815646726868,
+            "specificity": 0.9252881900549726
+          },
+          "within_patient": {
+            "sensitivity": 0.6253815646726868,
+            "specificity": 0.9243196927337723,
+            "youden": 0.5497012574064591
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 5.3114304700724775,
+            "median": 3.559577677224736
+          },
+          "alarm_counts": {
+            "mean": 29.460526315789473,
+            "median": 16.0,
+            "total": 11195
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.09333859179698875,
+        "brier_patient_mean": 0.09932692878207806,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "retrospective_rate": {
+        "pooled_auc": 0.8424481354193689,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.7568716094032549,
+            "specificity": 0.7495186544120318,
+            "ppv": 0.37773566174811607,
+            "npv": 0.9388210133551749,
+            "youden": 0.5063902638152866
+          },
+          "patient_mean": {
+            "sensitivity": 0.37066666666666664,
+            "specificity": 0.6342105263157894
+          },
+          "within_patient": {
+            "sensitivity": 0.37066666666666664,
+            "specificity": 0.6293333333333333,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 10.973684210526315,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 58.31842105263158,
+            "median": 0.0,
+            "total": 22161
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.10069513239267164,
+        "brier_patient_mean": 0.10603067743162793,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "logistic_regression": {
+        "pooled_auc": 0.894967378239389,
+        "within_patient_auc": 0.8049490231957047,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.7525316455696203,
+            "specificity": 0.9179896102008936,
+            "ppv": 0.6483097055616139,
+            "npv": 0.9486260229746978,
+            "youden": 0.670521255770514
+          },
+          "patient_mean": {
+            "sensitivity": 0.6530399218912463,
+            "specificity": 0.881824679097267
+          },
+          "within_patient": {
+            "sensitivity": 0.6530399218912463,
+            "specificity": 0.8803710129763411,
+            "youden": 0.5334109348675874
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 6.239984898151701,
+            "median": 4.355731225296442
+          },
+          "alarm_counts": {
+            "mean": 33.78421052631579,
+            "median": 19.0,
+            "total": 12838
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.06981435042805974,
+        "brier_patient_mean": 0.07550785780701524,
+        "brier_skill": {
+          "runin_rate": 0.9071122688900942,
+          "updating_rate": 0.6348990438081468,
+          "retrospective_rate": 0.3066760153230539
+        },
+        "calibration_slopes": {
+          "pooled_slope": 0.9638238428328634,
+          "between_slope": 1.3635459333348645,
+          "within_slope": 0.8353124103152652
+        }
+      },
+      "gradient_boosting": {
+        "pooled_auc": 0.9274738689897822,
+        "within_patient_auc": 0.8117348123353416,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.8040687160940325,
+            "specificity": 0.9007883169252007,
+            "ppv": 0.6195053988157436,
+            "npv": 0.9581328851021078,
+            "youden": 0.7048570330192332
+          },
+          "patient_mean": {
+            "sensitivity": 0.6797515701406883,
+            "specificity": 0.8744406026770747
+          },
+          "within_patient": {
+            "sensitivity": 0.6797515701406883,
+            "specificity": 0.8728057823567745,
+            "youden": 0.552557352497463
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 6.587691153481039,
+            "median": 4.226910828025478
+          },
+          "alarm_counts": {
+            "mean": 37.776315789473685,
+            "median": 17.0,
+            "total": 14355
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.06382338939146492,
+        "brier_patient_mean": 0.06904631569663856,
+        "brier_skill": {
+          "runin_rate": 0.9150832200547917,
+          "updating_rate": 0.6662293589877288,
+          "retrospective_rate": 0.3661720494831998
+        },
+        "calibration_slopes": {
+          "pooled_slope": 0.988084835893765,
+          "between_slope": 1.216517275967782,
+          "within_slope": 0.9037895526124514
+        },
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.9151030858819149,
+            0.9373468788381463
+          ],
+          "within_patient_auc": [
+            0.7939646370647547,
+            0.8305289092796664
+          ],
+          "pooled_sensitivity": [
+            0.7707141954948968,
+            0.8282964867680817
+          ],
+          "pooled_specificity": [
+            0.8862543781511796,
+            0.9138485571124376
+          ],
+          "within_patient_sensitivity": [
+            0.6514542837627064,
+            0.7074470138887582
+          ],
+          "within_patient_specificity": [
+            0.8570282747868426,
+            0.8899065883255631
+          ],
+          "pooled_youden": [
+            0.6702954687986438,
+            0.7351759675916362
+          ],
+          "within_patient_youden": [
+            0.522819794280772,
+            0.5836925733427594
+          ],
+          "brier_skill_vs": {
+            "runin_rate": [
+              0.9055165576213723,
+              0.9245367883962675
+            ],
+            "updating_rate": [
+              0.6418723878521121,
+              0.6950320294670994
+            ],
+            "retrospective_rate": [
+              0.31617476563132213,
+              0.41103529048577614
+            ]
+          },
+          "calibration_slopes": {
+            "pooled_slope": {
+              "ci95": [
+                0.9515732864741766,
+                1.024637714144586
+              ],
+              "skipped": 0
+            },
+            "between_slope": {
+              "ci95": [
+                1.1789071648477913,
+                1.2537205484643215
+              ],
+              "skipped": 0
+            },
+            "within_slope": {
+              "ci95": [
+                0.8642738039444249,
+                0.9449240462257663
+              ],
+              "skipped": 0
+            }
+          }
+        }
+      },
+      "within_centred_gradient_boosting": {
+        "pooled_auc": 0.9249119252043251,
+        "within_patient_auc": 0.8050490218450429,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.794755877034358,
+            "specificity": 0.9021324517746213,
+            "ppv": 0.6199746085484553,
+            "npv": 0.95629235982748,
+            "youden": 0.6968883288089793
+          },
+          "patient_mean": {
+            "sensitivity": 0.6702197104731294,
+            "specificity": 0.8738200432537293
+          },
+          "within_patient": {
+            "sensitivity": 0.6702197104731294,
+            "specificity": 0.8721769488077846,
+            "youden": 0.5423966592809142
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 6.5444236248658925,
+            "median": 4.215815921713832
+          },
+          "alarm_counts": {
+            "mean": 37.310526315789474,
+            "median": 17.0,
+            "total": 14178
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.06581421480989236,
+        "brier_patient_mean": 0.07114033374028768,
+        "brier_skill": {
+          "runin_rate": 0.9124344343106029,
+          "updating_rate": 0.655818143250244,
+          "retrospective_rate": 0.3464012286786351
+        },
+        "calibration_slopes": {
+          "pooled_slope": 0.9793851901040388,
+          "between_slope": 1.212854509459101,
+          "within_slope": 0.8932935377449789
+        }
+      }
+    }
+  },
+  "ctn_daily_self_reported_with_current_dose": {
+    "file": "forecasts_ctn_daily_self_reported_with_current_dose.csv",
+    "patients": 380,
+    "scored_observations": 66114,
+    "event_rate": 0.1672868076352966,
+    "patient_event_rate_mean": 0.174154833629225,
+    "patient_event_rate_sd": 0.19466373852816102,
+    "threshold": 0.1665014300322341,
+    "forecasts": {
+      "training_cohort_rate": {
+        "pooled_auc": 0.5,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "ppv": 0.1672868076352966,
+            "npv": null,
+            "youden": 0.0
+          },
+          "patient_mean": {
+            "sensitivity": 1.0,
+            "specificity": 0.0
+          },
+          "within_patient": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 30.0,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 173.9842105263158,
+            "median": 199.5,
+            "total": 66114
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.13930254844446727,
+        "brier_patient_mean": 0.14388350213942044,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "runin_rate": {
+        "pooled_auc": 0.5502728966220967,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.9999095840867993,
+            "specificity": 0.003324009154648164,
+            "ppv": 0.1677385105414834,
+            "npv": 0.9945652173913043,
+            "youden": 0.003233593241447563
+          },
+          "patient_mean": {
+            "sensitivity": 0.9973333333333333,
+            "specificity": 0.002631578947368421
+          },
+          "within_patient": {
+            "sensitivity": 0.9973333333333333,
+            "specificity": 0.0026666666666666666,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 29.92105263157895,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 173.5,
+            "median": 199.5,
+            "total": 65930
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.7515992649820962,
+        "brier_patient_mean": 0.7432554053127354,
+        "brier_skill": {},
+        "calibration_slopes": {},
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.5212675478624702,
+            0.5758170722928314
+          ],
+          "within_patient_auc": [
+            0.5,
+            0.5
+          ],
+          "pooled_sensitivity": [
+            0.999709853752738,
+            1.0
+          ],
+          "pooled_specificity": [
+            0.0,
+            0.01018289621417485
+          ],
+          "within_patient_sensitivity": [
+            0.9919786096256684,
+            1.0
+          ],
+          "within_patient_specificity": [
+            0.0,
+            0.008021390374331552
+          ],
+          "pooled_youden": [
+            0.0,
+            0.009930599872317902
+          ],
+          "within_patient_youden": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "runin_shrunk": {
+        "pooled_auc": 0.5502728966220967,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.9999095840867993,
+            "specificity": 0.003324009154648164,
+            "ppv": 0.1677385105414834,
+            "npv": 0.9945652173913043,
+            "youden": 0.003233593241447563
+          },
+          "patient_mean": {
+            "sensitivity": 0.9973333333333333,
+            "specificity": 0.002631578947368421
+          },
+          "within_patient": {
+            "sensitivity": 0.9973333333333333,
+            "specificity": 0.0026666666666666666,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 29.92105263157895,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 173.5,
+            "median": 199.5,
+            "total": 65930
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.4699850627832753,
+        "brier_patient_mean": 0.46549196316226815,
+        "brier_skill": {
+          "runin_rate": 0.3746866386378507,
+          "updating_rate": -1.4578327344731092,
+          "retrospective_rate": -3.6674059769892082
+        },
+        "calibration_slopes": {
+          "pooled_slope": 0.6300617842225104,
+          "between_slope": null,
+          "within_slope": null
+        }
+      },
+      "updating_rate": {
+        "pooled_auc": 0.7371275816589348,
+        "within_patient_auc": 0.6355252536966556,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.9672694394213381,
+            "specificity": 0.14899916445671524,
+            "ppv": 0.18589376010008862,
+            "npv": 0.957734967892586,
+            "youden": 0.11626860387805338
+          },
+          "patient_mean": {
+            "sensitivity": 0.933917149762676,
+            "specificity": 0.09870478935245776
+          },
+          "within_patient": {
+            "sensitivity": 0.933917149762676,
+            "specificity": 0.09388234117982991,
+            "youden": 0.02779949094250598
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 27.045484017544133,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 151.44473684210527,
+            "median": 158.0,
+            "total": 57549
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.1912193031654886,
+        "brier_patient_mean": 0.21859028126742125,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "recent_window_rate": {
+        "pooled_auc": 0.8669558766599106,
+        "within_patient_auc": 0.7446143157597437,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.839240506329114,
+            "specificity": 0.7294837795618847,
+            "ppv": 0.3839503619441572,
+            "npv": 0.9576050931114237,
+            "youden": 0.5687242858909987
+          },
+          "patient_mean": {
+            "sensitivity": 0.7235377461768817,
+            "specificity": 0.6206739392402016
+          },
+          "within_patient": {
+            "sensitivity": 0.7235377461768817,
+            "specificity": 0.6173979445576131,
+            "youden": 0.34093569073449476
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 12.61142334063634,
+            "median": 10.453164556962026
+          },
+          "alarm_counts": {
+            "mean": 63.61842105263158,
+            "median": 47.0,
+            "total": 24175
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.11359335373640374,
+        "brier_patient_mean": 0.1351487049568449,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "persistence": {
+        "pooled_auc": 0.8349268654921149,
+        "within_patient_auc": 0.7748506287032296,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.727124773960217,
+            "specificity": 0.9427289570240128,
+            "ppv": 0.7183564091112103,
+            "npv": 0.9450463409748903,
+            "youden": 0.6698537309842298
+          },
+          "patient_mean": {
+            "sensitivity": 0.6253815646726868,
+            "specificity": 0.9252881900549726
+          },
+          "within_patient": {
+            "sensitivity": 0.6253815646726868,
+            "specificity": 0.9243196927337723,
+            "youden": 0.5497012574064591
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 5.3114304700724775,
+            "median": 3.559577677224736
+          },
+          "alarm_counts": {
+            "mean": 29.460526315789473,
+            "median": 16.0,
+            "total": 11195
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.09333859179698875,
+        "brier_patient_mean": 0.09932692878207806,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "retrospective_rate": {
+        "pooled_auc": 0.8424481354193689,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.7568716094032549,
+            "specificity": 0.7495186544120318,
+            "ppv": 0.37773566174811607,
+            "npv": 0.9388210133551749,
+            "youden": 0.5063902638152866
+          },
+          "patient_mean": {
+            "sensitivity": 0.37066666666666664,
+            "specificity": 0.6342105263157894
+          },
+          "within_patient": {
+            "sensitivity": 0.37066666666666664,
+            "specificity": 0.6293333333333333,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 10.973684210526315,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 58.31842105263158,
+            "median": 0.0,
+            "total": 22161
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.10069513239267164,
+        "brier_patient_mean": 0.10603067743162793,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "logistic_regression": {
+        "pooled_auc": 0.894967378239389,
+        "within_patient_auc": 0.8049490231957047,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.7525316455696203,
+            "specificity": 0.9179896102008936,
+            "ppv": 0.6483097055616139,
+            "npv": 0.9486260229746978,
+            "youden": 0.670521255770514
+          },
+          "patient_mean": {
+            "sensitivity": 0.6530399218912463,
+            "specificity": 0.881824679097267
+          },
+          "within_patient": {
+            "sensitivity": 0.6530399218912463,
+            "specificity": 0.8803710129763411,
+            "youden": 0.5334109348675874
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 6.239984898151701,
+            "median": 4.355731225296442
+          },
+          "alarm_counts": {
+            "mean": 33.78421052631579,
+            "median": 19.0,
+            "total": 12838
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.06981435042805972,
+        "brier_patient_mean": 0.07550785780701523,
+        "brier_skill": {
+          "runin_rate": 0.9071122688900943,
+          "updating_rate": 0.634899043808147,
+          "retrospective_rate": 0.306676015323054
+        },
+        "calibration_slopes": {
+          "pooled_slope": 0.9638238428328635,
+          "between_slope": 1.363545933334864,
+          "within_slope": 0.8353124103152654
+        }
+      },
+      "gradient_boosting": {
+        "pooled_auc": 0.9274738689897822,
+        "within_patient_auc": 0.8117348123353416,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.8040687160940325,
+            "specificity": 0.9007883169252007,
+            "ppv": 0.6195053988157436,
+            "npv": 0.9581328851021078,
+            "youden": 0.7048570330192332
+          },
+          "patient_mean": {
+            "sensitivity": 0.6797515701406883,
+            "specificity": 0.8744406026770747
+          },
+          "within_patient": {
+            "sensitivity": 0.6797515701406883,
+            "specificity": 0.8728057823567745,
+            "youden": 0.552557352497463
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 6.587691153481039,
+            "median": 4.226910828025478
+          },
+          "alarm_counts": {
+            "mean": 37.776315789473685,
+            "median": 17.0,
+            "total": 14355
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.06382338939146492,
+        "brier_patient_mean": 0.06904631569663856,
+        "brier_skill": {
+          "runin_rate": 0.9150832200547917,
+          "updating_rate": 0.6662293589877288,
+          "retrospective_rate": 0.3661720494831998
+        },
+        "calibration_slopes": {
+          "pooled_slope": 0.988084835893765,
+          "between_slope": 1.216517275967782,
+          "within_slope": 0.9037895526124514
+        },
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.9151030858819149,
+            0.9373468788381463
+          ],
+          "within_patient_auc": [
+            0.7939646370647547,
+            0.8305289092796664
+          ],
+          "pooled_sensitivity": [
+            0.7707141954948968,
+            0.8282964867680817
+          ],
+          "pooled_specificity": [
+            0.8862543781511796,
+            0.9138485571124376
+          ],
+          "within_patient_sensitivity": [
+            0.6514542837627064,
+            0.7074470138887582
+          ],
+          "within_patient_specificity": [
+            0.8570282747868426,
+            0.8899065883255631
+          ],
+          "pooled_youden": [
+            0.6702954687986438,
+            0.7351759675916362
+          ],
+          "within_patient_youden": [
+            0.522819794280772,
+            0.5836925733427594
+          ],
+          "brier_skill_vs": {
+            "runin_rate": [
+              0.9055165576213723,
+              0.9245367883962675
+            ],
+            "updating_rate": [
+              0.6418723878521121,
+              0.6950320294670994
+            ],
+            "retrospective_rate": [
+              0.31617476563132213,
+              0.41103529048577614
+            ]
+          },
+          "calibration_slopes": {
+            "pooled_slope": {
+              "ci95": [
+                0.9515732864741766,
+                1.024637714144586
+              ],
+              "skipped": 0
+            },
+            "between_slope": {
+              "ci95": [
+                1.1789071648477913,
+                1.2537205484643215
+              ],
+              "skipped": 0
+            },
+            "within_slope": {
+              "ci95": [
+                0.8642738039444249,
+                0.9449240462257663
+              ],
+              "skipped": 0
+            }
+          }
+        }
+      },
+      "within_centred_gradient_boosting": {
+        "pooled_auc": 0.9249119252043251,
+        "within_patient_auc": 0.8050490218450429,
+        "within_auc_eligible_patients": 375,
+        "within_auc_excluded_patients": 5,
+        "threshold": {
+          "threshold": 0.1665014300322341,
+          "pooled": {
+            "sensitivity": 0.794755877034358,
+            "specificity": 0.9021324517746213,
+            "ppv": 0.6199746085484553,
+            "npv": 0.95629235982748,
+            "youden": 0.6968883288089793
+          },
+          "patient_mean": {
+            "sensitivity": 0.6702197104731294,
+            "specificity": 0.8738200432537293
+          },
+          "within_patient": {
+            "sensitivity": 0.6702197104731294,
+            "specificity": 0.8721769488077846,
+            "youden": 0.5423966592809142
+          },
+          "eligible": {
+            "sensitivity": 375,
+            "specificity": 380,
+            "both": 375
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 6.5444236248658925,
+            "median": 4.215815921713832
+          },
+          "alarm_counts": {
+            "mean": 37.310526315789474,
+            "median": 17.0,
+            "total": 14178
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.06581421480989236,
+        "brier_patient_mean": 0.07114033374028768,
+        "brier_skill": {
+          "runin_rate": 0.9124344343106029,
+          "updating_rate": 0.655818143250244,
+          "retrospective_rate": 0.3464012286786351
+        },
+        "calibration_slopes": {
+          "pooled_slope": 0.9793851901040388,
+          "between_slope": 1.2128545094591012,
+          "within_slope": 0.8932935377449789
+        }
+      }
+    }
+  },
+  "ctn_weekly_missing_excluded": {
+    "file": "forecasts_ctn_weekly_missing_excluded.csv",
+    "patients": 246,
+    "scored_observations": 4237,
+    "event_rate": 0.2999763983950909,
+    "patient_event_rate_mean": 0.3225753757461238,
+    "patient_event_rate_sd": 0.34812056974770467,
+    "threshold": 0.3195704057279236,
+    "forecasts": {
+      "training_cohort_rate": {
+        "pooled_auc": 0.5,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "ppv": 0.2999763983950909,
+            "npv": null,
+            "youden": 0.0
+          },
+          "patient_mean": {
+            "sensitivity": 1.0,
+            "specificity": 0.0
+          },
+          "within_patient": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 30.0,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 17.223577235772357,
+            "median": 18.0,
+            "total": 4237
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.21037448392435967,
+        "brier_patient_mean": 0.21852953255318114,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "runin_rate": {
+        "pooled_auc": 0.8010020993234098,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8135326514555468,
+            "specificity": 0.6530681051921781,
+            "ppv": 0.5012118274357732,
+            "npv": 0.890984360625575,
+            "youden": 0.4666007566477248
+          },
+          "patient_mean": {
+            "sensitivity": 0.6785714285714286,
+            "specificity": 0.5258620689655172
+          },
+          "within_patient": {
+            "sensitivity": 0.6493506493506493,
+            "specificity": 0.35064935064935066,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 15.121951219512194,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 8.386178861788618,
+            "median": 8.5,
+            "total": 2063
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.18441845561653092,
+        "brier_patient_mean": 0.18719264096498037,
+        "brier_skill": {},
+        "calibration_slopes": {},
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.7626878749463878,
+            0.8361482206240459
+          ],
+          "within_patient_auc": [
+            0.5,
+            0.5
+          ],
+          "pooled_sensitivity": [
+            0.7504268754470359,
+            0.8725401947463769
+          ],
+          "pooled_specificity": [
+            0.585290376926302,
+            0.7179533828313304
+          ],
+          "within_patient_sensitivity": [
+            0.5704841009245658,
+            0.7244268804315254
+          ],
+          "within_patient_specificity": [
+            0.2755731195684747,
+            0.4295158990754342
+          ],
+          "pooled_youden": [
+            0.38924628894451113,
+            0.5400245187932479
+          ],
+          "within_patient_youden": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "runin_shrunk": {
+        "pooled_auc": 0.8126535564618257,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8135326514555468,
+            "specificity": 0.6530681051921781,
+            "ppv": 0.5012118274357732,
+            "npv": 0.890984360625575,
+            "youden": 0.4666007566477248
+          },
+          "patient_mean": {
+            "sensitivity": 0.6785714285714286,
+            "specificity": 0.5258620689655172
+          },
+          "within_patient": {
+            "sensitivity": 0.6493506493506493,
+            "specificity": 0.35064935064935066,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 15.121951219512194,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 8.386178861788618,
+            "median": 8.5,
+            "total": 2063
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.1740327011782089,
+        "brier_patient_mean": 0.17994635472892734,
+        "brier_skill": {
+          "runin_rate": 0.056316242339202516,
+          "updating_rate": -0.463841474234324,
+          "retrospective_rate": -0.814416947118475
+        },
+        "calibration_slopes": {
+          "pooled_slope": 3.0234094652931476,
+          "between_slope": null,
+          "within_slope": null
+        }
+      },
+      "updating_rate": {
+        "pooled_auc": 0.889027520395057,
+        "within_patient_auc": 0.43647609856889114,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8056648308418568,
+            "specificity": 0.8091706001348618,
+            "ppv": 0.6440251572327044,
+            "npv": 0.9066868152625613,
+            "youden": 0.6148354309767186
+          },
+          "patient_mean": {
+            "sensitivity": 0.5759678871548619,
+            "specificity": 0.6405206128136363
+          },
+          "within_patient": {
+            "sensitivity": 0.5374195132598495,
+            "specificity": 0.4661297520536192,
+            "youden": 0.003549265313468594
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 11.936269656699071,
+            "median": 3.541666666666667
+          },
+          "alarm_counts": {
+            "mean": 6.463414634146342,
+            "median": 2.0,
+            "total": 1590
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.11888766935589001,
+        "brier_patient_mean": 0.12240373651682987,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "recent_window_rate": {
+        "pooled_auc": 0.881586249192925,
+        "within_patient_auc": 0.57385462795921,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8568056648308419,
+            "specificity": 0.7909642616318274,
+            "ppv": 0.6372147454651843,
+            "npv": 0.928006329113924,
+            "youden": 0.6477699264626693
+          },
+          "patient_mean": {
+            "sensitivity": 0.6977304558186911,
+            "specificity": 0.6354505796661437
+          },
+          "within_patient": {
+            "sensitivity": 0.670251406347663,
+            "specificity": 0.48171740113384,
+            "youden": 0.151968807481503
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 12.83430422024314,
+            "median": 9.0
+          },
+          "alarm_counts": {
+            "mean": 6.9471544715447155,
+            "median": 5.0,
+            "total": 1709
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.11915456408941327,
+        "brier_patient_mean": 0.12267719214863176,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "persistence": {
+        "pooled_auc": 0.8171219798683532,
+        "within_patient_auc": 0.6179132602083374,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8355625491738788,
+            "specificity": 0.6948752528658125,
+            "ppv": 0.539908490086426,
+            "npv": 0.9079295154185022,
+            "youden": 0.5304378020396914
+          },
+          "patient_mean": {
+            "sensitivity": 0.7266478983784657,
+            "specificity": 0.5792847110097831
+          },
+          "within_patient": {
+            "sensitivity": 0.7017977073219626,
+            "specificity": 0.5010219798205806,
+            "youden": 0.20281968714254306
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 14.944889657310533,
+            "median": 13.125
+          },
+          "alarm_counts": {
+            "mean": 7.995934959349594,
+            "median": 7.0,
+            "total": 1967
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.15951961918884583,
+        "brier_patient_mean": 0.16514360923961732,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "retrospective_rate": {
+        "pooled_auc": 0.9322250652954837,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8749016522423289,
+            "specificity": 0.8192852326365475,
+            "ppv": 0.6747572815533981,
+            "npv": 0.9385863267670915,
+            "youden": 0.6941868848788764
+          },
+          "patient_mean": {
+            "sensitivity": 0.6130952380952381,
+            "specificity": 0.6163793103448276
+          },
+          "within_patient": {
+            "sensitivity": 0.577922077922078,
+            "specificity": 0.42207792207792205,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 12.560975609756097,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 6.699186991869919,
+            "median": 0.0,
+            "total": 1648
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.09591659814167575,
+        "brier_patient_mean": 0.0978252054934632,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "logistic_regression": {
+        "pooled_auc": 0.9231643387714846,
+        "within_patient_auc": 0.652668351654235,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8214004720692368,
+            "specificity": 0.8803101820633851,
+            "ppv": 0.7462473195139385,
+            "npv": 0.9200140944326991,
+            "youden": 0.7017106541326219
+          },
+          "patient_mean": {
+            "sensitivity": 0.6252668744265384,
+            "specificity": 0.7237313054555434
+          },
+          "within_patient": {
+            "sensitivity": 0.5912002266471327,
+            "specificity": 0.5852974670422701,
+            "youden": 0.1764976936894029
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 10.668043478919571,
+            "median": 4.0
+          },
+          "alarm_counts": {
+            "mean": 5.686991869918699,
+            "median": 2.0,
+            "total": 1399
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.09692519900337772,
+        "brier_patient_mean": 0.0989462198571309,
+        "brier_skill": {
+          "runin_rate": 0.4744278782763566,
+          "updating_rate": 0.18473295398505685,
+          "retrospective_rate": -0.010515394428524338
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.0836350289522803,
+          "between_slope": 1.1786535994109641,
+          "within_slope": 0.7126008053796414
+        }
+      },
+      "gradient_boosting": {
+        "pooled_auc": 0.9292642871505173,
+        "within_patient_auc": 0.6378571868165637,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8481510621557828,
+            "specificity": 0.8718813216453135,
+            "ppv": 0.7393689986282579,
+            "npv": 0.930550557754588,
+            "youden": 0.7200323838010965
+          },
+          "patient_mean": {
+            "sensitivity": 0.6978880693691618,
+            "specificity": 0.7227559569891694
+          },
+          "within_patient": {
+            "sensitivity": 0.6704233484027219,
+            "specificity": 0.5876686637336591,
+            "youden": 0.25809201213638105
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 11.09864439864005,
+            "median": 5.970394736842105
+          },
+          "alarm_counts": {
+            "mean": 5.926829268292683,
+            "median": 3.5,
+            "total": 1458
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.09286839763992741,
+        "brier_patient_mean": 0.09471468202055595,
+        "brier_skill": {
+          "runin_rate": 0.496425684026806,
+          "updating_rate": 0.21885593230088451,
+          "retrospective_rate": 0.03177969778750833
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.068731793828635,
+          "between_slope": 1.1944702500797235,
+          "within_slope": 0.7471684699148508
+        },
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.9129781336230596,
+            0.9417888754537386
+          ],
+          "within_patient_auc": [
+            0.5947565149060842,
+            0.6832694135559025
+          ],
+          "pooled_sensitivity": [
+            0.811119131095843,
+            0.8794172539205399
+          ],
+          "pooled_specificity": [
+            0.8464870936786341,
+            0.8935453070654622
+          ],
+          "within_patient_sensitivity": [
+            0.6098151954678883,
+            0.7276748004741368
+          ],
+          "within_patient_specificity": [
+            0.5233575466271956,
+            0.6534423885168109
+          ],
+          "pooled_youden": [
+            0.6784232434102274,
+            0.7592865346694275
+          ],
+          "within_patient_youden": [
+            0.20395681289514753,
+            0.31648738701233126
+          ],
+          "brier_skill_vs": {
+            "runin_rate": [
+              0.4343705125501985,
+              0.5556556252063806
+            ],
+            "updating_rate": [
+              0.17790556333028593,
+              0.26340586853258446
+            ],
+            "retrospective_rate": [
+              -0.01944330826020012,
+              0.0831245086626168
+            ]
+          },
+          "calibration_slopes": {
+            "pooled_slope": {
+              "ci95": [
+                1.0053341234111512,
+                1.1407193181258337
+              ],
+              "skipped": 0
+            },
+            "between_slope": {
+              "ci95": [
+                1.1275862027676096,
+                1.2797306386805625
+              ],
+              "skipped": 0
+            },
+            "within_slope": {
+              "ci95": [
+                0.6332501682587862,
+                0.8570206286954317
+              ],
+              "skipped": 0
+            }
+          }
+        }
+      },
+      "within_centred_gradient_boosting": {
+        "pooled_auc": 0.9181632591346034,
+        "within_patient_auc": 0.6444767062946171,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8214004720692368,
+            "specificity": 0.8654753877275793,
+            "ppv": 0.7234927234927235,
+            "npv": 0.9187544738725841,
+            "youden": 0.6868758597968161
+          },
+          "patient_mean": {
+            "sensitivity": 0.6815171304535801,
+            "specificity": 0.7316713592083575
+          },
+          "within_patient": {
+            "sensitivity": 0.6538357873346414,
+            "specificity": 0.6036440861462976,
+            "youden": 0.257479873480939
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 10.956615973259918,
+            "median": 7.211538461538462
+          },
+          "alarm_counts": {
+            "mean": 5.865853658536586,
+            "median": 4.0,
+            "total": 1443
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.10204741691049773,
+        "brier_patient_mean": 0.10426963443504858,
+        "brier_skill": {
+          "runin_rate": 0.44665290374901934,
+          "updating_rate": 0.14164843618038314,
+          "retrospective_rate": -0.06391822570444305
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.1070962393714312,
+          "between_slope": 1.3601377101541596,
+          "within_slope": 0.6631084726133156
+        }
+      }
+    }
+  },
+  "ctn_weekly_missing_excluded_with_current_dose": {
+    "file": "forecasts_ctn_weekly_missing_excluded_with_current_dose.csv",
+    "patients": 246,
+    "scored_observations": 4237,
+    "event_rate": 0.2999763983950909,
+    "patient_event_rate_mean": 0.3225753757461238,
+    "patient_event_rate_sd": 0.34812056974770467,
+    "threshold": 0.3195704057279236,
+    "forecasts": {
+      "training_cohort_rate": {
+        "pooled_auc": 0.5,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "ppv": 0.2999763983950909,
+            "npv": null,
+            "youden": 0.0
+          },
+          "patient_mean": {
+            "sensitivity": 1.0,
+            "specificity": 0.0
+          },
+          "within_patient": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 30.0,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 17.223577235772357,
+            "median": 18.0,
+            "total": 4237
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.21037448392435967,
+        "brier_patient_mean": 0.21852953255318114,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "runin_rate": {
+        "pooled_auc": 0.8010020993234098,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8135326514555468,
+            "specificity": 0.6530681051921781,
+            "ppv": 0.5012118274357732,
+            "npv": 0.890984360625575,
+            "youden": 0.4666007566477248
+          },
+          "patient_mean": {
+            "sensitivity": 0.6785714285714286,
+            "specificity": 0.5258620689655172
+          },
+          "within_patient": {
+            "sensitivity": 0.6493506493506493,
+            "specificity": 0.35064935064935066,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 15.121951219512194,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 8.386178861788618,
+            "median": 8.5,
+            "total": 2063
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.18441845561653092,
+        "brier_patient_mean": 0.18719264096498037,
+        "brier_skill": {},
+        "calibration_slopes": {},
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.7626878749463878,
+            0.8361482206240459
+          ],
+          "within_patient_auc": [
+            0.5,
+            0.5
+          ],
+          "pooled_sensitivity": [
+            0.7504268754470359,
+            0.8725401947463769
+          ],
+          "pooled_specificity": [
+            0.585290376926302,
+            0.7179533828313304
+          ],
+          "within_patient_sensitivity": [
+            0.5704841009245658,
+            0.7244268804315254
+          ],
+          "within_patient_specificity": [
+            0.2755731195684747,
+            0.4295158990754342
+          ],
+          "pooled_youden": [
+            0.38924628894451113,
+            0.5400245187932479
+          ],
+          "within_patient_youden": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "runin_shrunk": {
+        "pooled_auc": 0.8126535564618257,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8135326514555468,
+            "specificity": 0.6530681051921781,
+            "ppv": 0.5012118274357732,
+            "npv": 0.890984360625575,
+            "youden": 0.4666007566477248
+          },
+          "patient_mean": {
+            "sensitivity": 0.6785714285714286,
+            "specificity": 0.5258620689655172
+          },
+          "within_patient": {
+            "sensitivity": 0.6493506493506493,
+            "specificity": 0.35064935064935066,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 15.121951219512194,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 8.386178861788618,
+            "median": 8.5,
+            "total": 2063
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.1740327011782089,
+        "brier_patient_mean": 0.17994635472892734,
+        "brier_skill": {
+          "runin_rate": 0.056316242339202516,
+          "updating_rate": -0.463841474234324,
+          "retrospective_rate": -0.814416947118475
+        },
+        "calibration_slopes": {
+          "pooled_slope": 3.0234094652931476,
+          "between_slope": null,
+          "within_slope": null
+        }
+      },
+      "updating_rate": {
+        "pooled_auc": 0.889027520395057,
+        "within_patient_auc": 0.43647609856889114,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8056648308418568,
+            "specificity": 0.8091706001348618,
+            "ppv": 0.6440251572327044,
+            "npv": 0.9066868152625613,
+            "youden": 0.6148354309767186
+          },
+          "patient_mean": {
+            "sensitivity": 0.5759678871548619,
+            "specificity": 0.6405206128136363
+          },
+          "within_patient": {
+            "sensitivity": 0.5374195132598495,
+            "specificity": 0.4661297520536192,
+            "youden": 0.003549265313468594
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 11.936269656699071,
+            "median": 3.541666666666667
+          },
+          "alarm_counts": {
+            "mean": 6.463414634146342,
+            "median": 2.0,
+            "total": 1590
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.11888766935589001,
+        "brier_patient_mean": 0.12240373651682987,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "recent_window_rate": {
+        "pooled_auc": 0.881586249192925,
+        "within_patient_auc": 0.57385462795921,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8568056648308419,
+            "specificity": 0.7909642616318274,
+            "ppv": 0.6372147454651843,
+            "npv": 0.928006329113924,
+            "youden": 0.6477699264626693
+          },
+          "patient_mean": {
+            "sensitivity": 0.6977304558186911,
+            "specificity": 0.6354505796661437
+          },
+          "within_patient": {
+            "sensitivity": 0.670251406347663,
+            "specificity": 0.48171740113384,
+            "youden": 0.151968807481503
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 12.83430422024314,
+            "median": 9.0
+          },
+          "alarm_counts": {
+            "mean": 6.9471544715447155,
+            "median": 5.0,
+            "total": 1709
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.11915456408941327,
+        "brier_patient_mean": 0.12267719214863176,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "persistence": {
+        "pooled_auc": 0.8171219798683532,
+        "within_patient_auc": 0.6179132602083374,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8355625491738788,
+            "specificity": 0.6948752528658125,
+            "ppv": 0.539908490086426,
+            "npv": 0.9079295154185022,
+            "youden": 0.5304378020396914
+          },
+          "patient_mean": {
+            "sensitivity": 0.7266478983784657,
+            "specificity": 0.5792847110097831
+          },
+          "within_patient": {
+            "sensitivity": 0.7017977073219626,
+            "specificity": 0.5010219798205806,
+            "youden": 0.20281968714254306
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 14.944889657310533,
+            "median": 13.125
+          },
+          "alarm_counts": {
+            "mean": 7.995934959349594,
+            "median": 7.0,
+            "total": 1967
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.15951961918884583,
+        "brier_patient_mean": 0.16514360923961732,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "retrospective_rate": {
+        "pooled_auc": 0.9322250652954837,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8749016522423289,
+            "specificity": 0.8192852326365475,
+            "ppv": 0.6747572815533981,
+            "npv": 0.9385863267670915,
+            "youden": 0.6941868848788764
+          },
+          "patient_mean": {
+            "sensitivity": 0.6130952380952381,
+            "specificity": 0.6163793103448276
+          },
+          "within_patient": {
+            "sensitivity": 0.577922077922078,
+            "specificity": 0.42207792207792205,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 12.560975609756097,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 6.699186991869919,
+            "median": 0.0,
+            "total": 1648
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.09591659814167575,
+        "brier_patient_mean": 0.0978252054934632,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "logistic_regression": {
+        "pooled_auc": 0.9230091575489962,
+        "within_patient_auc": 0.6543212871532591,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8269079464988198,
+            "specificity": 0.8809844908968307,
+            "ppv": 0.7485754985754985,
+            "npv": 0.9223438051535475,
+            "youden": 0.7078924373956506
+          },
+          "patient_mean": {
+            "sensitivity": 0.6366521987582912,
+            "specificity": 0.7247308028451271
+          },
+          "within_patient": {
+            "sensitivity": 0.6036205804635905,
+            "specificity": 0.586803203369435,
+            "youden": 0.1904237838330255
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 10.695967138172046,
+            "median": 4.0
+          },
+          "alarm_counts": {
+            "mean": 5.7073170731707314,
+            "median": 2.0,
+            "total": 1404
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.09688219254142034,
+        "brier_patient_mean": 0.09891425764530895,
+        "brier_skill": {
+          "runin_rate": 0.47466107869989127,
+          "updating_rate": 0.1850946942916033,
+          "retrospective_rate": -0.010067020916633584
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.0834104498478587,
+          "between_slope": 1.1746611919577512,
+          "within_slope": 0.7181325252285331
+        }
+      },
+      "gradient_boosting": {
+        "pooled_auc": 0.9288358808696303,
+        "within_patient_auc": 0.6469098008674841,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8512981904012589,
+            "specificity": 0.8674983142279163,
+            "ppv": 0.7335593220338983,
+            "npv": 0.9315713251267198,
+            "youden": 0.7187965046291751
+          },
+          "patient_mean": {
+            "sensitivity": 0.6924254045052364,
+            "specificity": 0.7149557668423767
+          },
+          "within_patient": {
+            "sensitivity": 0.6644640776420762,
+            "specificity": 0.5762996988983077,
+            "youden": 0.24076377654038386
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 11.232025061559904,
+            "median": 6.157894736842105
+          },
+          "alarm_counts": {
+            "mean": 5.995934959349594,
+            "median": 3.5,
+            "total": 1475
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.09307770982513192,
+        "brier_patient_mean": 0.09501126530690768,
+        "brier_skill": {
+          "runin_rate": 0.49529069900318257,
+          "updating_rate": 0.21709534445911316,
+          "retrospective_rate": 0.029597466669434858
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.0729562970954782,
+          "between_slope": 1.1931551363783555,
+          "within_slope": 0.7577501334947611
+        },
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.9117961996386248,
+            0.9419559368329762
+          ],
+          "within_patient_auc": [
+            0.6049877372766271,
+            0.6916433698908294
+          ],
+          "pooled_sensitivity": [
+            0.8150554974647071,
+            0.8831077746741154
+          ],
+          "pooled_specificity": [
+            0.8420326010585976,
+            0.8898052940196222
+          ],
+          "within_patient_sensitivity": [
+            0.6015698637365446,
+            0.7203281685565995
+          ],
+          "within_patient_specificity": [
+            0.5091775388050783,
+            0.6436168858324675
+          ],
+          "pooled_youden": [
+            0.6779449583238114,
+            0.7568965443360585
+          ],
+          "within_patient_youden": [
+            0.18664756890008113,
+            0.29617359229391754
+          ],
+          "brier_skill_vs": {
+            "runin_rate": [
+              0.43433695909435344,
+              0.5538706358380889
+            ],
+            "updating_rate": [
+              0.17252225366344062,
+              0.26110504809592666
+            ],
+            "retrospective_rate": [
+              -0.022523373458406232,
+              0.08040581036579224
+            ]
+          },
+          "calibration_slopes": {
+            "pooled_slope": {
+              "ci95": [
+                1.0087309376660163,
+                1.1483628622147006
+              ],
+              "skipped": 0
+            },
+            "between_slope": {
+              "ci95": [
+                1.1248448262644566,
+                1.2765718322233934
+              ],
+              "skipped": 0
+            },
+            "within_slope": {
+              "ci95": [
+                0.6426647291003306,
+                0.8673419146373521
+              ],
+              "skipped": 0
+            }
+          }
+        }
+      },
+      "within_centred_gradient_boosting": {
+        "pooled_auc": 0.9175329846309578,
+        "within_patient_auc": 0.6477234818986233,
+        "within_auc_eligible_patients": 154,
+        "within_auc_excluded_patients": 92,
+        "threshold": {
+          "threshold": 0.3195704057279236,
+          "pooled": {
+            "sensitivity": 0.8276947285601888,
+            "specificity": 0.8627781523937964,
+            "ppv": 0.7210418094585332,
+            "npv": 0.9211663066954644,
+            "youden": 0.6904728809539851
+          },
+          "patient_mean": {
+            "sensitivity": 0.6865130934852575,
+            "specificity": 0.7305071551315012
+          },
+          "within_patient": {
+            "sensitivity": 0.6592859288237439,
+            "specificity": 0.6029299543397288,
+            "youden": 0.2622158831634727
+          },
+          "eligible": {
+            "sensitivity": 168,
+            "specificity": 232,
+            "both": 154
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 11.033800467025854,
+            "median": 6.623376623376624
+          },
+          "alarm_counts": {
+            "mean": 5.930894308943089,
+            "median": 4.0,
+            "total": 1459
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.1027206105482821,
+        "brier_patient_mean": 0.10507077356997663,
+        "brier_skill": {
+          "runin_rate": 0.4430025443772645,
+          "updating_rate": 0.13598600170394337,
+          "retrospective_rate": -0.07093675691621515
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.1035715865773477,
+          "between_slope": 1.3486778486290498,
+          "within_slope": 0.6738755371229943
+        }
+      }
+    }
+  },
+  "ctn_weekly_missing_positive": {
+    "file": "forecasts_ctn_weekly_missing_positive.csv",
+    "patients": 246,
+    "scored_observations": 6632,
+    "event_rate": 0.5527744270205066,
+    "patient_event_rate_mean": 0.5494471991519324,
+    "patient_event_rate_sd": 0.25310179054085935,
+    "threshold": 0.5538341158059468,
+    "forecasts": {
+      "training_cohort_rate": {
+        "pooled_auc": 0.5,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "ppv": 0.5527744270205066,
+            "npv": null,
+            "youden": 0.0
+          },
+          "patient_mean": {
+            "sensitivity": 1.0,
+            "specificity": 0.0
+          },
+          "within_patient": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 30.0,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 26.959349593495936,
+            "median": 28.0,
+            "total": 6632
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.24721598279297913,
+        "brier_patient_mean": 0.24757421953375838,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "runin_rate": {
+        "pooled_auc": 0.6793925444913236,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.4959083469721768,
+            "specificity": 0.8162508428860418,
+            "ppv": 0.7693609818027931,
+            "npv": 0.567111735769501,
+            "youden": 0.31215918985821856
+          },
+          "patient_mean": {
+            "sensitivity": 0.3617886178861789,
+            "specificity": 0.6767241379310345
+          },
+          "within_patient": {
+            "sensitivity": 0.3232758620689655,
+            "specificity": 0.6767241379310345,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 10.853658536585366,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 9.605691056910569,
+            "median": 0.0,
+            "total": 2363
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.25889606302812573,
+        "brier_patient_mean": 0.2548692257319017,
+        "brier_skill": {},
+        "calibration_slopes": {},
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.6496475291341871,
+            0.7063573703912464
+          ],
+          "within_patient_auc": [
+            0.5,
+            0.5
+          ],
+          "pooled_sensitivity": [
+            0.4176684373115343,
+            0.5737522071847748
+          ],
+          "pooled_specificity": [
+            0.7693807129604678,
+            0.8584422707328571
+          ],
+          "within_patient_sensitivity": [
+            0.2628159701928697,
+            0.38235324302134643
+          ],
+          "within_patient_specificity": [
+            0.6176467569786536,
+            0.7371840298071303
+          ],
+          "pooled_youden": [
+            0.25580325628316436,
+            0.36757891973798507
+          ],
+          "within_patient_youden": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "runin_shrunk": {
+        "pooled_auc": 0.6793925444913236,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.4959083469721768,
+            "specificity": 0.8162508428860418,
+            "ppv": 0.7693609818027931,
+            "npv": 0.567111735769501,
+            "youden": 0.31215918985821856
+          },
+          "patient_mean": {
+            "sensitivity": 0.3617886178861789,
+            "specificity": 0.6767241379310345
+          },
+          "within_patient": {
+            "sensitivity": 0.3232758620689655,
+            "specificity": 0.6767241379310345,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 10.853658536585366,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 9.605691056910569,
+            "median": 0.0,
+            "total": 2363
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.22488213480714614,
+        "brier_patient_mean": 0.22441678757418138,
+        "brier_skill": {
+          "runin_rate": 0.13138063137439215,
+          "updating_rate": -0.08159177432545883,
+          "retrospective_rate": -0.2143777332898702
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.72599415474985,
+          "between_slope": null,
+          "within_slope": null
+        }
+      },
+      "updating_rate": {
+        "pooled_auc": 0.7673562789629991,
+        "within_patient_auc": 0.49540939863516026,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.5368248772504092,
+            "specificity": 0.8462575859743763,
+            "ppv": 0.8118811881188119,
+            "npv": 0.5964828897338403,
+            "youden": 0.38308246322478556
+          },
+          "patient_mean": {
+            "sensitivity": 0.3664000861688662,
+            "specificity": 0.6753490313843481
+          },
+          "within_patient": {
+            "sensitivity": 0.3281656086100909,
+            "specificity": 0.6753490313843481,
+            "youden": 0.003514639994439035
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 11.094006211969523,
+            "median": 2.145593869731801
+          },
+          "alarm_counts": {
+            "mean": 9.853658536585366,
+            "median": 2.0,
+            "total": 2424
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.20791775616765873,
+        "brier_patient_mean": 0.20675300347129957,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "recent_window_rate": {
+        "pooled_auc": 0.8054813527672597,
+        "within_patient_auc": 0.6190845713762483,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.682214948172395,
+            "specificity": 0.8317599460552934,
+            "ppv": 0.8336666666666667,
+            "npv": 0.6792400881057269,
+            "youden": 0.5139748942276885
+          },
+          "patient_mean": {
+            "sensitivity": 0.564440181242208,
+            "specificity": 0.692471653381463
+          },
+          "within_patient": {
+            "sensitivity": 0.5381563990757894,
+            "specificity": 0.692471653381463,
+            "youden": 0.2306280524572525
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 13.43889891706731,
+            "median": 10.32258064516129
+          },
+          "alarm_counts": {
+            "mean": 12.195121951219512,
+            "median": 10.0,
+            "total": 3000
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.18673415304631213,
+        "brier_patient_mean": 0.18884564958258762,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "persistence": {
+        "pooled_auc": 0.7256427546380345,
+        "within_patient_auc": 0.6146639465757742,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.7564102564102564,
+            "specificity": 0.6948752528658125,
+            "ppv": 0.7539423599782491,
+            "npv": 0.6976980365605958,
+            "youden": 0.4512855092760688
+          },
+          "patient_mean": {
+            "sensitivity": 0.6699594238084939,
+            "specificity": 0.5792847110097831
+          },
+          "within_patient": {
+            "sensitivity": 0.6500431821417652,
+            "specificity": 0.5792847110097831,
+            "youden": 0.22932789315154836
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 16.553295741148247,
+            "median": 15.0
+          },
+          "alarm_counts": {
+            "mean": 14.951219512195122,
+            "median": 13.5,
+            "total": 3678
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.271109228589661,
+        "brier_patient_mean": 0.27619900989159324,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "retrospective_rate": {
+        "pooled_auc": 0.786327836594332,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.6126568466993999,
+            "specificity": 0.8226567768037761,
+            "ppv": 0.8102453102453102,
+            "npv": 0.6321243523316062,
+            "youden": 0.43531362350317604
+          },
+          "patient_mean": {
+            "sensitivity": 0.4186991869918699,
+            "specificity": 0.6163793103448276
+          },
+          "within_patient": {
+            "sensitivity": 0.38362068965517243,
+            "specificity": 0.6163793103448276,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 12.560975609756097,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 11.268292682926829,
+            "median": 0.0,
+            "total": 2772
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.18518301895895115,
+        "brier_patient_mean": 0.18375486672424737,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "logistic_regression": {
+        "pooled_auc": 0.8442880928390462,
+        "within_patient_auc": 0.6886742178761772,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.7449536279323513,
+            "specificity": 0.818273769386379,
+            "ppv": 0.8351681957186544,
+            "npv": 0.7218917311124331,
+            "youden": 0.5632273973187303
+          },
+          "patient_mean": {
+            "sensitivity": 0.6382052741145403,
+            "specificity": 0.6752544578225825
+          },
+          "within_patient": {
+            "sensitivity": 0.6163728337593832,
+            "specificity": 0.6752544578225825,
+            "youden": 0.2916272915819659
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 14.642013309859525,
+            "median": 11.269841269841269
+          },
+          "alarm_counts": {
+            "mean": 13.292682926829269,
+            "median": 10.5,
+            "total": 3270
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.15794080290911347,
+        "brier_patient_mean": 0.1603953882860767,
+        "brier_skill": {
+          "runin_rate": 0.3899451344999587,
+          "updating_rate": 0.24036885631954075,
+          "retrospective_rate": 0.1471096875025909
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.0355307247394923,
+          "between_slope": 1.1872472930643068,
+          "within_slope": 0.8926959803815864
+        }
+      },
+      "gradient_boosting": {
+        "pooled_auc": 0.8741211544991261,
+        "within_patient_auc": 0.7230115813366059,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.7640480087288598,
+            "specificity": 0.8381658799730276,
+            "ppv": 0.8537031392868029,
+            "npv": 0.741868099074903,
+            "youden": 0.6022138887018875
+          },
+          "patient_mean": {
+            "sensitivity": 0.6920990009878599,
+            "specificity": 0.7003260654923408
+          },
+          "within_patient": {
+            "sensitivity": 0.6737240228044509,
+            "specificity": 0.7003260654923408,
+            "youden": 0.37405008829679154
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 14.78543505943955,
+            "median": 11.25
+          },
+          "alarm_counts": {
+            "mean": 13.33739837398374,
+            "median": 10.5,
+            "total": 3281
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.14108001630997144,
+        "brier_patient_mean": 0.14267701577137587,
+        "brier_skill": {
+          "runin_rate": 0.4550708316694453,
+          "updating_rate": 0.3214623949855986,
+          "retrospective_rate": 0.23815900019837055
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.059154654054396,
+          "between_slope": 1.2904615343905181,
+          "within_slope": 0.9226173833993662
+        },
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.8612057429393624,
+            0.8866197515805448
+          ],
+          "within_patient_auc": [
+            0.695894433613115,
+            0.747328050950839
+          ],
+          "pooled_sensitivity": [
+            0.7355362624791157,
+            0.790287077576736
+          ],
+          "pooled_specificity": [
+            0.8164249410951185,
+            0.8581590556380189
+          ],
+          "within_patient_sensitivity": [
+            0.6411035531313606,
+            0.7045137000230561
+          ],
+          "within_patient_specificity": [
+            0.6500748468337262,
+            0.7406217338396295
+          ],
+          "pooled_youden": [
+            0.5731388855221364,
+            0.631653338658016
+          ],
+          "within_patient_youden": [
+            0.32939921932058314,
+            0.4132616882801205
+          ],
+          "brier_skill_vs": {
+            "runin_rate": [
+              0.4181479781454852,
+              0.4890255835408201
+            ],
+            "updating_rate": [
+              0.29112901852236966,
+              0.3512244105727169
+            ],
+            "retrospective_rate": [
+              0.2030576047511344,
+              0.2746217884813169
+            ]
+          },
+          "calibration_slopes": {
+            "pooled_slope": {
+              "ci95": [
+                1.0093540109837786,
+                1.1228463697625308
+              ],
+              "skipped": 0
+            },
+            "between_slope": {
+              "ci95": [
+                1.2002161537611367,
+                1.3985419242995742
+              ],
+              "skipped": 0
+            },
+            "within_slope": {
+              "ci95": [
+                0.8692299321405903,
+                0.9826080095820715
+              ],
+              "skipped": 0
+            }
+          }
+        }
+      },
+      "within_centred_gradient_boosting": {
+        "pooled_auc": 0.8643382043225661,
+        "within_patient_auc": 0.7105799662011025,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.7575013638843426,
+            "specificity": 0.8314227916385705,
+            "ppv": 0.8474214220323466,
+            "npv": 0.7350223546944858,
+            "youden": 0.5889241555229132
+          },
+          "patient_mean": {
+            "sensitivity": 0.6920171630346222,
+            "specificity": 0.6985508019235133
+          },
+          "within_patient": {
+            "sensitivity": 0.6739246026758741,
+            "specificity": 0.6985508019235133,
+            "youden": 0.3724754045993875
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 14.817345088050326,
+            "median": 11.11111111111111
+          },
+          "alarm_counts": {
+            "mean": 13.321138211382113,
+            "median": 10.0,
+            "total": 3277
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.1467628183685989,
+        "brier_patient_mean": 0.14751830693953116,
+        "brier_skill": {
+          "runin_rate": 0.4331207023698348,
+          "updating_rate": 0.2941304240978164,
+          "retrospective_rate": 0.2074715101111334
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.1008234429327544,
+          "between_slope": 1.3663830039496838,
+          "within_slope": 0.9571840148559271
+        }
+      }
+    }
+  },
+  "ctn_weekly_missing_positive_with_current_dose": {
+    "file": "forecasts_ctn_weekly_missing_positive_with_current_dose.csv",
+    "patients": 246,
+    "scored_observations": 6632,
+    "event_rate": 0.5527744270205066,
+    "patient_event_rate_mean": 0.5494471991519324,
+    "patient_event_rate_sd": 0.25310179054085935,
+    "threshold": 0.5538341158059468,
+    "forecasts": {
+      "training_cohort_rate": {
+        "pooled_auc": 0.5,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "ppv": 0.5527744270205066,
+            "npv": null,
+            "youden": 0.0
+          },
+          "patient_mean": {
+            "sensitivity": 1.0,
+            "specificity": 0.0
+          },
+          "within_patient": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 30.0,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 26.959349593495936,
+            "median": 28.0,
+            "total": 6632
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.24721598279297913,
+        "brier_patient_mean": 0.24757421953375838,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "runin_rate": {
+        "pooled_auc": 0.6793925444913236,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.4959083469721768,
+            "specificity": 0.8162508428860418,
+            "ppv": 0.7693609818027931,
+            "npv": 0.567111735769501,
+            "youden": 0.31215918985821856
+          },
+          "patient_mean": {
+            "sensitivity": 0.3617886178861789,
+            "specificity": 0.6767241379310345
+          },
+          "within_patient": {
+            "sensitivity": 0.3232758620689655,
+            "specificity": 0.6767241379310345,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 10.853658536585366,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 9.605691056910569,
+            "median": 0.0,
+            "total": 2363
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.25889606302812573,
+        "brier_patient_mean": 0.2548692257319017,
+        "brier_skill": {},
+        "calibration_slopes": {},
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.6496475291341871,
+            0.7063573703912464
+          ],
+          "within_patient_auc": [
+            0.5,
+            0.5
+          ],
+          "pooled_sensitivity": [
+            0.4176684373115343,
+            0.5737522071847748
+          ],
+          "pooled_specificity": [
+            0.7693807129604678,
+            0.8584422707328571
+          ],
+          "within_patient_sensitivity": [
+            0.2628159701928697,
+            0.38235324302134643
+          ],
+          "within_patient_specificity": [
+            0.6176467569786536,
+            0.7371840298071303
+          ],
+          "pooled_youden": [
+            0.25580325628316436,
+            0.36757891973798507
+          ],
+          "within_patient_youden": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "runin_shrunk": {
+        "pooled_auc": 0.6793925444913236,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.4959083469721768,
+            "specificity": 0.8162508428860418,
+            "ppv": 0.7693609818027931,
+            "npv": 0.567111735769501,
+            "youden": 0.31215918985821856
+          },
+          "patient_mean": {
+            "sensitivity": 0.3617886178861789,
+            "specificity": 0.6767241379310345
+          },
+          "within_patient": {
+            "sensitivity": 0.3232758620689655,
+            "specificity": 0.6767241379310345,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 10.853658536585366,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 9.605691056910569,
+            "median": 0.0,
+            "total": 2363
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.22488213480714614,
+        "brier_patient_mean": 0.22441678757418138,
+        "brier_skill": {
+          "runin_rate": 0.13138063137439215,
+          "updating_rate": -0.08159177432545883,
+          "retrospective_rate": -0.2143777332898702
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.72599415474985,
+          "between_slope": null,
+          "within_slope": null
+        }
+      },
+      "updating_rate": {
+        "pooled_auc": 0.7673562789629991,
+        "within_patient_auc": 0.49540939863516026,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.5368248772504092,
+            "specificity": 0.8462575859743763,
+            "ppv": 0.8118811881188119,
+            "npv": 0.5964828897338403,
+            "youden": 0.38308246322478556
+          },
+          "patient_mean": {
+            "sensitivity": 0.3664000861688662,
+            "specificity": 0.6753490313843481
+          },
+          "within_patient": {
+            "sensitivity": 0.3281656086100909,
+            "specificity": 0.6753490313843481,
+            "youden": 0.003514639994439035
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 11.094006211969523,
+            "median": 2.145593869731801
+          },
+          "alarm_counts": {
+            "mean": 9.853658536585366,
+            "median": 2.0,
+            "total": 2424
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.20791775616765873,
+        "brier_patient_mean": 0.20675300347129957,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "recent_window_rate": {
+        "pooled_auc": 0.8054813527672597,
+        "within_patient_auc": 0.6190845713762483,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.682214948172395,
+            "specificity": 0.8317599460552934,
+            "ppv": 0.8336666666666667,
+            "npv": 0.6792400881057269,
+            "youden": 0.5139748942276885
+          },
+          "patient_mean": {
+            "sensitivity": 0.564440181242208,
+            "specificity": 0.692471653381463
+          },
+          "within_patient": {
+            "sensitivity": 0.5381563990757894,
+            "specificity": 0.692471653381463,
+            "youden": 0.2306280524572525
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 13.43889891706731,
+            "median": 10.32258064516129
+          },
+          "alarm_counts": {
+            "mean": 12.195121951219512,
+            "median": 10.0,
+            "total": 3000
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.18673415304631213,
+        "brier_patient_mean": 0.18884564958258762,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "persistence": {
+        "pooled_auc": 0.7256427546380345,
+        "within_patient_auc": 0.6146639465757742,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.7564102564102564,
+            "specificity": 0.6948752528658125,
+            "ppv": 0.7539423599782491,
+            "npv": 0.6976980365605958,
+            "youden": 0.4512855092760688
+          },
+          "patient_mean": {
+            "sensitivity": 0.6699594238084939,
+            "specificity": 0.5792847110097831
+          },
+          "within_patient": {
+            "sensitivity": 0.6500431821417652,
+            "specificity": 0.5792847110097831,
+            "youden": 0.22932789315154836
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 16.553295741148247,
+            "median": 15.0
+          },
+          "alarm_counts": {
+            "mean": 14.951219512195122,
+            "median": 13.5,
+            "total": 3678
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.271109228589661,
+        "brier_patient_mean": 0.27619900989159324,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "retrospective_rate": {
+        "pooled_auc": 0.786327836594332,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.6126568466993999,
+            "specificity": 0.8226567768037761,
+            "ppv": 0.8102453102453102,
+            "npv": 0.6321243523316062,
+            "youden": 0.43531362350317604
+          },
+          "patient_mean": {
+            "sensitivity": 0.4186991869918699,
+            "specificity": 0.6163793103448276
+          },
+          "within_patient": {
+            "sensitivity": 0.38362068965517243,
+            "specificity": 0.6163793103448276,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 12.560975609756097,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 11.268292682926829,
+            "median": 0.0,
+            "total": 2772
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.18518301895895115,
+        "brier_patient_mean": 0.18375486672424737,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "logistic_regression": {
+        "pooled_auc": 0.8465824166890149,
+        "within_patient_auc": 0.6910495828039733,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.7460447354064376,
+            "specificity": 0.822993931220499,
+            "ppv": 0.838957055214724,
+            "npv": 0.7239027283511269,
+            "youden": 0.5690386666269367
+          },
+          "patient_mean": {
+            "sensitivity": 0.6380005890395465,
+            "specificity": 0.6824154138634161
+          },
+          "within_patient": {
+            "sensitivity": 0.6161557969988294,
+            "specificity": 0.6824154138634161,
+            "youden": 0.2985712108622456
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 14.591685429433195,
+            "median": 11.055555555555555
+          },
+          "alarm_counts": {
+            "mean": 13.252032520325203,
+            "median": 10.0,
+            "total": 3260
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.15669805236123652,
+        "brier_patient_mean": 0.15916812525126278,
+        "brier_skill": {
+          "runin_rate": 0.3947453254852574,
+          "updating_rate": 0.2463459819425916,
+          "retrospective_rate": 0.15382061896306365
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.032586661514188,
+          "between_slope": 1.1928255710955622,
+          "within_slope": 0.8836271722928167
+        }
+      },
+      "gradient_boosting": {
+        "pooled_auc": 0.8747388570741177,
+        "within_patient_auc": 0.7256881297939163,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.7725040916530278,
+            "specificity": 0.8408631153068106,
+            "ppv": 0.8571428571428571,
+            "npv": 0.7493990384615384,
+            "youden": 0.6133672069598384
+          },
+          "patient_mean": {
+            "sensitivity": 0.6940863575969263,
+            "specificity": 0.7076435008460337
+          },
+          "within_patient": {
+            "sensitivity": 0.6760365606210429,
+            "specificity": 0.7076435008460337,
+            "youden": 0.3836800614670766
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 14.785198313401121,
+            "median": 11.314655172413794
+          },
+          "alarm_counts": {
+            "mean": 13.43089430894309,
+            "median": 11.0,
+            "total": 3304
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.1407161815073732,
+        "brier_patient_mean": 0.14256909554450423,
+        "brier_skill": {
+          "runin_rate": 0.4564761632080663,
+          "updating_rate": 0.32321229268219,
+          "retrospective_rate": 0.24012373111508
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.0719240936017294,
+          "between_slope": 1.3110045567175403,
+          "within_slope": 0.933885669947974
+        },
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.8618146571991572,
+            0.8866095297728008
+          ],
+          "within_patient_auc": [
+            0.6986361932375426,
+            0.749886374391418
+          ],
+          "pooled_sensitivity": [
+            0.74291360301209,
+            0.800464067183561
+          ],
+          "pooled_specificity": [
+            0.8190158789638858,
+            0.8589741062786088
+          ],
+          "within_patient_sensitivity": [
+            0.6428128191784497,
+            0.7078618970976875
+          ],
+          "within_patient_specificity": [
+            0.6596057398742906,
+            0.7498077256205871
+          ],
+          "pooled_youden": [
+            0.5827507057340642,
+            0.6423895902760506
+          ],
+          "within_patient_youden": [
+            0.3385248751824466,
+            0.42019948897286163
+          ],
+          "brier_skill_vs": {
+            "runin_rate": [
+              0.4199518672185294,
+              0.4906617445346416
+            ],
+            "updating_rate": [
+              0.29545414114242896,
+              0.3513462186273115
+            ],
+            "retrospective_rate": [
+              0.20644064949156601,
+              0.2743110782828417
+            ]
+          },
+          "calibration_slopes": {
+            "pooled_slope": {
+              "ci95": [
+                1.0193122623737678,
+                1.1374349904145895
+              ],
+              "skipped": 0
+            },
+            "between_slope": {
+              "ci95": [
+                1.2209267262858865,
+                1.4210333210139539
+              ],
+              "skipped": 0
+            },
+            "within_slope": {
+              "ci95": [
+                0.8813081032456405,
+                0.9944234085570196
+              ],
+              "skipped": 0
+            }
+          }
+        }
+      },
+      "within_centred_gradient_boosting": {
+        "pooled_auc": 0.8630974190489119,
+        "within_patient_auc": 0.7160319977469884,
+        "within_auc_eligible_patients": 232,
+        "within_auc_excluded_patients": 14,
+        "threshold": {
+          "threshold": 0.5538341158059468,
+          "pooled": {
+            "sensitivity": 0.75177304964539,
+            "specificity": 0.8371544167228591,
+            "ppv": 0.8508799012040753,
+            "npv": 0.7318007662835249,
+            "youden": 0.5889274663682491
+          },
+          "patient_mean": {
+            "sensitivity": 0.6882254533715912,
+            "specificity": 0.7089589365379707
+          },
+          "within_patient": {
+            "sensitivity": 0.6696167266251316,
+            "specificity": 0.7089589365379707,
+            "youden": 0.3785756631631022
+          },
+          "eligible": {
+            "sensitivity": 246,
+            "specificity": 232,
+            "both": 232
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 14.630954583073454,
+            "median": 11.026315789473685
+          },
+          "alarm_counts": {
+            "mean": 13.166666666666666,
+            "median": 10.0,
+            "total": 3239
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.14738444471639395,
+        "brier_patient_mean": 0.14832595196522674,
+        "brier_skill": {
+          "runin_rate": 0.43071963709087946,
+          "updating_rate": 0.2911406537229677,
+          "retrospective_rate": 0.20411468856621162
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.1067710785512717,
+          "between_slope": 1.3985498247505173,
+          "within_slope": 0.9552128891250111
+        }
+      }
+    }
+  },
+  "replace_bg": {
+    "file": "forecasts_replace_bg.csv",
+    "patients": 45,
+    "scored_observations": 9477,
+    "event_rate": 0.05982905982905983,
+    "patient_event_rate_mean": 0.060472716992993586,
+    "patient_event_rate_sd": 0.052750905973892925,
+    "threshold": 0.0543564285200374,
+    "forecasts": {
+      "training_cohort_rate": {
+        "pooled_auc": 0.5,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "ppv": 0.05982905982905983,
+            "npv": null,
+            "youden": 0.0
+          },
+          "patient_mean": {
+            "sensitivity": 1.0,
+            "specificity": 0.0
+          },
+          "within_patient": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 30.0,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 210.6,
+            "median": 215.0,
+            "total": 9477
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.0562794931224751,
+        "brier_patient_mean": 0.0568531764771633,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "runin_rate": {
+        "pooled_auc": 0.5971073660374072,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.6807760141093474,
+            "specificity": 0.5132435465768799,
+            "ppv": 0.0817277154351048,
+            "npv": 0.9619267984854859,
+            "youden": 0.19401956068622717
+          },
+          "patient_mean": {
+            "sensitivity": 0.5238095238095238,
+            "specificity": 0.5111111111111111
+          },
+          "within_patient": {
+            "sensitivity": 0.5238095238095238,
+            "specificity": 0.47619047619047616,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 14.666666666666666,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 104.95555555555555,
+            "median": 0.0,
+            "total": 4723
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.060534812020149625,
+        "brier_patient_mean": 0.06105494201833755,
+        "brier_skill": {},
+        "calibration_slopes": {},
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.531598119087495,
+            0.6601009865536864
+          ],
+          "within_patient_auc": [
+            0.5,
+            0.5
+          ],
+          "pooled_sensitivity": [
+            0.5044319299626204,
+            0.8269589084369466
+          ],
+          "pooled_specificity": [
+            0.3656541947723972,
+            0.657385250267496
+          ],
+          "within_patient_sensitivity": [
+            0.3670731707317073,
+            0.6666666666666666
+          ],
+          "within_patient_specificity": [
+            0.3333333333333333,
+            0.6329268292682926
+          ],
+          "pooled_youden": [
+            0.07064008202642809,
+            0.2997358543118619
+          ],
+          "within_patient_youden": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "runin_rate_shrunk_10": {
+        "pooled_auc": 0.5971073660374072,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.6807760141093474,
+            "specificity": 0.5132435465768799,
+            "ppv": 0.0817277154351048,
+            "npv": 0.9619267984854859,
+            "youden": 0.19401956068622717
+          },
+          "patient_mean": {
+            "sensitivity": 0.5238095238095238,
+            "specificity": 0.5111111111111111
+          },
+          "within_patient": {
+            "sensitivity": 0.5238095238095238,
+            "specificity": 0.47619047619047616,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 14.666666666666666,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 104.95555555555555,
+            "median": 0.0,
+            "total": 4723
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.05694037290988708,
+        "brier_patient_mean": 0.057481683072349,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "expanding_rate": {
+        "pooled_auc": 0.7066441408005194,
+        "within_patient_auc": 0.38706641408619463,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.7336860670194003,
+            "specificity": 0.5875420875420876,
+            "ppv": 0.10168662918601809,
+            "npv": 0.9719643520237653,
+            "youden": 0.3212281545614879
+          },
+          "patient_mean": {
+            "sensitivity": 0.4543766163878946,
+            "specificity": 0.559932408257546
+          },
+          "within_patient": {
+            "sensitivity": 0.4543766163878946,
+            "specificity": 0.5284990088473707,
+            "youden": -0.017124374764734735
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 13.173194432644198,
+            "median": 8.035714285714286
+          },
+          "alarm_counts": {
+            "mean": 90.91111111111111,
+            "median": 60.0,
+            "total": 4091
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.05461217097374628,
+        "brier_patient_mean": 0.0552715669659848,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "recent_28_night_rate": {
+        "pooled_auc": 0.6837289215890039,
+        "within_patient_auc": 0.46921323437513557,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.6649029982363316,
+            "specificity": 0.6240179573512907,
+            "ppv": 0.10115374295680171,
+            "npv": 0.9669565217391304,
+            "youden": 0.28892095558762243
+          },
+          "patient_mean": {
+            "sensitivity": 0.41512310701342364,
+            "specificity": 0.6026101899246211
+          },
+          "within_patient": {
+            "sensitivity": 0.41512310701342364,
+            "specificity": 0.5742252034906654,
+            "youden": -0.010651689495911028
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 11.934084597944803,
+            "median": 9.348837209302326
+          },
+          "alarm_counts": {
+            "mean": 82.82222222222222,
+            "median": 67.0,
+            "total": 3727
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.05562604196082227,
+        "brier_patient_mean": 0.056291847991678426,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "persistence": {
+        "pooled_auc": 0.5365961199294532,
+        "within_patient_auc": 0.5062029783623405,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.12874779541446207,
+            "specificity": 0.9444444444444444,
+            "ppv": 0.12852112676056338,
+            "npv": 0.9445504545964755,
+            "youden": 0.07319223985890644
+          },
+          "patient_mean": {
+            "sensitivity": 0.07586041365167401,
+            "specificity": 0.9407758402014732
+          },
+          "within_patient": {
+            "sensitivity": 0.07586041365167401,
+            "specificity": 0.9365455430730072,
+            "youden": 0.012405956724681174
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 1.8169056013947689,
+            "median": 1.3407821229050279
+          },
+          "alarm_counts": {
+            "mean": 12.622222222222222,
+            "median": 7.0,
+            "total": 568
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.10435771045789563,
+        "brier_patient_mean": 0.10596896017156138,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "retrospective_rate_reference": {
+        "pooled_auc": 0.7518087003683711,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.7372134038800705,
+            "specificity": 0.6472502805836139,
+            "ppv": 0.11738275765234485,
+            "npv": 0.9748140635564571,
+            "youden": 0.3844636844636844
+          },
+          "patient_mean": {
+            "sensitivity": 0.40476190476190477,
+            "specificity": 0.6222222222222222
+          },
+          "within_patient": {
+            "sensitivity": 0.40476190476190477,
+            "specificity": 0.5952380952380952,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 11.333333333333334,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 79.13333333333334,
+            "median": 0.0,
+            "total": 3561
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.05345457003314785,
+        "brier_patient_mean": 0.05409494625772499,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "logistic_regression": {
+        "pooled_auc": 0.8181307489949465,
+        "within_patient_auc": 0.750388338185026,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.7724867724867724,
+            "specificity": 0.7204264870931537,
+            "ppv": 0.1495390918402185,
+            "npv": 0.9802993280390959,
+            "youden": 0.49291325957992616
+          },
+          "patient_mean": {
+            "sensitivity": 0.6444567875313181,
+            "specificity": 0.7047408089730648
+          },
+          "within_patient": {
+            "sensitivity": 0.6444567875313181,
+            "specificity": 0.6852995807781124,
+            "youden": 0.32975636830943056
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 9.439188463103395,
+            "median": 7.819148936170213
+          },
+          "alarm_counts": {
+            "mean": 65.08888888888889,
+            "median": 55.0,
+            "total": 2929
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.04954619795523261,
+        "brier_patient_mean": 0.0502340577370823,
+        "brier_skill": {
+          "runin_rate": 0.1815260502453605,
+          "updating_rate": 0.09276278084666267,
+          "retrospective_rate": 0.07311577055849028
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.1525336417817786,
+          "between_slope": 1.4398356204504204,
+          "within_slope": 1.0281811203274887
+        }
+      },
+      "gradient_boosting": {
+        "pooled_auc": 0.8285656882364701,
+        "within_patient_auc": 0.7586922688546607,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.7019400352733686,
+            "specificity": 0.7797979797979798,
+            "ppv": 0.16864406779661018,
+            "npv": 0.9762540396234368,
+            "youden": 0.4817380150713484
+          },
+          "patient_mean": {
+            "sensitivity": 0.596734782866881,
+            "specificity": 0.7680244126766608
+          },
+          "within_patient": {
+            "sensitivity": 0.596734782866881,
+            "specificity": 0.7526334171653519,
+            "youden": 0.34936820003223296
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 7.570125427104029,
+            "median": 6.8493150684931505
+          },
+          "alarm_counts": {
+            "mean": 52.44444444444444,
+            "median": 44.0,
+            "total": 2360
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.047963325082300105,
+        "brier_patient_mean": 0.0485280285093282,
+        "brier_skill": {
+          "runin_rate": 0.20767417594895377,
+          "updating_rate": 0.12174666342045914,
+          "retrospective_rate": 0.10272732429380504
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.0592481201856465,
+          "between_slope": 1.5242569490825109,
+          "within_slope": 0.9515557101478839
+        },
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.8008182898444242,
+            0.8538629897140955
+          ],
+          "within_patient_auc": [
+            0.7275953053219141,
+            0.7890523710326691
+          ],
+          "pooled_sensitivity": [
+            0.633809690193338,
+            0.7587158359303015
+          ],
+          "pooled_specificity": [
+            0.7319026504065717,
+            0.8246493680433031
+          ],
+          "within_patient_sensitivity": [
+            0.5303174581529329,
+            0.6582299346160674
+          ],
+          "within_patient_specificity": [
+            0.7056511592240888,
+            0.8010287980416685
+          ],
+          "pooled_youden": [
+            0.4338883756079611,
+            0.5299042476023865
+          ],
+          "within_patient_youden": [
+            0.3035244009605573,
+            0.39804613347390666
+          ],
+          "brier_skill_vs": {
+            "runin_rate": [
+              0.15315153013766714,
+              0.2733898431330069
+            ],
+            "updating_rate": [
+              0.07865744581314532,
+              0.1663920604510621
+            ],
+            "retrospective_rate": [
+              0.059686791255691894,
+              0.14777095991099015
+            ]
+          },
+          "calibration_slopes": {
+            "pooled_slope": {
+              "ci95": [
+                0.9512007842182811,
+                1.1737722971926075
+              ],
+              "skipped": 0
+            },
+            "between_slope": {
+              "ci95": [
+                1.3109902866527836,
+                1.8438996987828553
+              ],
+              "skipped": 0
+            },
+            "within_slope": {
+              "ci95": [
+                0.8143129106732577,
+                1.0875166330760861
+              ],
+              "skipped": 0
+            }
+          }
+        }
+      },
+      "within_patient_centred_gradient_boosting": {
+        "pooled_auc": 0.784827799848376,
+        "within_patient_auc": 0.759824908588073,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.6649029982363316,
+            "specificity": 0.7548821548821549,
+            "ppv": 0.14720812182741116,
+            "npv": 0.9725274725274725,
+            "youden": 0.4197851531184864
+          },
+          "patient_mean": {
+            "sensitivity": 0.6232540102080125,
+            "specificity": 0.7486863009705469
+          },
+          "within_patient": {
+            "sensitivity": 0.6232540102080125,
+            "specificity": 0.7381964302324915,
+            "youden": 0.361450440440504
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 8.19089632063526,
+            "median": 7.885714285714286
+          },
+          "alarm_counts": {
+            "mean": 56.91111111111111,
+            "median": 52.0,
+            "total": 2561
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.05066735305856736,
+        "brier_patient_mean": 0.05128488716168423,
+        "brier_skill": {
+          "runin_rate": 0.16300522960553876,
+          "updating_rate": 0.07223338242323496,
+          "retrospective_rate": 0.05214179017400555
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.1381140716342406,
+          "between_slope": 1.365489259195994,
+          "within_slope": 1.0980266489701564
+        }
+      }
+    }
+  },
+  "replace_bg_v1panel": {
+    "file": "forecasts_replace_bg_v1panel.csv",
+    "patients": 45,
+    "scored_observations": 9477,
+    "event_rate": 0.05982905982905983,
+    "patient_event_rate_mean": 0.060472716992993586,
+    "patient_event_rate_sd": 0.052750905973892925,
+    "threshold": 0.0543564285200374,
+    "forecasts": {
+      "training_cohort_rate": {
+        "pooled_auc": 0.5,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "ppv": 0.05982905982905983,
+            "npv": null,
+            "youden": 0.0
+          },
+          "patient_mean": {
+            "sensitivity": 1.0,
+            "specificity": 0.0
+          },
+          "within_patient": {
+            "sensitivity": 1.0,
+            "specificity": 0.0,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 30.0,
+            "median": 30.0
+          },
+          "alarm_counts": {
+            "mean": 210.6,
+            "median": 215.0,
+            "total": 9477
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.0562794931224751,
+        "brier_patient_mean": 0.0568531764771633,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "runin_rate": {
+        "pooled_auc": 0.5971073660374072,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.6807760141093474,
+            "specificity": 0.5132435465768799,
+            "ppv": 0.0817277154351048,
+            "npv": 0.9619267984854859,
+            "youden": 0.19401956068622717
+          },
+          "patient_mean": {
+            "sensitivity": 0.5238095238095238,
+            "specificity": 0.5111111111111111
+          },
+          "within_patient": {
+            "sensitivity": 0.5238095238095238,
+            "specificity": 0.47619047619047616,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 14.666666666666666,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 104.95555555555555,
+            "median": 0.0,
+            "total": 4723
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.060534812020149625,
+        "brier_patient_mean": 0.06105494201833755,
+        "brier_skill": {},
+        "calibration_slopes": {},
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.531598119087495,
+            0.6601009865536864
+          ],
+          "within_patient_auc": [
+            0.5,
+            0.5
+          ],
+          "pooled_sensitivity": [
+            0.5044319299626204,
+            0.8269589084369466
+          ],
+          "pooled_specificity": [
+            0.3656541947723972,
+            0.657385250267496
+          ],
+          "within_patient_sensitivity": [
+            0.3670731707317073,
+            0.6666666666666666
+          ],
+          "within_patient_specificity": [
+            0.3333333333333333,
+            0.6329268292682926
+          ],
+          "pooled_youden": [
+            0.07064008202642809,
+            0.2997358543118619
+          ],
+          "within_patient_youden": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "runin_rate_shrunk_10": {
+        "pooled_auc": 0.5971073660374072,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.6807760141093474,
+            "specificity": 0.5132435465768799,
+            "ppv": 0.0817277154351048,
+            "npv": 0.9619267984854859,
+            "youden": 0.19401956068622717
+          },
+          "patient_mean": {
+            "sensitivity": 0.5238095238095238,
+            "specificity": 0.5111111111111111
+          },
+          "within_patient": {
+            "sensitivity": 0.5238095238095238,
+            "specificity": 0.47619047619047616,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 14.666666666666666,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 104.95555555555555,
+            "median": 0.0,
+            "total": 4723
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.05694037290988708,
+        "brier_patient_mean": 0.057481683072349,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "expanding_rate": {
+        "pooled_auc": 0.7066441408005194,
+        "within_patient_auc": 0.38706641408619463,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.7336860670194003,
+            "specificity": 0.5875420875420876,
+            "ppv": 0.10168662918601809,
+            "npv": 0.9719643520237653,
+            "youden": 0.3212281545614879
+          },
+          "patient_mean": {
+            "sensitivity": 0.4543766163878946,
+            "specificity": 0.559932408257546
+          },
+          "within_patient": {
+            "sensitivity": 0.4543766163878946,
+            "specificity": 0.5284990088473707,
+            "youden": -0.017124374764734735
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 13.173194432644198,
+            "median": 8.035714285714286
+          },
+          "alarm_counts": {
+            "mean": 90.91111111111111,
+            "median": 60.0,
+            "total": 4091
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.05461217097374628,
+        "brier_patient_mean": 0.0552715669659848,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "recent_28_night_rate": {
+        "pooled_auc": 0.6837289215890039,
+        "within_patient_auc": 0.46921323437513557,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.6649029982363316,
+            "specificity": 0.6240179573512907,
+            "ppv": 0.10115374295680171,
+            "npv": 0.9669565217391304,
+            "youden": 0.28892095558762243
+          },
+          "patient_mean": {
+            "sensitivity": 0.41512310701342364,
+            "specificity": 0.6026101899246211
+          },
+          "within_patient": {
+            "sensitivity": 0.41512310701342364,
+            "specificity": 0.5742252034906654,
+            "youden": -0.010651689495911028
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 11.934084597944803,
+            "median": 9.348837209302326
+          },
+          "alarm_counts": {
+            "mean": 82.82222222222222,
+            "median": 67.0,
+            "total": 3727
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.05562604196082227,
+        "brier_patient_mean": 0.056291847991678426,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "persistence": {
+        "pooled_auc": 0.5365961199294532,
+        "within_patient_auc": 0.5062029783623405,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.12874779541446207,
+            "specificity": 0.9444444444444444,
+            "ppv": 0.12852112676056338,
+            "npv": 0.9445504545964755,
+            "youden": 0.07319223985890644
+          },
+          "patient_mean": {
+            "sensitivity": 0.07586041365167401,
+            "specificity": 0.9407758402014732
+          },
+          "within_patient": {
+            "sensitivity": 0.07586041365167401,
+            "specificity": 0.9365455430730072,
+            "youden": 0.012405956724681174
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 1.8169056013947689,
+            "median": 1.3407821229050279
+          },
+          "alarm_counts": {
+            "mean": 12.622222222222222,
+            "median": 7.0,
+            "total": 568
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.10435771045789563,
+        "brier_patient_mean": 0.10596896017156138,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "retrospective_rate_reference": {
+        "pooled_auc": 0.7518087003683711,
+        "within_patient_auc": 0.5,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.7372134038800705,
+            "specificity": 0.6472502805836139,
+            "ppv": 0.11738275765234485,
+            "npv": 0.9748140635564571,
+            "youden": 0.3844636844636844
+          },
+          "patient_mean": {
+            "sensitivity": 0.40476190476190477,
+            "specificity": 0.6222222222222222
+          },
+          "within_patient": {
+            "sensitivity": 0.40476190476190477,
+            "specificity": 0.5952380952380952,
+            "youden": 0.0
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 11.333333333333334,
+            "median": 0.0
+          },
+          "alarm_counts": {
+            "mean": 79.13333333333334,
+            "median": 0.0,
+            "total": 3561
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.05345457003314785,
+        "brier_patient_mean": 0.05409494625772499,
+        "brier_skill": {},
+        "calibration_slopes": {}
+      },
+      "logistic_regression": {
+        "pooled_auc": 0.8181208518657078,
+        "within_patient_auc": 0.7504405243598248,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.7724867724867724,
+            "specificity": 0.7205387205387206,
+            "ppv": 0.14959016393442623,
+            "npv": 0.9803023362345397,
+            "youden": 0.49302549302549314
+          },
+          "patient_mean": {
+            "sensitivity": 0.6444567875313181,
+            "specificity": 0.7048446511329818
+          },
+          "within_patient": {
+            "sensitivity": 0.6444567875313181,
+            "specificity": 0.6854108402351663,
+            "youden": 0.32986762776648443
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 9.43613035912786,
+            "median": 7.819148936170213
+          },
+          "alarm_counts": {
+            "mean": 65.06666666666666,
+            "median": 55.0,
+            "total": 2928
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.049546435185417854,
+        "brier_patient_mean": 0.05023431963317167,
+        "brier_skill": {
+          "runin_rate": 0.18152213134270534,
+          "updating_rate": 0.09275843694011798,
+          "retrospective_rate": 0.07311133258087488
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.1526723909469119,
+          "between_slope": 1.4396991973324509,
+          "within_slope": 1.028352404047852
+        }
+      },
+      "gradient_boosting": {
+        "pooled_auc": 0.8279203954101073,
+        "within_patient_auc": 0.7577296850531104,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.7072310405643739,
+            "specificity": 0.7778900112233446,
+            "ppv": 0.1684873949579832,
+            "npv": 0.9766098351416092,
+            "youden": 0.48512105178771847
+          },
+          "patient_mean": {
+            "sensitivity": 0.6040013258477097,
+            "specificity": 0.7658721064370844
+          },
+          "within_patient": {
+            "sensitivity": 0.6040013258477097,
+            "specificity": 0.7503273747658058,
+            "youden": 0.35432870061351546
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 7.643402674272569,
+            "median": 6.70391061452514
+          },
+          "alarm_counts": {
+            "mean": 52.888888888888886,
+            "median": 46.0,
+            "total": 2380
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.048040202262902454,
+        "brier_patient_mean": 0.048603471172743204,
+        "brier_skill": {
+          "runin_rate": 0.2064042102956769,
+          "updating_rate": 0.12033897034966001,
+          "retrospective_rate": 0.1012891464063993
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.0574570757158532,
+          "between_slope": 1.5282284894788796,
+          "within_slope": 0.9495177739331279
+        },
+        "patient_bootstrap_95": {
+          "pooled_auc": [
+            0.8002293963043577,
+            0.8537844280987296
+          ],
+          "within_patient_auc": [
+            0.725579415547437,
+            0.7878624785980212
+          ],
+          "pooled_sensitivity": [
+            0.642526144924663,
+            0.761243779514831
+          ],
+          "pooled_specificity": [
+            0.7309099552793173,
+            0.8224792327974313
+          ],
+          "within_patient_sensitivity": [
+            0.5376764167193538,
+            0.6648474123850235
+          ],
+          "within_patient_specificity": [
+            0.7033189093481585,
+            0.7990800827533359
+          ],
+          "pooled_youden": [
+            0.4352350956926122,
+            0.5332417645543011
+          ],
+          "within_patient_youden": [
+            0.30619432519630385,
+            0.40629077172795836
+          ],
+          "brier_skill_vs": {
+            "runin_rate": [
+              0.15207229348250778,
+              0.2728874156251621
+            ],
+            "updating_rate": [
+              0.07781226216899267,
+              0.16528101895045333
+            ],
+            "retrospective_rate": [
+              0.05845439342110614,
+              0.1465471538427
+            ]
+          },
+          "calibration_slopes": {
+            "pooled_slope": {
+              "ci95": [
+                0.9492607439727584,
+                1.171819391961029
+              ],
+              "skipped": 0
+            },
+            "between_slope": {
+              "ci95": [
+                1.3147572936865701,
+                1.8463022672612102
+              ],
+              "skipped": 0
+            },
+            "within_slope": {
+              "ci95": [
+                0.8114658525200941,
+                1.0878245857266275
+              ],
+              "skipped": 0
+            }
+          }
+        }
+      },
+      "within_patient_centred_gradient_boosting": {
+        "pooled_auc": 0.7846473751823546,
+        "within_patient_auc": 0.7592455962635588,
+        "within_auc_eligible_patients": 42,
+        "within_auc_excluded_patients": 3,
+        "threshold": {
+          "threshold": 0.0543564285200374,
+          "pooled": {
+            "sensitivity": 0.6631393298059964,
+            "specificity": 0.7554433221099888,
+            "ppv": 0.1471624266144814,
+            "npv": 0.972406818838486,
+            "youden": 0.4185826519159852
+          },
+          "patient_mean": {
+            "sensitivity": 0.622261946715949,
+            "specificity": 0.7491623553903642
+          },
+          "within_patient": {
+            "sensitivity": 0.622261946715949,
+            "specificity": 0.7387064885394389,
+            "youden": 0.3609684352553878
+          },
+          "eligible": {
+            "sensitivity": 42,
+            "specificity": 45,
+            "both": 42
+          },
+          "alarms_per_patient_30_days": {
+            "mean": 8.176324912281506,
+            "median": 7.542857142857143
+          },
+          "alarm_counts": {
+            "mean": 56.77777777777778,
+            "median": 54.0,
+            "total": 2555
+          },
+          "alarms_per_patient_per_time_unit": null
+        },
+        "brier_pooled": 0.05065516475242161,
+        "brier_patient_mean": 0.05126794028101731,
+        "brier_skill": {
+          "runin_rate": 0.16320657322994658,
+          "updating_rate": 0.07245656170701886,
+          "retrospective_rate": 0.05236980259910251
+        },
+        "calibration_slopes": {
+          "pooled_slope": 1.1366010968677729,
+          "between_slope": 1.3717090808672565,
+          "within_slope": 1.0953454186054614
+        }
+      }
+    }
+  }
+}

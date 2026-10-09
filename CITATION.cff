@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper and the software version used."
+type: software
+title: "when-who: code for 'Which patients or which days? Separating within-patient and between-patient performance of clinical forecasts'"
+authors:
+  - family-names: Remy
+    given-names: Wesley
+    affiliation: "Department of Computer Science, ETH Zurich, Zurich, Switzerland"
+    orcid: "https://orcid.org/0009-0007-6431-4200"
+repository-code: "https://github.com/wjremy/when-who"
+license: MIT
+version: "1.0.0"
+date-released: "2026-10-09"
+keywords:
+  - clinical prediction
+  - repeated forecasts
+  - model evaluation
+  - within-patient discrimination

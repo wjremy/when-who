@@ -1,0 +1,527 @@
+{
+  "metadata": {
+    "seed": 20261009,
+    "permutations": 200,
+    "bootstrap_replicates": 2000,
+    "model_fit_policy": "Fit once per cohort/model with existing split, seeds, preprocessing, feature sets and settings; keep estimators fixed for every permutation.",
+    "existing_observed_results": "open_data\\cases_extra_results.json",
+    "history_features": {
+      "replace_bg": {
+        "outcome_history_features": [
+          "history_rate_7",
+          "history_rate_28",
+          "expanding_rate",
+          "runin_rate"
+        ],
+        "held_fixed_runin_features": [
+          "runin_rate"
+        ],
+        "detail": "Rates use prior eligible nights only; the 14-night run-in remains fixed."
+      },
+      "ctn0094": {
+        "outcome_history_features": [
+          "previous_result",
+          "runin_rate",
+          "expanding_rate",
+          "recent_rate"
+        ],
+        "held_fixed_runin_features": [
+          "runin_rate"
+        ],
+        "detail": "Run-in rate is fixed. Expanding rate is positive weeks divided by screens, as in the panel builder (identity check: rebuilding from the unpermuted outcomes reproduces every forecast); recent rate averages observed outcomes in the prior four calendar weeks. Previous-observed status and expanding_n describe availability, not outcome values."
+      },
+      "ces": {
+        "outcome_history_features": [
+          "last4_rate",
+          "last12_rate",
+          "expanding_rate",
+          "runin_rate"
+        ],
+        "held_fixed_runin_features": [
+          "runin_rate"
+        ],
+        "detail": "Run-in comprises the first 20 report outcomes; the first forecast origin (report 21) is also held fixed, matching the existing report-history timing. Subsequent rates are rebuilt from permuted scored targets."
+      }
+    },
+    "permutation": "Within each test patient, shuffle that patient's observed scored target outcomes; hold the run-in fixed; rebuild outcome-history inputs; keep all non-history predictors fixed."
+  },
+  "cohorts": {
+    "replace_bg": {
+      "label": "REPLACE-BG",
+      "test_patients": 45,
+      "test_scored_rows": 9477,
+      "selected_gb_iterations": 200,
+      "reproduction_checks": {
+        "logistic_regression": {
+          "recomputed": {
+            "mean": 0.750388338185026,
+            "median": 0.7750195608782435,
+            "share_gt_0_5": 0.9761904761904762,
+            "eligible": 42
+          },
+          "cases_extra_results": {
+            "mean": 0.750388338185026,
+            "median": 0.7750195608782435,
+            "share_gt_0_5": 0.9761904761904762,
+            "eligible": 42
+          }
+        },
+        "gradient_boosting": {
+          "recomputed": {
+            "mean": 0.7586922688546608,
+            "median": 0.7797238855622088,
+            "share_gt_0_5": 0.9761904761904762,
+            "eligible": 42
+          },
+          "cases_extra_results": {
+            "mean": 0.7586922688546608,
+            "median": 0.7797238855622088,
+            "share_gt_0_5": 0.9761904761904762,
+            "eligible": 42
+          }
+        },
+        "table4_gradient_boosting_rounded": {
+          "recomputed": {
+            "median_auc": 0.78,
+            "share_gt_0_5": 0.98,
+            "mean_auc": 0.76
+          },
+          "expected": {
+            "median_auc": 0.78,
+            "share_gt_0_5": 0.98,
+            "mean_auc": 0.76
+          },
+          "passed": true
+        }
+      },
+      "models": {
+        "logistic_regression": {
+          "eligible_patients": 42,
+          "observed": {
+            "median_auc": 0.7750195608782435,
+            "mean_per_patient_auc": 0.750388338185026,
+            "share_above_0_5": 0.9761904761904762
+          },
+          "permutation_reference": {
+            "permutations": 200,
+            "median_auc_mean_over_permutations": 0.4906290447320748,
+            "median_auc_permutation_percentiles_2_5_97_5": [
+              0.4574470711785131,
+              0.5266067611771211
+            ],
+            "mean_per_patient_auc_mean_over_permutations": 0.49127109406505354,
+            "mean_per_patient_auc_permutation_percentiles_2_5_97_5": [
+              0.4584695235506618,
+              0.5242782920164775
+            ],
+            "share_above_0_5_mean_over_permutations": 0.46142857142857147,
+            "share_above_0_5_permutation_percentiles_2_5_97_5": [
+              0.30952380952380953,
+              0.6190476190476191
+            ],
+            "median_of_per_patient_permutation_mean_auc": 0.49251552918442687,
+            "mean_of_per_patient_permutation_mean_auc": 0.4912710940650535,
+            "per_patient_mean_auc_summary": {
+              "mean": 0.4912710940650535,
+              "median": 0.49251552918442687,
+              "percentiles_2_5_97_5": [
+                0.46762457879023905,
+                0.5063269505063468
+              ]
+            }
+          },
+          "observed_minus_reference": {
+            "median_auc": 0.2843905161461687,
+            "median_auc_bootstrap_ci95": [
+              0.23300750922846622,
+              0.33111745262500786
+            ],
+            "median_auc_patient_permutation_mean_reference": 0.28250403169381666,
+            "median_auc_patient_permutation_mean_reference_bootstrap_ci95": [
+              0.2323413039415962,
+              0.3294484255000687
+            ],
+            "mean_per_patient_auc": 0.25911724411997256,
+            "mean_per_patient_auc_bootstrap_ci95": [
+              0.22436264028499625,
+              0.2911117625114592
+            ]
+          },
+          "patient_bootstrap_replicates": 2000
+        },
+        "gradient_boosting": {
+          "eligible_patients": 42,
+          "observed": {
+            "median_auc": 0.7797238855622088,
+            "mean_per_patient_auc": 0.7586922688546608,
+            "share_above_0_5": 0.9761904761904762
+          },
+          "permutation_reference": {
+            "permutations": 200,
+            "median_auc_mean_over_permutations": 0.48634244525769427,
+            "median_auc_permutation_percentiles_2_5_97_5": [
+              0.4488760077206148,
+              0.5197116634988584
+            ],
+            "mean_per_patient_auc_mean_over_permutations": 0.48426628344734096,
+            "mean_per_patient_auc_permutation_percentiles_2_5_97_5": [
+              0.44324990134241987,
+              0.5180738041396058
+            ],
+            "share_above_0_5_mean_over_permutations": 0.4438095238095238,
+            "share_above_0_5_permutation_percentiles_2_5_97_5": [
+              0.2857142857142857,
+              0.5952380952380952
+            ],
+            "median_of_per_patient_permutation_mean_auc": 0.484735127810786,
+            "mean_of_per_patient_permutation_mean_auc": 0.48426628344734096,
+            "per_patient_mean_auc_summary": {
+              "mean": 0.48426628344734096,
+              "median": 0.484735127810786,
+              "percentiles_2_5_97_5": [
+                0.4462586366758244,
+                0.506200788720727
+              ]
+            }
+          },
+          "observed_minus_reference": {
+            "median_auc": 0.2933814403045146,
+            "median_auc_bootstrap_ci95": [
+              0.23611559959886938,
+              0.3304130843483384
+            ],
+            "median_auc_patient_permutation_mean_reference": 0.29498875775142286,
+            "median_auc_patient_permutation_mean_reference_bootstrap_ci95": [
+              0.2378080929097016,
+              0.33029259889881946
+            ],
+            "mean_per_patient_auc": 0.27442598540731983,
+            "mean_per_patient_auc_bootstrap_ci95": [
+              0.24562389869349763,
+              0.30365503846388564
+            ]
+          },
+          "patient_bootstrap_replicates": 2000
+        }
+      }
+    },
+    "ctn0094": {
+      "label": "CTN-0094 weekly",
+      "test_patients": 246,
+      "test_scored_rows": 4237,
+      "selected_gb_iterations": 100,
+      "reproduction_checks": {
+        "logistic_regression": {
+          "recomputed": {
+            "mean": 0.652668351654235,
+            "median": 0.6961538461538461,
+            "share_gt_0_5": 0.7077922077922078,
+            "eligible": 154
+          },
+          "cases_extra_results": {
+            "mean": 0.652668351654235,
+            "median": 0.6961538461538461,
+            "share_gt_0_5": 0.7077922077922078,
+            "eligible": 154
+          }
+        },
+        "gradient_boosting": {
+          "recomputed": {
+            "mean": 0.6378571868165637,
+            "median": 0.6783950617283951,
+            "share_gt_0_5": 0.6558441558441559,
+            "eligible": 154
+          },
+          "cases_extra_results": {
+            "mean": 0.6378571868165637,
+            "median": 0.6783950617283951,
+            "share_gt_0_5": 0.6558441558441559,
+            "eligible": 154
+          }
+        },
+        "table4_gradient_boosting_rounded": {
+          "recomputed": {
+            "median_auc": 0.68,
+            "share_gt_0_5": 0.66,
+            "mean_auc": 0.64
+          },
+          "expected": {
+            "median_auc": 0.68,
+            "share_gt_0_5": 0.66,
+            "mean_auc": 0.64
+          },
+          "passed": true
+        }
+      },
+      "models": {
+        "logistic_regression": {
+          "eligible_patients": 154,
+          "observed": {
+            "median_auc": 0.6961538461538461,
+            "mean_per_patient_auc": 0.652668351654235,
+            "share_above_0_5": 0.7077922077922078
+          },
+          "permutation_reference": {
+            "permutations": 200,
+            "median_auc_mean_over_permutations": 0.40734593258416496,
+            "median_auc_permutation_percentiles_2_5_97_5": [
+              0.37179044834307995,
+              0.440265376984127
+            ],
+            "mean_per_patient_auc_mean_over_permutations": 0.40770070764778865,
+            "mean_per_patient_auc_permutation_percentiles_2_5_97_5": [
+              0.37073043165107034,
+              0.4394084366832986
+            ],
+            "share_above_0_5_mean_over_permutations": 0.3017207792207792,
+            "share_above_0_5_permutation_percentiles_2_5_97_5": [
+              0.23376623376623376,
+              0.37012987012987014
+            ],
+            "median_of_per_patient_permutation_mean_auc": 0.4189488636363636,
+            "mean_of_per_patient_permutation_mean_auc": 0.4077007076477887,
+            "per_patient_mean_auc_summary": {
+              "mean": 0.4077007076477887,
+              "median": 0.4189488636363636,
+              "percentiles_2_5_97_5": [
+                0.28160416666666716,
+                0.47649509803921536
+              ]
+            }
+          },
+          "observed_minus_reference": {
+            "median_auc": 0.28880791356968116,
+            "median_auc_bootstrap_ci95": [
+              0.23373322963360033,
+              0.3394083315469415
+            ],
+            "median_auc_patient_permutation_mean_reference": 0.27720498251748255,
+            "median_auc_patient_permutation_mean_reference_bootstrap_ci95": [
+              0.22255275974026018,
+              0.32762865385000806
+            ],
+            "mean_per_patient_auc": 0.24496764400644627,
+            "mean_per_patient_auc_bootstrap_ci95": [
+              0.2061913922777932,
+              0.2838256252123086
+            ]
+          },
+          "patient_bootstrap_replicates": 2000
+        },
+        "gradient_boosting": {
+          "eligible_patients": 154,
+          "observed": {
+            "median_auc": 0.6783950617283951,
+            "mean_per_patient_auc": 0.6378571868165637,
+            "share_above_0_5": 0.6558441558441559
+          },
+          "permutation_reference": {
+            "permutations": 200,
+            "median_auc_mean_over_permutations": 0.4109237025372521,
+            "median_auc_permutation_percentiles_2_5_97_5": [
+              0.3713813025210084,
+              0.44647817460317457
+            ],
+            "mean_per_patient_auc_mean_over_permutations": 0.4074799168415295,
+            "mean_per_patient_auc_permutation_percentiles_2_5_97_5": [
+              0.374532986340726,
+              0.4374629075173112
+            ],
+            "share_above_0_5_mean_over_permutations": 0.3111038961038961,
+            "share_above_0_5_permutation_percentiles_2_5_97_5": [
+              0.2336038961038961,
+              0.38311688311688313
+            ],
+            "median_of_per_patient_permutation_mean_auc": 0.4223968253968251,
+            "mean_of_per_patient_permutation_mean_auc": 0.40747991684152957,
+            "per_patient_mean_auc_summary": {
+              "mean": 0.40747991684152957,
+              "median": 0.4223968253968251,
+              "percentiles_2_5_97_5": [
+                0.27369374999999974,
+                0.47461658653846156
+              ]
+            }
+          },
+          "observed_minus_reference": {
+            "median_auc": 0.26747135919114307,
+            "median_auc_bootstrap_ci95": [
+              0.1808265498704709,
+              0.3294128592789052
+            ],
+            "median_auc_patient_permutation_mean_reference": 0.25599823633157004,
+            "median_auc_patient_permutation_mean_reference_bootstrap_ci95": [
+              0.1677651515151516,
+              0.31818785766499585
+            ],
+            "mean_per_patient_auc": 0.2303772699750341,
+            "mean_per_patient_auc_bootstrap_ci95": [
+              0.18684552193747678,
+              0.271769491657128
+            ]
+          },
+          "patient_bootstrap_replicates": 2000
+        }
+      }
+    },
+    "ces": {
+      "label": "College Experience",
+      "test_patients": 38,
+      "test_scored_rows": 6361,
+      "selected_gb_iterations": 200,
+      "reproduction_checks": {
+        "logistic_regression": {
+          "recomputed": {
+            "mean": 0.8055983136687709,
+            "median": 0.8196649029982364,
+            "share_gt_0_5": 0.9459459459459459,
+            "eligible": 37
+          },
+          "cases_extra_results": {
+            "mean": 0.8055983136687709,
+            "median": 0.8196649029982364,
+            "share_gt_0_5": 0.9459459459459459,
+            "eligible": 37
+          }
+        },
+        "gradient_boosting": {
+          "recomputed": {
+            "mean": 0.800308448089229,
+            "median": 0.8174603174603174,
+            "share_gt_0_5": 0.9459459459459459,
+            "eligible": 37
+          },
+          "cases_extra_results": {
+            "mean": 0.800308448089229,
+            "median": 0.8174603174603174,
+            "share_gt_0_5": 0.9459459459459459,
+            "eligible": 37
+          }
+        },
+        "table4_gradient_boosting_rounded": {
+          "recomputed": {
+            "median_auc": 0.82,
+            "share_gt_0_5": 0.95,
+            "mean_auc": 0.8
+          },
+          "expected": {
+            "median_auc": 0.82,
+            "share_gt_0_5": 0.95,
+            "mean_auc": 0.8
+          },
+          "passed": true
+        }
+      },
+      "models": {
+        "logistic_regression": {
+          "eligible_patients": 37,
+          "observed": {
+            "median_auc": 0.8196649029982364,
+            "mean_per_patient_auc": 0.8055983136687709,
+            "share_above_0_5": 0.9459459459459459
+          },
+          "permutation_reference": {
+            "permutations": 200,
+            "median_auc_mean_over_permutations": 0.490424832293298,
+            "median_auc_permutation_percentiles_2_5_97_5": [
+              0.4659399955634428,
+              0.5131438439522816
+            ],
+            "mean_per_patient_auc_mean_over_permutations": 0.4892695816561843,
+            "mean_per_patient_auc_permutation_percentiles_2_5_97_5": [
+              0.4627892842960129,
+              0.5196795905801733
+            ],
+            "share_above_0_5_mean_over_permutations": 0.4310810810810811,
+            "share_above_0_5_permutation_percentiles_2_5_97_5": [
+              0.2702702702702703,
+              0.5945945945945946
+            ],
+            "median_of_per_patient_permutation_mean_auc": 0.4899665612840468,
+            "mean_of_per_patient_permutation_mean_auc": 0.48926958165618445,
+            "per_patient_mean_auc_summary": {
+              "mean": 0.48926958165618445,
+              "median": 0.4899665612840468,
+              "percentiles_2_5_97_5": [
+                0.4721199675324676,
+                0.4986655597581153
+              ]
+            }
+          },
+          "observed_minus_reference": {
+            "median_auc": 0.3292400707049384,
+            "median_auc_bootstrap_ci95": [
+              0.30329342249580743,
+              0.3791603958230136
+            ],
+            "median_auc_patient_permutation_mean_reference": 0.32969834171418955,
+            "median_auc_patient_permutation_mean_reference_bootstrap_ci95": [
+              0.3032883361678004,
+              0.3791539511862092
+            ],
+            "mean_per_patient_auc": 0.31632873201258643,
+            "mean_per_patient_auc_bootstrap_ci95": [
+              0.27389206546387457,
+              0.3549945162926934
+            ]
+          },
+          "patient_bootstrap_replicates": 2000
+        },
+        "gradient_boosting": {
+          "eligible_patients": 37,
+          "observed": {
+            "median_auc": 0.8174603174603174,
+            "mean_per_patient_auc": 0.800308448089229,
+            "share_above_0_5": 0.9459459459459459
+          },
+          "permutation_reference": {
+            "permutations": 200,
+            "median_auc_mean_over_permutations": 0.4887903086658656,
+            "median_auc_permutation_percentiles_2_5_97_5": [
+              0.46686492995792694,
+              0.5123163552872511
+            ],
+            "mean_per_patient_auc_mean_over_permutations": 0.4844733010983822,
+            "mean_per_patient_auc_permutation_percentiles_2_5_97_5": [
+              0.456311050677104,
+              0.5133720537776948
+            ],
+            "share_above_0_5_mean_over_permutations": 0.422972972972973,
+            "share_above_0_5_permutation_percentiles_2_5_97_5": [
+              0.2702702702702703,
+              0.5682432432432434
+            ],
+            "median_of_per_patient_permutation_mean_auc": 0.4875175321422613,
+            "mean_of_per_patient_permutation_mean_auc": 0.48447330109838216,
+            "per_patient_mean_auc_summary": {
+              "mean": 0.48447330109838216,
+              "median": 0.4875175321422613,
+              "percentiles_2_5_97_5": [
+                0.45540062602627257,
+                0.499089309414784
+              ]
+            }
+          },
+          "observed_minus_reference": {
+            "median_auc": 0.32867000879445185,
+            "median_auc_bootstrap_ci95": [
+              0.3071021570192457,
+              0.3609331815461334
+            ],
+            "median_auc_patient_permutation_mean_reference": 0.32994278531805615,
+            "median_auc_patient_permutation_mean_reference_bootstrap_ci95": [
+              0.3075615835777121,
+              0.3629424050760263
+            ],
+            "mean_per_patient_auc": 0.3158351469908468,
+            "mean_per_patient_auc_bootstrap_ci95": [
+              0.2748739499897614,
+              0.35288378986023017
+            ]
+          },
+          "patient_bootstrap_replicates": 2000
+        }
+      }
+    }
+  }
+}

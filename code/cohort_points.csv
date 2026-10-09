@@ -1,0 +1,13 @@
+cohort,forecast,within_auc,pooled_auc,within_youden,pooled_youden,note
+REPLACE-BG,gradient_boosting,0.759,0.829,0.349,0.482,final 7 Oct
+REPLACE-BG,logistic_regression,0.750,0.818,0.330,0.493,
+REPLACE-BG,runin_rate,0.500,0.597,0,0.194,
+REPLACE-BG,retrospective_rate,0.500,0.752,0,0.384,
+CTN-0094,gradient_boosting,0.638,0.929,0.258,0.720,
+CTN-0094,logistic_regression,0.653,0.923,0.176,0.702,
+CTN-0094,runin_rate,0.500,0.801,0,0.467,
+CTN-0094,retrospective_rate,0.500,0.932,0,0.694,
+College Experience,gradient_boosting,0.800,0.935,0.365,0.720,
+College Experience,logistic_regression,0.806,0.934,0.346,0.724,
+College Experience,runin_rate,0.500,0.695,0,0.213,
+College Experience,retrospective_rate,0.500,0.855,0,0.530,

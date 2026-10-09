@@ -1,0 +1,56 @@
+design,tau,result_type,feature,permutation_scheme,evaluation,estimate,standard_error,n_repeats,se_basis
+A,1.50000000,permutation_drop,trait_A,across_all_days,pooled_auc,0.18914060,0.00134936,5,permutation_repeats
+A,1.50000000,permutation_drop,trait_A,across_all_days,mean_within_patient_auc,0.07091291,0.00262929,5,permutation_repeats
+A,1.50000000,permutation_drop,trait_A,within_patient,pooled_auc,0.00011313,0.00034768,5,permutation_repeats
+A,1.50000000,permutation_drop,trait_A,within_patient,mean_within_patient_auc,0.00359853,0.00078120,5,permutation_repeats
+A,1.50000000,permutation_drop,trait_B,across_all_days,pooled_auc,0.01716029,0.00038224,5,permutation_repeats
+A,1.50000000,permutation_drop,trait_B,across_all_days,mean_within_patient_auc,0.01292781,0.00089282,5,permutation_repeats
+A,1.50000000,permutation_drop,trait_B,within_patient,pooled_auc,0.00070884,0.00011456,5,permutation_repeats
+A,1.50000000,permutation_drop,trait_B,within_patient,mean_within_patient_auc,0.00362006,0.00045948,5,permutation_repeats
+A,1.50000000,permutation_drop,trigger_1 (b=0.6),across_all_days,pooled_auc,0.04212040,0.00053121,5,permutation_repeats
+A,1.50000000,permutation_drop,trigger_1 (b=0.6),across_all_days,mean_within_patient_auc,0.09707995,0.00159189,5,permutation_repeats
+A,1.50000000,permutation_drop,trigger_1 (b=0.6),within_patient,pooled_auc,0.04203878,0.00050268,5,permutation_repeats
+A,1.50000000,permutation_drop,trigger_1 (b=0.6),within_patient,mean_within_patient_auc,0.09518939,0.00121585,5,permutation_repeats
+A,1.50000000,permutation_drop,trigger_2 (b=0.4),across_all_days,pooled_auc,0.02038874,0.00025958,5,permutation_repeats
+A,1.50000000,permutation_drop,trigger_2 (b=0.4),across_all_days,mean_within_patient_auc,0.04647145,0.00096024,5,permutation_repeats
+A,1.50000000,permutation_drop,trigger_2 (b=0.4),within_patient,pooled_auc,0.01997181,0.00057946,5,permutation_repeats
+A,1.50000000,permutation_drop,trigger_2 (b=0.4),within_patient,mean_within_patient_auc,0.04617805,0.00182838,5,permutation_repeats
+A,1.50000000,permutation_drop,trigger_3 (b=0.2),across_all_days,pooled_auc,0.00494857,0.00014338,5,permutation_repeats
+A,1.50000000,permutation_drop,trigger_3 (b=0.2),across_all_days,mean_within_patient_auc,0.01321741,0.00102027,5,permutation_repeats
+A,1.50000000,permutation_drop,trigger_3 (b=0.2),within_patient,pooled_auc,0.00489522,0.00017566,5,permutation_repeats
+A,1.50000000,permutation_drop,trigger_3 (b=0.2),within_patient,mean_within_patient_auc,0.01338920,0.00069206,5,permutation_repeats
+B,1.50000000,permutation_drop,trait_A,across_all_days,pooled_auc,0.19943794,0.00107483,5,permutation_repeats
+B,1.50000000,permutation_drop,trait_A,across_all_days,mean_within_patient_auc,0.08456040,0.00195775,5,permutation_repeats
+B,1.50000000,permutation_drop,trait_A,within_patient,pooled_auc,0.00000000,0.00000000,5,permutation_repeats
+B,1.50000000,permutation_drop,trait_A,within_patient,mean_within_patient_auc,0.00000000,0.00000000,5,permutation_repeats
+B,1.50000000,permutation_drop,trait_B,across_all_days,pooled_auc,0.00668814,0.00036335,5,permutation_repeats
+B,1.50000000,permutation_drop,trait_B,across_all_days,mean_within_patient_auc,0.02005419,0.00144591,5,permutation_repeats
+B,1.50000000,permutation_drop,trait_B,within_patient,pooled_auc,0.00000000,0.00000000,5,permutation_repeats
+B,1.50000000,permutation_drop,trait_B,within_patient,mean_within_patient_auc,0.00000000,0.00000000,5,permutation_repeats
+B,1.50000000,permutation_drop,trigger_1 (b=0.6),across_all_days,pooled_auc,0.03811392,0.00033523,5,permutation_repeats
+B,1.50000000,permutation_drop,trigger_1 (b=0.6),across_all_days,mean_within_patient_auc,0.10540626,0.00192293,5,permutation_repeats
+B,1.50000000,permutation_drop,trigger_1 (b=0.6),within_patient,pooled_auc,0.03846168,0.00047161,5,permutation_repeats
+B,1.50000000,permutation_drop,trigger_1 (b=0.6),within_patient,mean_within_patient_auc,0.10382984,0.00078749,5,permutation_repeats
+B,1.50000000,permutation_drop,trigger_2 (b=0.4),across_all_days,pooled_auc,0.01748662,0.00031965,5,permutation_repeats
+B,1.50000000,permutation_drop,trigger_2 (b=0.4),across_all_days,mean_within_patient_auc,0.04841576,0.00109752,5,permutation_repeats
+B,1.50000000,permutation_drop,trigger_2 (b=0.4),within_patient,pooled_auc,0.01931788,0.00014952,5,permutation_repeats
+B,1.50000000,permutation_drop,trigger_2 (b=0.4),within_patient,mean_within_patient_auc,0.05259255,0.00144977,5,permutation_repeats
+B,1.50000000,permutation_drop,trigger_3 (b=0.2),across_all_days,pooled_auc,0.00476697,0.00009393,5,permutation_repeats
+B,1.50000000,permutation_drop,trigger_3 (b=0.2),across_all_days,mean_within_patient_auc,0.01499800,0.00109138,5,permutation_repeats
+B,1.50000000,permutation_drop,trigger_3 (b=0.2),within_patient,pooled_auc,0.00450520,0.00012698,5,permutation_repeats
+B,1.50000000,permutation_drop,trigger_3 (b=0.2),within_patient,mean_within_patient_auc,0.01356894,0.00107122,5,permutation_repeats
+C,1.50000000,permutation_drop,g,across_all_days,pooled_auc,0.07586765,0.00138303,5,permutation_repeats
+C,1.50000000,permutation_drop,g,across_all_days,mean_within_patient_auc,0.09612980,0.00120840,5,permutation_repeats
+C,1.50000000,permutation_drop,g,within_patient,pooled_auc,0.00000000,0.00000000,5,permutation_repeats
+C,1.50000000,permutation_drop,g,within_patient,mean_within_patient_auc,0.00000000,0.00000000,5,permutation_repeats
+C,1.50000000,permutation_drop,z1,across_all_days,pooled_auc,0.07646039,0.00064215,5,permutation_repeats
+C,1.50000000,permutation_drop,z1,across_all_days,mean_within_patient_auc,0.10451430,0.00178490,5,permutation_repeats
+C,1.50000000,permutation_drop,z1,within_patient,pooled_auc,0.07629604,0.00130142,5,permutation_repeats
+C,1.50000000,permutation_drop,z1,within_patient,mean_within_patient_auc,0.10500146,0.00131027,5,permutation_repeats
+C,1.50000000,permutation_drop,z2,across_all_days,pooled_auc,0.08047465,0.00103239,5,permutation_repeats
+C,1.50000000,permutation_drop,z2,across_all_days,mean_within_patient_auc,0.09513715,0.00155570,5,permutation_repeats
+C,1.50000000,permutation_drop,z2,within_patient,pooled_auc,0.07853213,0.00087645,5,permutation_repeats
+C,1.50000000,permutation_drop,z2,within_patient,mean_within_patient_auc,0.09615790,0.00246545,5,permutation_repeats
+C,1.50000000,model_comparison,full_model,not_applicable,mean_within_patient_auc,0.70217475,0.00566939,199,paired_test_patients
+C,1.50000000,model_comparison,model_without_g,not_applicable,mean_within_patient_auc,0.64307316,0.00593932,199,paired_test_patients
+C,1.50000000,model_comparison,full_minus_without_g,not_applicable,mean_within_patient_auc,0.05910159,0.00385334,199,paired_test_patients

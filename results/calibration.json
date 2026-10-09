@@ -1,0 +1,52 @@
+{
+    "synthetic":  [
+                      {
+                          "tau":  0.5,
+                          "within_scale":  0.25,
+                          "pooled_slope":  1.17,
+                          "between_slope":  0.99,
+                          "within_slope":  4.14,
+                          "pooled_ECE":  0.0115
+                      },
+                      {
+                          "tau":  0.5,
+                          "within_scale":  1.0,
+                          "pooled_slope":  1.01,
+                          "between_slope":  0.99,
+                          "within_slope":  1.04,
+                          "pooled_ECE":  0.0034
+                      },
+                      {
+                          "tau":  0.5,
+                          "within_scale":  3.0,
+                          "pooled_slope":  0.4,
+                          "between_slope":  0.98,
+                          "within_slope":  0.35,
+                          "pooled_ECE":  0.099
+                      },
+                      {
+                          "tau":  1.5,
+                          "within_scale":  0.25,
+                          "pooled_slope":  0.98,
+                          "between_slope":  0.99,
+                          "within_slope":  4.04,
+                          "pooled_ECE":  0.0045
+                      },
+                      {
+                          "tau":  1.5,
+                          "within_scale":  1.0,
+                          "pooled_slope":  0.99,
+                          "between_slope":  0.99,
+                          "within_slope":  1.01,
+                          "pooled_ECE":  0.0024
+                      },
+                      {
+                          "tau":  1.5,
+                          "within_scale":  3.0,
+                          "pooled_slope":  0.64,
+                          "between_slope":  0.98,
+                          "within_slope":  0.34,
+                          "pooled_ECE":  0.0617
+                      }
+                  ]
+}

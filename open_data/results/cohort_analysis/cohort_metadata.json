@@ -1,0 +1,26 @@
+{
+  "seed": 20261007,
+  "nboot": 2000,
+  "python": "3.12.10",
+  "numpy": "2.5.3",
+  "pandas": "3.0.6",
+  "scipy": "1.18.1",
+  "statsmodels": "0.15.0",
+  "inputs": [
+    {
+      "cohort": "replace_bg",
+      "input": "open_data/forecasts_replace_bg.csv",
+      "sha256": "90314289094d3e1aa150a68a5e30894d43012e5932d774f3e786a963a36bf9f8"
+    },
+    {
+      "cohort": "ctn_weekly_missing_excluded",
+      "input": "open_data/forecasts_ctn_weekly_missing_excluded.csv",
+      "sha256": "f3769be3eb2555a730a60b253b109a7d0d5ee3cbc78e196abd8e092b3546a09b"
+    },
+    {
+      "cohort": "ces",
+      "input": "open_data/forecasts_ces.csv",
+      "sha256": "254cd6484fe25e9f34c01c44e09d7e916c9eb2601f022902a948592d9779f4f4"
+    }
+  ]
+}

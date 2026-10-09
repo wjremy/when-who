@@ -1,0 +1,20 @@
+{
+  "title": "when-who: code for “Which patients or which days? Separating within-patient and between-patient performance of clinical forecasts”",
+  "upload_type": "software",
+  "description": "Analysis scripts, simulation code, the scripts that produce every table and figure, and the withinpatient Python package for the paper “Which patients or which days? Separating within-patient and between-patient performance of clinical forecasts”.",
+  "creators": [
+    {
+      "name": "Remy, Wesley",
+      "affiliation": "Department of Computer Science, ETH Zurich, Zurich, Switzerland",
+      "orcid": "0009-0007-6431-4200"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "clinical prediction",
+    "repeated forecasts",
+    "model evaluation",
+    "within-patient discrimination"
+  ],
+  "version": "1.0.0"
+}
