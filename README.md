@@ -1,5 +1,7 @@
 # Which patients or which days? Separating within-patient and between-patient performance of clinical forecasts
 
+[![DOI](https://zenodo.org/badge/1412370860.svg)](https://doi.org/10.5281/zenodo.23269933)
+
 This repository accompanies the paper “Which patients or which days? Separating within-patient and between-patient performance of clinical forecasts” by Wesley Remy (Department of Computer Science, ETH Zurich, Zurich, Switzerland; ORCID 0009-0007-6431-4200). The paper shows how pooled scores of repeated clinical forecasts mix comparisons within and between patients, and gives quantities for evaluating whether a forecast distinguishes a patient's higher-risk days from other patients' risk at a given time.
 
 ## Repository contents
@@ -140,6 +142,10 @@ Code is licensed under the MIT License; see LICENSE.
 
 Paste-ready sentence:
 
-> We evaluated repeated forecasts using separate within-patient and between-patient comparisons (Remy W. Which patients or which days? Separating within-patient and between-patient performance of clinical forecasts. Preprint, 2026.).
+> Following Remy (2026), we report discrimination per patient and per time point, the pooled AUC beside $A_0$ (the pooled AUC that patients' event rates alone attain), Brier skill against each patient's own event rate and calibration-in-the-large per patient, computed with the withinpatient package (version 1.0.0; https://github.com/wjremy/when-who).
+
+Reference: Remy W. Which patients or which days? Separating within-patient and between-patient performance of clinical forecasts. Preprint, 2026.
+
+Software: Remy W. when-who: code for “Which patients or which days?” Version 1.0.0. Zenodo; 2026. doi:10.5281/zenodo.23269934. The concept DOI 10.5281/zenodo.23269933 always resolves to the latest version.
 
 The DOI will be added when assigned.
