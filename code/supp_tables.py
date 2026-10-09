@@ -1,7 +1,7 @@
-"""Regenerate Tables S2--S4 from the synthetic designs in the supplement.
+"""Regenerate Tables S2, S7 and S14 from the synthetic designs in the supplement.
 
-Table S3 reproduces the realisation of code/calibration.py (seed 11) with a
-converged Newton fit; Table S4 follows code/history_bias.py (scoring from
+Table S7 reproduces the realisation of code/calibration.py (seed 11) with a
+converged Newton fit; Table S14 follows code/history_bias.py (scoring from
 zero-based day 30, ties counted one half).
 
 Only numpy and the Python standard library are required. Run from the repository
@@ -29,8 +29,8 @@ PRINTED_S2 = {
     (0.30, .025): .53, (0.30, .05): .57, (0.30, .10): .63, (0.30, .15): .70, (0.30, .20): .77,
     (0.50, .025): .53, (0.50, .05): .56, (0.50, .10): .61, (0.50, .15): .67, (0.50, .20): .73,
 }
-PRINTED_S3 = np.array([[.98, .99, 4.05], [.99, .99, 1.01], [.64, .98, .34]])
-PRINTED_S4 = {
+PRINTED_S7 = np.array([[.98, .99, 4.05], [.99, .99, 1.01], [.64, .98, .34]])
+PRINTED_S14 = {
     # Printed since 9 Oct 2026 = the seed-20261006 regeneration below (ledger NC).
     60: (.2773, .3571, .4188), 100: (.3555, .4164, .4639),
     180: (.4034, .4572, .4829), 365: (.4360, .4800, .4924),
@@ -131,7 +131,7 @@ def _slopes(y: np.ndarray, forecast_logit: np.ndarray, n_days: int) -> np.ndarra
 
 
 def _s3_printed_example() -> tuple[np.ndarray, float]:
-    """The single realisation printed in Table S3 (code/calibration.py, seed 11).
+    """The single realisation printed in Table S7 (code/calibration.py, seed 11).
 
     calibration.py draws the tau = 0.5 setting first and the tau = 1.5 setting
     second from one generator; the table reports the second. Forecast
@@ -172,7 +172,7 @@ def _s3_expected_check() -> tuple[np.ndarray, float]:
     return np.vstack(rows), float(risk.mean())
 
 
-def table_s3(repetitions: int = 200, seed: int = 73105) -> tuple[str, list[tuple[str, float, float, float]]]:
+def table_s7(repetitions: int = 200, seed: int = 73105) -> tuple[str, list[tuple[str, float, float, float]]]:
     """Printed realisation (seed 11), its sampling variation, and the expected-outcome check."""
     labels = ("0.25", "1", "3")
     names = ("pooled", "between", "within")
@@ -195,7 +195,7 @@ def table_s3(repetitions: int = 200, seed: int = 73105) -> tuple[str, list[tuple
     target = np.array([[1., 1., 4.], [1., 1., 1.], [.62, .99, .33]])
 
     lines = [
-        "## Table S3 — calibration simulation",
+        "## Table S7 — calibration simulation",
         f"Printed realisation: 400 patients × 300 days, tau=1.5, omega=0.5, fixed intercept=logit(0.15), generator seed 11 as in code/calibration.py; realised event proportion {event_proportion:.3f}.",
         "| Daily logit deviation scale | Pooled slope | Between slope | Within slope |",
         "| ---: | ---: | ---: | ---: |",
@@ -222,7 +222,7 @@ def table_s3(repetitions: int = 200, seed: int = 73105) -> tuple[str, list[tuple
     lines.extend(["", "### Printed-value comparison", "Both checks are deterministic given their seeds; a value matches if it rounds to the printed two decimals.",
                   "| Quantity | Regenerated | Printed | Difference | Tolerance result |", "| --- | ---: | ---: | ---: | --- |"])
     comps = []
-    for kind, regenerated, printed in (("seed 11", printed_example, PRINTED_S3), ("expected", expected, target)):
+    for kind, regenerated, printed in (("seed 11", printed_example, PRINTED_S7), ("expected", expected, target)):
         for j, label in enumerate(labels):
             for k, name in enumerate(names):
                 value, ref = float(regenerated[j, k]), float(printed[j, k])
@@ -287,11 +287,11 @@ def _history_block(y: np.ndarray) -> list[tuple[np.ndarray, np.ndarray]]:
     return [_batch_auc(y[:, 30:], scores[:, 30:]) for scores in (expanding, roll30, roll7)]
 
 
-def table_s4(diaries: int = 100_000, seed: int = 20261006, block: int = 5_000) -> tuple[str, list[tuple[str, float, float, float]]]:
+def table_s14(diaries: int = 100_000, seed: int = 20261006, block: int = 5_000) -> tuple[str, list[tuple[str, float, float, float]]]:
     """Monte Carlo within-diary AUCs for prior-history count/rate forecasts."""
     rng = np.random.default_rng(seed)
     lines = [
-        "## Table S4 — independent Bernoulli history forecasts",
+        "## Table S14 — independent Bernoulli history forecasts",
         f"{diaries:,} diaries per length; Bernoulli(0.15), scoring starts at day 30, seed={seed}; SD of diary AUCs / sqrt(eligible diaries) is the Monte Carlo SE.",
         "| Diary length | Expanding rate | Previous 30-day count | Previous 7-day count |",
         "| ---: | ---: | ---: | ---: |",
@@ -309,7 +309,7 @@ def table_s4(diaries: int = 100_000, seed: int = 20261006, block: int = 5_000) -
         lines.append(f"| {T} | " + " | ".join(f"{m:.4f} ({se:.5f}; n={n})" for m,se,n in per_method) + " |")
         for j, (mean, se, n) in enumerate(per_method):
             label = f"T={T}, " + ("expanding" if j == 0 else f"previous {30 if j == 1 else 7} days")
-            comparisons.append((label, mean, PRINTED_S4[T][j], abs(mean - PRINTED_S4[T][j]), se))
+            comparisons.append((label, mean, PRINTED_S14[T][j], abs(mean - PRINTED_S14[T][j]), se))
     lines.extend(["", "### Printed-value comparison",
                   "The printed values are themselves Monte Carlo means of 100,000 diaries, so the difference of two independent runs has standard error sqrt(2) x SE; the criterion is 3 x sqrt(2) x SE.",
                   "| Quantity | Regenerated | Printed | Difference | Tolerance result |", "| --- | ---: | ---: | ---: | --- |"])
@@ -320,10 +320,10 @@ def table_s4(diaries: int = 100_000, seed: int = 20261006, block: int = 5_000) -
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--table", choices=("S2", "S3", "S4", "all"), default="all")
+    parser.add_argument("--table", choices=("S2", "S7", "S14", "all"), default="all")
     args = parser.parse_args()
     started = time.perf_counter()
-    funcs = {"S2": table_s2, "S3": table_s3, "S4": table_s4}
+    funcs = {"S2": table_s2, "S7": table_s7, "S14": table_s14}
     selected = tuple(funcs) if args.table == "all" else (args.table,)
     sections, reports = [], []
     for name in selected:
@@ -338,12 +338,12 @@ def main() -> None:
     blocks: dict[str, str] = {}
     for block in re.split(r"(?m)(?=^## Table S[234] )", old):
         block = block.strip()
-        for name in ("S2", "S3", "S4"):
+        for name in ("S2", "S7", "S14"):
             if block.startswith(f"## Table {name} ") and name not in selected:
                 blocks[name] = block
     for name, section in zip(selected, sections):
         blocks[name] = section
-    ordered = [blocks[name] for name in ("S2", "S3", "S4") if name in blocks]
+    ordered = [blocks[name] for name in ("S2", "S7", "S14") if name in blocks]
     OUTPUT.write_text("\n\n".join(ordered) + "\n", encoding="utf-8")
     print(f"Wrote {OUTPUT.relative_to(ROOT)}")
     for name, elapsed, comp in reports:
@@ -352,7 +352,7 @@ def main() -> None:
             bad = [x for x in comp if x[1] != x[2]]
             diff = max((x[3] for x in comp), default=0)
             print(f"  rounded cells differing: {len(bad)}/{len(comp)}; maximum absolute difference={diff:.2f}")
-        elif name == "S3":
+        elif name == "S7":
             bad = [x for x in comp if x[3] > 0]
             print(f"  values not matching at printed precision: {len(bad)}/{len(comp)}")
         else:

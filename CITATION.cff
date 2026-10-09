@@ -9,7 +9,7 @@ authors:
     orcid: "https://orcid.org/0009-0007-6431-4200"
 repository-code: "https://github.com/wjremy/when-who"
 license: MIT
-doi: "10.5281/zenodo.23269934"
+doi: "10.5281/zenodo.23269933"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.23269934"
@@ -17,7 +17,7 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.23269933"
     description: "All versions (concept DOI)"
-version: "1.0.0"
+version: "1.0.1"
 date-released: "2026-10-09"
 keywords:
   - clinical prediction

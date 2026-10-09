@@ -1,4 +1,4 @@
-"""Known within-patient calibration simulation used for Supplement Table S16."""
+"""Known within-patient calibration simulation used for Supplement Table S12."""
 import argparse
 import json
 from pathlib import Path

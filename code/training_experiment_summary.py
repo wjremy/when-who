@@ -307,7 +307,7 @@ def main():
                 "estimate",
             ]
             value = float(match.iloc[0])
-            # Published Table S7 rounds all drops to three decimals.
+            # Published Table S19 rounds all drops to three decimals.
             if feature == "trait_A":
                 printed_value = {metric_map[0][0]: 0.199, metric_map[1][0]: 0.085,
                                  metric_map[2][0]: 0.000, metric_map[3][0]: 0.000}[label]

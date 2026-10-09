@@ -43,10 +43,11 @@ def curve(rows, cohort, forecast, metric, version):
 
 
 def main():
-    plt.rcParams.update({"font.size": 9, "font.family": "sans-serif", "axes.linewidth": 0.7})
+    # Drawn at the printed size (166 x 115 mm), so font sizes below are the printed sizes (all >= 7.5 pt).
+    plt.rcParams.update({"font.size": 8, "font.family": "sans-serif", "axes.linewidth": 0.6})
     curves = read_rows(ROOT / "code" / "cohort_curves_results.csv")
     points = read_rows(ROOT / "code" / "cohort_points.csv")
-    fig, axes = plt.subplots(3, 2, figsize=(7.0, 7.4), sharex=True)
+    fig, axes = plt.subplots(3, 2, figsize=(166 / 25.4, 115 / 25.4), sharex=True)
 
     for i, (cohort, title) in enumerate(COHORTS):
         ax_auc, ax_j = axes[i]
@@ -59,25 +60,26 @@ def main():
         a0 = ys[xs.index(0.5)]
         ax_auc.axhspan(a0 - 0.006, a0 + 0.006, color=POOLED, alpha=0.10, lw=0, zorder=0)
         ax_auc.plot([0.5, 0.525], [a0, a0], color=POOLED, lw=2.0, zorder=3)
-        ax_auc.text(0.532, a0, "A0", color=POOLED, fontsize=8.5, va="center", ha="left",
+        ax_auc.text(0.532, a0, "A0", color=POOLED, fontsize=7.5, va="center", ha="left",
                     bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.85, "pad": 1.0}, zorder=4)
         for r in obs:
             x, y = num(r["within_auc"]), num(r["pooled_auc"])
             if x is None or y is None:
                 continue
             if r["forecast"] in MODEL_MARKERS:
-                ax_auc.scatter([x], [y], s=26, marker=MODEL_MARKERS[r["forecast"]], color=POOLED,
+                ax_auc.scatter([x], [y], s=18, marker=MODEL_MARKERS[r["forecast"]], color=POOLED,
                                edgecolors="black", linewidths=0.5, zorder=5)
             elif r["forecast"] in RATE_MARKERS:
-                ax_auc.scatter([x], [y], s=26, marker=RATE_MARKERS[r["forecast"]], facecolors="white",
+                ax_auc.scatter([x], [y], s=18, marker=RATE_MARKERS[r["forecast"]], facecolors="white",
                                edgecolors=POOLED, linewidths=1.0, zorder=5, clip_on=False)
         ax_auc.set_ylim(0.45, 1.0)
-        ax_auc.set_ylabel("Pooled AUC", fontsize=9.5)
+        ax_auc.set_ylabel("Pooled AUC", fontsize=8)
+        ax_auc.set_yticks([0.5, 0.7, 0.9])
         cohort_label = {"REPLACE-BG": "REPLACE-BG · nocturnal hypoglycaemia",
                         "CTN-0094": "CTN-0094 · weekly opioid use",
                         "College Experience": "College Experience Study · symptoms"}[cohort]
-        ax_auc.text(0.015, 0.975, cohort_label, transform=ax_auc.transAxes,
-                    fontsize=8.5, fontweight="bold", ha="left", va="top",
+        ax_auc.text(0.985, 0.04, cohort_label, transform=ax_auc.transAxes,
+                    fontsize=7.5, fontweight="bold", ha="right", va="bottom",
                     bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.9, "pad": 1.2}, zorder=8)
 
         # Right: Youden index, pooled and within-patient, against within-patient AUC.
@@ -94,29 +96,31 @@ def main():
                 if yp is not None and yw is not None:
                     ax_j.plot([x, x], [yw, yp], color=GREY, lw=0.6, zorder=3)
                 if yp is not None:
-                    ax_j.scatter([x], [yp], s=26, marker=m, color=POOLED, edgecolors="black", linewidths=0.5, zorder=5)
+                    ax_j.scatter([x], [yp], s=18, marker=m, color=POOLED, edgecolors="black", linewidths=0.5, zorder=5)
                 if yw is not None:
-                    ax_j.scatter([x], [yw], s=26, marker=m, color=WITHIN, edgecolors="black", linewidths=0.5, zorder=5)
+                    ax_j.scatter([x], [yw], s=18, marker=m, color=WITHIN, edgecolors="black", linewidths=0.5, zorder=5)
             elif r["forecast"] in RATE_MARKERS and yp is not None:
-                ax_j.scatter([x], [yp], s=26, marker=RATE_MARKERS[r["forecast"]], facecolors="white",
+                ax_j.scatter([x], [yp], s=18, marker=RATE_MARKERS[r["forecast"]], facecolors="white",
                              edgecolors=POOLED, linewidths=1.0, zorder=5, clip_on=False)
-        ax_j.scatter([0.5], [0.0], s=26, marker="o", facecolors="white", edgecolors=WITHIN, linewidths=1.0,
+        ax_j.scatter([0.5], [0.0], s=18, marker="o", facecolors="white", edgecolors=WITHIN, linewidths=1.0,
                      zorder=5, clip_on=False)
         ax_j.set_ylim(-0.05, 0.85)
-        ax_j.set_ylabel("Youden index", fontsize=9.5)
+        ax_j.set_ylabel("Youden index", fontsize=8)
+        ax_j.set_yticks([0.0, 0.4, 0.8])
 
         for ax in (ax_auc, ax_j):
             ax.set_xlim(0.5, 0.9)
-            ax.tick_params(labelsize=7, width=0.6, length=2.5)
+            ax.set_xticks([0.5, 0.6, 0.7, 0.8, 0.9])
+            ax.tick_params(labelsize=7.5, width=0.6, length=2.5, pad=1.5)
             ax.spines["top"].set_visible(False)
             ax.spines["right"].set_visible(False)
 
     for ax in axes[-1]:
-        ax.set_xlabel("Within-patient AUC of the forecast", fontsize=9.5)
+        ax.set_xlabel("Within-patient AUC of the forecast", fontsize=8)
 
     # A concise callout identifies the CTN-0094 gradient-boosting model result.
     axes[1, 0].annotate("Model: pooled 0.93\nper patient 0.64", xy=(0.638, 0.929),
-                        xytext=(0.69, 0.84), textcoords="data", fontsize=8.5,
+                        xytext=(0.69, 0.84), textcoords="data", fontsize=7.5,
                         ha="left", va="top", color="#222222",
                         arrowprops={"arrowstyle": "-", "color": "#555555", "lw": 0.8},
                         bbox={"boxstyle": "round,pad=0.22", "facecolor": "white",
@@ -130,9 +134,9 @@ def main():
         Line2D([], [], marker="D", ls="", markerfacecolor="white", markeredgecolor=POOLED,
                markersize=5, label="Observed patient rate"),
     ]
-    fig.legend(handles=handles, loc="lower center", ncol=4, frameon=False, fontsize=8.5,
+    fig.legend(handles=handles, loc="lower center", ncol=4, frameon=False, fontsize=8,
                handlelength=1.8, columnspacing=1.4, bbox_to_anchor=(0.5, 0.005))
-    fig.subplots_adjust(left=0.11, right=0.98, top=0.975, bottom=0.115, wspace=0.30, hspace=0.28)
+    fig.subplots_adjust(left=0.085, right=0.975, top=0.985, bottom=0.165, wspace=0.22, hspace=0.18)
     out = Path(__file__)
     fig.savefig(out.with_name("fig_central_v6.png"), dpi=300)
     fig.savefig(out.with_name("fig_central_v6.pdf"))

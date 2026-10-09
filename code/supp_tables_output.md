@@ -34,7 +34,7 @@ Printed-value comparison (two-decimal rounded values):
 | mu=0.50, sd=0.150 | 0.67 | 0.67 | 0.00 |
 | mu=0.50, sd=0.200 | 0.73 | 0.73 | 0.00 |
 
-## Table S3 — calibration simulation
+## Table S7 — calibration simulation
 Printed realisation: 400 patients × 300 days, tau=1.5, omega=0.5, fixed intercept=logit(0.15), generator seed 11 as in code/calibration.py; realised event proportion 0.237.
 | Daily logit deviation scale | Pooled slope | Between slope | Within slope |
 | ---: | ---: | ---: | ---: |
@@ -80,7 +80,7 @@ Both checks are deterministic given their seeds; a value matches if it rounds to
 | expected, scale=3, between | 0.9948 | 0.99 | 0.0048 | matches at printed precision |
 | expected, scale=3, within | 0.3330 | 0.33 | 0.0030 | matches at printed precision |
 
-## Table S4 — independent Bernoulli history forecasts
+## Table S14 — independent Bernoulli history forecasts
 100,000 diaries per length; Bernoulli(0.15), scoring starts at day 30, seed=20261006; SD of diary AUCs / sqrt(eligible diaries) is the Monte Carlo SE.
 | Diary length | Expanding rate | Previous 30-day count | Previous 7-day count |
 | ---: | ---: | ---: | ---: |

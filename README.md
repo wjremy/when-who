@@ -88,7 +88,7 @@ The synthetic methods and figure commands are:
     python figures/fig_central_v6.py
     python code/importance_v2.py
 
-Tables 1, 2, 5, S1, S8, and S31 are manuscript-authored summaries; code/theory_check.py checks calculations supporting Table 3. The current source tree does not contain generators for the exact robustness scenarios in Table S12 or the known-calibration scenarios in Table S16, so those two tables cannot be regenerated from the listed commands. Other commands regenerate the script-produced tables and figures from their required source data and aggregate inputs.
+Tables 1, 2, 5, S1, S23 and S33 are manuscript-authored summaries; code/theory_check.py checks calculations supporting Table 3. Table S18 (robustness scenarios) is produced by `python code/robustness_sim.py` and Table S12 (known-calibration simulation) by `python code/calibration_known_sim.py`. The other commands regenerate the remaining tables and figures from their source data and aggregate inputs.
 
 ## The withinpatient package
 
@@ -146,6 +146,6 @@ Paste-ready sentence:
 
 Reference: Remy W. Which patients or which days? Separating within-patient and between-patient performance of clinical forecasts. Preprint, 2026.
 
-Software: Remy W. when-who: code for “Which patients or which days?” Version 1.0.0. Zenodo; 2026. doi:10.5281/zenodo.23269934. The concept DOI 10.5281/zenodo.23269933 always resolves to the latest version.
+Software: Remy W. when-who: code for “Which patients or which days?” Zenodo; 2026. doi:10.5281/zenodo.23269933 (all versions; Zenodo lists the DOI of each release, and the paper cites the release it used).
 
 The preprint DOI will be added once the preprint is posted.
