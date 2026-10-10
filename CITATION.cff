@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper and the software version used."
 type: software
-title: "when-who: code for 'Which patients or which days? Pooling distorts every common measure of repeated clinical forecasts, and per-patient scores need a chance level of their own'"
+title: "when-who: code for 'Why pooled and per-patient scores of repeated clinical forecasts both mislead, and how to fix them'"
 authors:
   - family-names: Remy
     given-names: Wesley
@@ -30,7 +30,7 @@ keywords:
   - permutation chance level
 preferred-citation:
   type: article
-  title: "Which patients or which days? Pooling distorts every common measure of repeated clinical forecasts, and per-patient scores need a chance level of their own"
+  title: "Why pooled and per-patient scores of repeated clinical forecasts both mislead, and how to fix them"
   authors:
     - family-names: Remy
       given-names: Wesley

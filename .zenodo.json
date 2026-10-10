@@ -1,7 +1,7 @@
 {
-  "title": "when-who: code for “Which patients or which days? Pooling distorts every common measure of repeated clinical forecasts, and per-patient scores need a chance level of their own”",
+  "title": "when-who: code for “Why pooled and per-patient scores of repeated clinical forecasts both mislead, and how to fix them”",
   "upload_type": "software",
-  "description": "The withinpatient Python package and its R port, the simulations, the cohort analyses, and the scripts that produce every table and figure of the paper “Which patients or which days? Pooling distorts every common measure of repeated clinical forecasts, and per-patient scores need a chance level of their own”.",
+  "description": "The withinpatient Python package and its R port, the simulations, the cohort analyses, and the scripts that produce every table and figure of the paper “Why pooled and per-patient scores of repeated clinical forecasts both mislead, and how to fix them”.",
   "creators": [
     {
       "name": "Remy, Wesley",

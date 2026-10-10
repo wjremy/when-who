@@ -1,4 +1,4 @@
-# Which patients or which days? Pooling distorts every common measure of repeated clinical forecasts, and per-patient scores need a chance level of their own
+# Why pooled and per-patient scores of repeated clinical forecasts both mislead, and how to fix them
 
 Code for the paper by Wesley Remy (2026): the Python package `withinpatient` and its R port, the simulations, the cohort analyses, and the scripts that produce every table and figure.
 
@@ -116,6 +116,6 @@ MIT; see LICENSE.
 
 ## Citation
 
-Remy W. Which patients or which days? Pooling distorts every common measure of repeated clinical forecasts, and per-patient scores need a chance level of their own. Preprint, 2026.
+Remy W. Why pooled and per-patient scores of repeated clinical forecasts both mislead, and how to fix them. Preprint, 2026.
 
-Software: Remy W. when-who: code for "Which patients or which days?". Zenodo; 2026. doi:10.5281/zenodo.23269933 (all versions; each release has its own DOI). See CITATION.cff.
+Software: Remy W. when-who: code for "Why pooled and per-patient scores of repeated clinical forecasts both mislead, and how to fix them". Zenodo; 2026. doi:10.5281/zenodo.23269933 (all versions; each release has its own DOI). See CITATION.cff.
