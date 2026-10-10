@@ -12,7 +12,7 @@ from unittest.mock import patch
 import numpy as np
 import pandas as pd
 
-from withinpatient import (auc, calibration_slopes, conditional_within_slope, evaluate, patient_calibration_in_the_large,
+from withinpatient import (auc, calibration_slopes, conditional_within_slope, evaluate_v1 as evaluate, patient_calibration_in_the_large,
                            per_patient_auc_summary, per_time_point_auc, permutation_reference, pooled_auc,
                            predictive_value_excess, threshold_metrics, to_markdown, within_patient_auc)
 
@@ -77,7 +77,7 @@ class TestWithinPatient(unittest.TestCase):
                 output = StringIO()
                 with patch.object(sys, "argv", argv), redirect_stdout(output):
                     runpy.run_module("withinpatient", run_name="__main__")
-                self.assertIn("| Quantity | Value |", output.getvalue())
+                self.assertIn("| Metric | Mean observed | Mean chance | Median excess [IQR] |", output.getvalue())
 
 
 class TestChecklistAdditions(unittest.TestCase):

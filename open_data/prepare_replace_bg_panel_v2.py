@@ -1,5 +1,6 @@
 """Chunked CGM reduction for the REPLACE-BG daily analysis panel."""
 from pathlib import Path
+import argparse
 import os
 import sqlite3
 import tempfile
@@ -7,12 +8,42 @@ import numpy as np
 import pandas as pd
 
 
+def slot_day(day, seconds):
+    """Round CGM times to five-minute slots, carrying slot 288 into tomorrow."""
+    raw_slot = np.floor((seconds + 150) / 300).astype("int32")
+    rollover = raw_slot == 288
+    assigned_day = np.asarray(day, dtype="int32") + rollover.astype("int32")
+    return assigned_day, np.mod(raw_slot, 288).astype("int16"), rollover
+
+
+def _old_slot_day(day, seconds):
+    """Reproduce the pre-fix day assignment for the optional comparison only."""
+    raw_slot = np.floor((seconds + 150) / 300).astype("int16")
+    return np.asarray(day), raw_slot % 288, raw_slot == 288
+
+
+def changed_patient_nights(old_panel, new_panel):
+    """Count final panel nights with any changed label, feature, or panel field."""
+    keys = ["pid", "day"]
+    old = old_panel.copy()
+    new = new_panel.copy()
+    old["_old_present"] = True
+    new["_new_present"] = True
+    joined = old.merge(new, on=keys, how="outer", suffixes=("_old", "_new"), indicator=True)
+    changed = joined["_merge"].ne("both")
+    for col in (set(old_panel.columns) & set(new_panel.columns)) - set(keys):
+        same = joined[f"{col}_old"].eq(joined[f"{col}_new"])
+        same |= joined[f"{col}_old"].isna() & joined[f"{col}_new"].isna()
+        changed |= ~same.fillna(False)
+    return int(changed.sum())
+
+
 def sustained(v, threshold):
     z = np.isfinite(v) & (v < threshold)
     return bool(np.any(z[:-2] & z[1:-1] & z[2:]))
 
 
-def global_duplicate_medians(path, cols, chunksize=350_000):
+def global_duplicate_medians(path, cols, chunksize=350_000, slot_assigner=slot_day):
     """Find cross-chunk slot keys, then compute medians over every raw reading.
 
     The SQLite index stays on disk; only one input chunk and the small set of
@@ -34,8 +65,8 @@ def global_duplicate_medians(path, cols, chunksize=350_000):
                        "RecordType":"string", "GlucoseValue":"float32"}, chunksize=chunksize), start=1):
             ch = ch[ch.RecordType.eq("CGM") & ch.GlucoseValue.notna()]
             seconds = pd.to_timedelta(ch.DeviceTm, errors="coerce").dt.total_seconds().to_numpy()
-            slot = (np.floor((seconds + 150) / 300).astype("int16") % 288)
-            keys = pd.DataFrame({"p":ch.PtID.to_numpy(), "d":ch.DeviceDtTmDaysFromEnroll.to_numpy(), "s":slot}).drop_duplicates()
+            day, slot, _ = slot_assigner(ch.DeviceDtTmDaysFromEnroll.to_numpy(), seconds)
+            keys = pd.DataFrame({"p":ch.PtID.to_numpy(), "d":day, "s":slot}).drop_duplicates()
             con.executemany(upsert, ((int(p),int(d),int(s),chunk_count-1) for p,d,s in keys.itertuples(index=False,name=None)))
             con.commit()
         dup = con.execute("SELECT p,d,s FROM seen WHERE n_chunks>1").fetchall()
@@ -52,8 +83,9 @@ def global_duplicate_medians(path, cols, chunksize=350_000):
             ch = ch[ch.RecordType.eq("CGM") & ch.GlucoseValue.notna()]
             if ch.empty: continue
             seconds = pd.to_timedelta(ch.DeviceTm, errors="coerce").dt.total_seconds().to_numpy()
-            z = pd.DataFrame({"p":ch.PtID.to_numpy(), "d":ch.DeviceDtTmDaysFromEnroll.to_numpy(),
-                              "s":(np.floor((seconds + 150) / 300).astype("int16") % 288),
+            day, slot, _ = slot_assigner(ch.DeviceDtTmDaysFromEnroll.to_numpy(), seconds)
+            z = pd.DataFrame({"p":ch.PtID.to_numpy(), "d":day,
+                              "s":slot,
                               "g":ch.GlucoseValue.to_numpy("float32")})
             z = z.merge(key_frame, on=["p","d","s"], how="inner")
             for p,d,s,g in z.itertuples(index=False,name=None): values[(int(p),int(d),int(s))].append(float(g))
@@ -66,13 +98,14 @@ def global_duplicate_medians(path, cols, chunksize=350_000):
         except FileNotFoundError: pass
 
 
-def main():
+def build_panel(slot_assigner=slot_day, write_panel=True):
     root = Path(__file__).resolve().parent / "replace_bg" / "Data Tables"
     cgm_path = root / "HDeviceCGM.txt"
     slots = {}
     cols = ["PtID", "DeviceDtTmDaysFromEnroll", "DeviceTm", "RecordType", "GlucoseValue"]
-    duplicate_medians = global_duplicate_medians(cgm_path, cols)
+    duplicate_medians = global_duplicate_medians(cgm_path, cols, slot_assigner=slot_assigner)
     nread = 0
+    n_reassigned = 0
     for ch in pd.read_csv(cgm_path, sep="|", usecols=cols,
                           dtype={"PtID": "int32", "DeviceDtTmDaysFromEnroll": "int16",
                                  "DeviceTm": "string", "RecordType": "string",
@@ -82,9 +115,11 @@ def main():
         if ch.empty:
             continue
         seconds = pd.to_timedelta(ch.DeviceTm, errors="coerce").dt.total_seconds().to_numpy()
+        day, slot, rollover = slot_assigner(ch.DeviceDtTmDaysFromEnroll.to_numpy(), seconds)
+        n_reassigned += int(rollover.sum())
         x = pd.DataFrame({"p": ch.PtID.to_numpy(),
-                          "d": ch.DeviceDtTmDaysFromEnroll.to_numpy(),
-                          "s": (np.floor((seconds + 150) / 300).astype("int16") % 288),
+                          "d": day,
+                          "s": slot,
                           "g": ch.GlucoseValue.to_numpy()})
         x = x.groupby(["p", "d", "s"], sort=False, as_index=False).g.median()
         for (pid, day), g in x.groupby(["p", "d"], sort=False):
@@ -206,16 +241,34 @@ def main():
     panel = pd.concat(pieces, ignore_index=True)
     post_counts = panel.loc[~panel.model_runin].groupby("pid").size()
     panel = panel[panel.pid.isin(post_counts[post_counts >= 60].index)].copy().reset_index(drop=True)
-    panel.to_csv(Path(__file__).resolve().parent / "replace_bg_panel_v2.csv", index=False)
+    if write_panel:
+        panel.to_csv(Path(__file__).resolve().parent / "replace_bg_panel_v2.csv", index=False)
     scored = panel[~panel.model_runin]
     rates = scored.groupby("pid").y.mean()
     gaps = np.concatenate([np.diff(g.day.to_numpy()) for _, g in panel.groupby("pid")])
-    print(f"Saved panel: {len(panel):,} rows, {panel.pid.nunique():,} patients, {len(scored):,} post-run-in nights")
+    prefix = "Saved panel" if write_panel else "Compared panel"
+    print(f"{prefix}: {len(panel):,} rows, {panel.pid.nunique():,} patients, {len(scored):,} post-run-in nights")
     print(f"Primary event rate {scored.y.mean():.5f}; patient rates mean {rates.mean():.5f}, SD {rates.std(ddof=1):.5f}")
     print(f"Median interval between eligible nights {np.median(gaps):.1f} days; median night/day coverage {panel.night_coverage.median():.0f}/{panel.predictor_coverage.median():.0f}")
     print(f"Night <70 event rate {scored.y_night70.mean():.5f}; valid 24h <54 rate {scored.y_24h54.mean():.5f}; 24h labels missing {scored.y_24h54.isna().mean():.3f}")
     print(f"Predictor days with pump bolus / carb entries {scored.insulin_bolus_available.mean():.3f}/{scored.carbs_available.mean():.3f}")
     print(f"Predictor days with basal dose estimates {scored.basal_insulin_available.mean():.3f}")
+    return panel, n_reassigned
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--report-rollover", action="store_true",
+                        help="compare old and corrected final panels; do not write the panel")
+    args = parser.parse_args()
+    if args.report_rollover:
+        old_panel, _ = build_panel(slot_assigner=_old_slot_day, write_panel=False)
+        new_panel, n_reassigned = build_panel(slot_assigner=slot_day, write_panel=False)
+        n_changed = changed_patient_nights(old_panel, new_panel)
+        print(f"CGM readings reassigned to the following day: {n_reassigned:,}")
+        print(f"Patient-nights with any changed event label or panel feature: {n_changed:,}")
+        return
+    build_panel()
 
 
 if __name__ == "__main__":

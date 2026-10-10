@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper and the software version used."
 type: software
-title: "when-who: code for 'Which patients or which days? Separating within-patient and between-patient performance of clinical forecasts'"
+title: "when-who: code for 'Which patients or which days? Pooling distorts every common measure of repeated clinical forecasts, and per-patient scores need a chance level of their own'"
 authors:
   - family-names: Remy
     given-names: Wesley
@@ -20,10 +20,20 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.23269933"
     description: "All versions (concept DOI)"
-version: "1.0.1"
-date-released: "2026-10-09"
+version: "2.0.0"
+date-released: "2026-10-11"
 keywords:
   - clinical prediction
   - repeated forecasts
   - model evaluation
-  - within-patient discrimination
+  - within-patient evaluation
+  - permutation chance level
+preferred-citation:
+  type: article
+  title: "Which patients or which days? Pooling distorts every common measure of repeated clinical forecasts, and per-patient scores need a chance level of their own"
+  authors:
+    - family-names: Remy
+      given-names: Wesley
+      orcid: "https://orcid.org/0009-0007-6431-4200"
+  year: 2026
+  notes: "Preprint"

@@ -44,7 +44,7 @@
         "training_event_rate": 0.3195704057279236,
         "validation_chosen_iterations": {
           "selected_iterations": 100,
-          "validation_log_loss": 0.32839781195030754
+          "validation_log_loss": 0.32661574131981497
         },
         "error": null
       },
@@ -116,20 +116,20 @@
           "eligible_within_people": 154
         },
         "updating_rate": {
-          "pooled_auc": 0.889027520395057,
+          "pooled_auc": 0.8905788020858478,
           "pooled_auc_ci": [
-            0.8650948254718378,
-            0.9094214141467409
+            0.8679626119137563,
+            0.910243094539808
           ],
-          "within_person_auc": 0.43647609856889114,
+          "within_person_auc": 0.44390745992796954,
           "within_person_auc_ci": [
-            0.3992989068466037,
-            0.47677836702036297
+            0.4076946014203348,
+            0.4824896083762179
           ],
-          "pooled_minus_within_auc": 0.4525514218261658,
+          "pooled_minus_within_auc": 0.4466713421578783,
           "pooled_minus_within_auc_ci": [
-            0.4025551021468421,
-            0.49852840120931
+            0.3970092889969601,
+            0.4920717495647172
           ],
           "eligible_within_people": 154
         },
@@ -188,56 +188,56 @@
           "eligible_within_people": 154
         },
         "logistic_regression": {
-          "pooled_auc": 0.9231643387714846,
+          "pooled_auc": 0.9232476326242391,
           "pooled_auc_ci": [
-            0.906593019601011,
-            0.9369983733782872
+            0.9063945467975064,
+            0.9371956561654126
           ],
-          "within_person_auc": 0.652668351654235,
+          "within_person_auc": 0.6469516078689742,
           "within_person_auc_ci": [
-            0.6112952565904293,
-            0.6927980421970577
+            0.6052554805782886,
+            0.6883015843160266
           ],
-          "pooled_minus_within_auc": 0.27049598711724965,
+          "pooled_minus_within_auc": 0.27629602475526494,
           "pooled_minus_within_auc_ci": [
-            0.23295807605820526,
-            0.3109122890447942
+            0.23864130695336347,
+            0.3186751529225373
           ],
           "eligible_within_people": 154
         },
         "gradient_boosting": {
-          "pooled_auc": 0.9292642871505173,
+          "pooled_auc": 0.9292925380910216,
           "pooled_auc_ci": [
-            0.9145681657634712,
-            0.9425155026625434
+            0.9143010422358221,
+            0.9427821247416397
           ],
-          "within_person_auc": 0.6378571868165637,
+          "within_person_auc": 0.638022582804176,
           "within_person_auc_ci": [
-            0.5948106540863365,
-            0.6817083518103982
+            0.5930839399367048,
+            0.6806009658386339
           ],
-          "pooled_minus_within_auc": 0.2914071003339537,
+          "pooled_minus_within_auc": 0.2912699552868456,
           "pooled_minus_within_auc_ci": [
-            0.2507832785052317,
-            0.33494295882126324
+            0.24958678990056918,
+            0.3360102481239297
           ],
           "eligible_within_people": 154
         },
         "within_centred_gradient_boosting": {
-          "pooled_auc": 0.9181632591346034,
+          "pooled_auc": 0.9184431158691767,
           "pooled_auc_ci": [
-            0.9021318072550044,
-            0.9326266272279897
+            0.9028026290398837,
+            0.9332691974401697
           ],
-          "within_person_auc": 0.6444767062946171,
+          "within_person_auc": 0.6246801323366213,
           "within_person_auc_ci": [
-            0.5972960484482921,
-            0.6868883617790408
+            0.5743754238000018,
+            0.667605789778098
           ],
-          "pooled_minus_within_auc": 0.27368655283998633,
+          "pooled_minus_within_auc": 0.29376298353255537,
           "pooled_minus_within_auc_ci": [
-            0.2352620674758642,
-            0.31667803241755604
+            0.2516873880219751,
+            0.340628771566164
           ],
           "eligible_within_people": 154
         }
@@ -250,7 +250,7 @@
           "exact_pooled_auc": 0.8010020993234098
         },
         "updating_rate": {
-          "exact_pooled_auc": 0.889027520395057
+          "exact_pooled_auc": 0.8905788020858478
         },
         "normal_approximation": {
           "mean_event_rate": 0.2999763983950909,
@@ -316,20 +316,20 @@
           "eligible_within_people": 827
         },
         "updating_rate": {
-          "pooled_auc": 0.8688304059647683,
+          "pooled_auc": 0.8703604271248785,
           "pooled_auc_ci": [
-            0.8582440708633102,
-            0.8781428180284626
+            0.8597355979553326,
+            0.8799413900487368
           ],
-          "within_person_auc": 0.4146399680821922,
+          "within_person_auc": 0.41485206643805606,
           "within_person_auc_ci": [
-            0.39838090387845426,
-            0.4308594170512802
+            0.39859214830465145,
+            0.431654074204773
           ],
-          "pooled_minus_within_auc": 0.4541904378825761,
+          "pooled_minus_within_auc": 0.45550836068682243,
           "pooled_minus_within_auc_ci": [
-            0.43264445581699246,
-            0.47373804934256897
+            0.434122518382574,
+            0.474742128245742
           ],
           "eligible_within_people": 827
         },
@@ -396,7 +396,7 @@
           "exact_pooled_auc": 0.776972958372594
         },
         "updating_rate": {
-          "exact_pooled_auc": 0.8688304059647683
+          "exact_pooled_auc": 0.8703604271248785
         },
         "normal_approximation": {
           "mean_event_rate": 0.3117378048780488,
@@ -418,26 +418,26 @@
             "n_specificity_people": 232
           },
           "logistic_regression": {
-            "pooled_sensitivity": 0.8214004720692368,
-            "pooled_specificity": 0.8803101820633851,
-            "mean_person_sensitivity": 0.6252668744265384,
-            "mean_person_specificity": 0.7237313054555434,
+            "pooled_sensitivity": 0.8198269079464988,
+            "pooled_specificity": 0.8806473364801078,
+            "mean_person_sensitivity": 0.6233557564439918,
+            "mean_person_specificity": 0.7231854576955729,
             "n_sensitivity_people": 168,
             "n_specificity_people": 232
           },
           "gradient_boosting": {
-            "pooled_sensitivity": 0.8481510621557828,
-            "pooled_specificity": 0.8718813216453135,
-            "mean_person_sensitivity": 0.6978880693691618,
-            "mean_person_specificity": 0.7227559569891694,
+            "pooled_sensitivity": 0.8544453186467349,
+            "pooled_specificity": 0.870869858395145,
+            "mean_person_sensitivity": 0.7018500076798396,
+            "mean_person_specificity": 0.720666143137819,
             "n_sensitivity_people": 168,
             "n_specificity_people": 232
           },
           "within_centred_gradient_boosting": {
-            "pooled_sensitivity": 0.8214004720692368,
-            "pooled_specificity": 0.8654753877275793,
-            "mean_person_sensitivity": 0.6815171304535801,
-            "mean_person_specificity": 0.7316713592083575,
+            "pooled_sensitivity": 0.8166797797010228,
+            "pooled_specificity": 0.8735670937289278,
+            "mean_person_sensitivity": 0.674910801053133,
+            "mean_person_specificity": 0.7388111152293253,
             "n_sensitivity_people": 168,
             "n_specificity_people": 232
           }
@@ -521,33 +521,33 @@
               "log_loss_skill_person_mean_difference": -0.08610481140338425,
               "paired_person_boot_ci_log_loss_skill": [
                 -0.18500831808462848,
-                -0.12377094496021239
+                -0.12377094496021218
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                -0.10229127544273885,
+                -0.10229127544273883,
                 -0.06992355779511839
               ]
             },
             "updating_rate": {
-              "brier_skill_summed_losses": -0.7695231563048313,
-              "brier_skill_person_mean_difference": -0.09612579603635131,
+              "brier_skill_summed_losses": -0.7412599641854474,
+              "brier_skill_person_mean_difference": -0.09474680830989447,
               "paired_person_boot_ci_skill": [
-                -0.9742468780630703,
-                -0.6036588522230167
+                -0.9460992752062732,
+                -0.5722818272763264
               ],
               "paired_person_boot_ci_difference": [
-                -0.11228197132153621,
-                -0.08015508202887751
+                -0.11134753230362712,
+                -0.07796848028418704
               ],
-              "log_loss_skill_summed_losses": -0.16504038572621615,
-              "log_loss_skill_person_mean_difference": -0.08987156294106592,
+              "log_loss_skill_summed_losses": -0.038995793281729974,
+              "log_loss_skill_person_mean_difference": -0.021865479001300328,
               "paired_person_boot_ci_log_loss_skill": [
-                -0.2907547004488182,
-                -0.05858901801678718
+                -0.14256486132697688,
+                0.05213976289377336
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                -0.1444059520954213,
-                -0.031916084848789626
+                -0.08435809717477907,
+                0.03905679340213869
               ]
             },
             "recent_window_rate": {
@@ -606,7 +606,7 @@
                 -0.10617799046907182
               ],
               "log_loss_skill_summed_losses": -1.0824775203522523,
-              "log_loss_skill_person_mean_difference": -0.3302223617345669,
+              "log_loss_skill_person_mean_difference": -0.33022236173456687,
               "paired_person_boot_ci_log_loss_skill": [
                 -1.3153154236191797,
                 -0.8984833418487029
@@ -687,30 +687,30 @@
                 -1.6904780601149219
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                -1.5754983241580829,
+                -1.5754983241580824,
                 -0.8988347330498688
               ]
             },
             "updating_rate": {
-              "brier_skill_summed_losses": -0.5511991833608465,
-              "brier_skill_person_mean_difference": -0.06478890444815051,
+              "brier_skill_summed_losses": -0.5264231071741348,
+              "brier_skill_person_mean_difference": -0.06340991672169367,
               "paired_person_boot_ci_skill": [
-                -0.6959967231998994,
-                -0.41828104688069956
+                -0.6510788010309752,
+                -0.4051278891183453
               ],
               "paired_person_boot_ci_difference": [
-                -0.08153034428760103,
-                -0.048614936953853265
+                -0.07913753898059968,
+                -0.048847568530581954
               ],
-              "log_loss_skill_summed_losses": -2.3429979863139514,
-              "log_loss_skill_person_mean_difference": -1.2467348729597758,
+              "log_loss_skill_summed_losses": -1.981322267694957,
+              "log_loss_skill_person_mean_difference": -1.1787287890200102,
               "paired_person_boot_ci_log_loss_skill": [
-                -2.8202366805080494,
-                -1.8348223044040142
+                -2.3517709349902147,
+                -1.5808783670863726
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                -1.5321019099123514,
-                -0.9424373162604838
+                -1.4777842110181314,
+                -0.8798179193867804
               ]
             },
             "recent_window_rate": {
@@ -855,25 +855,25 @@
               ]
             },
             "updating_rate": {
-              "brier_skill_summed_losses": -0.4638414742343242,
-              "brier_skill_person_mean_difference": -0.057542618212097545,
+              "brier_skill_summed_losses": -0.44046069355835793,
+              "brier_skill_person_mean_difference": -0.05616363048564071,
               "paired_person_boot_ci_skill": [
-                -0.5867010660737564,
-                -0.35663854852594346
+                -0.5771886606933953,
+                -0.33320742038777423
               ],
               "paired_person_boot_ci_difference": [
-                -0.06688950475339325,
-                -0.04822751889482273
+                -0.06679970352253584,
+                -0.04591237265748398
               ],
-              "log_loss_skill_summed_losses": -0.0093180570455913,
-              "log_loss_skill_person_mean_difference": -0.003766751537681657,
+              "log_loss_skill_summed_losses": 0.0998790872816171,
+              "log_loss_skill_person_mean_difference": 0.06423933240208392,
               "paired_person_boot_ci_log_loss_skill": [
-                -0.10544323281757738,
-                0.07795620074938682
+                0.01433885202531311,
+                0.16848521951686093
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                -0.05559225702326909,
-                0.04834987542870628
+                0.009930068390377947,
+                0.11951094382662258
               ]
             },
             "recent_window_rate": {
@@ -894,7 +894,7 @@
                 0.50765688891611
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.3531270242730037,
+                0.35312702427300374,
                 0.5940270080484946
               ]
             },
@@ -916,7 +916,7 @@
                 0.7061617225568972
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.8724142667486726,
+                0.8724142667486727,
                 1.262550610785301
               ]
             },
@@ -945,76 +945,76 @@
           }
         },
         "updating_rate": {
-          "brier_pooled": 0.11888766935589001,
-          "brier_person_mean": 0.12240373651682987,
-          "log_loss_pooled": 0.5250780295934516,
-          "log_loss_person_mean": 0.53894465072603,
+          "brier_pooled": 0.1208173898506716,
+          "brier_person_mean": 0.12378272424328672,
+          "log_loss_pooled": 0.5887772732955042,
+          "log_loss_person_mean": 0.6069507346657956,
           "n_people": 246,
           "skills": {
             "training_cohort_rate": {
-              "brier_skill_summed_losses": 0.4348760023642593,
-              "brier_skill_person_mean_difference": 0.09612579603635131,
+              "brier_skill_summed_losses": 0.4257032145870333,
+              "brier_skill_person_mean_difference": 0.09474680830989447,
               "paired_person_boot_ci_skill": [
-                0.37388378932730976,
-                0.4913555108991445
+                0.35911576214036356,
+                0.4866558371990864
               ],
               "paired_person_boot_ci_difference": [
-                0.08006648764208073,
-                0.11169178527910628
+                0.07718984328739224,
+                0.11107704490590574
               ],
-              "log_loss_skill_summed_losses": 0.14166065635856895,
-              "log_loss_skill_person_mean_difference": 0.08987156294106592,
+              "log_loss_skill_summed_losses": 0.037532195542928415,
+              "log_loss_skill_person_mean_difference": 0.021865479001300328,
               "paired_person_boot_ci_log_loss_skill": [
-                0.04660399514582925,
-                0.2297134422144901
+                -0.060584723249450675,
+                0.13658116466549758
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.02839429603474305,
-                0.1482633362199633
+                -0.04415026808904866,
+                0.08769693635245106
               ]
             },
             "runin_rate": {
-              "brier_skill_summed_losses": 0.35533746360452034,
-              "brier_skill_person_mean_difference": 0.06478890444815051,
+              "brier_skill_summed_losses": 0.3448736491867588,
+              "brier_skill_person_mean_difference": 0.06340991672169367,
               "paired_person_boot_ci_skill": [
-                0.28950500982049715,
-                0.4139138959365315
+                0.28097848182762986,
+                0.4026912386616383
               ],
               "paired_person_boot_ci_difference": [
-                0.04658022315535359,
-                0.08382215764680327
+                0.046756644190118324,
+                0.0819985450210208
               ],
-              "log_loss_skill_summed_losses": 0.7008673041102793,
-              "log_loss_skill_person_mean_difference": 1.2467348729597758,
+              "log_loss_skill_summed_losses": 0.6645783614754397,
+              "log_loss_skill_person_mean_difference": 1.1787287890200102,
               "paired_person_boot_ci_log_loss_skill": [
-                0.6414531276016276,
-                0.7457638028005272
+                0.6042555857438573,
+                0.7087122850784258
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.9292139486883682,
-                1.6044551393400297
+                0.8709137704150491,
+                1.5216993709599012
               ]
             },
             "runin_shrunk": {
-              "brier_skill_summed_losses": 0.3168659191576334,
-              "brier_skill_person_mean_difference": 0.057542618212097545,
+              "brier_skill_summed_losses": 0.30577765539043733,
+              "brier_skill_person_mean_difference": 0.05616363048564071,
               "paired_person_boot_ci_skill": [
-                0.2672989300444329,
-                0.37202833648997713
+                0.25070418425178753,
+                0.36334570466137184
               ],
               "paired_person_boot_ci_difference": [
-                0.04799391533941031,
-                0.06681706867417576
+                0.04599751299070634,
+                0.06671370126928801
               ],
-              "log_loss_skill_summed_losses": 0.009232032440662508,
-              "log_loss_skill_person_mean_difference": 0.003766751537681657,
+              "log_loss_skill_summed_losses": -0.11096185620216326,
+              "log_loss_skill_person_mean_difference": -0.06423933240208392,
               "paired_person_boot_ci_log_loss_skill": [
-                -0.08241975747016102,
-                0.09742638086242439
+                -0.21214428970690058,
+                -0.02090026180849177
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                -0.04755509587963658,
-                0.05253400894982021
+                -0.1228691669641784,
+                -0.01080819566852454
               ]
             },
             "updating_rate": {
@@ -1040,69 +1040,69 @@
               ]
             },
             "recent_window_rate": {
-              "brier_skill_summed_losses": 0.002239903570315449,
-              "brier_skill_person_mean_difference": 0.000273455631801912,
+              "brier_skill_summed_losses": -0.013955199903299853,
+              "brier_skill_person_mean_difference": -0.0011055320946549228,
               "paired_person_boot_ci_skill": [
-                -0.05294681673391047,
-                0.05053881275900763
+                -0.07256617749014005,
+                0.03342617928761234
               ],
               "paired_person_boot_ci_difference": [
-                -0.006619147606239974,
-                0.007024141653415306
+                -0.008182966567150526,
+                0.005306816335873077
               ],
-              "log_loss_skill_summed_losses": 0.4658498929626026,
-              "log_loss_skill_person_mean_difference": 0.48327328951841825,
+              "log_loss_skill_summed_losses": 0.401050080508067,
+              "log_loss_skill_person_mean_difference": 0.4152672055786527,
               "paired_person_boot_ci_log_loss_skill": [
-                0.4173915825690098,
-                0.5114825531173715
+                0.3479027199940153,
+                0.4482634920581702
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.38371078822822774,
-                0.5842957656314174
+                0.3194725114246527,
+                0.5150242475873713
               ]
             },
             "persistence": {
-              "brier_skill_summed_losses": 0.25471443600209487,
-              "brier_skill_person_mean_difference": 0.04273987272278745,
+              "brier_skill_summed_losses": 0.24261736289852187,
+              "brier_skill_person_mean_difference": 0.04136088499633062,
               "paired_person_boot_ci_skill": [
-                0.1968137412418315,
-                0.31072180506174296
+                0.18203401064842917,
+                0.29817849283992104
               ],
               "paired_person_boot_ci_difference": [
-                0.03216204473255559,
-                0.05463991734527261
+                0.030014212887528383,
+                0.05342238703894902
               ],
-              "log_loss_skill_summed_losses": 0.6720393714216554,
-              "log_loss_skill_person_mean_difference": 1.0595211921588423,
+              "log_loss_skill_summed_losses": 0.632253200934451,
+              "log_loss_skill_person_mean_difference": 0.9915151082190767,
               "paired_person_boot_ci_log_loss_skill": [
-                0.6299377438105126,
-                0.709591480363924
+                0.5892819830433998,
+                0.6715928998503734
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.8667361659727387,
-                1.2512373966445183
+                0.8059478774254248,
+                1.1819534062065207
               ]
             },
             "retrospective_rate": {
-              "brier_skill_summed_losses": -0.2394900534345925,
-              "brier_skill_person_mean_difference": -0.024578531023366663,
+              "brier_skill_summed_losses": -0.2596087871279129,
+              "brier_skill_person_mean_difference": -0.025957518749823497,
               "paired_person_boot_ci_skill": [
-                -0.28158806144980025,
-                -0.20399544029147043
+                -0.2984732796353191,
+                -0.2264476608547986
               ],
               "paired_person_boot_ci_difference": [
-                -0.028940951415113922,
-                -0.020439450424734287
+                -0.029964393837307583,
+                -0.02209468921611727
               ],
-              "log_loss_skill_summed_losses": -0.787472387967187,
-              "log_loss_skill_person_mean_difference": -0.240350798793501,
+              "log_loss_skill_summed_losses": -1.0043175668446387,
+              "log_loss_skill_person_mean_difference": -0.3083568827332666,
               "paired_person_boot_ci_log_loss_skill": [
-                -0.9202667512902185,
-                -0.6701741761080143
+                -1.1349172828737857,
+                -0.8783971531285328
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                -0.2797580491198328,
-                -0.1997862896163199
+                -0.35568468598170777,
+                -0.26480801400600823
               ]
             }
           }
@@ -1177,29 +1177,29 @@
               ],
               "paired_person_boot_ci_log_loss_difference": [
                 -0.5967802005689169,
-                -0.3647452496115
+                -0.36474524961149996
               ]
             },
             "updating_rate": {
-              "brier_skill_summed_losses": -0.0022449320015207608,
-              "brier_skill_person_mean_difference": -0.000273455631801912,
+              "brier_skill_summed_losses": 0.013763132636067987,
+              "brier_skill_person_mean_difference": 0.0011055320946549228,
               "paired_person_boot_ci_skill": [
-                -0.055532504409183565,
-                0.049643280383508404
+                -0.04178928584617884,
+                0.06393590106663412
               ],
               "paired_person_boot_ci_difference": [
-                -0.007129508861712308,
-                0.0064178280409902255
+                -0.005945532344407467,
+                0.007648908873513144
               ],
-              "log_loss_skill_summed_losses": -0.8721329207371797,
-              "log_loss_skill_person_mean_difference": -0.48327328951841825,
+              "log_loss_skill_summed_losses": -0.669588670866277,
+              "log_loss_skill_person_mean_difference": -0.4152672055786527,
               "paired_person_boot_ci_log_loss_skill": [
-                -1.0477344332464957,
-                -0.7093536668623004
+                -0.8064456027891562,
+                -0.5467593229769091
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                -0.586594275023356,
-                -0.38479203945625334
+                -0.5075617546798898,
+                -0.3251881489549264
               ]
             },
             "recent_window_rate": {
@@ -1335,8 +1335,8 @@
               "log_loss_skill_summed_losses": -2.0209966722351815,
               "log_loss_skill_person_mean_difference": -1.0557544406211608,
               "paired_person_boot_ci_log_loss_skill": [
-                -2.3846921630392206,
-                -1.679064580688253
+                -2.38469216303922,
+                -1.6790645806882525
               ],
               "paired_person_boot_ci_log_loss_difference": [
                 -1.2525761527138484,
@@ -1344,25 +1344,25 @@
               ]
             },
             "updating_rate": {
-              "brier_skill_summed_losses": -0.3417675697832392,
-              "brier_skill_person_mean_difference": -0.04273987272278745,
+              "brier_skill_summed_losses": -0.32033657891475364,
+              "brier_skill_person_mean_difference": -0.04136088499633062,
               "paired_person_boot_ci_skill": [
-                -0.4459263065332694,
-                -0.24354218576696102
+                -0.4208720707202143,
+                -0.22751275619320227
               ],
               "paired_person_boot_ci_difference": [
-                -0.05423646690078399,
-                -0.030435674275989755
+                -0.05229538655642929,
+                -0.029670752339437473
               ],
-              "log_loss_skill_summed_losses": -2.0491464915616104,
-              "log_loss_skill_person_mean_difference": -1.0595211921588423,
+              "log_loss_skill_summed_losses": -1.7192622819315289,
+              "log_loss_skill_person_mean_difference": -0.9915151082190767,
               "paired_person_boot_ci_log_loss_skill": [
-                -2.4222307808546866,
-                -1.7129234218661762
+                -2.0377259168826094,
+                -1.4271470059838387
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                -1.2546508865147963,
-                -0.8701986325428168
+                -1.183001019039531,
+                -0.8053325997946161
               ]
             },
             "recent_window_rate": {
@@ -1421,7 +1421,7 @@
                 -0.05583184082697249
               ],
               "log_loss_skill_summed_losses": -4.4502651605334025,
-              "log_loss_skill_person_mean_difference": -1.2998719909523435,
+              "log_loss_skill_person_mean_difference": -1.2998719909523437,
               "paired_person_boot_ci_log_loss_skill": [
                 -4.901271467886839,
                 -4.011178457493849
@@ -1452,7 +1452,7 @@
                 0.13760512595913177
               ],
               "log_loss_skill_summed_losses": 0.5198027396565369,
-              "log_loss_skill_person_mean_difference": 0.3302223617345669,
+              "log_loss_skill_person_mean_difference": 0.33022236173456687,
               "paired_person_boot_ci_log_loss_skill": [
                 0.46950915733348114,
                 0.5685816831042446
@@ -1507,25 +1507,25 @@
               ]
             },
             "updating_rate": {
-              "brier_skill_summed_losses": 0.1932165996580386,
-              "brier_skill_person_mean_difference": 0.024578531023366663,
+              "brier_skill_summed_losses": 0.20610271203320019,
+              "brier_skill_person_mean_difference": 0.025957518749823497,
               "paired_person_boot_ci_skill": [
-                0.16977510094509393,
-                0.21888340601473266
+                0.18390659765415737,
+                0.23036740165768704
               ],
               "paired_person_boot_ci_difference": [
-                0.020674756866138684,
-                0.029030677348771895
+                0.022132053670269627,
+                0.029876660122253342
               ],
-              "log_loss_skill_summed_losses": 0.4405507985847795,
-              "log_loss_skill_person_mean_difference": 0.240350798793501,
+              "log_loss_skill_summed_losses": 0.5010770665577302,
+              "log_loss_skill_person_mean_difference": 0.3083568827332666,
               "paired_person_boot_ci_log_loss_skill": [
-                0.4000138394263422,
-                0.4778259338527579
+                0.46707402212853966,
+                0.534192511040848
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.20200952491915308,
-                0.2801353891484234
+                0.2613719654704602,
+                0.35311996087772385
               ]
             },
             "recent_window_rate": {
@@ -1562,9 +1562,9 @@
                 0.07772389125116949
               ],
               "log_loss_skill_summed_losses": 0.8165226882462113,
-              "log_loss_skill_person_mean_difference": 1.2998719909523435,
+              "log_loss_skill_person_mean_difference": 1.2998719909523437,
               "paired_person_boot_ci_log_loss_skill": [
-                0.8014431161003409,
+                0.8014431161003408,
                 0.8291191967036213
               ],
               "paired_person_boot_ci_log_loss_difference": [
@@ -1597,490 +1597,490 @@
           }
         },
         "logistic_regression": {
-          "brier_pooled": 0.09692519900337772,
-          "brier_person_mean": 0.0989462198571309,
-          "log_loss_pooled": 0.32250644431297065,
-          "log_loss_person_mean": 0.3280743764059545,
+          "brier_pooled": 0.09670672316960624,
+          "brier_person_mean": 0.0986943093263389,
+          "log_loss_pooled": 0.3219251966602506,
+          "log_loss_person_mean": 0.32744866673716716,
           "n_people": 246,
           "skills": {
             "training_cohort_rate": {
-              "brier_skill_summed_losses": 0.5392730278153539,
-              "brier_skill_person_mean_difference": 0.11958331269605024,
+              "brier_skill_summed_losses": 0.5403115370000041,
+              "brier_skill_person_mean_difference": 0.11983522322684229,
               "paired_person_boot_ci_skill": [
-                0.4914660766737567,
-                0.5891882345904881
+                0.4917503094832054,
+                0.5896884854274524
               ],
               "paired_person_boot_ci_difference": [
-                0.10499316668773476,
-                0.135995172570829
+                0.10503649924153693,
+                0.13619888699482557
               ],
-              "log_loss_skill_summed_losses": 0.47280222342180567,
-              "log_loss_skill_person_mean_difference": 0.3007418372611415,
+              "log_loss_skill_summed_losses": 0.4737523826374086,
+              "log_loss_skill_person_mean_difference": 0.30136754692992884,
               "paired_person_boot_ci_log_loss_skill": [
-                0.42692450144962973,
-                0.5195480852491227
+                0.42784526494293,
+                0.5195473756182362
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.26888886893935104,
-                0.3379278364286084
+                0.2700633044245731,
+                0.33837551247192466
               ]
             },
             "runin_rate": {
-              "brier_skill_summed_losses": 0.4744278782763566,
-              "brier_skill_person_mean_difference": 0.08824642110784947,
+              "brier_skill_summed_losses": 0.4756125527333739,
+              "brier_skill_person_mean_difference": 0.08849833163864147,
               "paired_person_boot_ci_skill": [
-                0.4102492759054345,
-                0.5262932351722786
+                0.4128834068429855,
+                0.5278545278774558
               ],
               "paired_person_boot_ci_difference": [
-                0.06766970177000307,
-                0.10789771974626741
+                0.06794079180318931,
+                0.1079066471454343
               ],
-              "log_loss_skill_summed_losses": 0.816270693702721,
-              "log_loss_skill_person_mean_difference": 1.4576051472798515,
+              "log_loss_skill_summed_losses": 0.8166018257774572,
+              "log_loss_skill_person_mean_difference": 1.4582308569486386,
               "paired_person_boot_ci_log_loss_skill": [
-                0.7771191084454685,
-                0.8447522983407729
+                0.7778227419753426,
+                0.8450808068560391
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                1.1195584199448916,
-                1.7916495387650722
+                1.120757372955247,
+                1.7918680920393946
               ]
             },
             "runin_shrunk": {
-              "brier_skill_summed_losses": 0.44306329587951043,
-              "brier_skill_person_mean_difference": 0.08100013487179651,
+              "brier_skill_summed_losses": 0.4443186681876594,
+              "brier_skill_person_mean_difference": 0.08125204540258851,
               "paired_person_boot_ci_skill": [
-                0.39352222694080113,
-                0.4931315167142718
+                0.3940109903509785,
+                0.4947181496458304
               ],
               "paired_person_boot_ci_difference": [
-                0.07150615931756972,
-                0.09161138004333923
+                0.07185869831378139,
+                0.09188933232365327
               ],
-              "log_loss_skill_summed_losses": 0.3914636752100443,
-              "log_loss_skill_person_mean_difference": 0.21463702585775735,
+              "log_loss_skill_summed_losses": 0.39256042945051406,
+              "log_loss_skill_person_mean_difference": 0.2152627355265446,
               "paired_person_boot_ci_log_loss_skill": [
-                0.34630964731951747,
-                0.43742050875520716
+                0.3485581028175512,
+                0.43822649953992737
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.1921993765024672,
-                0.24078676156902576
+                0.19242889777646166,
+                0.2408077064387395
               ]
             },
             "updating_rate": {
-              "brier_skill_summed_losses": 0.18473295398505685,
-              "brier_skill_person_mean_difference": 0.023457516659698963,
+              "brier_skill_summed_losses": 0.1995628833801638,
+              "brier_skill_person_mean_difference": 0.025088414916947785,
               "paired_person_boot_ci_skill": [
-                0.1405217661877079,
-                0.22366062309620038
+                0.15635694869789973,
+                0.24043021311179003
               ],
               "paired_person_boot_ci_difference": [
-                0.01740142305492049,
-                0.030161130084967448
+                0.018492834059376823,
+                0.031780263952541944
               ],
-              "log_loss_skill_summed_losses": 0.38579329902133697,
-              "log_loss_skill_person_mean_difference": 0.21087027432007563,
+              "log_loss_skill_summed_losses": 0.4532309393357341,
+              "log_loss_skill_person_mean_difference": 0.2795020679286285,
               "paired_person_boot_ci_log_loss_skill": [
-                0.3364716207676953,
-                0.42958561724887906
+                0.4107676189705231,
+                0.4941282019197913
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.16773068758214124,
-                0.2541343116996002
+                0.2326633423394652,
+                0.3299141653117916
               ]
             },
             "recent_window_rate": {
-              "brier_skill_summed_losses": 0.18655907355218637,
-              "brier_skill_person_mean_difference": 0.023730972291500875,
+              "brier_skill_summed_losses": 0.188392623407713,
+              "brier_skill_person_mean_difference": 0.023982882822292866,
               "paired_person_boot_ci_skill": [
-                0.14924514150985638,
-                0.2190638776770285
+                0.14932579658656306,
+                0.22240484346026676
               ],
               "paired_person_boot_ci_difference": [
-                0.017647441953827246,
-                0.02975926499007156
+                0.017710954133739482,
+                0.030077639846461238
               ],
-              "log_loss_skill_summed_losses": 0.6719214249291604,
-              "log_loss_skill_person_mean_difference": 0.694143563838494,
+              "log_loss_skill_summed_losses": 0.6725127151344581,
+              "log_loss_skill_person_mean_difference": 0.6947692735072811,
               "paired_person_boot_ci_log_loss_skill": [
-                0.6458970011829269,
-                0.6938342567371377
+                0.6463719514382635,
+                0.6951635097733476
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.5866596739189712,
-                0.8093142029451473
+                0.5860136981598743,
+                0.8091588375196562
               ]
             },
             "persistence": {
-              "brier_skill_summed_losses": 0.39239323980184704,
-              "brier_skill_person_mean_difference": 0.06619738938248643,
+              "brier_skill_summed_losses": 0.3937628257805651,
+              "brier_skill_person_mean_difference": 0.0664492999132784,
               "paired_person_boot_ci_skill": [
-                0.3584461221032525,
-                0.4266154029864396
+                0.359228634074184,
+                0.4287405292505706
               ],
               "paired_person_boot_ci_difference": [
-                0.05779911230039241,
-                0.07551009451102379
+                0.05795169398643929,
+                0.07585465874796164
               ],
-              "log_loss_skill_summed_losses": 0.7985643842700063,
-              "log_loss_skill_person_mean_difference": 1.2703914664789182,
+              "log_loss_skill_summed_losses": 0.7989274281126393,
+              "log_loss_skill_person_mean_difference": 1.2710171761477054,
               "paired_person_boot_ci_log_loss_skill": [
-                0.783946786854699,
-                0.8112838022711383
+                0.7840381974575434,
+                0.8116930787935195
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                1.0900654846908462,
-                1.4493169403891273
+                1.0906283282849372,
+                1.4494171143926475
               ]
             },
             "retrospective_rate": {
-              "brier_skill_summed_losses": -0.010515394428524338,
-              "brier_skill_person_mean_difference": -0.0011210143636676937,
+              "brier_skill_summed_losses": -0.008237625637675494,
+              "brier_skill_person_mean_difference": -0.000869103832875703,
               "paired_person_boot_ci_skill": [
-                -0.06705235457813,
-                0.0354856848805847
+                -0.06160308216468875,
+                0.03673073094845551
               ],
               "paired_person_boot_ci_difference": [
-                -0.00654581254076496,
-                0.003718456252761587
+                -0.006315743030492465,
+                0.003962398644607578
               ],
-              "log_loss_skill_summed_losses": -0.0978775185037788,
-              "log_loss_skill_person_mean_difference": -0.02948052447342536,
+              "log_loss_skill_summed_losses": -0.09589883329653004,
+              "log_loss_skill_person_mean_difference": -0.028854814804638085,
               "paired_person_boot_ci_log_loss_skill": [
-                -0.15707518267973292,
-                -0.04897497763103087
+                -0.1536603640014779,
+                -0.04664255219327191
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                -0.04540361977423904,
-                -0.014911093722428251
+                -0.04460342747927618,
+                -0.014519953594306096
               ]
             }
           }
         },
         "gradient_boosting": {
-          "brier_pooled": 0.09286839763992741,
-          "brier_person_mean": 0.09471468202055595,
-          "log_loss_pooled": 0.3062249715108416,
-          "log_loss_person_mean": 0.31121089455521983,
+          "brier_pooled": 0.09297621540668634,
+          "brier_person_mean": 0.09460115990327057,
+          "log_loss_pooled": 0.3066001600423511,
+          "log_loss_person_mean": 0.3110845700368782,
           "n_people": 246,
           "skills": {
             "training_cohort_rate": {
-              "brier_skill_summed_losses": 0.5585567417324322,
-              "brier_skill_person_mean_difference": 0.1238148505326252,
+              "brier_skill_summed_losses": 0.5580442377217381,
+              "brier_skill_person_mean_difference": 0.12392837264991059,
               "paired_person_boot_ci_skill": [
-                0.5065318581689883,
-                0.6054568949605954
+                0.5072826266650156,
+                0.6042824425175185
               ],
               "paired_person_boot_ci_difference": [
-                0.10972561876125783,
-                0.13766500682927602
+                0.10986811008977139,
+                0.1377972343594951
               ],
-              "log_loss_skill_summed_losses": 0.49941736991596697,
-              "log_loss_skill_person_mean_difference": 0.31760531911187606,
+              "log_loss_skill_summed_losses": 0.49880405330447786,
+              "log_loss_skill_person_mean_difference": 0.3177316436302177,
               "paired_person_boot_ci_log_loss_skill": [
-                0.4518742226026713,
-                0.5444740360297191
+                0.45131240200949,
+                0.5442289604549937
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.28460290067941935,
-                0.34897292577648586
+                0.2848870747580103,
+                0.3489162318735352
               ]
             },
             "runin_rate": {
-              "brier_skill_summed_losses": 0.496425684026806,
-              "brier_skill_person_mean_difference": 0.09247795894442441,
+              "brier_skill_summed_losses": 0.4958410474924717,
+              "brier_skill_person_mean_difference": 0.0925914810617098,
               "paired_person_boot_ci_skill": [
-                0.42900598609714036,
-                0.5544603499457366
+                0.42926509141455266,
+                0.5543313192147137
               ],
               "paired_person_boot_ci_difference": [
-                0.07158776341413446,
-                0.11550532307319535
+                0.07194451845609208,
+                0.11549945987394653
               ],
-              "log_loss_skill_summed_losses": 0.8255461167405634,
-              "log_loss_skill_person_mean_difference": 1.474468629130586,
+              "log_loss_skill_summed_losses": 0.8253323748763605,
+              "log_loss_skill_person_mean_difference": 1.4745949536489278,
               "paired_person_boot_ci_log_loss_skill": [
-                0.787374393205653,
-                0.8546993681735141
+                0.7874918065835186,
+                0.8546542420086125
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                1.136940568059564,
-                1.8226823409885962
+                1.1369972882556478,
+                1.8226367729440742
               ]
             },
             "runin_shrunk": {
-              "brier_skill_summed_losses": 0.4663738653068973,
-              "brier_skill_person_mean_difference": 0.08523167270837144,
+              "brier_skill_summed_losses": 0.46575433940154165,
+              "brier_skill_person_mean_difference": 0.08534519482565683,
               "paired_person_boot_ci_skill": [
-                0.4179316827831159,
-                0.5141364328882988
+                0.41739028120566285,
+                0.5130279688480494
               ],
               "paired_person_boot_ci_difference": [
-                0.07515721421075343,
-                0.0953783094410477
+                0.07510400332983612,
+                0.09511900381073626
               ],
-              "log_loss_skill_summed_losses": 0.4221851314658466,
-              "log_loss_skill_person_mean_difference": 0.23150050770849195,
+              "log_loss_skill_summed_losses": 0.42147718948795987,
+              "log_loss_skill_person_mean_difference": 0.23162683222683353,
               "paired_person_boot_ci_log_loss_skill": [
-                0.3775496248476556,
-                0.4668984936287906
+                0.3775090924374018,
+                0.46622597430209944
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.20807303085148077,
-                0.2554337296382905
+                0.2075680837372647,
+                0.25509030557502055
               ]
             },
             "updating_rate": {
-              "brier_skill_summed_losses": 0.21885593230088451,
-              "brier_skill_person_mean_difference": 0.027689054496273898,
+              "brier_skill_summed_losses": 0.23044012520380153,
+              "brier_skill_person_mean_difference": 0.02918156434001612,
               "paired_person_boot_ci_skill": [
-                0.17372415183190923,
-                0.26698694528711897
+                0.1863465941655057,
+                0.2799056570866179
               ],
               "paired_person_boot_ci_difference": [
-                0.021164430298917555,
-                0.03535775880396514
+                0.0217717258830277,
+                0.037291451255832615
               ],
-              "log_loss_skill_summed_losses": 0.41680101955905446,
-              "log_loss_skill_person_mean_difference": 0.22773375617081026,
+              "log_loss_skill_summed_losses": 0.47925951977349834,
+              "log_loss_skill_person_mean_difference": 0.2958661646289174,
               "paired_person_boot_ci_log_loss_skill": [
-                0.3696757962543302,
-                0.4638863632466736
+                0.43454829320982663,
+                0.5186039496874083
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.1856393929702609,
-                0.2765191754110661
+                0.24688009485287551,
+                0.34875532758240974
               ]
             },
             "recent_window_rate": {
-              "brier_skill_summed_losses": 0.2206056196870545,
-              "brier_skill_person_mean_difference": 0.027962510128075813,
+              "brier_skill_summed_losses": 0.2197007633134621,
+              "brier_skill_person_mean_difference": 0.028076032245361194,
               "paired_person_boot_ci_skill": [
-                0.18069556212172494,
-                0.2564485701240489
+                0.17814944021867576,
+                0.25673300199439
               ],
               "paired_person_boot_ci_difference": [
-                0.021656859499979062,
-                0.03436722033192965
+                0.021450007753592217,
+                0.034625796892085
               ],
-              "log_loss_skill_summed_losses": 0.6884842021733679,
-              "log_loss_skill_person_mean_difference": 0.7110070456892286,
+              "log_loss_skill_summed_losses": 0.6881025312921463,
+              "log_loss_skill_person_mean_difference": 0.7111333702075702,
               "paired_person_boot_ci_log_loss_skill": [
-                0.6642290098552991,
-                0.7087618899631082
+                0.6635844926921981,
+                0.7086783981588396
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.6030294275701684,
-                0.8228088432715385
+                0.6039561917379036,
+                0.8237320767263113
               ]
             },
             "persistence": {
-              "brier_skill_summed_losses": 0.4178246029412469,
-              "brier_skill_person_mean_difference": 0.07042892721906135,
+              "brier_skill_summed_losses": 0.4171487126193719,
+              "brier_skill_person_mean_difference": 0.07054244933634674,
               "paired_person_boot_ci_skill": [
-                0.38447777290679586,
-                0.4513440173351187
+                0.3831941512689901,
+                0.4508880857612423
               ],
               "paired_person_boot_ci_difference": [
-                0.06172889982532069,
-                0.07969759922607648
+                0.06196032204077793,
+                0.07944250711173002
               ],
-              "log_loss_skill_summed_losses": 0.8087336957883378,
-              "log_loss_skill_person_mean_difference": 1.2872549483296527,
+              "log_loss_skill_summed_losses": 0.8084993552528472,
+              "log_loss_skill_person_mean_difference": 1.2873812728479943,
               "paired_person_boot_ci_log_loss_skill": [
-                0.7952380339141009,
-                0.8197126620294157
+                0.795118272360285,
+                0.8197898884115999
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                1.1104236833928007,
-                1.4760831820293736
+                1.1096015965550365,
+                1.4736743089398336
               ]
             },
             "retrospective_rate": {
-              "brier_skill_summed_losses": 0.03177969778750833,
-              "brier_skill_person_mean_difference": 0.0031105234729072386,
+              "brier_skill_summed_losses": 0.030655619485651986,
+              "brier_skill_person_mean_difference": 0.0032240455901926257,
               "paired_person_boot_ci_skill": [
-                -0.026913355245481618,
-                0.08542305336184515
+                -0.02739747324211961,
+                0.08368423887677529
               ],
               "paired_person_boot_ci_difference": [
-                -0.002704727401418864,
-                0.008905109718171633
+                -0.0027766258109465716,
+                0.009041331993044703
               ],
-              "log_loss_skill_summed_losses": -0.0424520742288057,
-              "log_loss_skill_person_mean_difference": -0.012617042622690727,
+              "log_loss_skill_summed_losses": -0.04372929228509048,
+              "log_loss_skill_person_mean_difference": -0.012490718104349149,
               "paired_person_boot_ci_log_loss_skill": [
-                -0.09725951748514941,
-                0.007502802326667998
+                -0.0967429474665281,
+                0.006574204053640694
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                -0.027787867745513308,
-                0.003270559342755983
+                -0.028086964933945104,
+                0.0033839851325710123
               ]
             }
           }
         },
         "within_centred_gradient_boosting": {
-          "brier_pooled": 0.10204741691049773,
-          "brier_person_mean": 0.1042696344350486,
-          "log_loss_pooled": 0.3328817481831164,
-          "log_loss_person_mean": 0.3389274372586279,
+          "brier_pooled": 0.10189266122130274,
+          "brier_person_mean": 0.10425165514277379,
+          "log_loss_pooled": 0.33209093364022557,
+          "log_loss_person_mean": 0.3383672862064611,
           "n_people": 246,
           "skills": {
             "training_cohort_rate": {
-              "brier_skill_summed_losses": 0.5149249328773684,
-              "brier_skill_person_mean_difference": 0.11425989811813257,
+              "brier_skill_summed_losses": 0.5156605529312275,
+              "brier_skill_person_mean_difference": 0.11427787741040735,
               "paired_person_boot_ci_skill": [
-                0.4651026075656784,
-                0.5655543058912446
+                0.46650052810675796,
+                0.5664292143928324
               ],
               "paired_person_boot_ci_difference": [
-                0.09990641222126807,
-                0.12966277341363242
+                0.09938317765085208,
+                0.12949589282645507
               ],
-              "log_loss_skill_summed_losses": 0.45584182703866905,
-              "log_loss_skill_person_mean_difference": 0.28988877640846816,
+              "log_loss_skill_summed_losses": 0.45713456297015065,
+              "log_loss_skill_person_mean_difference": 0.29044892746063494,
               "paired_person_boot_ci_log_loss_skill": [
-                0.40967833729084735,
-                0.5023518510592716
+                0.411925573322342,
+                0.5048435582498677
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.25665458246487804,
-                0.32379306342511655
+                0.25684064989515826,
+                0.324222675447051
               ]
             },
             "runin_rate": {
-              "brier_skill_summed_losses": 0.44665290374901934,
-              "brier_skill_person_mean_difference": 0.08292300652993177,
+              "brier_skill_summed_losses": 0.44749205885785936,
+              "brier_skill_person_mean_difference": 0.08294098582220655,
               "paired_person_boot_ci_skill": [
-                0.37918983358008407,
-                0.5079600274017314
+                0.3805570096169586,
+                0.5087890585529433
               ],
               "paired_person_boot_ci_difference": [
-                0.06301768222723948,
-                0.10425601686097685
+                0.06291446296824761,
+                0.10416985318764674
               ],
-              "log_loss_skill_summed_losses": 0.8103599672155458,
-              "log_loss_skill_person_mean_difference": 1.4467520864271777,
+              "log_loss_skill_summed_losses": 0.8108104878483495,
+              "log_loss_skill_person_mean_difference": 1.4473122374793448,
               "paired_person_boot_ci_log_loss_skill": [
-                0.7717158890822995,
-                0.8405374518888638
+                0.7717441960669379,
+                0.8409757856227642
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                1.1259299095924342,
-                1.7939952809127877
+                1.1284665096756672,
+                1.7967008729904306
               ]
             },
             "runin_shrunk": {
-              "brier_skill_summed_losses": 0.41363079341047804,
-              "brier_skill_person_mean_difference": 0.07567672029387881,
+              "brier_skill_summed_losses": 0.4145200268025204,
+              "brier_skill_person_mean_difference": 0.07569469958615359,
               "paired_person_boot_ci_skill": [
-                0.3634059340938543,
-                0.46694037865420074
+                0.3635332901756994,
+                0.4685164058153239
               ],
               "paired_person_boot_ci_difference": [
-                0.0655066475116799,
-                0.08634249145200414
+                0.06562272446699242,
+                0.0865912027080197
               ],
-              "log_loss_skill_summed_losses": 0.37188654924232123,
-              "log_loss_skill_person_mean_difference": 0.20378396500508394,
+              "log_loss_skill_summed_losses": 0.373378734542824,
+              "log_loss_skill_person_mean_difference": 0.20434411605725064,
               "paired_person_boot_ci_log_loss_skill": [
-                0.3252646106744437,
-                0.41844267567590987
+                0.32673150294779424,
+                0.4208632902190224
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.179899198917857,
-                0.22980993940019437
+                0.1797856236553267,
+                0.23109399937183717
               ]
             },
             "updating_rate": {
-              "brier_skill_summed_losses": 0.14164843618038314,
-              "brier_skill_person_mean_difference": 0.018134102081781275,
+              "brier_skill_summed_losses": 0.1566391117434297,
+              "brier_skill_person_mean_difference": 0.01953106910051289,
               "paired_person_boot_ci_skill": [
-                0.08466857066849572,
-                0.19706028244153162
+                0.10264412451939671,
+                0.21077434122217234
               ],
               "paired_person_boot_ci_difference": [
-                0.010205289726158253,
-                0.025913613834199652
+                0.011746207212849144,
+                0.027866607449331324
               ],
-              "log_loss_skill_summed_losses": 0.36603375227705803,
-              "log_loss_skill_person_mean_difference": 0.20001721346740223,
+              "log_loss_skill_summed_losses": 0.43596509460793864,
+              "log_loss_skill_person_mean_difference": 0.2685834484593346,
               "paired_person_boot_ci_log_loss_skill": [
-                0.3105000942965649,
-                0.4158005911037635
+                0.3879889697541466,
+                0.478390245720707
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.15042297726956022,
-                0.24442966985785863
+                0.21607327577350902,
+                0.31826630708372583
               ]
             },
             "recent_window_rate": {
-              "brier_skill_summed_losses": 0.1435710609127685,
-              "brier_skill_person_mean_difference": 0.01840755771358318,
+              "brier_skill_summed_losses": 0.14486984195718478,
+              "brier_skill_person_mean_difference": 0.018425537005857966,
               "paired_person_boot_ci_skill": [
-                0.09983331575008965,
-                0.1873302648758777
+                0.10031138912279382,
+                0.19062669855677702
               ],
               "paired_person_boot_ci_difference": [
-                0.011614085066103702,
-                0.025261274344029798
+                0.011637438067801795,
+                0.025433951103017403
               ],
-              "log_loss_skill_summed_losses": 0.6613668609206933,
-              "log_loss_skill_person_mean_difference": 0.6832905029858206,
+              "log_loss_skill_summed_losses": 0.6621713388247848,
+              "log_loss_skill_person_mean_difference": 0.6838506540379873,
               "paired_person_boot_ci_log_loss_skill": [
-                0.6351973228008366,
-                0.6844926917217922
+                0.635615679495247,
+                0.6849774600740741
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.570965533776525,
-                0.79793951884915
+                0.5716445106954794,
+                0.7996136985540001
               ]
             },
             "persistence": {
-              "brier_skill_summed_losses": 0.360282970650213,
-              "brier_skill_person_mean_difference": 0.06087397480456872,
+              "brier_skill_summed_losses": 0.3612531064239939,
+              "brier_skill_person_mean_difference": 0.060891954096843504,
               "paired_person_boot_ci_skill": [
-                0.32776831427219627,
-                0.39254091358686666
+                0.32904506073452516,
+                0.3943876312365213
               ],
               "paired_person_boot_ci_difference": [
-                0.05281511744011478,
-                0.06931488433789758
+                0.05260685453486698,
+                0.06945896406208703
               ],
-              "log_loss_skill_summed_losses": 0.7920840308993293,
-              "log_loss_skill_person_mean_difference": 1.2595384056262446,
+              "log_loss_skill_summed_losses": 0.7925779689808297,
+              "log_loss_skill_person_mean_difference": 1.2600985566784113,
               "paired_person_boot_ci_log_loss_skill": [
-                0.7761938189759692,
-                0.8051456784085967
+                0.7773652687963107,
+                0.8055943987868849
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                1.0693815848057184,
-                1.4582467266917176
+                1.0700707171541082,
+                1.4609638696915126
               ]
             },
             "retrospective_rate": {
-              "brier_skill_summed_losses": -0.06391822570444305,
-              "brier_skill_person_mean_difference": -0.006444428941585388,
+              "brier_skill_summed_losses": -0.062304785567977694,
+              "brier_skill_person_mean_difference": -0.006426449649310607,
               "paired_person_boot_ci_skill": [
-                -0.13401414666401018,
-                0.001751416584756391
+                -0.1310607004203292,
+                0.0031944090204538227
               ],
               "paired_person_boot_ci_difference": [
-                -0.013557017528946391,
-                0.000484649462545091
+                -0.013363381332101743,
+                0.00045268245785864687
               ],
-              "log_loss_skill_summed_losses": -0.13319716270792448,
-              "log_loss_skill_person_mean_difference": -0.04033358532609874,
+              "log_loss_skill_summed_losses": -0.13050506919086247,
+              "log_loss_skill_person_mean_difference": -0.03977343427393202,
               "paired_person_boot_ci_log_loss_skill": [
-                -0.20099012843017505,
-                -0.07056036785819861
+                -0.19425860079375168,
+                -0.07037444979056355
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                -0.05863493144730233,
-                -0.02188289986138643
+                -0.05775222087570323,
+                -0.021290185167860593
               ]
             }
           }
@@ -2095,165 +2095,165 @@
         "logistic_regression": {
           "slopes": {
             "day_weighted": {
-              "pooled_intercept": -0.0027160772326820246,
-              "pooled_slope": 1.0836350289511807,
-              "between_intercept": 0.053157535833798335,
-              "between_slope": 1.1786535994091085,
-              "within_intercept": 0.053157535833798335,
-              "within_slope": 0.7126008053773109
+              "pooled_intercept": -0.007400876133586768,
+              "pooled_slope": 1.0816209332643705,
+              "between_intercept": 0.04482996154263618,
+              "between_slope": 1.1719469639037863,
+              "within_intercept": 0.04482996154263618,
+              "within_slope": 0.715347809935907
             },
             "equal_person_weighted": {
-              "pooled_intercept": 0.03193761000607412,
-              "pooled_slope": 1.0946314533269748,
-              "between_intercept": 0.07471750499205766,
-              "between_slope": 1.1920084218344484,
-              "within_intercept": 0.07471750499205766,
-              "within_slope": 0.7136392262070438
+              "pooled_intercept": 0.02076800668390009,
+              "pooled_slope": 1.0912176894386136,
+              "between_intercept": 0.059999933728333794,
+              "between_slope": 1.1841506498032017,
+              "within_intercept": 0.059999933728333794,
+              "within_slope": 0.7152674000046386
             }
           },
           "bootstrap_ci": {
             "day_weighted": {
               "pooled_intercept": [
-                -0.11448434470253097,
-                0.10474475963147101
+                -0.12267899859735143,
+                0.09463702460680097
               ],
               "pooled_slope": [
-                1.0119606649146047,
-                1.1739789541855292
+                1.013952192480978,
+                1.1662420572693126
               ],
               "between_intercept": [
-                -0.07322542778700342,
-                0.17868072319132042
+                -0.08271827193465472,
+                0.16157248979344938
               ],
               "between_slope": [
-                1.101872177642587,
-                1.2833818126003784
+                1.0970326159936805,
+                1.2648590402306072
               ],
               "within_intercept": [
-                -0.07322542778700342,
-                0.17868072319132042
+                -0.08271827193465472,
+                0.16157248979344938
               ],
               "within_slope": [
-                0.5790226681534422,
-                0.8607048387782844
+                0.5820425520573229,
+                0.8623714173118424
               ]
             },
             "equal_person_weighted": {
               "pooled_intercept": [
-                -0.09287752983654891,
-                0.13759023112326194
+                -0.09776107407744873,
+                0.12257213055078836
               ],
               "pooled_slope": [
-                1.022435934006935,
-                1.1869743905872545
+                1.0226540505470176,
+                1.1773239613052346
               ],
               "between_intercept": [
-                -0.05126618815603182,
-                0.19357906619382945
+                -0.07725555854566256,
+                0.1696619454756984
               ],
               "between_slope": [
-                1.114054573160444,
-                1.2963166027933473
+                1.1101129342697187,
+                1.2759170704737162
               ],
               "within_intercept": [
-                -0.05126618815603182,
-                0.19357906619382945
+                -0.07725555854566256,
+                0.1696619454756984
               ],
               "within_slope": [
-                0.57311825657923,
-                0.8657447997575355
+                0.5792453859395306,
+                0.8676585643478063
               ]
             }
           },
-          "between_forecast_logit_variance_share": 0.8099448340622625,
-          "within_forecast_logit_variance_share": 0.19005516593773752
+          "between_forecast_logit_variance_share": 0.8132111164963884,
+          "within_forecast_logit_variance_share": 0.18678888350361156
         },
         "gradient_boosting": {
           "slopes": {
             "day_weighted": {
-              "pooled_intercept": -0.008481922363141374,
-              "pooled_slope": 1.0687317938276064,
-              "between_intercept": 0.11338021049600612,
-              "between_slope": 1.1944702500776778,
-              "within_intercept": 0.11338021049600612,
-              "within_slope": 0.7471684699126812
+              "pooled_intercept": 0.013797491517805353,
+              "pooled_slope": 1.0809419810194858,
+              "between_intercept": 0.1396104052448067,
+              "between_slope": 1.2096141659951292,
+              "within_intercept": 0.1396104052448067,
+              "within_slope": 0.7571495709798018
             },
             "equal_person_weighted": {
-              "pooled_intercept": 0.023776046670895012,
-              "pooled_slope": 1.079805457058322,
-              "between_intercept": 0.13366955543428152,
-              "between_slope": 1.2057146370626528,
-              "within_intercept": 0.13366955543428152,
-              "within_slope": 0.7557815113765256
+              "pooled_intercept": 0.04174205669416879,
+              "pooled_slope": 1.0909390169422997,
+              "between_intercept": 0.15450154567768107,
+              "between_slope": 1.2184168822142845,
+              "within_intercept": 0.15450154567768107,
+              "within_slope": 0.7686504815765589
             }
           },
           "bootstrap_ci": {
             "day_weighted": {
               "pooled_intercept": [
-                -0.12465499463819503,
-                0.10013491547618607
+                -0.10265345404282512,
+                0.11843016694749109
               ],
               "pooled_slope": [
-                1.0092982032920492,
-                1.1340605172897298
+                1.0181123755478783,
+                1.1505179733119868
               ],
               "between_intercept": [
-                -0.011400228962493915,
-                0.24935325048888654
+                0.010933776967543503,
+                0.280059094021188
               ],
               "between_slope": [
-                1.1316058661451085,
-                1.2812074519933818
+                1.1407981243800018,
+                1.2950467813846223
               ],
               "within_intercept": [
-                -0.011400228962493915,
-                0.24935325048888654
+                0.010933776967543503,
+                0.280059094021188
               ],
               "within_slope": [
-                0.6275099667057278,
-                0.8648653690595534
+                0.6400965463459695,
+                0.8805431823618337
               ]
             },
             "equal_person_weighted": {
               "pooled_intercept": [
-                -0.10223299368877573,
-                0.1345173290298116
+                -0.0834844732503878,
+                0.15573945521685317
               ],
               "pooled_slope": [
-                1.0154232008860558,
-                1.1454672757395021
+                1.0250388090206373,
+                1.162245406741939
               ],
               "between_intercept": [
-                -0.0010481696610484237,
-                0.2651385741992616
+                0.02128186964444767,
+                0.29126543152664497
               ],
               "between_slope": [
-                1.140207958345981,
-                1.2883188430462813
+                1.1472959511956664,
+                1.3052401227665356
               ],
               "within_intercept": [
-                -0.0010481696610484237,
-                0.2651385741992616
+                0.02128186964444767,
+                0.29126543152664497
               ],
               "within_slope": [
-                0.6369698716932247,
-                0.8754058878980496
+                0.6483110863175475,
+                0.8870245089566671
               ]
             }
           },
-          "between_forecast_logit_variance_share": 0.832211885659525,
-          "within_forecast_logit_variance_share": 0.16778811434047503
+          "between_forecast_logit_variance_share": 0.8366030698173891,
+          "within_forecast_logit_variance_share": 0.16339693018261092
         }
       },
       "8_history_bias_test": {
         "updating_rate": {
-          "observed_within_auc": 0.43647609856889114,
+          "observed_within_auc": 0.44390745992796954,
           "eligible_people": 154,
           "permutation_reference_mean": 0.29579490782026036,
-          "observed_minus_reference": 0.1406811907486308,
+          "observed_minus_reference": 0.14811255210770918,
           "observed_minus_reference_patient_boot_ci": [
-            0.10333166099518987,
-            0.17827840239178308
+            0.11025889490210947,
+            0.1866506304382601
           ],
           "permutation_reference_sd": 0.014267996762830148
         },
@@ -2282,13 +2282,13 @@
       },
       "8_history_bias_all_model_free": {
         "updating_rate": {
-          "observed_within_auc": 0.4146399680821922,
+          "observed_within_auc": 0.41485206643805606,
           "eligible_people": 827,
           "permutation_reference_mean": 0.29926167794935055,
-          "observed_minus_reference": 0.11537829013284168,
+          "observed_minus_reference": 0.11559038848870545,
           "observed_minus_reference_patient_boot_ci": [
-            0.10020221200157349,
-            0.13045038898803427
+            0.10024283694339231,
+            0.1304597707428204
           ],
           "permutation_reference_sd": 0.006135102447115018
         },
@@ -2317,10 +2317,10 @@
       },
       "9_average_precision": {
         "gradient_boosting": {
-          "mean_average_precision": 0.6946965587322934,
+          "mean_average_precision": 0.6824602517889942,
           "mean_prevalence": 0.4723425144853956,
-          "mean_tie_matched_expectation": 0.5518854858099032,
-          "mean_difference_from_tie_expectation": 0.14281107292239031,
+          "mean_tie_matched_expectation": 0.5514769097719577,
+          "mean_difference_from_tie_expectation": 0.13098334201703649,
           "eligible_people": 168
         },
         "runin_rate": {
@@ -2731,7 +2731,7 @@
           "mean_event_rate": 0.5525133954842506,
           "observed_patient_rate_sd": 0.24081399174597473,
           "sampling_corrected_patient_rate_sd": 0.22511679600723977,
-          "auc_observed_sd": 0.754500841519152,
+          "auc_observed_sd": 0.7545008415191519,
           "auc_sampling_corrected_sd": 0.7401566039043119
         }
       },
@@ -3299,7 +3299,7 @@
               ],
               "paired_person_boot_ci_log_loss_difference": [
                 -0.07699628054493196,
-                -0.010246152215490243
+                -0.010246152215490242
               ]
             },
             "runin_rate": {
@@ -3343,7 +3343,7 @@
               ],
               "paired_person_boot_ci_log_loss_difference": [
                 -0.12114847357396134,
-                -0.060861326537243646
+                -0.06086132653724364
               ]
             },
             "updating_rate": {
@@ -3427,7 +3427,7 @@
               "log_loss_skill_person_mean_difference": -0.19453810831886942,
               "paired_person_boot_ci_log_loss_skill": [
                 -0.4055828774311069,
-                -0.3074631086501867
+                -0.3074631086501865
               ],
               "paired_person_boot_ci_log_loss_difference": [
                 -0.22128681529593688,
@@ -3832,7 +3832,7 @@
               ],
               "paired_person_boot_ci_log_loss_difference": [
                 0.08884747050359063,
-                0.11759809182266373
+                0.11759809182266372
               ]
             },
             "updating_rate": {
@@ -3936,17 +3936,17 @@
               "brier_skill_summed_losses": 0.36112220122363814,
               "brier_skill_person_mean_difference": 0.08717883124768167,
               "paired_person_boot_ci_skill": [
-                0.32804380886193196,
+                0.32804380886193185,
                 0.3966196806436401
               ],
               "paired_person_boot_ci_difference": [
                 0.07914077662292474,
-                0.09569991799291404
+                0.09569991799291405
               ],
               "log_loss_skill_summed_losses": 0.29422530557926097,
-              "log_loss_skill_person_mean_difference": 0.19630426301721352,
+              "log_loss_skill_person_mean_difference": 0.19630426301721354,
               "paired_person_boot_ci_log_loss_skill": [
-                0.2632610969763618,
+                0.2632610969763616,
                 0.32807007657937975
               ],
               "paired_person_boot_ci_log_loss_difference": [
@@ -3956,7 +3956,7 @@
             },
             "runin_rate": {
               "brier_skill_summed_losses": 0.3899451344999587,
-              "brier_skill_person_mean_difference": 0.09447383744582498,
+              "brier_skill_person_mean_difference": 0.09447383744582499,
               "paired_person_boot_ci_skill": [
                 0.3532523176862643,
                 0.42405438066434237
@@ -3969,7 +3969,7 @@
               "log_loss_skill_person_mean_difference": 1.2497929315380274,
               "paired_person_boot_ci_log_loss_skill": [
                 0.6849327487037836,
-                0.7665789323684457
+                0.7665789323684458
               ],
               "paired_person_boot_ci_log_loss_difference": [
                 1.001890776783819,
@@ -3978,10 +3978,10 @@
             },
             "runin_shrunk": {
               "brier_skill_summed_losses": 0.29767296524217035,
-              "brier_skill_person_mean_difference": 0.06402139928810467,
+              "brier_skill_person_mean_difference": 0.06402139928810466,
               "paired_person_boot_ci_skill": [
                 0.26888392119205684,
-                0.326944137585244
+                0.3269441375852441
               ],
               "paired_person_boot_ci_difference": [
                 0.05761301469232438,
@@ -3990,30 +3990,30 @@
               "log_loss_skill_summed_losses": 0.24335432296763493,
               "log_loss_skill_person_mean_difference": 0.1483702432021738,
               "paired_person_boot_ci_log_loss_skill": [
-                0.21693812249396846,
+                0.21693812249396854,
                 0.27083841800695707
               ],
               "paired_person_boot_ci_log_loss_difference": [
                 0.13233249130005426,
-                0.16412614380000462
+                0.16412614380000468
               ]
             },
             "updating_rate": {
               "brier_skill_summed_losses": 0.24036885631954075,
-              "brier_skill_person_mean_difference": 0.04635761518522282,
+              "brier_skill_person_mean_difference": 0.04635761518522281,
               "paired_person_boot_ci_skill": [
                 0.2143747457808222,
-                0.2635366304004913
+                0.2635366304004912
               ],
               "paired_person_boot_ci_difference": [
-                0.04016594156958299,
-                0.05205895848134695
+                0.04016594156958298,
+                0.052058958481346944
               ],
               "log_loss_skill_summed_losses": 0.33727449314492597,
-              "log_loss_skill_person_mean_difference": 0.23961632537230998,
+              "log_loss_skill_person_mean_difference": 0.23961632537230995,
               "paired_person_boot_ci_log_loss_skill": [
                 0.30655763962615773,
-                0.36837505822587313
+                0.36837505822587324
               ],
               "paired_person_boot_ci_log_loss_difference": [
                 0.20920558901072575,
@@ -4022,13 +4022,13 @@
             },
             "recent_window_rate": {
               "brier_skill_summed_losses": 0.15419434349568384,
-              "brier_skill_person_mean_difference": 0.02845026129651088,
+              "brier_skill_person_mean_difference": 0.028450261296510876,
               "paired_person_boot_ci_skill": [
                 0.1406892238068711,
                 0.16595081075947454
               ],
               "paired_person_boot_ci_difference": [
-                0.025281899885882485,
+                0.025281899885882482,
                 0.031764151562776
               ],
               "log_loss_skill_summed_losses": 0.637862727939793,
@@ -4046,12 +4046,12 @@
               "brier_skill_summed_losses": 0.4174274194547405,
               "brier_skill_person_mean_difference": 0.1158036216055165,
               "paired_person_boot_ci_skill": [
-                0.3973837200643677,
+                0.39738372006436756,
                 0.4338419231701304
               ],
               "paired_person_boot_ci_difference": [
-                0.10371444880016514,
-                0.1276886445673825
+                0.10371444880016513,
+                0.12768864456738246
               ],
               "log_loss_skill_summed_losses": 0.8704402683257524,
               "log_loss_skill_person_mean_difference": 3.3238549111749287,
@@ -4060,16 +4060,16 @@
                 0.8744932542686009
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                3.059494173145024,
-                3.5679273091268278
+                3.0594941731450236,
+                3.5679273091268273
               ]
             },
             "retrospective_rate": {
               "brier_skill_summed_losses": 0.1471096875025909,
-              "brier_skill_person_mean_difference": 0.023359478438170624,
+              "brier_skill_person_mean_difference": 0.02335947843817062,
               "paired_person_boot_ci_skill": [
-                0.11736857276372996,
-                0.17333501322580558
+                0.11736857276372975,
+                0.17333501322580547
               ],
               "paired_person_boot_ci_difference": [
                 0.01763838013555543,
@@ -4082,8 +4082,8 @@
                 0.12660076782983382
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.03043310543470754,
-                0.058561949063951256
+                0.030433105434707536,
+                0.05856194906395124
               ]
             }
           }
@@ -4107,7 +4107,7 @@
                 0.11290706921487184
               ],
               "log_loss_skill_summed_losses": 0.36496995711278823,
-              "log_loss_skill_person_mean_difference": 0.24776483841787064,
+              "log_loss_skill_person_mean_difference": 0.24776483841787061,
               "paired_person_boot_ci_log_loss_skill": [
                 0.33685325501138674,
                 0.39301042954368864
@@ -4364,7 +4364,7 @@
                 0.6786725139645494
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.8148674289442355,
+                0.8148674289442354,
                 0.9493712459230089
               ]
             },
@@ -4405,7 +4405,7 @@
               "log_loss_skill_person_mean_difference": 0.08079519846268696,
               "paired_person_boot_ci_log_loss_skill": [
                 0.1248474691877706,
-                0.19029089967927895
+                0.19029089967927906
               ],
               "paired_person_boot_ci_log_loss_difference": [
                 0.06210301065046941,
@@ -4424,73 +4424,73 @@
         "logistic_regression": {
           "slopes": {
             "day_weighted": {
-              "pooled_intercept": -0.001604395603164058,
-              "pooled_slope": 1.0355307247387877,
-              "between_intercept": -0.04866192507072666,
-              "between_slope": 1.187247293062651,
-              "within_intercept": -0.04866192507072666,
-              "within_slope": 0.8926959803803345
+              "pooled_intercept": -0.001604395603164291,
+              "pooled_slope": 1.0355307247387966,
+              "between_intercept": -0.048661925070727134,
+              "between_slope": 1.1872472930626543,
+              "within_intercept": -0.048661925070727134,
+              "within_slope": 0.8926959803803386
             },
             "equal_person_weighted": {
-              "pooled_intercept": -0.0012505073730855632,
-              "pooled_slope": 1.0275437356210728,
-              "between_intercept": -0.04928767944502832,
-              "between_slope": 1.194591214428153,
-              "within_intercept": -0.04928767944502832,
-              "within_slope": 0.8595242147007282
+              "pooled_intercept": -0.001250507373085679,
+              "pooled_slope": 1.027543735621072,
+              "between_intercept": -0.049287679445029244,
+              "between_slope": 1.1945912144281543,
+              "within_intercept": -0.049287679445029244,
+              "within_slope": 0.8595242147007267
             }
           },
           "bootstrap_ci": {
             "day_weighted": {
               "pooled_intercept": [
-                -0.06254691514582696,
-                0.05105639788571767
+                -0.06254691514582698,
+                0.05105639788571753
               ],
               "pooled_slope": [
-                0.9794801421445571,
-                1.0934774122022748
+                0.9794801421445591,
+                1.0934774122022775
               ],
               "between_intercept": [
-                -0.09808481865363677,
-                0.0009485490193626458
+                -0.09808481865363639,
+                0.0009485490193622976
               ],
               "between_slope": [
                 1.1241415736265845,
-                1.2593542591375024
+                1.2593542591375022
               ],
               "within_intercept": [
-                -0.09808481865363677,
-                0.0009485490193626458
+                -0.09808481865363639,
+                0.0009485490193622976
               ],
               "within_slope": [
-                0.8177668470538151,
-                0.9624615828868421
+                0.8177668470538166,
+                0.9624615828868419
               ]
             },
             "equal_person_weighted": {
               "pooled_intercept": [
-                -0.05984195042967837,
-                0.054259442317199764
+                -0.05984195042967826,
+                0.05425944231719953
               ],
               "pooled_slope": [
-                0.969534436835205,
-                1.0881211807461542
+                0.9695344368352041,
+                1.0881211807461535
               ],
               "between_intercept": [
-                -0.1019987359281754,
-                0.0014400510066314648
+                -0.10199873592817535,
+                0.001440051006631496
               ],
               "between_slope": [
-                1.1269764312865667,
-                1.2661122516884913
+                1.1269764312865644,
+                1.2661122516884906
               ],
               "within_intercept": [
-                -0.1019987359281754,
-                0.0014400510066314648
+                -0.10199873592817535,
+                0.001440051006631496
               ],
               "within_slope": [
-                0.7840226964827032,
-                0.9322658337775092
+                0.7840226964827056,
+                0.9322658337775096
               ]
             }
           },
@@ -4500,73 +4500,73 @@
         "gradient_boosting": {
           "slopes": {
             "day_weighted": {
-              "pooled_intercept": 0.03611838510996526,
-              "pooled_slope": 1.0591546540536945,
-              "between_intercept": -0.07544744171463444,
-              "between_slope": 1.290461534388252,
-              "within_intercept": -0.07544744171463444,
-              "within_slope": 0.9226173833983102
+              "pooled_intercept": 0.03611838510996592,
+              "pooled_slope": 1.0591546540536967,
+              "between_intercept": -0.07544744171463279,
+              "between_slope": 1.290461534388251,
+              "within_intercept": -0.07544744171463279,
+              "within_slope": 0.9226173833983079
             },
             "equal_person_weighted": {
-              "pooled_intercept": 0.013026492341185353,
-              "pooled_slope": 1.0421309959929033,
-              "between_intercept": -0.08300627805685452,
-              "between_slope": 1.2435687276623413,
-              "within_intercept": -0.08300627805685452,
-              "within_slope": 0.9052453411663173
+              "pooled_intercept": 0.01302649234118557,
+              "pooled_slope": 1.0421309959929037,
+              "between_intercept": -0.08300627805685408,
+              "between_slope": 1.2435687276623382,
+              "within_intercept": -0.08300627805685408,
+              "within_slope": 0.9052453411663137
             }
           },
           "bootstrap_ci": {
             "day_weighted": {
               "pooled_intercept": [
-                -0.0386753301300439,
-                0.1260477005155943
+                -0.03867533013004371,
+                0.1260477005155941
               ],
               "pooled_slope": [
-                1.002288111745102,
-                1.1174153784120306
+                1.0022881117451026,
+                1.1174153784120298
               ],
               "between_intercept": [
-                -0.1387016347049288,
-                -0.00041047271669073166
+                -0.13870163470492847,
+                -0.00041047271668839206
               ],
               "between_slope": [
-                1.1955291058898945,
-                1.3972121198761882
+                1.1955291058898938,
+                1.397212119876192
               ],
               "within_intercept": [
-                -0.1387016347049288,
-                -0.00041047271669073166
+                -0.13870163470492847,
+                -0.00041047271668839206
               ],
               "within_slope": [
-                0.8666028006741556,
-                0.9842523207379177
+                0.8666028006741562,
+                0.984252320737917
               ]
             },
             "equal_person_weighted": {
               "pooled_intercept": [
-                -0.05368396730895835,
-                0.08309071859960745
+                -0.053683967308957824,
+                0.08309071859960752
               ],
               "pooled_slope": [
-                0.986166958085428,
-                1.099966114066059
+                0.9861669580854286,
+                1.099966114066061
               ],
               "between_intercept": [
-                -0.14352323841748532,
-                -0.015841453424802806
+                -0.1435232384174857,
+                -0.01584145342480421
               ],
               "between_slope": [
-                1.1581969559497096,
-                1.3339237490820233
+                1.1581969559497125,
+                1.333923749082024
               ],
               "within_intercept": [
-                -0.14352323841748532,
-                -0.015841453424802806
+                -0.1435232384174857,
+                -0.01584145342480421
               ],
               "within_slope": [
-                0.848879324697965,
-                0.9701168016567223
+                0.8488793246979653,
+                0.9701168016567231
               ]
             }
           },
@@ -5060,8 +5060,8 @@
           "mean_event_rate": 0.16963252833600972,
           "observed_patient_rate_sd": 0.19606607671750503,
           "sampling_corrected_patient_rate_sd": 0.1944282586264378,
-          "auc_observed_sd": 0.8375051303289602,
-          "auc_sampling_corrected_sd": 0.8354761803602108
+          "auc_observed_sd": 0.8375051303289603,
+          "auc_sampling_corrected_sd": 0.8354761803602109
         }
       },
       "5_threshold": {
@@ -5116,7 +5116,7 @@
         "training_cohort_rate": {
           "brier_pooled": 0.13930254844446727,
           "brier_person_mean": 0.14388350213942044,
-          "log_loss_pooled": 0.45156012367243925,
+          "log_loss_pooled": 0.4515601236724392,
           "log_loss_person_mean": 0.46262195924962735,
           "n_people": 380,
           "skills": {
@@ -5175,15 +5175,15 @@
                 0.2964242476444518,
                 0.345126556679186
               ],
-              "log_loss_skill_summed_losses": 0.6220143408134142,
+              "log_loss_skill_summed_losses": 0.6220143408134143,
               "log_loss_skill_person_mean_difference": 0.7220793591939992,
               "paired_person_boot_ci_log_loss_skill": [
                 0.5830643643224391,
                 0.6557780861885203
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.6623550714890812,
-                0.7773394665805035
+                0.6623550714890815,
+                0.7773394665805036
               ]
             },
             "updating_rate": {
@@ -5197,15 +5197,15 @@
                 0.0602992965729431,
                 0.08842191552882686
               ],
-              "log_loss_skill_summed_losses": 0.27262782981764677,
+              "log_loss_skill_summed_losses": 0.2726278298176469,
               "log_loss_skill_person_mean_difference": 0.2456789574218147,
               "paired_person_boot_ci_log_loss_skill": [
-                0.21909594312095743,
+                0.21909594312095745,
                 0.32372234998512317
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.2077097114195186,
-                0.28382027612809946
+                0.20770971141951863,
+                0.2838202761280995
               ]
             },
             "recent_window_rate": {
@@ -5219,15 +5219,15 @@
                 -0.0208274356824722,
                 0.003284434889907977
               ],
-              "log_loss_skill_summed_losses": -0.016237247145353573,
-              "log_loss_skill_person_mean_difference": 0.06519284834012513,
+              "log_loss_skill_summed_losses": -0.01623724714535335,
+              "log_loss_skill_person_mean_difference": 0.06519284834012518,
               "paired_person_boot_ci_log_loss_skill": [
                 -0.09396514760632024,
-                0.05313708927470177
+                0.05313708927470188
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.03040457939947369,
-                0.10132659396159449
+                0.03040457939947371,
+                0.10132659396159453
               ]
             },
             "persistence": {
@@ -5244,7 +5244,7 @@
               "log_loss_skill_summed_losses": 0.6498241222614837,
               "log_loss_skill_person_mean_difference": 0.9096339191973312,
               "paired_person_boot_ci_log_loss_skill": [
-                0.6014734577300948,
+                0.6014734577300949,
                 0.6870484737046995
               ],
               "paired_person_boot_ci_log_loss_difference": [
@@ -5264,14 +5264,14 @@
                 -0.02920551015301916
               ],
               "log_loss_skill_summed_losses": -0.37972780039979503,
-              "log_loss_skill_person_mean_difference": -0.12038383258289377,
+              "log_loss_skill_person_mean_difference": -0.12038383258289374,
               "paired_person_boot_ci_log_loss_skill": [
-                -0.4650609545306222,
+                -0.46506095453062196,
                 -0.3075773414812305
               ],
               "paired_person_boot_ci_log_loss_difference": [
                 -0.14475187261162195,
-                -0.09928887364080946
+                -0.09928887364080943
               ]
             }
           }
@@ -5294,10 +5294,10 @@
                 -0.6340048309334705,
                 -0.5646165832560245
               ],
-              "log_loss_skill_summed_losses": -17.793182885429125,
+              "log_loss_skill_summed_losses": -17.79318288542913,
               "log_loss_skill_person_mean_difference": -7.9235893425030195,
               "paired_person_boot_ci_log_loss_skill": [
-                -20.022707882785646,
+                -20.02270788278565,
                 -15.727367822801169
               ],
               "paired_person_boot_ci_log_loss_difference": [
@@ -5457,10 +5457,10 @@
                 -0.34521220988671536,
                 -0.298097902106615
               ],
-              "log_loss_skill_summed_losses": -1.6456030161355097,
+              "log_loss_skill_summed_losses": -1.6456030161355102,
               "log_loss_skill_person_mean_difference": -0.7220793591939992,
               "paired_person_boot_ci_log_loss_skill": [
-                -1.9032537345399396,
+                -1.90325373453994,
                 -1.4211636359191155
               ],
               "paired_person_boot_ci_log_loss_difference": [
@@ -5623,11 +5623,11 @@
               "log_loss_skill_summed_losses": -0.3748120164527311,
               "log_loss_skill_person_mean_difference": -0.2456789574218147,
               "paired_person_boot_ci_log_loss_skill": [
-                -0.4738906044406337,
+                -0.47389060444063386,
                 -0.2811737311056151
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                -0.2797306453828276,
+                -0.27973064538282766,
                 -0.2087976098573494
               ]
             },
@@ -5753,9 +5753,9 @@
                 -0.10491299530656903
               ],
               "log_loss_skill_summed_losses": -0.8968663594235335,
-              "log_loss_skill_person_mean_difference": -0.3660627900047085,
+              "log_loss_skill_person_mean_difference": -0.36606279000470837,
               "paired_person_boot_ci_log_loss_skill": [
-                -0.9941996924285785,
+                -0.994199692428579,
                 -0.8080844884346984
               ],
               "paired_person_boot_ci_log_loss_difference": [
@@ -5783,15 +5783,15 @@
                 -0.002666930399791713,
                 0.02048170401258403
               ],
-              "log_loss_skill_summed_losses": 0.015977811471646564,
-              "log_loss_skill_person_mean_difference": -0.06519284834012513,
+              "log_loss_skill_summed_losses": 0.015977811471646453,
+              "log_loss_skill_person_mean_difference": -0.06519284834012518,
               "paired_person_boot_ci_log_loss_skill": [
                 -0.05094469574585047,
-                0.08060899658006024
+                0.08060899658006013
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                -0.09773891376534243,
-                -0.030227367521151443
+                -0.09773891376534244,
+                -0.03022736752115146
               ]
             },
             "runin_rate": {
@@ -5922,7 +5922,7 @@
                 -0.30401492535723207
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                -0.20999864527313034,
+                -0.2099986452731304,
                 -0.16204026662748947
               ]
             }
@@ -5946,7 +5946,7 @@
                 0.03137980116102702,
                 0.05923623870875876
               ],
-              "log_loss_skill_summed_losses": -1.8557078416084414,
+              "log_loss_skill_summed_losses": -1.8557078416084418,
               "log_loss_skill_person_mean_difference": -0.9096339191973312,
               "paired_person_boot_ci_log_loss_skill": [
                 -2.2304334212090837,
@@ -6109,14 +6109,14 @@
                 0.029416298853337457,
                 0.047229799848144086
               ],
-              "log_loss_skill_summed_losses": 0.27521935869507286,
-              "log_loss_skill_person_mean_difference": 0.12038383258289377,
+              "log_loss_skill_summed_losses": 0.27521935869507275,
+              "log_loss_skill_person_mean_difference": 0.12038383258289374,
               "paired_person_boot_ci_log_loss_skill": [
-                0.233130024444342,
+                0.23313002444434178,
                 0.31606906627027226
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.09968963005107573,
+                0.09968963005107569,
                 0.1431698182058467
               ]
             },
@@ -6176,14 +6176,14 @@
                 0.12119946491587719
               ],
               "log_loss_skill_summed_losses": 0.4728147320278775,
-              "log_loss_skill_person_mean_difference": 0.3660627900047085,
+              "log_loss_skill_person_mean_difference": 0.36606279000470837,
               "paired_person_boot_ci_log_loss_skill": [
                 0.4444882718773262,
-                0.4991554016710798
+                0.4991554016710797
               ],
               "paired_person_boot_ci_log_loss_difference": [
                 0.3384471455818548,
-                0.39431776964756604
+                0.394317769647566
               ]
             },
             "recent_window_rate": {
@@ -6265,7 +6265,7 @@
               "brier_skill_summed_losses": 0.4988293379579405,
               "brier_skill_person_mean_difference": 0.06837564433240517,
               "paired_person_boot_ci_skill": [
-                0.44122642333803397,
+                0.4412264233380339,
                 0.5508465756411325
               ],
               "paired_person_boot_ci_difference": [
@@ -6292,7 +6292,7 @@
               ],
               "paired_person_boot_ci_difference": [
                 0.6420724541459921,
-                0.6927749136368052
+                0.6927749136368053
               ],
               "log_loss_skill_summed_losses": 0.9704498877299217,
               "log_loss_skill_person_mean_difference": 8.117077293335813,
@@ -6358,22 +6358,22 @@
               ],
               "paired_person_boot_ci_difference": [
                 0.053440347214501534,
-                0.06624160531816961
+                0.06624160531816962
               ],
               "log_loss_skill_summed_losses": 0.43564213220935666,
-              "log_loss_skill_person_mean_difference": 0.25868079917291786,
+              "log_loss_skill_person_mean_difference": 0.2586807991729179,
               "paired_person_boot_ci_log_loss_skill": [
                 0.4018500435534723,
                 0.46804715981015244
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.2339013801094544,
+                0.23390138010945438,
                 0.28390290592279926
               ]
             },
             "persistence": {
               "brier_skill_summed_losses": 0.2520312436263684,
-              "brier_skill_person_mean_difference": 0.023819070975062827,
+              "brier_skill_person_mean_difference": 0.023819070975062834,
               "paired_person_boot_ci_skill": [
                 0.23280831165579785,
                 0.26735681352986135
@@ -6389,26 +6389,26 @@
                 0.8124331197002894
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.9839151334989269,
-                1.2384642791738407
+                0.983915133498927,
+                1.238464279173841
               ]
             },
             "retrospective_rate": {
               "brier_skill_summed_losses": 0.306676015323054,
-              "brier_skill_person_mean_difference": 0.03052281962461268,
+              "brier_skill_person_mean_difference": 0.030522819624612688,
               "paired_person_boot_ci_skill": [
                 0.2502631397426192,
-                0.3559909284703492
+                0.3559909284703493
               ],
               "paired_person_boot_ci_difference": [
-                0.02472177822525331,
-                0.03548328583714439
+                0.024721778225253316,
+                0.035483285837144385
               ],
               "log_loss_skill_summed_losses": 0.23378104694313562,
               "log_loss_skill_person_mean_difference": 0.07310411824989896,
               "paired_person_boot_ci_log_loss_skill": [
                 0.18595934337938397,
-                0.2762450298836066
+                0.2762450298836065
               ],
               "paired_person_boot_ci_log_loss_difference": [
                 0.05742277394735991,
@@ -6438,12 +6438,12 @@
               "log_loss_skill_summed_losses": 0.5068601599097105,
               "log_loss_skill_person_mean_difference": 0.22217741527363302,
               "paired_person_boot_ci_log_loss_skill": [
-                0.4649791405866129,
+                0.464979140586613,
                 0.5492814472474821
               ],
               "paired_person_boot_ci_log_loss_difference": [
                 0.1955640628862227,
-                0.2511902043933029
+                0.25119020439330286
               ]
             },
             "runin_rate": {
@@ -6509,7 +6509,7 @@
               ],
               "paired_person_boot_ci_log_loss_difference": [
                 0.44019062782216173,
-                0.49876273851950886
+                0.49876273851950875
               ]
             },
             "recent_window_rate": {
@@ -6574,7 +6574,7 @@
                 0.36113036876620086
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.08855643088235332,
+                0.08855643088235331,
                 0.11665396544158738
               ]
             }
@@ -6598,14 +6598,14 @@
                 0.061964587333554075,
                 0.08541202821410418
               ],
-              "log_loss_skill_summed_losses": 0.49529097765218655,
+              "log_loss_skill_summed_losses": 0.49529097765218644,
               "log_loss_skill_person_mean_difference": 0.21629129680392822,
               "paired_person_boot_ci_log_loss_skill": [
                 0.45041697895164945,
                 0.5373985795906557
               ],
               "paired_person_boot_ci_log_loss_difference": [
-                0.19072638029108427,
+                0.19072638029108424,
                 0.24658158880645922
               ]
             },
@@ -6731,7 +6731,7 @@
                 0.04032122815247202
               ],
               "log_loss_skill_summed_losses": 0.3036389307541203,
-              "log_loss_skill_person_mean_difference": 0.09590746422103448,
+              "log_loss_skill_person_mean_difference": 0.09590746422103445,
               "paired_person_boot_ci_log_loss_skill": [
                 0.26233028617081355,
                 0.3437543664101763
@@ -6753,149 +6753,149 @@
         "logistic_regression": {
           "slopes": {
             "day_weighted": {
-              "pooled_intercept": -0.031754067210130896,
-              "pooled_slope": 0.9638238428328166,
-              "between_intercept": 0.872493098048164,
-              "between_slope": 1.3635459333341795,
-              "within_intercept": 0.872493098048164,
-              "within_slope": 0.8353124103151357
+              "pooled_intercept": -0.03175406721013445,
+              "pooled_slope": 0.9638238428328124,
+              "between_intercept": 0.8724930980482084,
+              "between_slope": 1.3635459333342037,
+              "within_intercept": 0.8724930980482084,
+              "within_slope": 0.8353124103151374
             },
             "equal_person_weighted": {
-              "pooled_intercept": -0.04424301671680646,
-              "pooled_slope": 0.9358301407115347,
-              "between_intercept": 0.8248186307806591,
-              "between_slope": 1.3316019463118367,
-              "within_intercept": 0.8248186307806591,
-              "within_slope": 0.8091686484544989
+              "pooled_intercept": -0.04424301671679452,
+              "pooled_slope": 0.9358301407115388,
+              "between_intercept": 0.8248186307806052,
+              "between_slope": 1.3316019463118116,
+              "within_intercept": 0.8248186307806052,
+              "within_slope": 0.8091686484544885
             }
           },
           "bootstrap_ci": {
             "day_weighted": {
               "pooled_intercept": [
-                -0.11866894067392697,
-                0.05099299148736596
+                -0.11866894067393373,
+                0.05099299148735634
               ],
               "pooled_slope": [
-                0.9170649096614982,
-                1.0124648780268264
+                0.9170649096614998,
+                1.0124648780268255
               ],
               "between_intercept": [
-                0.7957926901616116,
-                0.9795827504341686
+                0.7957926901614634,
+                0.9795827504340937
               ],
               "between_slope": [
-                1.3150535494702038,
-                1.4230947113807795
+                1.315053549470256,
+                1.4230947113808468
               ],
               "within_intercept": [
-                0.7957926901616116,
-                0.9795827504341686
+                0.7957926901614634,
+                0.9795827504340937
               ],
               "within_slope": [
-                0.7845151715173905,
-                0.8920861897740381
+                0.7845151715173997,
+                0.892086189774039
               ]
             },
             "equal_person_weighted": {
               "pooled_intercept": [
-                -0.13121784415277238,
-                0.03253503198661336
+                -0.1312178441527753,
+                0.03253503198660418
               ],
               "pooled_slope": [
-                0.8916196014294011,
-                0.9799390408737475
+                0.8916196014293993,
+                0.9799390408737507
               ],
               "between_intercept": [
-                0.7467337624461886,
-                0.9300059386540855
+                0.7467337624461887,
+                0.9300059386540032
               ],
               "between_slope": [
-                1.2860035226943085,
-                1.3879255530955306
+                1.2860035226943078,
+                1.3879255530955266
               ],
               "within_intercept": [
-                0.7467337624461886,
-                0.9300059386540855
+                0.7467337624461887,
+                0.9300059386540032
               ],
               "within_slope": [
-                0.7631016732444281,
-                0.8585942021106231
+                0.7631016732444228,
+                0.8585942021106099
               ]
             }
           },
-          "between_forecast_logit_variance_share": 0.38570732588570267,
-          "within_forecast_logit_variance_share": 0.6142926741142973
+          "between_forecast_logit_variance_share": 0.38570732588570283,
+          "within_forecast_logit_variance_share": 0.6142926741142971
         },
         "gradient_boosting": {
           "slopes": {
             "day_weighted": {
-              "pooled_intercept": 0.0012738254622981675,
-              "pooled_slope": 0.9880848358936701,
-              "between_intercept": 0.5066742125946001,
-              "between_slope": 1.216517275967375,
-              "within_intercept": 0.5066742125946001,
-              "within_slope": 0.9037895526123154
+              "pooled_intercept": 0.0012738254623272441,
+              "pooled_slope": 0.9880848358936916,
+              "between_intercept": 0.5066742125946454,
+              "between_slope": 1.2165172759673766,
+              "within_intercept": 0.5066742125946454,
+              "within_slope": 0.903789552612288
             },
             "equal_person_weighted": {
-              "pooled_intercept": 0.03227726675620739,
-              "pooled_slope": 0.9790275755746318,
-              "between_intercept": 0.5587176150893906,
-              "between_slope": 1.224971712179635,
-              "within_intercept": 0.5587176150893906,
-              "within_slope": 0.8904926894951993
+              "pooled_intercept": 0.032277266756212016,
+              "pooled_slope": 0.9790275755746326,
+              "between_intercept": 0.5587176150893153,
+              "between_slope": 1.2249717121795518,
+              "within_intercept": 0.5587176150893153,
+              "within_slope": 0.8904926894951346
             }
           },
           "bootstrap_ci": {
             "day_weighted": {
               "pooled_intercept": [
-                -0.06640190494453516,
-                0.07071013687682295
+                -0.06640190494448252,
+                0.07071013687680763
               ],
               "pooled_slope": [
-                0.9521438262379084,
-                1.0240280260539094
+                0.952143826237922,
+                1.0240280260538983
               ],
               "between_intercept": [
-                0.4506484864370287,
-                0.5817278451509784
+                0.45064848643726474,
+                0.5817278451511665
               ],
               "between_slope": [
-                1.1851945750870516,
-                1.255298259434253
+                1.1851945750871473,
+                1.255298259434291
               ],
               "within_intercept": [
-                0.4506484864370287,
-                0.5817278451509784
+                0.45064848643726474,
+                0.5817278451511665
               ],
               "within_slope": [
-                0.86538393735291,
-                0.941859550673525
+                0.8653839373529469,
+                0.9418595506735237
               ]
             },
             "equal_person_weighted": {
               "pooled_intercept": [
-                -0.03831011284962431,
-                0.09720296918333543
+                -0.038310112849661036,
+                0.0972029691833535
               ],
               "pooled_slope": [
-                0.9452511639445736,
-                1.0156388996936856
+                0.9452511639445695,
+                1.015638899693692
               ],
               "between_intercept": [
-                0.4931442987953637,
-                0.6347969452415066
+                0.49314429879527477,
+                0.6347969452415306
               ],
               "between_slope": [
-                1.1924440176900064,
-                1.264545223253126
+                1.1924440176899862,
+                1.264545223253141
               ],
               "within_intercept": [
-                0.4931442987953637,
-                0.6347969452415066
+                0.49314429879527477,
+                0.6347969452415306
               ],
               "within_slope": [
-                0.8537654504539502,
-                0.9303560389826286
+                0.8537654504539768,
+                0.9303560389826322
               ]
             }
           },

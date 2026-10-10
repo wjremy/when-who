@@ -19,67 +19,67 @@
       "test_patient_variation": {
         "gradient_boosting": {
           "n_eligible": 42,
-          "mean": 0.7586922688546608,
-          "sd": 0.10204281577365885,
-          "min": 0.4617117117117117,
+          "mean": 0.7593517215709531,
+          "sd": 0.1013739843154423,
+          "min": 0.47072072072072074,
           "deciles": {
-            "10": 0.6325735082846471,
-            "20": 0.6554818112881026,
-            "30": 0.7022565136582866,
-            "40": 0.7313962235763184,
-            "50": 0.7797238855622088,
-            "60": 0.7988920754716982,
-            "70": 0.8291198385708856,
-            "80": 0.8402371967654986,
-            "90": 0.8762487468771382
+            "10": 0.6323818836530701,
+            "20": 0.6460080300865735,
+            "30": 0.7108428277282086,
+            "40": 0.7369942883774903,
+            "50": 0.7752923639899687,
+            "60": 0.8046401762165609,
+            "70": 0.8257524148229993,
+            "80": 0.8434981000136026,
+            "90": 0.8673293852227862
           },
           "share_gt_0_5": 0.9761904761904762,
           "share_gt_0_6": 0.9761904761904762,
-          "share_gt_0_7": 0.6904761904761905,
-          "observed_variance": 0.010412736251016881,
-          "mean_hanley_mcneil_sampling_variance": 0.010449223901066368,
+          "share_gt_0_7": 0.7142857142857143,
+          "observed_variance": 0.010276684695987541,
+          "mean_hanley_mcneil_sampling_variance": 0.010606871822858027,
           "estimated_true_auc_sd": 0.0,
-          "observed_variance_sampling_share": 1.0035041365852249,
+          "observed_variance_sampling_share": 1.032129732169306,
           "observed_variance_sampling_share_capped_1": 1.0,
+          "brier_comparison": {
+            "n_patients": 45,
+            "share_model_lower": 0.7333333333333333,
+            "ci95": [
+              0.6,
+              0.844999999999997
+            ]
+          }
+        },
+        "logistic_regression": {
+          "n_eligible": 42,
+          "mean": 0.7513418508829076,
+          "sd": 0.1160686221474186,
+          "min": 0.3153153153153153,
+          "deciles": {
+            "10": 0.6175689321311048,
+            "20": 0.6572094572094572,
+            "30": 0.685580768082603,
+            "40": 0.7373684210526316,
+            "50": 0.7789232202262142,
+            "60": 0.8183038129345759,
+            "70": 0.8245794799260145,
+            "80": 0.8488075800851131,
+            "90": 0.8585409988306951
+          },
+          "share_gt_0_5": 0.9761904761904762,
+          "share_gt_0_6": 0.9285714285714286,
+          "share_gt_0_7": 0.6666666666666666,
+          "observed_variance": 0.01347192504720023,
+          "mean_hanley_mcneil_sampling_variance": 0.010351037072085647,
+          "estimated_true_auc_sd": 0.055864908261936526,
+          "observed_variance_sampling_share": 0.7683413495710344,
+          "observed_variance_sampling_share_capped_1": 0.7683413495710344,
           "brier_comparison": {
             "n_patients": 45,
             "share_model_lower": 0.7555555555555555,
             "ci95": [
               0.6222222222222222,
               0.8666666666666667
-            ]
-          }
-        },
-        "logistic_regression": {
-          "n_eligible": 42,
-          "mean": 0.750388338185026,
-          "sd": 0.11542402800226509,
-          "min": 0.32432432432432434,
-          "deciles": {
-            "10": 0.6170299675034786,
-            "20": 0.6541107582373958,
-            "30": 0.6734207097276004,
-            "40": 0.7399122807017544,
-            "50": 0.7750195608782435,
-            "60": 0.8118233618233618,
-            "70": 0.8272580884462072,
-            "80": 0.8502699943228578,
-            "90": 0.8594272400896266
-          },
-          "share_gt_0_5": 0.9761904761904762,
-          "share_gt_0_6": 0.9523809523809523,
-          "share_gt_0_7": 0.6666666666666666,
-          "observed_variance": 0.013322706240267676,
-          "mean_hanley_mcneil_sampling_variance": 0.01037477419564548,
-          "estimated_true_auc_sd": 0.05429486204625807,
-          "observed_variance_sampling_share": 0.778728736379992,
-          "observed_variance_sampling_share_capped_1": 0.778728736379992,
-          "brier_comparison": {
-            "n_patients": 45,
-            "share_model_lower": 0.7777777777777778,
-            "ci95": [
-              0.6444444444444445,
-              0.8888888888888888
             ]
           }
         }
@@ -89,441 +89,441 @@
           "2026": {
             "best": {
               "pooled_auc": {
-                "round": 120,
-                "value": 0.7875504912450071
+                "round": 130,
+                "value": 0.7865498090232437
               },
               "mean_within_patient_auc": {
-                "round": 500,
-                "value": 0.7055089544593549
+                "round": 430,
+                "value": 0.7100124047524855
               },
               "pooled_log_loss": {
-                "round": 140,
-                "value": 0.22030506986334858
+                "round": 170,
+                "value": 0.220666083650205
               },
               "pooled_brier": {
-                "round": 140,
-                "value": 0.059426865922520285
+                "round": 130,
+                "value": 0.059505375454021896
               },
               "patient_mean_brier": {
-                "round": 140,
-                "value": 0.06302447814224589
+                "round": 130,
+                "value": 0.06307618214010566
               }
             },
-            "round_after_which_pooled_auc_remaining_gain_lt_0_002": 90,
-            "round_after_which_within_auc_remaining_gain_lt_0_002": 110,
+            "round_after_which_pooled_auc_remaining_gain_lt_0_002": 100,
+            "round_after_which_within_auc_remaining_gain_lt_0_002": 210,
             "auc_at_requested_rounds": {
               "10": {
-                "pooled_auc": 0.7569844378374735,
-                "mean_within_patient_auc": 0.6539742767406929
+                "pooled_auc": 0.7386903401671455,
+                "mean_within_patient_auc": 0.6594538515095637
               },
               "50": {
-                "pooled_auc": 0.7789728516583732,
-                "mean_within_patient_auc": 0.6933482675608934
+                "pooled_auc": 0.7766315828490903,
+                "mean_within_patient_auc": 0.6893271396563851
               },
               "100": {
-                "pooled_auc": 0.7863057837623287,
-                "mean_within_patient_auc": 0.7018795896368416
+                "pooled_auc": 0.7851794589808044,
+                "mean_within_patient_auc": 0.701411354354749
               },
               "200": {
-                "pooled_auc": 0.7867152964388396,
-                "mean_within_patient_auc": 0.7041125414591543
+                "pooled_auc": 0.7856716934088535,
+                "mean_within_patient_auc": 0.7071371807900003
               },
               "300": {
-                "pooled_auc": 0.7851969847884593,
-                "mean_within_patient_auc": 0.703776814631901
+                "pooled_auc": 0.7839606899375381,
+                "mean_within_patient_auc": 0.707843120774495
               },
               "500": {
-                "pooled_auc": 0.7830438093461481,
-                "mean_within_patient_auc": 0.7055089544593549
+                "pooled_auc": 0.7826250258444328,
+                "mean_within_patient_auc": 0.7087593758575105
               }
             }
           },
           "2037": {
             "best": {
               "pooled_auc": {
-                "round": 160,
-                "value": 0.7866034719049795
+                "round": 150,
+                "value": 0.7877951876305824
               },
               "mean_within_patient_auc": {
-                "round": 220,
-                "value": 0.7058220974580091
+                "round": 350,
+                "value": 0.7068084382831508
               },
               "pooled_log_loss": {
-                "round": 250,
-                "value": 0.21993973132947978
+                "round": 190,
+                "value": 0.22029784648605216
               },
               "pooled_brier": {
-                "round": 250,
-                "value": 0.05927573907784724
+                "round": 160,
+                "value": 0.05940147188685999
               },
               "patient_mean_brier": {
-                "round": 170,
-                "value": 0.06293112816973964
+                "round": 150,
+                "value": 0.06300374154154546
               }
             },
             "round_after_which_pooled_auc_remaining_gain_lt_0_002": 100,
-            "round_after_which_within_auc_remaining_gain_lt_0_002": 140,
+            "round_after_which_within_auc_remaining_gain_lt_0_002": 150,
             "auc_at_requested_rounds": {
               "10": {
-                "pooled_auc": 0.7504159804577691,
-                "mean_within_patient_auc": 0.6627058897487166
+                "pooled_auc": 0.7481942902846697,
+                "mean_within_patient_auc": 0.6626982027090004
               },
               "50": {
-                "pooled_auc": 0.7789295345444197,
-                "mean_within_patient_auc": 0.6988643850039223
+                "pooled_auc": 0.7803275067739619,
+                "mean_within_patient_auc": 0.7001945767644218
               },
               "100": {
-                "pooled_auc": 0.7853921245572123,
-                "mean_within_patient_auc": 0.7012145971222814
+                "pooled_auc": 0.7861867967593802,
+                "mean_within_patient_auc": 0.7013546822976091
               },
               "200": {
-                "pooled_auc": 0.7858275934611413,
-                "mean_within_patient_auc": 0.70488597411115
+                "pooled_auc": 0.7876158068631932,
+                "mean_within_patient_auc": 0.7060595382074728
               },
               "300": {
-                "pooled_auc": 0.7850584381057162,
-                "mean_within_patient_auc": 0.7054253606162477
+                "pooled_auc": 0.7863203546672325,
+                "mean_within_patient_auc": 0.7063141486236995
               },
               "500": {
-                "pooled_auc": 0.783464470435091,
-                "mean_within_patient_auc": 0.7047413942901438
+                "pooled_auc": 0.7858862702130669,
+                "mean_within_patient_auc": 0.7058244784330688
               }
             }
           },
           "2048": {
             "best": {
               "pooled_auc": {
-                "round": 190,
-                "value": 0.7881572712498953
+                "round": 150,
+                "value": 0.7874923656905632
               },
               "mean_within_patient_auc": {
-                "round": 150,
-                "value": 0.7053241321749288
+                "round": 380,
+                "value": 0.7083650578338564
               },
               "pooled_log_loss": {
-                "round": 190,
-                "value": 0.21966792045465672
+                "round": 220,
+                "value": 0.22033398406875557
               },
               "pooled_brier": {
-                "round": 340,
-                "value": 0.059256912853818164
+                "round": 210,
+                "value": 0.05942387479678467
               },
               "patient_mean_brier": {
-                "round": 190,
-                "value": 0.0628460871326475
+                "round": 210,
+                "value": 0.06303655494911574
               }
             },
-            "round_after_which_pooled_auc_remaining_gain_lt_0_002": 100,
-            "round_after_which_within_auc_remaining_gain_lt_0_002": 130,
+            "round_after_which_pooled_auc_remaining_gain_lt_0_002": 110,
+            "round_after_which_within_auc_remaining_gain_lt_0_002": 150,
             "auc_at_requested_rounds": {
               "10": {
-                "pooled_auc": 0.7580178360982531,
-                "mean_within_patient_auc": 0.6636301567388215
+                "pooled_auc": 0.7497916292602507,
+                "mean_within_patient_auc": 0.6536620381880502
               },
               "50": {
-                "pooled_auc": 0.7803082782834372,
-                "mean_within_patient_auc": 0.6961017485583797
+                "pooled_auc": 0.7790046798826935,
+                "mean_within_patient_auc": 0.6992736742903208
               },
               "100": {
-                "pooled_auc": 0.7863188044272303,
-                "mean_within_patient_auc": 0.7011066436271077
+                "pooled_auc": 0.7852302977006617,
+                "mean_within_patient_auc": 0.7049882769246593
               },
               "200": {
-                "pooled_auc": 0.78791472945271,
-                "mean_within_patient_auc": 0.7028373221547748
+                "pooled_auc": 0.7867848743416471,
+                "mean_within_patient_auc": 0.7067105196383499
               },
               "300": {
-                "pooled_auc": 0.7863968433142545,
-                "mean_within_patient_auc": 0.7043226402860109
+                "pooled_auc": 0.7848091354629146,
+                "mean_within_patient_auc": 0.7074168109300876
               },
               "500": {
-                "pooled_auc": 0.7849975899004574,
-                "mean_within_patient_auc": 0.7047655642330051
+                "pooled_auc": 0.7827960751828154,
+                "mean_within_patient_auc": 0.7074654099927056
               }
             }
           },
           "2059": {
             "best": {
               "pooled_auc": {
-                "round": 130,
-                "value": 0.7867798040466525
+                "round": 140,
+                "value": 0.7872589156492121
               },
               "mean_within_patient_auc": {
-                "round": 310,
-                "value": 0.7056683158378123
+                "round": 110,
+                "value": 0.706264085952588
               },
               "pooled_log_loss": {
-                "round": 170,
-                "value": 0.22036586363753732
+                "round": 270,
+                "value": 0.2204210441416369
               },
               "pooled_brier": {
-                "round": 120,
-                "value": 0.059398595247650406
+                "round": 150,
+                "value": 0.05942559162951853
               },
               "patient_mean_brier": {
-                "round": 130,
-                "value": 0.06301110707425085
+                "round": 150,
+                "value": 0.06303536112513847
               }
             },
-            "round_after_which_pooled_auc_remaining_gain_lt_0_002": 100,
-            "round_after_which_within_auc_remaining_gain_lt_0_002": 260,
+            "round_after_which_pooled_auc_remaining_gain_lt_0_002": 80,
+            "round_after_which_within_auc_remaining_gain_lt_0_002": 90,
             "auc_at_requested_rounds": {
               "10": {
-                "pooled_auc": 0.7426274952870299,
-                "mean_within_patient_auc": 0.6582492689797066
+                "pooled_auc": 0.7451925954339689,
+                "mean_within_patient_auc": 0.6610434268135612
               },
               "50": {
-                "pooled_auc": 0.7765057335178807,
-                "mean_within_patient_auc": 0.695999565247697
+                "pooled_auc": 0.7796477301786803,
+                "mean_within_patient_auc": 0.6969305646632241
               },
               "100": {
-                "pooled_auc": 0.7852264302136615,
-                "mean_within_patient_auc": 0.6994439605953976
+                "pooled_auc": 0.7864188015528424,
+                "mean_within_patient_auc": 0.7052434878145283
               },
               "200": {
-                "pooled_auc": 0.7851352004569657,
-                "mean_within_patient_auc": 0.6996133837175493
+                "pooled_auc": 0.7865017757845826,
+                "mean_within_patient_auc": 0.7058137439469645
               },
               "300": {
-                "pooled_auc": 0.784098653407942,
-                "mean_within_patient_auc": 0.7049180774307565
+                "pooled_auc": 0.7855457868133542,
+                "mean_within_patient_auc": 0.7055496475134178
               },
               "500": {
-                "pooled_auc": 0.7815432840942281,
-                "mean_within_patient_auc": 0.7031522722246825
+                "pooled_auc": 0.7808890280860973,
+                "mean_within_patient_auc": 0.7047474168095247
               }
             }
           },
           "2070": {
             "best": {
               "pooled_auc": {
-                "round": 170,
-                "value": 0.7886206537360968
+                "round": 220,
+                "value": 0.7879978623933577
               },
               "mean_within_patient_auc": {
-                "round": 190,
-                "value": 0.7042693876832372
+                "round": 480,
+                "value": 0.7091176372862804
               },
               "pooled_log_loss": {
-                "round": 170,
-                "value": 0.21991797487743917
+                "round": 220,
+                "value": 0.21993266032931638
               },
               "pooled_brier": {
-                "round": 170,
-                "value": 0.059374358812866894
+                "round": 210,
+                "value": 0.05933639278698884
               },
               "patient_mean_brier": {
-                "round": 160,
-                "value": 0.06295584246923923
+                "round": 210,
+                "value": 0.06292377126586104
               }
             },
             "round_after_which_pooled_auc_remaining_gain_lt_0_002": 110,
-            "round_after_which_within_auc_remaining_gain_lt_0_002": 130,
+            "round_after_which_within_auc_remaining_gain_lt_0_002": 220,
             "auc_at_requested_rounds": {
               "10": {
-                "pooled_auc": 0.7467238134855282,
-                "mean_within_patient_auc": 0.6615099869936242
+                "pooled_auc": 0.7387433892661269,
+                "mean_within_patient_auc": 0.6590247315213421
               },
               "50": {
-                "pooled_auc": 0.7776244043684075,
-                "mean_within_patient_auc": 0.6921179984062769
+                "pooled_auc": 0.7789314823278489,
+                "mean_within_patient_auc": 0.6960950857897655
               },
               "100": {
-                "pooled_auc": 0.7861632372674918,
-                "mean_within_patient_auc": 0.7014076141875852
+                "pooled_auc": 0.7856070823267607,
+                "mean_within_patient_auc": 0.7029668180906585
               },
               "200": {
-                "pooled_auc": 0.7877028245141164,
-                "mean_within_patient_auc": 0.7034783731755742
+                "pooled_auc": 0.7878650696167406,
+                "mean_within_patient_auc": 0.7071104766422897
               },
               "300": {
-                "pooled_auc": 0.7864853497946309,
-                "mean_within_patient_auc": 0.7033801145499284
+                "pooled_auc": 0.7870606616446852,
+                "mean_within_patient_auc": 0.7082200090625127
               },
               "500": {
-                "pooled_auc": 0.783611101844407,
-                "mean_within_patient_auc": 0.7025471222874269
+                "pooled_auc": 0.7852773107643423,
+                "mean_within_patient_auc": 0.7090958756307202
               }
             }
           }
         },
         "aggregate": {
           "pooled_auc": {
-            "mean_best_round": 154.0,
-            "range_best_round": [
-              120,
-              190
-            ],
-            "rounds_by_seed": {
-              "2026": 120,
-              "2037": 160,
-              "2048": 190,
-              "2059": 130,
-              "2070": 170
-            }
-          },
-          "mean_within_patient_auc": {
-            "mean_best_round": 274.0,
-            "range_best_round": [
-              150,
-              500
-            ],
-            "rounds_by_seed": {
-              "2026": 500,
-              "2037": 220,
-              "2048": 150,
-              "2059": 310,
-              "2070": 190
-            }
-          },
-          "pooled_log_loss": {
-            "mean_best_round": 184.0,
-            "range_best_round": [
-              140,
-              250
-            ],
-            "rounds_by_seed": {
-              "2026": 140,
-              "2037": 250,
-              "2048": 190,
-              "2059": 170,
-              "2070": 170
-            }
-          },
-          "pooled_brier": {
-            "mean_best_round": 204.0,
-            "range_best_round": [
-              120,
-              340
-            ],
-            "rounds_by_seed": {
-              "2026": 140,
-              "2037": 250,
-              "2048": 340,
-              "2059": 120,
-              "2070": 170
-            }
-          },
-          "patient_mean_brier": {
             "mean_best_round": 158.0,
             "range_best_round": [
               130,
-              190
+              220
             ],
             "rounds_by_seed": {
-              "2026": 140,
-              "2037": 170,
-              "2048": 190,
-              "2059": 130,
-              "2070": 160
+              "2026": 130,
+              "2037": 150,
+              "2048": 150,
+              "2059": 140,
+              "2070": 220
+            }
+          },
+          "mean_within_patient_auc": {
+            "mean_best_round": 350.0,
+            "range_best_round": [
+              110,
+              480
+            ],
+            "rounds_by_seed": {
+              "2026": 430,
+              "2037": 350,
+              "2048": 380,
+              "2059": 110,
+              "2070": 480
+            }
+          },
+          "pooled_log_loss": {
+            "mean_best_round": 214.0,
+            "range_best_round": [
+              170,
+              270
+            ],
+            "rounds_by_seed": {
+              "2026": 170,
+              "2037": 190,
+              "2048": 220,
+              "2059": 270,
+              "2070": 220
+            }
+          },
+          "pooled_brier": {
+            "mean_best_round": 172.0,
+            "range_best_round": [
+              130,
+              210
+            ],
+            "rounds_by_seed": {
+              "2026": 130,
+              "2037": 160,
+              "2048": 210,
+              "2059": 150,
+              "2070": 210
+            }
+          },
+          "patient_mean_brier": {
+            "mean_best_round": 170.0,
+            "range_best_round": [
+              130,
+              210
+            ],
+            "rounds_by_seed": {
+              "2026": 130,
+              "2037": 150,
+              "2048": 210,
+              "2059": 150,
+              "2070": 210
             }
           },
           "plateau_rounds": {
             "pooled_auc_mean": 100.0,
             "pooled_auc_range": [
-              90,
+              80,
               110
             ],
-            "within_auc_mean": 154.0,
+            "within_auc_mean": 164.0,
             "within_auc_range": [
-              110,
-              260
+              90,
+              220
             ]
           },
           "at_rounds_mean_range": {
             "10": {
               "pooled_auc": {
-                "mean": 0.7509539126332107,
+                "mean": 0.7441224488824323,
                 "range": [
-                  0.7426274952870299,
-                  0.7580178360982531
+                  0.7386903401671455,
+                  0.7497916292602507
                 ]
               },
               "mean_within_patient_auc": {
-                "mean": 0.6600139158403124,
+                "mean": 0.6591764501483035,
                 "range": [
-                  0.6539742767406929,
-                  0.6636301567388215
+                  0.6536620381880502,
+                  0.6626982027090004
                 ]
               }
             },
             "50": {
               "pooled_auc": {
-                "mean": 0.7784681604745035,
+                "mean": 0.778908596402455,
                 "range": [
-                  0.7765057335178807,
-                  0.7803082782834372
+                  0.7766315828490903,
+                  0.7803275067739619
                 ]
               },
               "mean_within_patient_auc": {
-                "mean": 0.6952863929554339,
+                "mean": 0.6963642082328235,
                 "range": [
-                  0.6921179984062769,
-                  0.6988643850039223
+                  0.6893271396563851,
+                  0.7001945767644218
                 ]
               }
             },
             "100": {
               "pooled_auc": {
-                "mean": 0.785881276045585,
+                "mean": 0.7857244874640898,
                 "range": [
-                  0.7852264302136615,
-                  0.7863188044272303
+                  0.7851794589808044,
+                  0.7864188015528424
                 ]
               },
               "mean_within_patient_auc": {
-                "mean": 0.7010104810338428,
+                "mean": 0.703192923896441,
                 "range": [
-                  0.6994439605953976,
-                  0.7018795896368416
+                  0.7013546822976091,
+                  0.7052434878145283
                 ]
               }
             },
             "200": {
               "pooled_auc": {
-                "mean": 0.7866591288647546,
+                "mean": 0.7868878440030034,
                 "range": [
-                  0.7851352004569657,
-                  0.78791472945271
+                  0.7856716934088535,
+                  0.7878650696167406
                 ]
               },
               "mean_within_patient_auc": {
-                "mean": 0.7029855189236405,
+                "mean": 0.7065662918450155,
                 "range": [
-                  0.6996133837175493,
-                  0.70488597411115
+                  0.7058137439469645,
+                  0.7071371807900003
                 ]
               }
             },
             "300": {
               "pooled_auc": {
-                "mean": 0.7854472538822006,
+                "mean": 0.785539325705145,
                 "range": [
-                  0.784098653407942,
-                  0.7864853497946309
+                  0.7839606899375381,
+                  0.7870606616446852
                 ]
               },
               "mean_within_patient_auc": {
-                "mean": 0.704364601502969,
+                "mean": 0.7070687473808424,
                 "range": [
-                  0.7033801145499284,
-                  0.7054253606162477
+                  0.7055496475134178,
+                  0.7082200090625127
                 ]
               }
             },
             "500": {
               "pooled_auc": {
-                "mean": 0.7833320511240665,
+                "mean": 0.7834947420181508,
                 "range": [
-                  0.7815432840942281,
-                  0.7849975899004574
+                  0.7808890280860973,
+                  0.7858862702130669
                 ]
               },
               "mean_within_patient_auc": {
-                "mean": 0.7041430614989226,
+                "mean": 0.707178511344706,
                 "range": [
-                  0.7025471222874269,
-                  0.7055089544593549
+                  0.7047474168095247,
+                  0.7090958756307202
                 ]
               }
             }
@@ -539,61 +539,61 @@
       "test_patient_variation": {
         "gradient_boosting": {
           "n_eligible": 154,
-          "mean": 0.6378571868165637,
-          "sd": 0.28029910132786406,
+          "mean": 0.638022582804176,
+          "sd": 0.27874335066331646,
           "min": 0.0,
           "deciles": {
-            "10": 0.21857142857142858,
-            "20": 0.4134065934065934,
-            "30": 0.5,
-            "40": 0.5562091503267974,
-            "50": 0.6783950617283951,
-            "60": 0.75,
-            "70": 0.8272108843537415,
-            "80": 0.9230769230769231,
-            "90": 1.0
+            "10": 0.21165413533834584,
+            "20": 0.42000000000000004,
+            "30": 0.4883333333333333,
+            "40": 0.5838095238095239,
+            "50": 0.6899038461538461,
+            "60": 0.7724675324675324,
+            "70": 0.825216049382716,
+            "80": 0.9206349206349206,
+            "90": 0.9672115384615386
           },
-          "share_gt_0_5": 0.6558441558441559,
-          "share_gt_0_6": 0.5714285714285714,
-          "share_gt_0_7": 0.474025974025974,
-          "observed_variance": 0.07856758620520822,
-          "mean_hanley_mcneil_sampling_variance": 0.024765602650981627,
-          "estimated_true_auc_sd": 0.2319525459102068,
-          "observed_variance_sampling_share": 0.3152139940547126,
-          "observed_variance_sampling_share_capped_1": 0.3152139940547126,
+          "share_gt_0_5": 0.6623376623376623,
+          "share_gt_0_6": 0.564935064935065,
+          "share_gt_0_7": 0.4805194805194805,
+          "observed_variance": 0.0776978555390126,
+          "mean_hanley_mcneil_sampling_variance": 0.024896248933260902,
+          "estimated_true_auc_sd": 0.22978600176196914,
+          "observed_variance_sampling_share": 0.32042388764205126,
+          "observed_variance_sampling_share_capped_1": 0.32042388764205126,
           "brier_comparison": {
             "n_patients": 246,
-            "share_model_lower": 0.5447154471544715,
+            "share_model_lower": 0.532520325203252,
             "ci95": [
-              0.4796747967479675,
-              0.6097560975609756
+              0.4715447154471545,
+              0.5975609756097561
             ]
           }
         },
         "logistic_regression": {
           "n_eligible": 154,
-          "mean": 0.652668351654235,
-          "sd": 0.2522060223733254,
+          "mean": 0.6469516078689742,
+          "sd": 0.25263832750324094,
           "min": 0.0,
           "deciles": {
-            "10": 0.2974074074074074,
-            "20": 0.41893939393939394,
-            "30": 0.5116946778711484,
-            "40": 0.6254545454545455,
-            "50": 0.6961538461538461,
+            "10": 0.2957070707070707,
+            "20": 0.4197916666666667,
+            "30": 0.5088235294117647,
+            "40": 0.6085714285714285,
+            "50": 0.6837719298245615,
             "60": 0.75,
-            "70": 0.8181818181818182,
-            "80": 0.8957142857142858,
-            "90": 0.968125
+            "70": 0.8196969696969697,
+            "80": 0.8933333333333334,
+            "90": 0.9595
           },
-          "share_gt_0_5": 0.7077922077922078,
-          "share_gt_0_6": 0.6298701298701299,
-          "share_gt_0_7": 0.4805194805194805,
-          "observed_variance": 0.0636078777213743,
-          "mean_hanley_mcneil_sampling_variance": 0.027775229002431588,
-          "estimated_true_auc_sd": 0.18929513654328975,
-          "observed_variance_sampling_share": 0.43666335047519145,
-          "observed_variance_sampling_share_capped_1": 0.43666335047519145,
+          "share_gt_0_5": 0.7012987012987013,
+          "share_gt_0_6": 0.6103896103896104,
+          "share_gt_0_7": 0.45454545454545453,
+          "observed_variance": 0.06382612452363484,
+          "mean_hanley_mcneil_sampling_variance": 0.028093099253756446,
+          "estimated_true_auc_sd": 0.18903181020632057,
+          "observed_variance_sampling_share": 0.4401504785607586,
+          "observed_variance_sampling_share_capped_1": 0.4401504785607586,
           "brier_comparison": {
             "n_patients": 246,
             "share_model_lower": 0.5487804878048781,
@@ -609,208 +609,208 @@
           "2026": {
             "best": {
               "pooled_auc": {
-                "round": 140,
-                "value": 0.9160580935646826
+                "round": 90,
+                "value": 0.9167543758548927
               },
               "mean_within_patient_auc": {
-                "round": 80,
-                "value": 0.666048136767173
+                "round": 30,
+                "value": 0.662872941632595
               },
               "pooled_log_loss": {
-                "round": 140,
-                "value": 0.3275217629647456
+                "round": 90,
+                "value": 0.3257047910232196
               },
               "pooled_brier": {
-                "round": 80,
-                "value": 0.09889268868558862
+                "round": 90,
+                "value": 0.09833107144313197
               },
               "patient_mean_brier": {
-                "round": 80,
-                "value": 0.10078762840079752
+                "round": 90,
+                "value": 0.1001263470457793
               }
             },
             "round_after_which_pooled_auc_remaining_gain_lt_0_002": 40,
-            "round_after_which_within_auc_remaining_gain_lt_0_002": 70,
+            "round_after_which_within_auc_remaining_gain_lt_0_002": 30,
             "auc_at_requested_rounds": {
               "10": {
-                "pooled_auc": 0.9083806401176028,
-                "mean_within_patient_auc": 0.6389593219703763
+                "pooled_auc": 0.9098253952893642,
+                "mean_within_patient_auc": 0.6488751594295697
               },
               "50": {
-                "pooled_auc": 0.9149858759212183,
-                "mean_within_patient_auc": 0.6571658155617557
+                "pooled_auc": 0.9153680632723936,
+                "mean_within_patient_auc": 0.6614381595029416
               },
               "100": {
-                "pooled_auc": 0.9159484117750673,
-                "mean_within_patient_auc": 0.6559782762455416
+                "pooled_auc": 0.9164496589127396,
+                "mean_within_patient_auc": 0.6579025667668764
               },
               "200": {
-                "pooled_auc": 0.9157180392429755,
-                "mean_within_patient_auc": 0.6553343775052431
+                "pooled_auc": 0.9158142656457607,
+                "mean_within_patient_auc": 0.6578024389065024
               },
               "300": {
-                "pooled_auc": 0.9151549516910839,
-                "mean_within_patient_auc": 0.6525224238765787
+                "pooled_auc": 0.9146681113312297,
+                "mean_within_patient_auc": 0.6520256747774315
               },
               "500": {
-                "pooled_auc": 0.9131450702724566,
-                "mean_within_patient_auc": 0.6492103475026185
+                "pooled_auc": 0.9118276655800875,
+                "mean_within_patient_auc": 0.6511462103759623
               }
             }
           },
           "2037": {
             "best": {
               "pooled_auc": {
-                "round": 110,
-                "value": 0.9167380662950987
+                "round": 90,
+                "value": 0.916823827397016
               },
               "mean_within_patient_auc": {
-                "round": 110,
-                "value": 0.6695348408006079
+                "round": 90,
+                "value": 0.6668974778837267
               },
               "pooled_log_loss": {
-                "round": 120,
-                "value": 0.326376750460873
+                "round": 90,
+                "value": 0.3264359720015725
               },
               "pooled_brier": {
-                "round": 110,
-                "value": 0.09869857112862761
+                "round": 90,
+                "value": 0.09873813687683011
               },
               "patient_mean_brier": {
-                "round": 110,
-                "value": 0.10046192986729965
+                "round": 90,
+                "value": 0.10041164244424403
               }
             },
             "round_after_which_pooled_auc_remaining_gain_lt_0_002": 50,
-            "round_after_which_within_auc_remaining_gain_lt_0_002": 90,
+            "round_after_which_within_auc_remaining_gain_lt_0_002": 70,
             "auc_at_requested_rounds": {
               "10": {
-                "pooled_auc": 0.9077732449282706,
-                "mean_within_patient_auc": 0.643780043832017
+                "pooled_auc": 0.9090467497221938,
+                "mean_within_patient_auc": 0.6509126287109218
               },
               "50": {
-                "pooled_auc": 0.9153421038897213,
-                "mean_within_patient_auc": 0.6586493938918339
+                "pooled_auc": 0.9151900172446412,
+                "mean_within_patient_auc": 0.6618830009803812
               },
               "100": {
-                "pooled_auc": 0.9166289281574764,
-                "mean_within_patient_auc": 0.6683881456324181
+                "pooled_auc": 0.9166732357949171,
+                "mean_within_patient_auc": 0.6639093446525071
               },
               "200": {
-                "pooled_auc": 0.9153248429389392,
-                "mean_within_patient_auc": 0.6607654581844487
+                "pooled_auc": 0.9158452538093695,
+                "mean_within_patient_auc": 0.6619057792803513
               },
               "300": {
-                "pooled_auc": 0.914356462826164,
-                "mean_within_patient_auc": 0.6591859300364311
+                "pooled_auc": 0.9146880905419775,
+                "mean_within_patient_auc": 0.659257891549433
               },
               "500": {
-                "pooled_auc": 0.9130522416946285,
-                "mean_within_patient_auc": 0.6584026139954096
+                "pooled_auc": 0.9126935672921564,
+                "mean_within_patient_auc": 0.6495663797081765
               }
             }
           },
           "2048": {
             "best": {
               "pooled_auc": {
-                "round": 110,
-                "value": 0.9174714528338404
+                "round": 90,
+                "value": 0.9170301433284115
               },
               "mean_within_patient_auc": {
-                "round": 100,
-                "value": 0.6670644157467782
+                "round": 70,
+                "value": 0.6660544268044221
               },
               "pooled_log_loss": {
-                "round": 110,
-                "value": 0.3254183118100764
+                "round": 90,
+                "value": 0.32590998416634614
               },
               "pooled_brier": {
-                "round": 110,
-                "value": 0.09843624137308025
+                "round": 90,
+                "value": 0.09862162300581648
               },
               "patient_mean_brier": {
-                "round": 110,
-                "value": 0.10007383006917346
+                "round": 90,
+                "value": 0.10032317014101472
               }
             },
             "round_after_which_pooled_auc_remaining_gain_lt_0_002": 50,
-            "round_after_which_within_auc_remaining_gain_lt_0_002": 30,
+            "round_after_which_within_auc_remaining_gain_lt_0_002": 50,
             "auc_at_requested_rounds": {
               "10": {
-                "pooled_auc": 0.9092147381880732,
-                "mean_within_patient_auc": 0.6449086218820396
+                "pooled_auc": 0.908941145322527,
+                "mean_within_patient_auc": 0.6384630839296652
               },
               "50": {
-                "pooled_auc": 0.916199850821893,
-                "mean_within_patient_auc": 0.6605326160457197
+                "pooled_auc": 0.9154115554318445,
+                "mean_within_patient_auc": 0.6647226999870116
               },
               "100": {
-                "pooled_auc": 0.9172590208175221,
-                "mean_within_patient_auc": 0.6670644157467782
+                "pooled_auc": 0.9168039840992666,
+                "mean_within_patient_auc": 0.6617357587436884
               },
               "200": {
-                "pooled_auc": 0.9166316464174421,
-                "mean_within_patient_auc": 0.6613942687516741
+                "pooled_auc": 0.9162932230517143,
+                "mean_within_patient_auc": 0.6581519999721782
               },
               "300": {
-                "pooled_auc": 0.9151938228085932,
-                "mean_within_patient_auc": 0.6554837279965959
+                "pooled_auc": 0.9144521455769561,
+                "mean_within_patient_auc": 0.6534844623377448
               },
               "500": {
-                "pooled_auc": 0.912822005075535,
-                "mean_within_patient_auc": 0.6583297608088748
+                "pooled_auc": 0.9124645538900474,
+                "mean_within_patient_auc": 0.6575432009906962
               }
             }
           },
           "2059": {
             "best": {
               "pooled_auc": {
-                "round": 90,
-                "value": 0.9167519294209237
+                "round": 110,
+                "value": 0.9172429830837245
               },
               "mean_within_patient_auc": {
-                "round": 30,
-                "value": 0.6654751454947668
+                "round": 40,
+                "value": 0.6653481948371024
               },
               "pooled_log_loss": {
-                "round": 110,
-                "value": 0.32597499447756645
+                "round": 100,
+                "value": 0.3251445082827616
               },
               "pooled_brier": {
-                "round": 110,
-                "value": 0.09833659015591165
+                "round": 90,
+                "value": 0.09812888268393409
               },
               "patient_mean_brier": {
-                "round": 110,
-                "value": 0.10017400194260345
+                "round": 90,
+                "value": 0.10002653652567409
               }
             },
-            "round_after_which_pooled_auc_remaining_gain_lt_0_002": 40,
-            "round_after_which_within_auc_remaining_gain_lt_0_002": 30,
+            "round_after_which_pooled_auc_remaining_gain_lt_0_002": 50,
+            "round_after_which_within_auc_remaining_gain_lt_0_002": 40,
             "auc_at_requested_rounds": {
               "10": {
-                "pooled_auc": 0.9086527379401679,
-                "mean_within_patient_auc": 0.6460089724009438
+                "pooled_auc": 0.9091602370757612,
+                "mean_within_patient_auc": 0.64542576469332
               },
               "50": {
-                "pooled_auc": 0.9161119151120032,
-                "mean_within_patient_auc": 0.6615353593972098
+                "pooled_auc": 0.9158682231060795,
+                "mean_within_patient_auc": 0.65748445990423
               },
               "100": {
-                "pooled_auc": 0.9167309988191878,
-                "mean_within_patient_auc": 0.6619833863737313
+                "pooled_auc": 0.9172376824767915,
+                "mean_within_patient_auc": 0.658271616457902
               },
               "200": {
-                "pooled_auc": 0.9162126266437318,
-                "mean_within_patient_auc": 0.6546451934321204
+                "pooled_auc": 0.9159121230045254,
+                "mean_within_patient_auc": 0.6519049944438778
               },
               "300": {
-                "pooled_auc": 0.9155253146114084,
-                "mean_within_patient_auc": 0.659858119811311
+                "pooled_auc": 0.9150566865933244,
+                "mean_within_patient_auc": 0.6591278950448609
               },
               "500": {
-                "pooled_auc": 0.9131074223719319,
-                "mean_within_patient_auc": 0.657260087161067
+                "pooled_auc": 0.9128006667348044,
+                "mean_within_patient_auc": 0.656401379846364
               }
             }
           },
@@ -818,232 +818,232 @@
             "best": {
               "pooled_auc": {
                 "round": 150,
-                "value": 0.9166986515255963
+                "value": 0.9174847723076722
               },
               "mean_within_patient_auc": {
-                "round": 110,
-                "value": 0.6689445386968689
+                "round": 30,
+                "value": 0.6660660881145557
               },
               "pooled_log_loss": {
-                "round": 150,
-                "value": 0.32610832914423504
+                "round": 120,
+                "value": 0.32465231078745727
               },
               "pooled_brier": {
-                "round": 100,
-                "value": 0.09844395725070268
+                "round": 90,
+                "value": 0.09813698973568799
               },
               "patient_mean_brier": {
-                "round": 100,
-                "value": 0.1003050702693267
+                "round": 90,
+                "value": 0.09985237843460261
               }
             },
-            "round_after_which_pooled_auc_remaining_gain_lt_0_002": 40,
-            "round_after_which_within_auc_remaining_gain_lt_0_002": 50,
+            "round_after_which_pooled_auc_remaining_gain_lt_0_002": 50,
+            "round_after_which_within_auc_remaining_gain_lt_0_002": 30,
             "auc_at_requested_rounds": {
               "10": {
-                "pooled_auc": 0.9089898021759127,
-                "mean_within_patient_auc": 0.6421411782146841
+                "pooled_auc": 0.909563219115674,
+                "mean_within_patient_auc": 0.645639783793379
               },
               "50": {
-                "pooled_auc": 0.9155675835538748,
-                "mean_within_patient_auc": 0.6677491568878339
+                "pooled_auc": 0.9160033206263741,
+                "mean_within_patient_auc": 0.6596950186163648
               },
               "100": {
-                "pooled_auc": 0.9165726601761868,
-                "mean_within_patient_auc": 0.6659559225683489
+                "pooled_auc": 0.9171241951232242,
+                "mean_within_patient_auc": 0.6575328672906101
               },
               "200": {
-                "pooled_auc": 0.9161358357997013,
-                "mean_within_patient_auc": 0.66029784939263
+                "pooled_auc": 0.9170344925443565,
+                "mean_within_patient_auc": 0.6653066522119532
               },
               "300": {
-                "pooled_auc": 0.9148749709146183,
-                "mean_within_patient_auc": 0.6532452049717424
+                "pooled_auc": 0.9155066945306435,
+                "mean_within_patient_auc": 0.659239802598863
               },
               "500": {
-                "pooled_auc": 0.9129145618273665,
-                "mean_within_patient_auc": 0.6491523950196356
+                "pooled_auc": 0.9132048719917017,
+                "mean_within_patient_auc": 0.6539705243497895
               }
             }
           }
         },
         "aggregate": {
           "pooled_auc": {
-            "mean_best_round": 120.0,
+            "mean_best_round": 106.0,
             "range_best_round": [
               90,
               150
             ],
             "rounds_by_seed": {
-              "2026": 140,
-              "2037": 110,
-              "2048": 110,
-              "2059": 90,
+              "2026": 90,
+              "2037": 90,
+              "2048": 90,
+              "2059": 110,
               "2070": 150
             }
           },
           "mean_within_patient_auc": {
-            "mean_best_round": 86.0,
+            "mean_best_round": 52.0,
             "range_best_round": [
               30,
-              110
+              90
             ],
             "rounds_by_seed": {
-              "2026": 80,
-              "2037": 110,
-              "2048": 100,
-              "2059": 30,
-              "2070": 110
+              "2026": 30,
+              "2037": 90,
+              "2048": 70,
+              "2059": 40,
+              "2070": 30
             }
           },
           "pooled_log_loss": {
-            "mean_best_round": 126.0,
+            "mean_best_round": 98.0,
             "range_best_round": [
-              110,
-              150
+              90,
+              120
             ],
             "rounds_by_seed": {
-              "2026": 140,
-              "2037": 120,
-              "2048": 110,
-              "2059": 110,
-              "2070": 150
+              "2026": 90,
+              "2037": 90,
+              "2048": 90,
+              "2059": 100,
+              "2070": 120
             }
           },
           "pooled_brier": {
-            "mean_best_round": 102.0,
+            "mean_best_round": 90.0,
             "range_best_round": [
-              80,
-              110
+              90,
+              90
             ],
             "rounds_by_seed": {
-              "2026": 80,
-              "2037": 110,
-              "2048": 110,
-              "2059": 110,
-              "2070": 100
+              "2026": 90,
+              "2037": 90,
+              "2048": 90,
+              "2059": 90,
+              "2070": 90
             }
           },
           "patient_mean_brier": {
-            "mean_best_round": 102.0,
+            "mean_best_round": 90.0,
             "range_best_round": [
-              80,
-              110
+              90,
+              90
             ],
             "rounds_by_seed": {
-              "2026": 80,
-              "2037": 110,
-              "2048": 110,
-              "2059": 110,
-              "2070": 100
+              "2026": 90,
+              "2037": 90,
+              "2048": 90,
+              "2059": 90,
+              "2070": 90
             }
           },
           "plateau_rounds": {
-            "pooled_auc_mean": 44.0,
+            "pooled_auc_mean": 48.0,
             "pooled_auc_range": [
               40,
               50
             ],
-            "within_auc_mean": 54.0,
+            "within_auc_mean": 44.0,
             "within_auc_range": [
               30,
-              90
+              70
             ]
           },
           "at_rounds_mean_range": {
             "10": {
               "pooled_auc": {
-                "mean": 0.9086022326700054,
+                "mean": 0.909307349305104,
                 "range": [
-                  0.9077732449282706,
-                  0.9092147381880732
+                  0.908941145322527,
+                  0.9098253952893642
                 ]
               },
               "mean_within_patient_auc": {
-                "mean": 0.6431596276600121,
+                "mean": 0.6458632841113712,
                 "range": [
-                  0.6389593219703763,
-                  0.6460089724009438
+                  0.6384630839296652,
+                  0.6509126287109218
                 ]
               }
             },
             "50": {
               "pooled_auc": {
-                "mean": 0.9156414658597422,
+                "mean": 0.9155682359362665,
                 "range": [
-                  0.9149858759212183,
-                  0.916199850821893
+                  0.9151900172446412,
+                  0.9160033206263741
                 ]
               },
               "mean_within_patient_auc": {
-                "mean": 0.6611264683568706,
+                "mean": 0.6610446677981858,
                 "range": [
-                  0.6571658155617557,
-                  0.6677491568878339
+                  0.65748445990423,
+                  0.6647226999870116
                 ]
               }
             },
             "100": {
               "pooled_auc": {
-                "mean": 0.916628003949088,
+                "mean": 0.9168577512813879,
                 "range": [
-                  0.9159484117750673,
-                  0.9172590208175221
+                  0.9164496589127396,
+                  0.9172376824767915
                 ]
               },
               "mean_within_patient_auc": {
-                "mean": 0.6638740293133637,
+                "mean": 0.6598704307823169,
                 "range": [
-                  0.6559782762455416,
-                  0.6683881456324181
+                  0.6575328672906101,
+                  0.6639093446525071
                 ]
               }
             },
             "200": {
               "pooled_auc": {
-                "mean": 0.916004598208558,
+                "mean": 0.9161798716111452,
                 "range": [
-                  0.9153248429389392,
-                  0.9166316464174421
+                  0.9158142656457607,
+                  0.9170344925443565
                 ]
               },
               "mean_within_patient_auc": {
-                "mean": 0.6584874294532232,
+                "mean": 0.6590143729629726,
                 "range": [
-                  0.6546451934321204,
-                  0.6613942687516741
+                  0.6519049944438778,
+                  0.6653066522119532
                 ]
               }
             },
             "300": {
               "pooled_auc": {
-                "mean": 0.9150211045703734,
+                "mean": 0.9148743457148262,
                 "range": [
-                  0.914356462826164,
-                  0.9155253146114084
+                  0.9144521455769561,
+                  0.9155066945306435
                 ]
               },
               "mean_within_patient_auc": {
-                "mean": 0.6560590813385319,
+                "mean": 0.6566271452616665,
                 "range": [
-                  0.6525224238765787,
-                  0.659858119811311
+                  0.6520256747774315,
+                  0.659257891549433
                 ]
               }
             },
             "500": {
               "pooled_auc": {
-                "mean": 0.9130082602483837,
+                "mean": 0.9125982650977595,
                 "range": [
-                  0.912822005075535,
-                  0.9131450702724566
+                  0.9118276655800875,
+                  0.9132048719917017
                 ]
               },
               "mean_within_patient_auc": {
-                "mean": 0.6544710408975212,
+                "mean": 0.6537255390541976,
                 "range": [
-                  0.6491523950196356,
-                  0.6584026139954096
+                  0.6495663797081765,
+                  0.6575432009906962
                 ]
               }
             }
@@ -1130,23 +1130,23 @@
             "best": {
               "pooled_auc": {
                 "round": 270,
-                "value": 0.8609436260720056
+                "value": 0.8609698369472337
               },
               "mean_within_patient_auc": {
                 "round": 500,
-                "value": 0.7429427183422703
+                "value": 0.7429671921552904
               },
               "pooled_log_loss": {
                 "round": 270,
-                "value": 0.4565501814527356
+                "value": 0.4565202985102918
               },
               "pooled_brier": {
                 "round": 270,
-                "value": 0.14921731749992018
+                "value": 0.14920488854770841
               },
               "patient_mean_brier": {
                 "round": 270,
-                "value": 0.14896493706379557
+                "value": 0.14895270243187494
               }
             },
             "round_after_which_pooled_auc_remaining_gain_lt_0_002": 90,
@@ -1169,12 +1169,12 @@
                 "mean_within_patient_auc": 0.7345822639746822
               },
               "300": {
-                "pooled_auc": 0.8604023666980173,
-                "mean_within_patient_auc": 0.738288104044861
+                "pooled_auc": 0.8604125438144062,
+                "mean_within_patient_auc": 0.7383125778578811
               },
               "500": {
-                "pooled_auc": 0.8582485624343048,
-                "mean_within_patient_auc": 0.7429427183422703
+                "pooled_auc": 0.8582521148239878,
+                "mean_within_patient_auc": 0.7429671921552904
               }
             }
           },
@@ -1186,7 +1186,7 @@
               },
               "mean_within_patient_auc": {
                 "round": 410,
-                "value": 0.740589878763078
+                "value": 0.740720039310799
               },
               "pooled_log_loss": {
                 "round": 290,
@@ -1202,7 +1202,7 @@
               }
             },
             "round_after_which_pooled_auc_remaining_gain_lt_0_002": 90,
-            "round_after_which_within_auc_remaining_gain_lt_0_002": 340,
+            "round_after_which_within_auc_remaining_gain_lt_0_002": 380,
             "auc_at_requested_rounds": {
               "10": {
                 "pooled_auc": 0.8483121444489975,
@@ -1225,8 +1225,8 @@
                 "mean_within_patient_auc": 0.7365909952018304
               },
               "500": {
-                "pooled_auc": 0.8586788336333342,
-                "mean_within_patient_auc": 0.7393803591664784
+                "pooled_auc": 0.8586073537922816,
+                "mean_within_patient_auc": 0.7397984970273609
               }
             }
           },
@@ -1234,23 +1234,23 @@
             "best": {
               "pooled_auc": {
                 "round": 230,
-                "value": 0.8612019904135404
+                "value": 0.8611755875172483
               },
               "mean_within_patient_auc": {
                 "round": 490,
-                "value": 0.7424226837702286
+                "value": 0.7424471575832485
               },
               "pooled_log_loss": {
                 "round": 230,
-                "value": 0.4560221927539561
+                "value": 0.45605293220405746
               },
               "pooled_brier": {
                 "round": 230,
-                "value": 0.14888098809775174
+                "value": 0.148895048558074
               },
               "patient_mean_brier": {
                 "round": 230,
-                "value": 0.14860719095956856
+                "value": 0.14862444772314057
               }
             },
             "round_after_which_pooled_auc_remaining_gain_lt_0_002": 90,
@@ -1269,15 +1269,15 @@
                 "mean_within_patient_auc": 0.7317764598489617
               },
               "200": {
-                "pooled_auc": 0.8609967198961858,
-                "mean_within_patient_auc": 0.7373672918378156
+                "pooled_auc": 0.8609692608840419,
+                "mean_within_patient_auc": 0.7373428180247956
               },
               "300": {
-                "pooled_auc": 0.860236268477707,
+                "pooled_auc": 0.8602114017499264,
                 "mean_within_patient_auc": 0.7393408355798261
               },
               "500": {
-                "pooled_auc": 0.8581952765890607,
+                "pooled_auc": 0.8581684896506407,
                 "mean_within_patient_auc": 0.7418971442036462
               }
             }
@@ -1286,23 +1286,23 @@
             "best": {
               "pooled_auc": {
                 "round": 230,
-                "value": 0.8602007925861436
+                "value": 0.8601185115602441
               },
               "mean_within_patient_auc": {
                 "round": 500,
-                "value": 0.7394577859510795
+                "value": 0.7393843645120192
               },
               "pooled_log_loss": {
                 "round": 300,
-                "value": 0.4573422390378775
+                "value": 0.45745481255263143
               },
               "pooled_brier": {
                 "round": 250,
-                "value": 0.14955472912541623
+                "value": 0.149616422412058
               },
               "patient_mean_brier": {
                 "round": 250,
-                "value": 0.14932305721466058
+                "value": 0.1493837859584177
               }
             },
             "round_after_which_pooled_auc_remaining_gain_lt_0_002": 90,
@@ -1321,16 +1321,16 @@
                 "mean_within_patient_auc": 0.7297482637132239
               },
               "200": {
-                "pooled_auc": 0.8599422842288108,
-                "mean_within_patient_auc": 0.7337621838767122
+                "pooled_auc": 0.8598637476136582,
+                "mean_within_patient_auc": 0.7336887624376519
               },
               "300": {
-                "pooled_auc": 0.859971855472658,
-                "mean_within_patient_auc": 0.7390251274898421
+                "pooled_auc": 0.8598966792261243,
+                "mean_within_patient_auc": 0.7389761798638019
               },
               "500": {
-                "pooled_auc": 0.8572784240140007,
-                "mean_within_patient_auc": 0.7394577859510795
+                "pooled_auc": 0.8571274954577417,
+                "mean_within_patient_auc": 0.7393843645120192
               }
             }
           },
@@ -1338,27 +1338,27 @@
             "best": {
               "pooled_auc": {
                 "round": 140,
-                "value": 0.8595243503831397
+                "value": 0.8595234862883518
               },
               "mean_within_patient_auc": {
-                "round": 410,
-                "value": 0.7397876427567122
+                "round": 500,
+                "value": 0.7391380524269667
               },
               "pooled_log_loss": {
                 "round": 330,
-                "value": 0.45754609044379196
+                "value": 0.4577937526774329
               },
               "pooled_brier": {
-                "round": 310,
-                "value": 0.14982804780694445
+                "round": 280,
+                "value": 0.14986547962237495
               },
               "patient_mean_brier": {
-                "round": 310,
-                "value": 0.1495792057919763
+                "round": 280,
+                "value": 0.14960472728109567
               }
             },
             "round_after_which_pooled_auc_remaining_gain_lt_0_002": 80,
-            "round_after_which_within_auc_remaining_gain_lt_0_002": 320,
+            "round_after_which_within_auc_remaining_gain_lt_0_002": 270,
             "auc_at_requested_rounds": {
               "10": {
                 "pooled_auc": 0.8475742555055319,
@@ -1373,16 +1373,16 @@
                 "mean_within_patient_auc": 0.7316649626030785
               },
               "200": {
-                "pooled_auc": 0.8589554879812096,
+                "pooled_auc": 0.8589552959601456,
                 "mean_within_patient_auc": 0.7348026506613824
               },
               "300": {
-                "pooled_auc": 0.8591370438971674,
-                "mean_within_patient_auc": 0.7364937093604074
+                "pooled_auc": 0.8591135693221004,
+                "mean_within_patient_auc": 0.7364167627795549
               },
               "500": {
-                "pooled_auc": 0.8577083111709022,
-                "mean_within_patient_auc": 0.7388439587434991
+                "pooled_auc": 0.8575776888421552,
+                "mean_within_patient_auc": 0.7391380524269667
               }
             }
           }
@@ -1403,7 +1403,7 @@
             }
           },
           "mean_within_patient_auc": {
-            "mean_best_round": 462.0,
+            "mean_best_round": 480.0,
             "range_best_round": [
               410,
               500
@@ -1413,7 +1413,7 @@
               "2037": 410,
               "2048": 490,
               "2059": 500,
-              "2070": 410
+              "2070": 500
             }
           },
           "pooled_log_loss": {
@@ -1431,31 +1431,31 @@
             }
           },
           "pooled_brier": {
-            "mean_best_round": 254.0,
+            "mean_best_round": 248.0,
             "range_best_round": [
               210,
-              310
+              280
             ],
             "rounds_by_seed": {
               "2026": 270,
               "2037": 210,
               "2048": 230,
               "2059": 250,
-              "2070": 310
+              "2070": 280
             }
           },
           "patient_mean_brier": {
-            "mean_best_round": 254.0,
+            "mean_best_round": 248.0,
             "range_best_round": [
               210,
-              310
+              280
             ],
             "rounds_by_seed": {
               "2026": 270,
               "2037": 210,
               "2048": 230,
               "2059": 250,
-              "2070": 310
+              "2070": 280
             }
           },
           "plateau_rounds": {
@@ -1464,7 +1464,7 @@
               80,
               90
             ],
-            "within_auc_mean": 330.0,
+            "within_auc_mean": 328.0,
             "within_auc_range": [
               260,
               380
@@ -1521,49 +1521,49 @@
             },
             "200": {
               "pooled_auc": {
-                "mean": 0.8601996596618662,
+                "mean": 0.8601784221321942,
                 "range": [
-                  0.8589554879812096,
-                  0.8609967198961858
+                  0.8589552959601456,
+                  0.8609692608840419
                 ]
               },
               "mean_within_patient_auc": {
-                "mean": 0.7348070060443089,
+                "mean": 0.7347874269938929,
                 "range": [
                   0.7335206398709527,
-                  0.7373672918378156
+                  0.7373428180247956
                 ]
               }
             },
             "300": {
               "pooled_auc": {
-                "mean": 0.8599562057559466,
+                "mean": 0.8599335376693482,
                 "range": [
-                  0.8591370438971674,
-                  0.8604023666980173
+                  0.8591135693221004,
+                  0.8604125438144062
                 ]
               },
               "mean_within_patient_auc": {
-                "mean": 0.7379477543353534,
+                "mean": 0.7379274702565788,
                 "range": [
-                  0.7364937093604074,
+                  0.7364167627795549,
                   0.7393408355798261
                 ]
               }
             },
             "500": {
               "pooled_auc": {
-                "mean": 0.8580218815683205,
+                "mean": 0.8579466285133612,
                 "range": [
-                  0.8572784240140007,
-                  0.8586788336333342
+                  0.8571274954577417,
+                  0.8586073537922816
                 ]
               },
               "mean_within_patient_auc": {
-                "mean": 0.7405043932813947,
+                "mean": 0.7406370500650566,
                 "range": [
-                  0.7388439587434991,
-                  0.7429427183422703
+                  0.7391380524269667,
+                  0.7429671921552904
                 ]
               }
             }

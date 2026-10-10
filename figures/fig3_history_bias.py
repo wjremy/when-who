@@ -106,7 +106,7 @@ legend_handles = [
     Line2D([], [], marker="o", linestyle="none", markersize=MARKER_SIZE,
            markerfacecolor=BLUE, markeredgecolor=BLUE,
            markeredgewidth=LINE_WIDTH,
-           label="Observed minus reference, plus 0.5"),
+           label="Observed minus chance level, plus 0.5"),
 ]
 
 # Put panel labels above the axes, outside the data regions.

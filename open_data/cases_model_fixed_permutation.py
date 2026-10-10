@@ -39,7 +39,7 @@ COHORTS = {
     "ctn0094": {
         "label": "CTN-0094 weekly",
         "existing_dataset": "weekly_missing_excluded",
-        "table4": {"median_auc": 0.68, "share_gt_0_5": 0.66, "mean_auc": 0.64},
+        "table4": {"median_auc": 0.69, "share_gt_0_5": 0.66, "mean_auc": 0.64},  # median 0.68 before the review-2 CTN fix (10 Oct)
     },
     "ces": {
         "label": "College Experience",
@@ -288,28 +288,24 @@ def ctn_rebuild_histories(data, test, target, event_col):
         rows = changed.loc[changed.who.eq(pid)].sort_values("study_week", kind="mergesort")
         first = rows.iloc[0]
         initial_events = json.loads(first.history_initial_events)
-        initial_screens = json.loads(first.history_initial_screens)
         week_event = {}
-        week_screens = {}
-        for week, event, screens in zip(range(4), initial_events, initial_screens):
+        for week, event in zip(range(4), initial_events):
             if event is not None:
                 week_event[week] = int(event)
-                week_screens[week] = int(screens)
         scored = rows.loc[rows.study_week.ge(4) & rows.observed.eq(1)]
         for row in scored.itertuples():
             week = int(row.study_week)
             week_event[week] = int(changed.at[row.Index, event_col])
-            week_screens[week] = int(row.screen_count_target)
 
         for row in rows.itertuples():
             week = int(row.study_week)
             origin = week - 1
             prior = [w for w in week_event if w <= origin]
-            prior_screens = sum(week_screens[w] for w in prior)
-            # As in prep_ctn0094_panels.py: positive weeks divided by screens.
+            prior_weeks = len(prior)
+            # Match prep_ctn0094_panels.py: positive weeks divided by observed weeks.
             prior_events = sum(week_event[w] for w in prior)
             changed.at[row.Index, "expanding_rate"] = (
-                prior_events / prior_screens if prior_screens else np.nan
+                prior_events / prior_weeks if prior_weeks else np.nan
             )
             recent_weeks = [w for w in prior if w >= max(0, origin - 3)]
             changed.at[row.Index, "recent_rate"] = (
@@ -397,9 +393,17 @@ def fit_ctn():
         return {"logistic_regression": lr.predict_proba(lr_scaler.transform(xt))[:, 1],
                 "gradient_boosting": gb.predict_proba(xt)[:, 1]}
 
+    def gb_for_patient(pid, target):
+        """Fixed gradient-boosting forecasts for one test patient's rows (test-index order) after
+        rebuilding that patient's history features from `target` (used by fitted_model_package.py)."""
+        rows = test.loc[test.who.eq(pid)]
+        permuted = ctn_rebuild_histories(data.loc[data.who.eq(pid)], rows, target, event_col)
+        x = feature_frame(permuted.loc[rows.index]).reindex(columns=xtr.columns, fill_value=0)
+        return gb.predict_proba(imputer.transform(x))[:, 1]
+
     return {"test": test, "y": test[event_col].astype(int).to_numpy(), "pid": test.who.to_numpy(),
             "predictions": predictions, "score_permutation": score_permutation,
-            "selected_gb_iterations": int(best_iter)}
+            "gb_for_patient": gb_for_patient, "selected_gb_iterations": int(best_iter)}
 
 
 def fit_ces():
@@ -503,7 +507,7 @@ def cohort_history_features():
         "ctn0094": {
             "outcome_history_features": ["previous_result", "runin_rate", "expanding_rate", "recent_rate"],
             "held_fixed_runin_features": ["runin_rate"],
-            "detail": "Run-in rate is fixed. Expanding rate is positive weeks divided by screens, as in the panel builder (identity check: rebuilding from the unpermuted outcomes reproduces every forecast); recent rate averages observed outcomes in the prior four calendar weeks. Previous-observed status and expanding_n describe availability, not outcome values.",
+            "detail": "Run-in rate is fixed. Expanding rate is positive weeks divided by observed weeks, as in the panel builder (identity check: rebuilding from the unpermuted outcomes reproduces every forecast); recent rate averages observed outcomes in the prior four calendar weeks. Previous-observed status and expanding_n describe availability, not outcome values.",
         },
         "ces": {
             "outcome_history_features": ["last4_rate", "last12_rate", "expanding_rate", "runin_rate"],
@@ -651,7 +655,7 @@ def helper_selftest():
         "previous_result": [0, 0, 1],
     })
     ctn_rebuilt = ctn_rebuild_histories(ctn, ctn, np.asarray([1, 0, 0]), "event")
-    if not np.allclose(ctn_rebuilt.expanding_rate.to_numpy(), [0.5, 0.6, 3 / 7]):
+    if not np.allclose(ctn_rebuilt.expanding_rate.to_numpy(), [0.5, 0.6, 0.5]):
         raise AssertionError("CTN history helper failed the synthetic check")
     if ctn_rebuilt.previous_result.to_list() != [0.0, 1.0, 0.0]:
         raise AssertionError("CTN previous-result helper failed the synthetic check")

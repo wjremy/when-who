@@ -1,0 +1,16 @@
+bibentry(
+  bibtype = "Unpublished",
+  title = "Which patients or which days? Pooling distorts every common measure of repeated clinical forecasts, and per-patient scores need a chance level of their own",
+  author = person("Wesley", "Remy"),
+  year = "2026",
+  note = "Preprint"
+)
+
+bibentry(
+  bibtype = "Manual",
+  title = "withinpatient: Within-Patient Evaluation of Repeated Binary Forecasts",
+  author = person("Wesley", "Remy"),
+  year = "2026",
+  note = "R package version 2.0.0",
+  address = "Department of Computer Science, ETH Zurich"
+)

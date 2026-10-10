@@ -1,9 +1,0 @@
-{
-  "seed": 7182026,
-  "reps": 100,
-  "patients": 150,
-  "observations_per_patient": 40,
-  "b": 1,
-  "x": "independent standard normal, centred to exact zero mean per patient",
-  "patient_z_sd": 1.3
-}

@@ -370,9 +370,13 @@ def population_a0_moment_corrected(patient: Any, y: Any) -> float:
 
 
 def pooled_auc_permutation_test(patient: Any, y: Any, forecast: Any, n_perm: int = 2000, seed: int = 0) -> dict[str, Any]:
-    """Test pooled AUC under within-patient forecast shuffles with outcomes fixed.
+    """Monte Carlo permutation test of the pooled AUC under within-patient forecast shuffles with outcomes fixed.
 
-    Each draw independently permutes forecast rows within each patient's scored record.
+    This tests the pooled AUC only. It is not a per-patient chance level: shuffling a history-built forecast against
+    fixed outcomes breaks its dependence on the patient's own past, so it misses the finite-record effect. For
+    per-patient chance levels use ``evaluate`` (outcomes shuffled, forecast and reference rebuilt).
+
+    Null hypothesis: within each patient, forecasts are unrelated to outcomes. Each draw independently permutes forecast rows within each patient's scored record.
     The one-sided p-value is ``(count(null >= observed) + 1) / (n_perm + 1)``.
     """
     pid, yy, pp = _arrays(patient, y, forecast)
@@ -501,13 +505,130 @@ def calibration_slopes(patient: Any, y: Any, forecast: Any) -> dict[str, Any]:
     return {"pooled_intercept": intercept, "pooled_slope": slope, "joint_intercept": joint_intercept, "between_slope": between, "within_slope": within}
 
 
-def conditional_within_slope(patient: Any, y: Any, forecast: Any) -> dict[str, Any]:
+def _dp_group_python(group_x, weights, m):
+    """Rescaled elementary-symmetric recurrence: (log scale, e_m, d1_m, d2_m) or NaNs on failure."""
+    e = np.zeros(m + 1)
+    d1 = np.zeros(m + 1)
+    d2 = np.zeros(m + 1)
+    e[0] = 1.0
+    log_scale = 0.0
+    n = group_x.shape[0]
+    for i in range(1, n + 1):
+        xi = group_x[i - 1]
+        wi = weights[i - 1]
+        degree = i if i < m else m
+        # Descending k so the previous row's lower entries are still unchanged when read.
+        for k in range(degree, 0, -1):
+            d2[k] = d2[k] + wi * (d2[k - 1] + 2.0 * xi * d1[k - 1] + xi * xi * e[k - 1])
+            d1[k] = d1[k] + wi * (d1[k - 1] + xi * e[k - 1])
+            e[k] = e[k] + wi * e[k - 1]
+        scale = 0.0
+        for k in range(degree + 1):
+            if e[k] > scale:
+                scale = e[k]
+        if not (scale > 0.0) or not np.isfinite(scale):
+            return np.nan, np.nan, np.nan, np.nan
+        for k in range(degree + 1):
+            e[k] /= scale
+            d1[k] /= scale
+            d2[k] /= scale
+        log_scale += math.log(scale)
+    return log_scale, e[m], d1[m], d2[m]
+
+
+try:  # numba makes the per-observation loop ~100x faster; the Python loop is the same code.
+    from numba import njit as _njit
+    _dp_group = _njit(cache=True)(_dp_group_python)
+except Exception:  # numba not installed
+    _dp_group = _dp_group_python
+
+
+def _conditional_loglik_terms_1d(y: np.ndarray, x: np.ndarray, groups: Sequence[np.ndarray], beta: float
+                                ) -> tuple[float, float, float]:
+    """Return exact conditional log likelihood, score, and observed information for one slope."""
+    loglik = score = information = 0.0
+    for ix in groups:
+        group_y = np.asarray(y[ix], dtype=int)
+        group_x = np.asarray(x[ix], dtype=float)
+        n = len(group_y)
+        m = int(group_y.sum())
+        if m == 0 or m == n:
+            continue
+        # e_m(w) = prod(w) * e_(n-m)(1/w); this keeps the DP degree at most n/2.
+        if m > n // 2:
+            group_y = 1 - group_y
+            group_x = -group_x
+            m = n - m
+        group_x = group_x - np.mean(group_x)
+        event_x = float(np.dot(group_y, group_x))
+
+        logits = beta * group_x
+        if not np.isfinite(logits).all():
+            return float("nan"), float("nan"), float("nan")
+        shift = float(np.max(logits))
+        weights = np.exp(logits - shift)
+
+        log_scale, denominator, d1m, d2m = _dp_group(np.ascontiguousarray(group_x), np.ascontiguousarray(weights), m)
+        if not np.isfinite(log_scale):
+            return float("nan"), float("nan"), float("nan")
+        denominator = float(denominator)
+        if denominator <= 0.0 or not np.isfinite(denominator):
+            return float("nan"), float("nan"), float("nan")
+        mean_sum = float(d1m / denominator)
+        variance_sum = float(d2m / denominator - mean_sum * mean_sum)
+        # Roundoff can make a zero variance very slightly negative.
+        variance_sum = max(variance_sum, 0.0)
+        log_denominator = m * shift + log_scale + math.log(denominator)
+        loglik += beta * event_x - log_denominator
+        score += event_x - mean_sum
+        information += variance_sum
+    return float(loglik), float(score), float(information)
+
+
+def _conditional_logit_1d(y: np.ndarray, x: np.ndarray, groups: Sequence[np.ndarray]
+                          ) -> Optional[tuple[float, float]]:
+    """Fit a one-covariate exact conditional logistic model by damped Newton steps."""
+    beta = 0.0
+    loglik, gradient, information = _conditional_loglik_terms_1d(y, x, groups, beta)
+    if not np.isfinite([loglik, gradient, information]).all():
+        return None
+    for _ in range(100):
+        if information <= 0.0 or not np.isfinite(information):
+            return None
+        step = gradient / information
+        if not np.isfinite(step):
+            return None
+        if abs(step) <= 1e-9 * (1.0 + abs(beta)):
+            return float(beta), float(1.0 / math.sqrt(information))
+
+        trial_step = step
+        accepted = False
+        for _ in range(60):
+            trial_beta = beta + trial_step
+            if np.isfinite(trial_beta):
+                trial = _conditional_loglik_terms_1d(y, x, groups, trial_beta)
+                if np.isfinite(trial[0]) and trial[0] >= loglik - 1e-12:
+                    accepted = True
+                    break
+            trial_step *= 0.5
+        if not accepted:
+            return None
+        beta = trial_beta
+        loglik, gradient, information = trial
+    return None
+
+
+def conditional_within_slope(patient: Any, y: Any, forecast: Any, *, method: str = "exact") -> dict[str, Any]:
     """Return the within-patient calibration slope from conditional logistic regression of y on the clipped forecast logit.
 
     Patients enter only if they have both outcomes; their intercepts are conditioned out, so the slope uses
     within-patient variation alone. If no such patient has within-patient logit variation, or the fit fails, the
-    slope and SE are NaN and ``reason`` says why (a RuntimeWarning is also issued). Requires statsmodels.
+    slope and SE are NaN and ``reason`` says why (a RuntimeWarning is also issued). The default exact implementation
+    uses a one-dimensional elementary-symmetric-polynomial recurrence; ``method="statsmodels"`` selects the slower
+    statsmodels implementation as a cross-check.
     """
+    if method not in {"exact", "statsmodels"}:
+        raise ValueError("method must be 'exact' or 'statsmodels'")
     pid, yy, pp = _arrays(patient, y, forecast)
     pp = _probabilities("forecast", pp)
     logits = _clipped_logit(pp)
@@ -517,6 +638,22 @@ def conditional_within_slope(patient: Any, y: Any, forecast: Any) -> dict[str, A
         out["reason"] = "no patient has both outcomes"
     elif not any(np.ptp(logits[ix]) > 1e-12 for ix in both):
         out["reason"] = "forecast logit does not vary within any patient with both outcomes"
+    elif method == "exact":
+        keep = np.concatenate(both)
+        group_indices: list[np.ndarray] = []
+        start = 0
+        for ix in both:
+            group_indices.append(np.arange(start, start + len(ix)))
+            start += len(ix)
+        fit = _conditional_logit_1d(yy[keep].astype(int), logits[keep], group_indices)
+        if fit is None:
+            out["reason"] = "exact conditional logit fit failed to converge"
+        else:
+            beta, se = fit
+            if np.isfinite(beta) and np.isfinite(se) and se > 0:
+                out.update(slope=beta, se=se, estimable=True)
+            else:
+                out["reason"] = "exact conditional logit returned a non-finite estimate"
     else:
         try:
             from statsmodels.discrete.conditional_models import ConditionalLogit
@@ -560,7 +697,10 @@ def patient_calibration_in_the_large(patient: Any, y: Any, forecast: Any, tolera
 
 def permutation_reference(patient: Any, y: Any, time: Any, history_forecast_fn: Callable[[np.ndarray], Any], n_perm: int = 200, seed: int = 0,
                           runin_days: Optional[float] = None) -> dict[str, Any]:
-    """Compare observed within AUC with forecasts recomputed after within-patient day permutations; the reference represents exchangeable days and the difference is a contrast with that hypothesis, not a corrected estimate.
+    """Compare the observed within-patient AUC with its chance level from within-patient shuffles of the outcomes,
+    the forecast being recomputed from each shuffled history. The reference is the patient's chance level and the
+    difference is the excess over it, which has expectation zero when the patient's scored days are exchangeable
+    (paper, Appendix A.5). ``evaluate`` applies the same procedure to every measure.
 
     With ``runin_days``, days before it are a fixed run-in history: they are not permuted, and ``history_forecast_fn``
     receives the run-in outcomes followed by the permuted scored outcomes (time order). AUC uses scored days only.

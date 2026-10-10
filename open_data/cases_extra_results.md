@@ -6,10 +6,10 @@ Patient AUC includes patients with both outcome classes. Sampling variance uses 
 
 | Dataset | Model | Eligible patients | Mean AUC | SD | Min | AUC > .5 | AUC > .6 | AUC > .7 | True AUC SD estimate | Sampling share | Model Brier wins (95% patient bootstrap) |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
-| replace_bg | gradient_boosting | 42 | 0.7587 | 0.1020 | 0.4617 | 0.9762 | 0.9762 | 0.6905 | 0.0000 | 1.0035 | 0.7556 [0.6222, 0.8667] (n=45) |
-| replace_bg | logistic_regression | 42 | 0.7504 | 0.1154 | 0.3243 | 0.9762 | 0.9524 | 0.6667 | 0.0543 | 0.7787 | 0.7778 [0.6444, 0.8889] (n=45) |
-| weekly_missing_excluded | gradient_boosting | 154 | 0.6379 | 0.2803 | 0.0000 | 0.6558 | 0.5714 | 0.4740 | 0.2320 | 0.3152 | 0.5447 [0.4797, 0.6098] (n=246) |
-| weekly_missing_excluded | logistic_regression | 154 | 0.6527 | 0.2522 | 0.0000 | 0.7078 | 0.6299 | 0.4805 | 0.1893 | 0.4367 | 0.5488 [0.4878, 0.6138] (n=246) |
+| replace_bg | gradient_boosting | 42 | 0.7594 | 0.1014 | 0.4707 | 0.9762 | 0.9762 | 0.7143 | 0.0000 | 1.0321 | 0.7333 [0.6000, 0.8450] (n=45) |
+| replace_bg | logistic_regression | 42 | 0.7513 | 0.1161 | 0.3153 | 0.9762 | 0.9286 | 0.6667 | 0.0559 | 0.7683 | 0.7556 [0.6222, 0.8667] (n=45) |
+| weekly_missing_excluded | gradient_boosting | 154 | 0.6380 | 0.2787 | 0.0000 | 0.6623 | 0.5649 | 0.4805 | 0.2298 | 0.3204 | 0.5325 [0.4715, 0.5976] (n=246) |
+| weekly_missing_excluded | logistic_regression | 154 | 0.6470 | 0.2526 | 0.0000 | 0.7013 | 0.6104 | 0.4545 | 0.1890 | 0.4402 | 0.5488 [0.4878, 0.6138] (n=246) |
 | weekly_missing_positive | gradient_boosting | 232 | 0.7230 | 0.1867 | 0.0000 | 0.8664 | 0.7974 | 0.6681 | 0.1432 | 0.4121 | 0.8252 [0.7763, 0.8699] (n=246) |
 | weekly_missing_positive | logistic_regression | 232 | 0.6887 | 0.1940 | 0.0000 | 0.8621 | 0.7371 | 0.5388 | 0.1536 | 0.3732 | 0.8008 [0.7480, 0.8496] (n=246) |
 | ces | gradient_boosting | 37 | 0.8003 | 0.1277 | 0.4619 | 0.9459 | 0.8919 | 0.8108 | 0.1078 | 0.2873 | 0.8684 [0.7632, 0.9737] (n=38) |
@@ -23,47 +23,47 @@ The CTN-0094 curve uses staged `GradientBoostingClassifier` because the source m
 
 | Dataset | Metric | Mean best round | Range of best rounds across seeds |
 |---|---|---:|---:|
-| replace_bg | pooled_auc | 154.0 | [120, 190] |
-| replace_bg | mean_within_patient_auc | 274.0 | [150, 500] |
-| replace_bg | pooled_log_loss | 184.0 | [140, 250] |
-| replace_bg | pooled_brier | 204.0 | [120, 340] |
-| replace_bg | patient_mean_brier | 158.0 | [130, 190] |
-| weekly_missing_excluded | pooled_auc | 120.0 | [90, 150] |
-| weekly_missing_excluded | mean_within_patient_auc | 86.0 | [30, 110] |
-| weekly_missing_excluded | pooled_log_loss | 126.0 | [110, 150] |
-| weekly_missing_excluded | pooled_brier | 102.0 | [80, 110] |
-| weekly_missing_excluded | patient_mean_brier | 102.0 | [80, 110] |
+| replace_bg | pooled_auc | 158.0 | [130, 220] |
+| replace_bg | mean_within_patient_auc | 350.0 | [110, 480] |
+| replace_bg | pooled_log_loss | 214.0 | [170, 270] |
+| replace_bg | pooled_brier | 172.0 | [130, 210] |
+| replace_bg | patient_mean_brier | 170.0 | [130, 210] |
+| weekly_missing_excluded | pooled_auc | 106.0 | [90, 150] |
+| weekly_missing_excluded | mean_within_patient_auc | 52.0 | [30, 90] |
+| weekly_missing_excluded | pooled_log_loss | 98.0 | [90, 120] |
+| weekly_missing_excluded | pooled_brier | 90.0 | [90, 90] |
+| weekly_missing_excluded | patient_mean_brier | 90.0 | [90, 90] |
 | weekly_missing_positive | pooled_auc | 214.0 | [140, 270] |
-| weekly_missing_positive | mean_within_patient_auc | 462.0 | [410, 500] |
+| weekly_missing_positive | mean_within_patient_auc | 480.0 | [410, 500] |
 | weekly_missing_positive | pooled_log_loss | 284.0 | [230, 330] |
-| weekly_missing_positive | pooled_brier | 254.0 | [210, 310] |
-| weekly_missing_positive | patient_mean_brier | 254.0 | [210, 310] |
+| weekly_missing_positive | pooled_brier | 248.0 | [210, 280] |
+| weekly_missing_positive | patient_mean_brier | 248.0 | [210, 280] |
 
 ### replace_bg: AUC by round
 
 | Round | Pooled AUC mean (range) | Mean within-patient AUC mean (range) |
 |---:|---:|---:|
-| 10 | 0.7510 (0.7426–0.7580) | 0.6600 (0.6540–0.6636) |
-| 50 | 0.7785 (0.7765–0.7803) | 0.6953 (0.6921–0.6989) |
-| 100 | 0.7859 (0.7852–0.7863) | 0.7010 (0.6994–0.7019) |
-| 200 | 0.7867 (0.7851–0.7879) | 0.7030 (0.6996–0.7049) |
-| 300 | 0.7854 (0.7841–0.7865) | 0.7044 (0.7034–0.7054) |
-| 500 | 0.7833 (0.7815–0.7850) | 0.7041 (0.7025–0.7055) |
+| 10 | 0.7441 (0.7387–0.7498) | 0.6592 (0.6537–0.6627) |
+| 50 | 0.7789 (0.7766–0.7803) | 0.6964 (0.6893–0.7002) |
+| 100 | 0.7857 (0.7852–0.7864) | 0.7032 (0.7014–0.7052) |
+| 200 | 0.7869 (0.7857–0.7879) | 0.7066 (0.7058–0.7071) |
+| 300 | 0.7855 (0.7840–0.7871) | 0.7071 (0.7055–0.7082) |
+| 500 | 0.7835 (0.7809–0.7859) | 0.7072 (0.7047–0.7091) |
 
-AUC plateau rounds: pooled mean 100.0 (range [90, 110]); within-patient mean 154.0 (range [110, 260]).
+AUC plateau rounds: pooled mean 100.0 (range [80, 110]); within-patient mean 164.0 (range [90, 220]).
 
 ### weekly_missing_excluded: AUC by round
 
 | Round | Pooled AUC mean (range) | Mean within-patient AUC mean (range) |
 |---:|---:|---:|
-| 10 | 0.9086 (0.9078–0.9092) | 0.6432 (0.6390–0.6460) |
-| 50 | 0.9156 (0.9150–0.9162) | 0.6611 (0.6572–0.6677) |
-| 100 | 0.9166 (0.9159–0.9173) | 0.6639 (0.6560–0.6684) |
-| 200 | 0.9160 (0.9153–0.9166) | 0.6585 (0.6546–0.6614) |
-| 300 | 0.9150 (0.9144–0.9155) | 0.6561 (0.6525–0.6599) |
-| 500 | 0.9130 (0.9128–0.9131) | 0.6545 (0.6492–0.6584) |
+| 10 | 0.9093 (0.9089–0.9098) | 0.6459 (0.6385–0.6509) |
+| 50 | 0.9156 (0.9152–0.9160) | 0.6610 (0.6575–0.6647) |
+| 100 | 0.9169 (0.9164–0.9172) | 0.6599 (0.6575–0.6639) |
+| 200 | 0.9162 (0.9158–0.9170) | 0.6590 (0.6519–0.6653) |
+| 300 | 0.9149 (0.9145–0.9155) | 0.6566 (0.6520–0.6593) |
+| 500 | 0.9126 (0.9118–0.9132) | 0.6537 (0.6496–0.6575) |
 
-AUC plateau rounds: pooled mean 44.0 (range [40, 50]); within-patient mean 54.0 (range [30, 90]).
+AUC plateau rounds: pooled mean 48.0 (range [40, 50]); within-patient mean 44.0 (range [30, 70]).
 
 ### weekly_missing_positive: AUC by round
 
@@ -72,8 +72,8 @@ AUC plateau rounds: pooled mean 44.0 (range [40, 50]); within-patient mean 54.0 
 | 10 | 0.8475 (0.8464–0.8483) | 0.7099 (0.7061–0.7161) |
 | 50 | 0.8553 (0.8548–0.8556) | 0.7188 (0.7161–0.7225) |
 | 100 | 0.8593 (0.8585–0.8599) | 0.7305 (0.7290–0.7318) |
-| 200 | 0.8602 (0.8590–0.8610) | 0.7348 (0.7335–0.7374) |
-| 300 | 0.8600 (0.8591–0.8604) | 0.7379 (0.7365–0.7393) |
-| 500 | 0.8580 (0.8573–0.8587) | 0.7405 (0.7388–0.7429) |
+| 200 | 0.8602 (0.8590–0.8610) | 0.7348 (0.7335–0.7373) |
+| 300 | 0.8599 (0.8591–0.8604) | 0.7379 (0.7364–0.7393) |
+| 500 | 0.8579 (0.8571–0.8586) | 0.7406 (0.7391–0.7430) |
 
-AUC plateau rounds: pooled mean 88.0 (range [80, 90]); within-patient mean 330.0 (range [260, 380]).
+AUC plateau rounds: pooled mean 88.0 (range [80, 90]); within-patient mean 328.0 (range [260, 380]).

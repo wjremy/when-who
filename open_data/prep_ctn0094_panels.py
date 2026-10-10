@@ -91,7 +91,7 @@ def build():
                 history_initial_events=json.dumps(initial_events, separators=(',', ':')),
                 history_initial_screens=json.dumps(initial_screens, separators=(',', ':')),
                 previous_result=(weeks[origin][0] if origin in weeks else np.nan), previous_observed=int(origin in weeks),
-                expanding_rate=(hist_events/hist_screens if hist_screens else np.nan), expanding_n=hist_screens,
+                expanding_rate=(hist_events/len(hist) if hist else np.nan), expanding_n=hist_screens,
                 recent_rate=(sum(recent)/len(recent) if recent else np.nan), recent_n=len(recent),
                 persistence=(weeks[origin][0] if origin in weeks else np.nan),
                 self_report_opioid_days_last_week=int(tlfb_week.get((p, origin), 0)),

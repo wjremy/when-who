@@ -1,151 +1,121 @@
-# Which patients or which days? Separating within-patient and between-patient performance of clinical forecasts
+# Which patients or which days? Pooling distorts every common measure of repeated clinical forecasts, and per-patient scores need a chance level of their own
 
-[![DOI](https://zenodo.org/badge/1412370860.svg)](https://doi.org/10.5281/zenodo.23269933)
+Code for the paper by Wesley Remy (2026): the Python package `withinpatient` and its R port, the simulations, the cohort analyses, and the scripts that produce every table and figure.
 
-This repository accompanies the paper “Which patients or which days? Separating within-patient and between-patient performance of clinical forecasts” by Wesley Remy (Department of Computer Science, ETH Zurich, Zurich, Switzerland; ORCID 0009-0007-6431-4200). The paper shows how pooled scores of repeated clinical forecasts mix comparisons within and between patients, and gives quantities for evaluating whether a forecast distinguishes a patient's higher-risk days from other patients' risk at a given time.
+A forecast that is issued every day for the same patients can score well because it knows which patients have events often, without knowing on which days. Scoring each patient separately is necessary but not sufficient. The fix has two steps:
 
-## Repository contents
+1. **Score within each patient.** Compute every measure on each patient's own days, so that every comparison is between days of the same patient.
+2. **Compare with that patient's chance level.** Shuffle the patient's scored outcomes over the days, rebuild the forecast and the reference from the shuffled outcomes (the fitted model stays fixed), and score again. The mean over a few hundred shuffles is the chance level; the excess over it is what the forecast knows about the days.
 
-| Path | Contents |
-| --- | --- |
-| code/ | Synthetic methods, simulations, supporting analyses, environment requirements, and the withinpatient package. |
-| figures/ | Scripts and rendered files for the three main-text figures. |
-| open_data/ | Cohort preparation and analysis scripts, plus aggregate tables and reports. Provider data, patient-day panels, and forecast exports are not included. |
-| results/ | Frozen aggregate outputs used by the synthetic analyses and figures. |
-| Repository root | This README, the MIT license, and citation metadata. |
+## Five-minute example
 
-## Public cohort data
+```
+python -m pip install ./code/withinpatient
+```
 
-The cohort source files are not part of this repository. Obtain them from their public sources and place them at the paths below before running the cohort analyses.
+```python
+import numpy as np, pandas as pd
+from withinpatient import evaluate, to_markdown
 
-- **REPLACE-BG:** download the public dataset from the [Jaeb Center dataset page](https://public.jaeb.org/dataset/546) (study NCT02258373). Put HDeviceCGM.txt, HDeviceBolus.txt, HDeviceWizard.txt, and HDeviceBasal.txt under open_data/replace_bg/Data Tables/.
-- **NIDA CTN-0094:** obtain the harmonized public tables from the [public.ctn0094data package on CRAN](https://cran.r-project.org/package=public.ctn0094data) and its [documentation](https://ctn-0094.github.io/public.ctn0094data/). Export randomization, everybody, uds_temp, uds, tlfb, and treatment as CSV files under open_data/ctn0094/csv/.
-- **College Experience Study:** download the harmonized dataset from its [openESM page](https://openesmdata.org/datasets/0040_nepal/) and place 0040_nepal_ts.tsv at open_data/ces_openesm/0040_nepal_ts.tsv.
+# 60 patients, 100 days each; outcomes are independent of the day (no daily signal)
+rng = np.random.default_rng(1)
+rate = rng.beta(2, 10, 60)
+rows = []
+for k, p in enumerate(rate):
+    y = rng.binomial(1, p, 100)
+    past = np.concatenate([[0], np.cumsum(y)[:-1]])
+    running = (past + 0.5) / (np.arange(100) + 1)          # running event rate of earlier days
+    rows.append(pd.DataFrame({"patient": k, "time": np.arange(100), "y": y, "forecast": running}))
+data = pd.concat(rows)
 
-## Environment and reproduction
+# Score days 30-99; rebuild the running rate in every within-patient shuffle
+result = evaluate(data, runin=30, rebuild={"name": "running_rate", "prior_rate": 0.5, "prior_weight": 1},
+                  metrics=["auc", "average_precision", "brier_skill"], n_perm=200, seed=1)
+print(to_markdown(result))
+```
 
-Run commands from the repository root in PowerShell. The analysis environment uses Python 3.12; install the listed dependencies and the package:
+```
+| Metric | Mean observed | Mean chance | Median excess [IQR] | Excess > 0 | p < 0.05 | Patients | Pooled | Usual per-patient mean |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| auc | 0.356 | 0.341 | 0.002 [-0.032, 0.061] | 52% | 5% | 58 | 0.653 | 0.356 |
+| average_precision | 0.139 | 0.138 | -0.001 [-0.010, 0.011] | 43% | 3% | 58 | 0.233 | 0.139 |
+| brier_skill | -0.034 | -0.033 | -0.000 [-0.001, 0.001] | 47% | 5% | 58 | 0.033 | 0.033 |
+```
 
-    python -m pip install -r code/requirements.txt
-    python -m pip install ./code/withinpatient
+The running rate knows nothing about the days. Pooled, its AUC is 0.65; per patient it is 0.36, below 0.5 because the record is finished; against its chance level the excess is zero. The default measures are the AUC, average precision, sensitivity, specificity, PPV, NPV, net benefit, Brier skill and the calibration slope; any function `f(y, p)` can be added. A fitted model with covariates is rebuilt by a function `f(y, scored, rows)` that recomputes its history features from the shuffled outcomes (`open_data/fitted_model_package.py` does this for the CTN-0094 model). See `code/withinpatient/README.md` and, for R, `code/withinpatientR/README.md`.
 
-The calibration-history routines build a small C helper on first use and require a GCC-compatible compiler on PATH (MinGW-w64 GCC on Windows). Run compute-intensive jobs sequentially.
+## Tables and figures
 
-First rebuild the REPLACE-BG and CTN-0094 panels from the provider files, then run the three cohort analyses. The College Experience analysis reads the openESM TSV directly.
+Outputs are in `open_data/results/v10/` (the analysis version used for paper v11) unless stated otherwise.
 
-    python open_data/prepare_replace_bg_panel_v2.py
-    Copy-Item open_data/replace_bg_panel_v2.csv open_data/replace_bg_panel.csv -Force
+| Item | Content | Script | Output |
+|---|---|---|---|
+| Table 1 | Two patients, nine measures | `code/table1_two_patients.py` | `table1.md` |
+| Table 2 | The four errors | analytical | — |
+| Table 3 | Per-patient chance levels | analytical (Appendix A); expected average precision of a random ranking: `withinpatient.ap_chance` | — |
+| Table 4 | Two forecasts without knowledge of the weeks, CTN-0094 | `open_data/main_table_v10.py` | `main_table.md` |
+| Table 5 | Ranking simulation, AUC | `code/ranking_sim.py --extra-pair` | `ranking_sim.md` |
+| Table 6 | Gradient-boosting model, CTN-0094, read three ways | `open_data/fitted_model_package.py` | `fitted_model_package.md` |
+| Figure 1 | Finite-record effect | `code/history_bias.py`, `code/history_bias_fix.py`, then `figures/fig3_history_bias.py` | `results/history_bias_*.json`, `figures/fig3_history_bias.pdf` |
+| Table S1 | The three datasets | panel builders and cohort analyses (counts) | `open_data/*_results.md`, `main_table.md` |
+| Tables S2–S4 | Main table for CTN-0094, REPLACE-BG, College Experience Study | `open_data/main_table_v10.py` | `main_table.md` |
+| Table S5 | Run-in rate against scored-period references | `open_data/yardstick_check_v10.py` | `yardstick_check.md` |
+| Table S6 | Per-patient AUC of history-built forecasts | `code/history_bias.py` | `results/history_bias_grid.json` |
+| Table S7 | Recent-window counts with clustered events | `code/history_bias_fix.py` | `results/history_bias_fix.json` |
+| Tables S8–S10 | Ranking simulation, both pairs, shortcut effect | `code/ranking_sim.py --extra-pair` | `ranking_sim.md` |
+| Table S11 | Power and size of the per-patient permutation test | `code/ranking_sim.py` | `ranking_sim.md` |
+| Table S12 | Recent mean without time structure | `code/lj_baseline_check.py` (prints the table) | `lj_baseline_check.md` |
 
-    python open_data/prep_ctn0094_panels.py
-    Copy-Item open_data/ctn0094_daily_panel_rebuilt.csv open_data/ctn0094_daily_panel.csv -Force
-    Copy-Item open_data/ctn0094_weekly_panel_rebuilt.csv open_data/ctn0094_weekly_panel.csv -Force
+`open_data/table4_v10.py` produces the nine-measure comparison of the fitted models (`table4.md`), whose model-fixed chance levels `fitted_model_package.py` checks against.
 
-    python open_data/replace_bg_analysis.py
-    python open_data/ctn0094_analysis.py
-    python open_data/ces_analysis.py
+## Cohort data
 
-Those analyses create local panel and forecast files used by the aggregate producers. These person-level intermediate files are not included in the public repository.
+No data are redistributed. Obtain the provider files and place them as follows.
 
-Run the cohort tables and supplementary analyses after the cohort scripts:
+- **REPLACE-BG:** the public dataset of the [Jaeb Center](https://public.jaeb.org/dataset/546) (NCT02258373). Put HDeviceCGM.txt, HDeviceBolus.txt, HDeviceWizard.txt and HDeviceBasal.txt under `open_data/replace_bg/Data Tables/`.
+- **CTN-0094:** the harmonized tables of the [public.ctn0094data package on CRAN](https://cran.r-project.org/package=public.ctn0094data). Export randomization, everybody, uds_temp, uds, tlfb and treatment as CSV files under `open_data/ctn0094/csv/`.
+- **College Experience Study:** the harmonized dataset on [openESM](https://openesmdata.org/datasets/0040_nepal/); place `0040_nepal_ts.tsv` at `open_data/ces_openesm/0040_nepal_ts.tsv`.
 
-    python open_data/cases_tables.py
-    python open_data/cases_extra.py
-    python open_data/cases_average_precision.py
-    python open_data/cases_predictive_values.py
-    python open_data/cases_same_patients.py
-    python open_data/cases_resplit.py --cohort replace_bg
-    python open_data/cases_resplit.py --cohort ctn_weekly_missing_excluded
-    python open_data/cases_resplit.py --cohort ces
-    python open_data/cases_threshold_sensitivity.py
-    python open_data/realtime_analysis.py
-    python open_data/skill_analysis.py
-    python open_data/cases_information_audit.py
-    python open_data/cases_review_v71.py
-    python open_data/cases_model_fixed_permutation.py
+## Reproduction
 
-The last three commands produce the v7 information audit, rate-reference and calibration-noise summaries, and model-fixed permutation results. cases_model_fixed_permutation.py uses the aggregate output from cases_extra.py.
+Environment: `code/environment.md`. Install with `python -m pip install -r code/requirements.txt` and `python -m pip install ./code/withinpatient`. Run from the repository root.
 
-For the calibration-history supplement, run the producers in this order:
+```
+# 1. Panels and cohort analyses (forecasts and fitted models)
+python open_data/prepare_replace_bg_panel_v2.py
+cp open_data/replace_bg_panel_v2.csv open_data/replace_bg_panel.csv
+python open_data/prep_ctn0094_panels.py
+cp open_data/ctn0094_daily_panel_rebuilt.csv open_data/ctn0094_daily_panel.csv
+cp open_data/ctn0094_weekly_panel_rebuilt.csv open_data/ctn0094_weekly_panel.csv
+python open_data/replace_bg_analysis.py
+python open_data/ctn0094_analysis.py
+python open_data/ces_analysis.py
+python open_data/cases_tables.py
+python open_data/cases_extra.py
 
-    python open_data/calhist/fit_core.py
-    python open_data/calhist/cohort_analysis.py --nboot 2000 --seed 20261007
-    python open_data/calhist/exact_counterexample.py
-    python open_data/calhist/simulation.py
-    python open_data/calhist/clipping_sensitivity.py
-    python open_data/calhist/figures.py
-    python open_data/calhist/verify.py
+# 2. Cohort tables (table4_v10 and main_table_v10 take up to about an hour each)
+python open_data/table4_v10.py
+python open_data/main_table_v10.py
+python open_data/yardstick_check_v10.py
+python open_data/fitted_model_package.py
 
-The synthetic methods and figure commands are:
+# 3. Simulations and Figure 1
+python code/table1_two_patients.py
+python code/history_bias.py
+python code/history_bias_fix.py
+python figures/fig3_history_bias.py
+python code/ranking_sim.py --extra-pair --workers 4
+python code/lj_baseline_check.py
+```
 
-    python code/theory_check.py
-    python code/supp_tables.py --table all
-    python code/calibration.py
-    python code/history_bias.py
-    python code/history_bias_fix.py
-    python figures/fig_concept_v5.py
-    python figures/fig3_history_bias.py
-    python code/cohort_curves.py
-    python figures/fig_central_v6.py
-    python code/importance_v2.py
-
-Tables 1, 2, 5, S1, S23 and S33 are manuscript-authored summaries; code/theory_check.py checks calculations supporting Table 3. Table S18 (robustness scenarios) is produced by `python code/robustness_sim.py` and Table S12 (known-calibration simulation) by `python code/calibration_known_sim.py`. The other commands regenerate the remaining tables and figures from their source data and aggregate inputs.
-
-## The withinpatient package
-
-Install from the repository root:
-
-    python -m pip install ./code/withinpatient
-
-The package computes pooled, within-patient, and per-time-point quantities from a patient identifier, time, binary outcome, and forecast probability. The synthetic example has five patients so each time point meets the default minimum size for per-time-point AUC.
-
-    import pandas as pd
-    from withinpatient import evaluate
-
-    outcomes = {
-        "A": [0, 1, 0, 1],
-        "B": [0, 0, 1, 1],
-        "C": [0, 1, 1, 0],
-        "D": [1, 0, 1, 0],
-        "E": [1, 1, 0, 0],
-    }
-    forecasts = {
-        "A": [0.1, 0.8, 0.2, 0.7],
-        "B": [0.2, 0.3, 0.6, 0.7],
-        "C": [0.3, 0.8, 0.7, 0.2],
-        "D": [0.8, 0.2, 0.7, 0.3],
-        "E": [0.7, 0.8, 0.2, 0.3],
-    }
-    data = pd.DataFrame([
-        {"patient_id": patient, "time": day, "event": outcomes[patient][day - 1],
-         "risk": forecasts[patient][day - 1]}
-        for patient in outcomes
-        for day in range(1, 5)
-    ])
-    result = evaluate(
-        data,
-        patient="patient_id",
-        time="time",
-        y="event",
-        forecast="risk",
-        threshold=0.5,
-    )
-    print(result["auc"]["pooled"]["value"])
-    print(result["auc"]["within_patient"]["value"])
-    print(result["auc"]["per_time_point"]["value"])
-    print(result["auc"]["A0"])
+`ranking_sim.py` gives identical results for any `--workers`; the full run takes about 2 hours on four cores. Tests: `python -m unittest discover code/withinpatient/tests` and, in R, `testthat::test_dir("code/withinpatientR/tests/testthat")`.
 
 ## License
 
-Code is licensed under the MIT License; see LICENSE.
+MIT; see LICENSE.
 
-## Methods citation
+## Citation
 
-Paste-ready sentence:
+Remy W. Which patients or which days? Pooling distorts every common measure of repeated clinical forecasts, and per-patient scores need a chance level of their own. Preprint, 2026.
 
-> Following Remy (2026), we report discrimination per patient and per time point, the pooled AUC beside $A_0$ (the pooled AUC that patients' event rates alone attain), Brier skill against each patient's own event rate and calibration-in-the-large per patient, computed with the withinpatient package (version 1.0.0; https://github.com/wjremy/when-who).
-
-Reference: Remy W. Which patients or which days? Separating within-patient and between-patient performance of clinical forecasts. Preprint, 2026.
-
-Software: Remy W. when-who: code for “Which patients or which days?” Zenodo; 2026. doi:10.5281/zenodo.23269933 (all versions; Zenodo lists the DOI of each release, and the paper cites the release it used).
-
-The preprint DOI will be added once the preprint is posted.
+Software: Remy W. when-who: code for "Which patients or which days?". Zenodo; 2026. doi:10.5281/zenodo.23269933 (all versions; each release has its own DOI). See CITATION.cff.

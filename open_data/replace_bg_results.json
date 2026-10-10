@@ -10,22 +10,22 @@
   },
   "1_cohort": {
     "patients": 224,
-    "scored_nights": 46702,
-    "events": 2749,
-    "event_rate": 0.05886257547856623,
-    "patient_event_rate_mean": 0.06023293939812164,
-    "patient_event_rate_sd": 0.0519549540961884,
-    "icc_rate": 0.04566711280538863,
+    "scored_nights": 46696,
+    "events": 2762,
+    "event_rate": 0.059148535206441664,
+    "patient_event_rate_mean": 0.06056433440895289,
+    "patient_event_rate_sd": 0.05208114658115657,
+    "icc_rate": 0.04575794948666458,
     "median_gap_days_between_eligible_nights": 1.0,
-    "within_patient_pair_share": 0.004318098409908193,
-    "night_below70_rate": 0.1575735514538992,
-    "any_15min_below54_next24h_rate_observed_days": 0.2144229283048864,
-    "next24h_adequate_coverage_share": 0.969744336430988,
+    "within_patient_pair_share": 0.004316040580520574,
+    "night_below70_rate": 0.1583433270515676,
+    "any_15min_below54_next24h_rate_observed_days": 0.21454754228679945,
+    "next24h_adequate_coverage_share": 0.969804694192222,
     "median_night_coverage_readings": 72.0,
     "median_predictor_coverage_readings": 286.0,
-    "pump_bolus_day_available_share": 0.9305597190698471,
-    "basal_estimate_day_available_share": 0.8963641814055072,
-    "carbohydrate_entry_day_available_share": 0.8337330307053231,
+    "pump_bolus_day_available_share": 0.9305936268631146,
+    "basal_estimate_day_available_share": 0.8963722802809663,
+    "carbohydrate_entry_day_available_share": 0.8337544971732054,
     "treatment_arm_available": false
   },
   "2_split": {
@@ -39,22 +39,22 @@
     "validation_log_loss_grid": [
       {
         "n_estimators": 50,
-        "validation_log_loss": 0.22391422994058705
+        "validation_log_loss": 0.224363711424836
       },
       {
         "n_estimators": 100,
-        "validation_log_loss": 0.22090420555634205
+        "validation_log_loss": 0.22133912709217063
       },
       {
         "n_estimators": 200,
-        "validation_log_loss": 0.22044001932128263
+        "validation_log_loss": 0.22086379052893262
       },
       {
         "n_estimators": 300,
-        "validation_log_loss": 0.2206977646404196
+        "validation_log_loss": 0.22130062784871385
       }
     ],
-    "train_event_rate": 0.054356428520037414,
+    "train_event_rate": 0.05468609462133477,
     "features": [
       "mean",
       "sd",
@@ -104,10 +104,10 @@
         ]
       },
       "runin_rate": {
-        "pooled_auc": 0.5971073660374072,
+        "pooled_auc": 0.6085700385464616,
         "pooled_auc_ci95": [
-          0.5243364856739329,
-          0.6617163480707989
+          0.5381844805750038,
+          0.6672948530062349
         ],
         "within_auc": 0.5,
         "within_auc_ci95": [
@@ -115,17 +115,17 @@
           0.5
         ],
         "within_auc_patients": 42,
-        "pooled_minus_within": 0.09710736603740722,
+        "pooled_minus_within": 0.10857003854646163,
         "pooled_minus_within_ci95": [
-          0.024336485673932907,
-          0.16171634807079888
+          0.03818448057500373,
+          0.16729485300623492
         ]
       },
       "runin_rate_shrunk_10": {
-        "pooled_auc": 0.5971073660374072,
+        "pooled_auc": 0.6085700385464616,
         "pooled_auc_ci95": [
-          0.5243364856739329,
-          0.6617163480707989
+          0.5381844805750038,
+          0.6672948530062349
         ],
         "within_auc": 0.5,
         "within_auc_ci95": [
@@ -133,71 +133,71 @@
           0.5
         ],
         "within_auc_patients": 42,
-        "pooled_minus_within": 0.09710736603740722,
+        "pooled_minus_within": 0.10857003854646163,
         "pooled_minus_within_ci95": [
-          0.024336485673932907,
-          0.16171634807079888
+          0.03818448057500373,
+          0.16729485300623492
         ]
       },
       "expanding_rate": {
-        "pooled_auc": 0.7066441408005194,
+        "pooled_auc": 0.7092734080626513,
         "pooled_auc_ci95": [
-          0.6547688566372091,
-          0.7423560648792241
+          0.6566556953977901,
+          0.7449734054392649
         ],
-        "within_auc": 0.3870664140861947,
+        "within_auc": 0.387534378704246,
         "within_auc_ci95": [
-          0.36042025541436795,
-          0.41414089363144496
+          0.36047592478968093,
+          0.4146100529861686
         ],
         "within_auc_patients": 42,
-        "pooled_minus_within": 0.3195777267143247,
+        "pooled_minus_within": 0.32173902935840526,
         "pooled_minus_within_ci95": [
-          0.2608483827640101,
-          0.36234293842143844
+          0.2627469860630094,
+          0.36423032500615354
         ]
       },
       "recent_28_night_rate": {
-        "pooled_auc": 0.6837289215890039,
+        "pooled_auc": 0.686379331060333,
         "pooled_auc_ci95": [
-          0.6359357798147626,
-          0.720714322646195
+          0.6369177888464422,
+          0.7236947406907396
         ],
-        "within_auc": 0.4692132343751356,
+        "within_auc": 0.4701997955066838,
         "within_auc_ci95": [
-          0.44664639756050023,
-          0.49126579345358323
+          0.4482378078684495,
+          0.49237752975626314
         ],
         "within_auc_patients": 42,
-        "pooled_minus_within": 0.21451568721386827,
+        "pooled_minus_within": 0.21617953555364922,
         "pooled_minus_within_ci95": [
-          0.16263918116450796,
-          0.25487369119022
+          0.16459222057583098,
+          0.2570806203475954
         ]
       },
       "persistence": {
-        "pooled_auc": 0.5365961199294532,
+        "pooled_auc": 0.5360795471332424,
         "pooled_auc_ci95": [
-          0.5173024924524281,
-          0.552816467205721
+          0.5170231720609136,
+          0.5518700694468107
         ],
-        "within_auc": 0.5062029783623406,
+        "within_auc": 0.5057970923834996,
         "within_auc_ci95": [
-          0.49429808497671557,
-          0.5176671067757816
+          0.49412760382719195,
+          0.5173432312915822
         ],
         "within_auc_patients": 42,
-        "pooled_minus_within": 0.03039314156711259,
+        "pooled_minus_within": 0.030282454749742782,
         "pooled_minus_within_ci95": [
-          0.01642997649754268,
-          0.041717657670281676
+          0.016399230212416023,
+          0.041449069492236174
         ]
       },
       "retrospective_rate_reference": {
-        "pooled_auc": 0.7518087003683711,
+        "pooled_auc": 0.7527413881059447,
         "pooled_auc_ci95": [
-          0.7090254087904425,
-          0.7822097787204548
+          0.709817586364785,
+          0.7833438734872074
         ],
         "within_auc": 0.5,
         "within_auc_ci95": [
@@ -205,88 +205,88 @@
           0.5
         ],
         "within_auc_patients": 42,
-        "pooled_minus_within": 0.2518087003683711,
+        "pooled_minus_within": 0.2527413881059447,
         "pooled_minus_within_ci95": [
-          0.20902540879044249,
-          0.28220977872045483
+          0.209817586364785,
+          0.28334387348720735
         ]
       },
       "logistic_regression": {
-        "pooled_auc": 0.8181307489949465,
+        "pooled_auc": 0.8194930460765139,
         "pooled_auc_ci95": [
-          0.7912165724213727,
-          0.8428457005856554
+          0.7925404179253585,
+          0.8450441362101921
         ],
-        "within_auc": 0.750388338185026,
+        "within_auc": 0.7513418508829076,
         "within_auc_ci95": [
-          0.7151081270422536,
-          0.7842801499861883
+          0.71543888432066,
+          0.7852193648274174
         ],
         "within_auc_patients": 42,
-        "pooled_minus_within": 0.0677424108099205,
+        "pooled_minus_within": 0.06815119519360624,
         "pooled_minus_within_ci95": [
-          0.04078154915664972,
-          0.09969502107528581
+          0.0411781115293115,
+          0.10038913199624666
         ]
       },
       "gradient_boosting": {
-        "pooled_auc": 0.8285656882364701,
+        "pooled_auc": 0.8300423085332057,
         "pooled_auc_ci95": [
-          0.7996464071555783,
-          0.8537493613845042
+          0.8015975495787256,
+          0.8558599458966517
         ],
-        "within_auc": 0.7586922688546608,
+        "within_auc": 0.7593517215709531,
         "within_auc_ci95": [
-          0.7261732451659114,
-          0.7910232221882627
+          0.7264235307924337,
+          0.7913820855108029
         ],
         "within_auc_patients": 42,
-        "pooled_minus_within": 0.06987341938180935,
+        "pooled_minus_within": 0.07069058696225261,
         "pooled_minus_within_ci95": [
-          0.04569663415245381,
-          0.09625346931590457
+          0.04702953477717355,
+          0.09693205498658812
         ]
       },
       "within_patient_centred_gradient_boosting": {
-        "pooled_auc": 0.784827799848376,
+        "pooled_auc": 0.7847478525661858,
         "pooled_auc_ci95": [
-          0.7449592102281358,
-          0.8233516801128486
+          0.7427421530445844,
+          0.8226551933954173
         ],
-        "within_auc": 0.7598249085880727,
+        "within_auc": 0.7590742109189454,
         "within_auc_ci95": [
-          0.7199821221586435,
-          0.7960639725929354
+          0.7199126396231991,
+          0.7948218846726945
         ],
         "within_auc_patients": 42,
-        "pooled_minus_within": 0.025002891260303306,
+        "pooled_minus_within": 0.025673641647240397,
         "pooled_minus_within_ci95": [
-          -0.012995974222530163,
-          0.06557901072984582
+          -0.013885129285999411,
+          0.06717174291903229
         ]
       }
     },
     "benchmark": {
-      "day_weighted_mean_rate": 0.05982905982905983,
-      "observed_between_patient_sd": 0.052867507941617965,
-      "sampling_variance_estimate": 0.00025686109334120764,
-      "sampling_corrected_sd": 0.050379681446152784,
-      "normal_approx_auc_observed_sd": 0.8263590143634401,
-      "normal_approx_auc_corrected_sd": 0.8147790839001419,
-      "exact_auc_retrospective_rate": 0.7518087003683711,
-      "exact_auc_runin_rate": 0.5971073660374072,
-      "exact_auc_expanding_rate": 0.7066441408005194
+      "day_weighted_mean_rate": 0.06014561570117126,
+      "observed_between_patient_sd": 0.05345220416302738,
+      "sampling_variance_estimate": 0.0002577998048928516,
+      "sampling_corrected_sd": 0.0509837064658221,
+      "normal_approx_auc_observed_sd": 0.8278201273956409,
+      "normal_approx_auc_corrected_sd": 0.8164496774418003,
+      "exact_auc_retrospective_rate": 0.7527413881059447,
+      "exact_auc_runin_rate": 0.6085700385464616,
+      "exact_auc_expanding_rate": 0.7092734080626513
     },
     "benchmark_all_included": {
-      "day_weighted_mean_rate": 0.05886257547856623,
-      "observed_between_patient_sd": 0.05029767722714511,
-      "sampling_variance_estimate": 0.0002586089913033964,
-      "sampling_corrected_sd": 0.04765760530222511,
-      "normal_approx_auc_observed_sd": 0.8180441969420035,
-      "normal_approx_auc_corrected_sd": 0.8051826893982561,
-      "exact_auc_retrospective_rate": 0.7448106896353464,
-      "exact_auc_runin_rate": 0.617047164628555,
-      "exact_auc_expanding_rate": 0.7020001945429374
+      "day_weighted_mean_rate": 0.059148535206441664,
+      "observed_between_patient_sd": 0.050462156591205724,
+      "sampling_variance_estimate": 0.0002599771894970576,
+      "sampling_corrected_sd": 0.04781685956164739,
+      "normal_approx_auc_observed_sd": 0.8177377714863434,
+      "normal_approx_auc_corrected_sd": 0.8048967611352852,
+      "exact_auc_retrospective_rate": 0.744652958800982,
+      "exact_auc_runin_rate": 0.6195608294608986,
+      "exact_auc_expanding_rate": 0.7022196862537569
     }
   },
   "4_ranking_all_included_model_free": {
@@ -297,39 +297,39 @@
         "within_auc_patients": 212
       },
       "runin_rate": {
-        "pooled_auc": 0.617047164628555,
+        "pooled_auc": 0.6195608294608986,
         "within_auc": 0.5,
         "within_auc_patients": 212
       },
       "runin_rate_shrunk_10": {
-        "pooled_auc": 0.617047164628555,
+        "pooled_auc": 0.6195608294608986,
         "within_auc": 0.5,
         "within_auc_patients": 212
       },
       "expanding_rate": {
-        "pooled_auc": 0.7020001945429374,
-        "within_auc": 0.4003781593097279,
+        "pooled_auc": 0.7022196862537569,
+        "within_auc": 0.400338036213984,
         "within_auc_patients": 212
       },
       "recent_28_night_rate": {
-        "pooled_auc": 0.6838047440751078,
-        "within_auc": 0.4866426367980304,
+        "pooled_auc": 0.6842494585799441,
+        "within_auc": 0.48640767097845206,
         "within_auc_patients": 212
       },
       "persistence": {
-        "pooled_auc": 0.532594673514353,
-        "within_auc": 0.5079616972863811,
+        "pooled_auc": 0.5323438304056045,
+        "within_auc": 0.5074108259263885,
         "within_auc_patients": 212
       },
       "retrospective_rate_reference": {
-        "pooled_auc": 0.7448106896353464,
+        "pooled_auc": 0.744652958800982,
         "within_auc": 0.5,
         "within_auc_patients": 212
       }
     }
   },
   "5_threshold_test": {
-    "threshold": 0.054356428520037414,
+    "threshold": 0.05468609462133477,
     "forecasts": {
       "training_cohort_rate": {
         "pooled_sensitivity": 1.0,
@@ -340,85 +340,85 @@
         "specificity_eligible_patients": 45
       },
       "runin_rate": {
-        "pooled_sensitivity": 0.6807760141093474,
-        "mean_patient_sensitivity": 0.5238095238095238,
+        "pooled_sensitivity": 0.7263157894736842,
+        "mean_patient_sensitivity": 0.5476190476190477,
         "sensitivity_eligible_patients": 42,
-        "pooled_specificity": 0.5132435465768799,
-        "mean_patient_specificity": 0.5111111111111111,
+        "pooled_specificity": 0.49657572695632646,
+        "mean_patient_specificity": 0.4888888888888889,
         "specificity_eligible_patients": 45
       },
       "runin_rate_shrunk_10": {
-        "pooled_sensitivity": 0.6807760141093474,
-        "mean_patient_sensitivity": 0.5238095238095238,
+        "pooled_sensitivity": 0.7263157894736842,
+        "mean_patient_sensitivity": 0.5476190476190477,
         "sensitivity_eligible_patients": 42,
-        "pooled_specificity": 0.5132435465768799,
-        "mean_patient_specificity": 0.5111111111111111,
+        "pooled_specificity": 0.49657572695632646,
+        "mean_patient_specificity": 0.4888888888888889,
         "specificity_eligible_patients": 45
       },
       "expanding_rate": {
-        "pooled_sensitivity": 0.7336860670194003,
-        "mean_patient_sensitivity": 0.4543766163878946,
+        "pooled_sensitivity": 0.7368421052631579,
+        "mean_patient_sensitivity": 0.4554990653674864,
         "sensitivity_eligible_patients": 42,
-        "pooled_specificity": 0.5875420875420876,
-        "mean_patient_specificity": 0.559932408257546,
+        "pooled_specificity": 0.5893117772538453,
+        "mean_patient_specificity": 0.5614014743630048,
         "specificity_eligible_patients": 45
       },
       "recent_28_night_rate": {
-        "pooled_sensitivity": 0.6649029982363316,
-        "mean_patient_sensitivity": 0.41512310701342364,
+        "pooled_sensitivity": 0.6719298245614035,
+        "mean_patient_sensitivity": 0.4188005785886831,
         "sensitivity_eligible_patients": 42,
-        "pooled_specificity": 0.6240179573512907,
-        "mean_patient_specificity": 0.602610189924621,
+        "pooled_specificity": 0.6223195239699113,
+        "mean_patient_specificity": 0.6007403849097448,
         "specificity_eligible_patients": 45
       },
       "persistence": {
-        "pooled_sensitivity": 0.12874779541446207,
-        "mean_patient_sensitivity": 0.07586041365167401,
+        "pooled_sensitivity": 0.1280701754385965,
+        "mean_patient_sensitivity": 0.07547661550947692,
         "sensitivity_eligible_patients": 42,
-        "pooled_specificity": 0.9444444444444444,
-        "mean_patient_specificity": 0.9407758402014734,
+        "pooled_specificity": 0.9440889188278881,
+        "mean_patient_specificity": 0.9403763979736876,
         "specificity_eligible_patients": 45
       },
       "retrospective_rate_reference": {
-        "pooled_sensitivity": 0.7372134038800705,
+        "pooled_sensitivity": 0.7385964912280701,
         "mean_patient_sensitivity": 0.40476190476190477,
         "sensitivity_eligible_patients": 42,
-        "pooled_specificity": 0.6472502805836139,
+        "pooled_specificity": 0.6474682833726283,
         "mean_patient_specificity": 0.6222222222222222,
         "specificity_eligible_patients": 45
       },
       "logistic_regression": {
-        "pooled_sensitivity": 0.7724867724867724,
-        "mean_patient_sensitivity": 0.6444567875313182,
+        "pooled_sensitivity": 0.775438596491228,
+        "mean_patient_sensitivity": 0.6468602480454938,
         "sensitivity_eligible_patients": 42,
-        "pooled_specificity": 0.7204264870931537,
-        "mean_patient_specificity": 0.7047408089730648,
+        "pooled_specificity": 0.7207814078814415,
+        "mean_patient_specificity": 0.7049081631953847,
         "specificity_eligible_patients": 45
       },
       "gradient_boosting": {
-        "pooled_sensitivity": 0.7019400352733686,
-        "mean_patient_sensitivity": 0.5967347828668811,
+        "pooled_sensitivity": 0.7017543859649122,
+        "mean_patient_sensitivity": 0.5852328823842088,
         "sensitivity_eligible_patients": 42,
-        "pooled_specificity": 0.7797979797979798,
-        "mean_patient_specificity": 0.7680244126766607,
+        "pooled_specificity": 0.7843269338722353,
+        "mean_patient_specificity": 0.7722842533988437,
         "specificity_eligible_patients": 45
       },
       "within_patient_centred_gradient_boosting": {
-        "pooled_sensitivity": 0.6649029982363316,
-        "mean_patient_sensitivity": 0.6232540102080125,
+        "pooled_sensitivity": 0.6649122807017543,
+        "mean_patient_sensitivity": 0.6298158328027588,
         "sensitivity_eligible_patients": 42,
-        "pooled_specificity": 0.7548821548821549,
-        "mean_patient_specificity": 0.7486863009705467,
+        "pooled_specificity": 0.7570450207701808,
+        "mean_patient_specificity": 0.7504581274787187,
         "specificity_eligible_patients": 45
       }
     },
     "all_included_runin_rate": {
       "runin_rate": {
-        "pooled_sensitivity": 0.7049836304110586,
-        "mean_patient_sensitivity": 0.5518867924528302,
+        "pooled_sensitivity": 0.7150615496017378,
+        "mean_patient_sensitivity": 0.5566037735849056,
         "sensitivity_eligible_patients": 212,
-        "pooled_specificity": 0.48426728550952153,
-        "mean_patient_specificity": 0.47767857142857145,
+        "pooled_specificity": 0.48097145718577866,
+        "mean_patient_specificity": 0.4732142857142857,
         "specificity_eligible_patients": 224
       }
     }
@@ -426,10 +426,10 @@
   "6_scores_test": {
     "forecasts": {
       "training_cohort_rate": {
-        "brier_pooled": 0.056279493122475106,
-        "brier_patient_mean": 0.0568531764771633,
-        "log_loss_pooled": 0.22677946859300774,
-        "log_loss_patient_mean": 0.22861794837647814,
+        "brier_pooled": 0.056557926983519455,
+        "brier_patient_mean": 0.057107492218055354,
+        "log_loss_pooled": 0.22764767784752016,
+        "log_loss_patient_mean": 0.22940622402105962,
         "brier_skill_vs": {
           "training_cohort_rate": {
             "summed_loss_ratio_skill": 0.0,
@@ -444,95 +444,95 @@
             ]
           },
           "runin_rate": {
-            "summed_loss_ratio_skill": 0.07029598784226199,
+            "summed_loss_ratio_skill": 0.06528909987658138,
             "summed_loss_ratio_skill_ci95": [
-              0.011861124936564035,
-              0.13836239938584952
+              0.007759038847373498,
+              0.13424449179836373
             ],
-            "patient_mean_brier_improvement": 0.004201806851934889,
+            "patient_mean_brier_improvement": 0.0038419007029490033,
             "patient_mean_brier_improvement_ci95": [
-              0.000924113532713422,
-              0.008007292311721618
+              0.0005678719743292656,
+              0.0075247346061425415
             ]
           },
           "runin_rate_shrunk_10": {
-            "summed_loss_ratio_skill": 0.01160652369554871,
+            "summed_loss_ratio_skill": 0.008715580868371986,
             "summed_loss_ratio_skill_ci95": [
-              -0.017140108814651316,
-              0.04487338679307231
+              -0.019329474719924026,
+              0.0415745033575037
             ],
-            "patient_mean_brier_improvement": 0.000628506595185683,
+            "patient_mean_brier_improvement": 0.00043514643710861766,
             "patient_mean_brier_improvement_ci95": [
-              -0.0010401589574505204,
-              0.002222082905762384
+              -0.0011968818828042014,
+              0.0020462244132229703
             ]
           },
           "expanding_rate": {
-            "summed_loss_ratio_skill": -0.03053015050575314,
+            "summed_loss_ratio_skill": -0.031892667867185365,
             "summed_loss_ratio_skill_ci95": [
-              -0.04951131986510246,
-              -0.011216178699924284
+              -0.051621370075443485,
+              -0.012093357529139506
             ],
-            "patient_mean_brier_improvement": -0.0015816049202324646,
+            "patient_mean_brier_improvement": -0.0016617335957864962,
             "patient_mean_brier_improvement_ci95": [
-              -0.0029357629414690435,
-              -0.0004694100203633855
+              -0.003057268354824838,
+              -0.0005101025499211969
             ]
           },
           "recent_28_night_rate": {
-            "summed_loss_ratio_skill": -0.011746878791752957,
+            "summed_loss_ratio_skill": -0.013179706230870059,
             "summed_loss_ratio_skill_ci95": [
-              -0.0321851897551816,
-              0.007441499064517259
+              -0.03369557512807339,
+              0.006141218673584355
             ],
-            "patient_mean_brier_improvement": -0.0005613097160200406,
+            "patient_mean_brier_improvement": -0.0006442298733477339,
             "patient_mean_brier_improvement_ci95": [
-              -0.001852081735073108,
-              0.00040758510980653596
+              -0.001988707805723338,
+              0.00037907951267738757
             ]
           },
           "persistence": {
-            "summed_loss_ratio_skill": 0.46070702090829463,
+            "summed_loss_ratio_skill": 0.4613070612836042,
             "summed_loss_ratio_skill_ci95": [
-              0.4390712928697229,
-              0.48151434614945665
+              0.439829702474819,
+              0.4816717528423241
             ],
-            "patient_mean_brier_improvement": 0.04911599563174229,
+            "patient_mean_brier_improvement": 0.04944158481630882,
             "patient_mean_brier_improvement_ci95": [
-              0.037757934350636596,
-              0.060378471355415235
+              0.03805268271606182,
+              0.06083025923041381
             ]
           },
           "retrospective_rate_reference": {
-            "summed_loss_ratio_skill": -0.05284717635281133,
+            "summed_loss_ratio_skill": -0.053789671191693644,
             "summed_loss_ratio_skill_ci95": [
-              -0.07165525330283125,
-              -0.03473849621905724
+              -0.07335406031835223,
+              -0.034907794165789
             ],
-            "patient_mean_brier_improvement": -0.002758230219504987,
+            "patient_mean_brier_improvement": -0.0028148533076208016,
             "patient_mean_brier_improvement_ci95": [
-              -0.004282017823409042,
-              -0.0015438056264365546
+              -0.004419068926889802,
+              -0.0015789112874421399
             ]
           }
         }
       },
       "runin_rate": {
-        "brier_pooled": 0.0605348502173899,
-        "brier_patient_mean": 0.0610549833290982,
-        "log_loss_pooled": 0.41904811626322586,
-        "log_loss_patient_mean": 0.4367561440329498,
+        "brier_pooled": 0.06050847056138062,
+        "brier_patient_mean": 0.06094939292100435,
+        "log_loss_pooled": 0.3914683308140762,
+        "log_loss_patient_mean": 0.40335492327173356,
         "brier_skill_vs": {
           "training_cohort_rate": {
-            "summed_loss_ratio_skill": -0.07561114819663195,
+            "summed_loss_ratio_skill": -0.06984951161686537,
             "summed_loss_ratio_skill_ci95": [
-              -0.16058100913865955,
-              -0.012003500063202445
+              -0.15506054262715047,
+              -0.007819712582243435
             ],
-            "patient_mean_brier_improvement": -0.004201806851934889,
+            "patient_mean_brier_improvement": -0.0038419007029490033,
             "patient_mean_brier_improvement_ci95": [
-              -0.008007292311721618,
-              -0.0009241135327134226
+              -0.007524734606142542,
+              -0.0005678719743292666
             ]
           },
           "runin_rate": {
@@ -548,95 +548,95 @@
             ]
           },
           "runin_rate_shrunk_10": {
-            "summed_loss_ratio_skill": -0.06312704191789131,
+            "summed_loss_ratio_skill": -0.060525151681380285,
             "summed_loss_ratio_skill_ci95": [
-              -0.11431585728757598,
-              -0.0245260285474029
+              -0.1112624374824868,
+              -0.022346550294843493
             ],
-            "patient_mean_brier_improvement": -0.003573300256749205,
+            "patient_mean_brier_improvement": -0.0034067542658403863,
             "patient_mean_brier_improvement_ci95": [
-              -0.005914004859559832,
-              -0.0015785616608692652
+              -0.005739300035517994,
+              -0.001384682002757755
             ]
           },
           "expanding_rate": {
-            "summed_loss_ratio_skill": -0.108449718436741,
+            "summed_loss_ratio_skill": -0.10396986675873254,
             "summed_loss_ratio_skill_ci95": [
-              -0.18897123241039254,
-              -0.051108336097885065
+              -0.18279559933114167,
+              -0.048462824013240924
             ],
-            "patient_mean_brier_improvement": -0.005783411772167352,
+            "patient_mean_brier_improvement": -0.0055036342987355,
             "patient_mean_brier_improvement_ci95": [
-              -0.00914545539789676,
-              -0.002772527300110564
+              -0.0086914282265253,
+              -0.002663906343815037
             ]
           },
           "recent_28_night_rate": {
-            "summed_loss_ratio_skill": -0.08824622198155607,
+            "summed_loss_ratio_skill": -0.08394981389121536,
             "summed_loss_ratio_skill_ci95": [
-              -0.1709569480464293,
-              -0.028614262025333317
+              -0.1657289568702771,
+              -0.026898355879596457
             ],
-            "patient_mean_brier_improvement": -0.004763116567954929,
+            "patient_mean_brier_improvement": -0.0044861305762967365,
             "patient_mean_brier_improvement_ci95": [
-              -0.008351683849632903,
-              -0.0016433208072921682
+              -0.007986778739404234,
+              -0.0015142365044187034
             ]
           },
           "persistence": {
-            "summed_loss_ratio_skill": 0.4199304595447886,
+            "summed_loss_ratio_skill": 0.42367962260281,
             "summed_loss_ratio_skill_ci95": [
-              0.3738341345425938,
-              0.4550360667010626
+              0.3775233071834187,
+              0.45858428230587417
             ],
-            "patient_mean_brier_improvement": 0.0449141887798074,
+            "patient_mean_brier_improvement": 0.045599684113359816,
             "patient_mean_brier_improvement_ci95": [
-              0.03263709027955861,
-              0.05650783042852361
+              0.03286376024269805,
+              0.05754805488159653
             ]
           },
           "retrospective_rate_reference": {
-            "summed_loss_ratio_skill": -0.13245416023242917,
+            "summed_loss_ratio_skill": -0.12739636507133056,
             "summed_loss_ratio_skill_ci95": [
-              -0.2206821907069539,
-              -0.06977407150244713
+              -0.21414324372355195,
+              -0.06686684080790908
             ],
-            "patient_mean_brier_improvement": -0.006960037071439875,
+            "patient_mean_brier_improvement": -0.0066567540105698045,
             "patient_mean_brier_improvement_ci95": [
-              -0.01061931735493437,
-              -0.0036875636247127594
+              -0.010037620109737487,
+              -0.003534669240474806
             ]
           }
         }
       },
       "runin_rate_shrunk_10": {
-        "brier_pooled": 0.05694037290988709,
-        "brier_patient_mean": 0.057481683072349,
-        "log_loss_pooled": 0.2292686715838797,
-        "log_loss_patient_mean": 0.23171035443263588,
+        "brier_pooled": 0.05705519615960935,
+        "brier_patient_mean": 0.05754263865516397,
+        "log_loss_pooled": 0.22796281193749954,
+        "log_loss_patient_mean": 0.22991302438276032,
         "brier_skill_vs": {
           "training_cohort_rate": {
-            "summed_loss_ratio_skill": -0.01174281697906876,
+            "summed_loss_ratio_skill": -0.008792210086391528,
             "summed_loss_ratio_skill_ci95": [
-              -0.046981610958545306,
-              0.01685127496978892
+              -0.04337792189822846,
+              0.018962929220626996
             ],
-            "patient_mean_brier_improvement": -0.000628506595185683,
+            "patient_mean_brier_improvement": -0.00043514643710861766,
             "patient_mean_brier_improvement_ci95": [
-              -0.0022220829057623855,
-              0.0010401589574505201
+              -0.0020462244132229716,
+              0.001196881882804201
             ]
           },
           "runin_rate": {
-            "summed_loss_ratio_skill": 0.05937864378278779,
+            "summed_loss_ratio_skill": 0.057070925272656114,
             "summed_loss_ratio_skill_ci95": [
-              0.02393890116274724,
-              0.10258837538030863
+              0.021858097033965636,
+              0.10012255637984802
             ],
-            "patient_mean_brier_improvement": 0.003573300256749205,
+            "patient_mean_brier_improvement": 0.0034067542658403863,
             "patient_mean_brier_improvement_ci95": [
-              0.0015785616608692647,
-              0.005914004859559832
+              0.001384682002757755,
+              0.005739300035517993
             ]
           },
           "runin_rate_shrunk_10": {
@@ -652,95 +652,95 @@
             ]
           },
           "expanding_rate": {
-            "summed_loss_ratio_skill": -0.04263147745455442,
+            "summed_loss_ratio_skill": -0.04096528498968066,
             "summed_loss_ratio_skill_ci95": [
-              -0.07284706526143468,
-              -0.018486911146297816
+              -0.07085927700274174,
+              -0.01828932218448399
             ],
-            "patient_mean_brier_improvement": -0.0022101115154181472,
+            "patient_mean_brier_improvement": -0.002096880032895113,
             "patient_mean_brier_improvement_ci95": [
-              -0.0035930053631439457,
-              -0.0009546257095758023
+              -0.003497876353631819,
+              -0.0009141173118190167
             ]
           },
           "recent_28_night_rate": {
-            "summed_loss_ratio_skill": -0.02362763721854866,
+            "summed_loss_ratio_skill": -0.02208779506332048,
             "summed_loss_ratio_skill_ci95": [
-              -0.055666039493922397,
-              0.0016004743840085402
+              -0.05445150206267471,
+              0.0029122942854230014
             ],
-            "patient_mean_brier_improvement": -0.0011898163112057235,
+            "patient_mean_brier_improvement": -0.0010793763104563515,
             "patient_mean_brier_improvement_ci95": [
-              -0.0027038590512969956,
-              0.0001501568592084359
+              -0.0026040035443185695,
+              0.00021239606625327034
             ]
           },
           "persistence": {
-            "summed_loss_ratio_skill": 0.45437420215672397,
+            "summed_loss_ratio_skill": 0.4565707597943539,
             "summed_loss_ratio_skill_ci95": [
-              0.4302879350719949,
-              0.4757229347635344
+              0.4327720101510233,
+              0.47793212208051983
             ],
-            "patient_mean_brier_improvement": 0.04848748903655661,
+            "patient_mean_brier_improvement": 0.04900643837920019,
             "patient_mean_brier_improvement_ci95": [
-              0.036520925074454445,
-              0.060470671829911074
+              0.036783336908645825,
+              0.061099235875290134
             ]
           },
           "retrospective_rate_reference": {
-            "summed_loss_ratio_skill": -0.06521056805165171,
+            "summed_loss_ratio_skill": -0.06305481136768054,
             "summed_loss_ratio_skill_ci95": [
-              -0.10075814111761955,
-              -0.03768751272813819
+              -0.09702135725783985,
+              -0.03664548493771368
             ],
-            "patient_mean_brier_improvement": -0.00338673681469067,
+            "patient_mean_brier_improvement": -0.0032499997447294187,
             "patient_mean_brier_improvement_ci95": [
-              -0.004987103078751062,
-              -0.0019100047990757367
+              -0.004819246984814954,
+              -0.0018717571109905934
             ]
           }
         }
       },
       "expanding_rate": {
-        "brier_pooled": 0.05461217519434519,
-        "brier_patient_mean": 0.05527157155693085,
-        "log_loss_pooled": 0.23038814523330184,
-        "log_loss_patient_mean": 0.23494917672634238,
+        "brier_pooled": 0.05480989326188236,
+        "brier_patient_mean": 0.05544575862226886,
+        "log_loss_pooled": 0.2297113878812096,
+        "log_loss_patient_mean": 0.2339711098771684,
         "brier_skill_vs": {
           "training_cohort_rate": {
-            "summed_loss_ratio_skill": 0.029625674213190067,
+            "summed_loss_ratio_skill": 0.030906962381178738,
             "summed_loss_ratio_skill_ci95": [
-              0.011091771409225393,
-              0.04717559321568418
+              0.011948855642811099,
+              0.04908740917509789
             ],
-            "patient_mean_brier_improvement": 0.0015816049202324646,
+            "patient_mean_brier_improvement": 0.0016617335957864962,
             "patient_mean_brier_improvement_ci95": [
-              0.0004694100203633852,
-              0.002935762941469043
+              0.0005101025499211968,
+              0.003057268354824838
             ]
           },
           "runin_rate": {
-            "summed_loss_ratio_skill": 0.09783909602114282,
+            "summed_loss_ratio_skill": 0.0941781745039737,
             "summed_loss_ratio_skill_ci95": [
-              0.048623275724181375,
-              0.15893675746668484
+              0.046222731266212055,
+              0.15454536259587529
             ],
-            "patient_mean_brier_improvement": 0.005783411772167352,
+            "patient_mean_brier_improvement": 0.0055036342987355,
             "patient_mean_brier_improvement_ci95": [
-              0.002772527300110563,
-              0.009145455397896756
+              0.0026639063438150365,
+              0.008691428226525298
             ]
           },
           "runin_rate_shrunk_10": {
-            "summed_loss_ratio_skill": 0.04088834681898679,
+            "summed_loss_ratio_skill": 0.03935317111952186,
             "summed_loss_ratio_skill_ci95": [
-              0.01815134798703307,
-              0.06790069862696207
+              0.017960829291349616,
+              0.0661704829938075
             ],
-            "patient_mean_brier_improvement": 0.0022101115154181472,
+            "patient_mean_brier_improvement": 0.002096880032895113,
             "patient_mean_brier_improvement_ci95": [
-              0.0009546257095758019,
-              0.0035930053631439453
+              0.0009141173118190165,
+              0.003497876353631819
             ]
           },
           "expanding_rate": {
@@ -756,95 +756,95 @@
             ]
           },
           "recent_28_night_rate": {
-            "summed_loss_ratio_skill": 0.01822680462554338,
+            "summed_loss_ratio_skill": 0.018134600834981196,
             "summed_loss_ratio_skill_ci95": [
-              0.012567040094661034,
-              0.02353873805488799
+              0.012492902036291997,
+              0.02328443993193124
             ],
-            "patient_mean_brier_improvement": 0.0010202952042124237,
+            "patient_mean_brier_improvement": 0.0010175037224387621,
             "patient_mean_brier_improvement_ci95": [
-              0.0006353487708257714,
-              0.0014084792336423694
+              0.0006396303393380388,
+              0.0013977606253552386
             ]
           },
           "persistence": {
-            "summed_loss_ratio_skill": 0.4766839390123262,
+            "summed_loss_ratio_skill": 0.4779564236755185,
             "summed_loss_ratio_skill_ci95": [
-              0.4616343369675709,
-              0.49186697348268965
+              0.463195366352961,
+              0.49272129824789335
             ],
-            "patient_mean_brier_improvement": 0.050697600551974746,
+            "patient_mean_brier_improvement": 0.05110331841209532,
             "patient_mean_brier_improvement_ci95": [
-              0.038947744288486734,
-              0.06292330819212358
+              0.03923845963605001,
+              0.06330544690220109
             ]
           },
           "retrospective_rate_reference": {
-            "summed_loss_ratio_skill": -0.021655868909905784,
+            "summed_loss_ratio_skill": -0.021220233466497262,
             "summed_loss_ratio_skill_ci95": [
-              -0.026909930293230123,
-              -0.017615125982076364
+              -0.026466549682522773,
+              -0.017339063588806138
             ],
-            "patient_mean_brier_improvement": -0.001176625299272523,
+            "patient_mean_brier_improvement": -0.0011531197118343055,
             "patient_mean_brier_improvement_ci95": [
-              -0.0015055033839217282,
-              -0.0008789952482783139
+              -0.001469582074692807,
+              -0.0008652520630335896
             ]
           }
         }
       },
       "recent_28_night_rate": {
-        "brier_pooled": 0.05562606053174598,
-        "brier_patient_mean": 0.05629186676114326,
-        "log_loss_pooled": 0.3015467285479277,
-        "log_loss_patient_mean": 0.3053925887536095,
+        "brier_pooled": 0.05582220669807985,
+        "brier_patient_mean": 0.0564632623447076,
+        "log_loss_pooled": 0.3008522394456202,
+        "log_loss_patient_mean": 0.30439641028591363,
         "brier_skill_vs": {
           "training_cohort_rate": {
-            "summed_loss_ratio_skill": 0.011610491752424568,
+            "summed_loss_ratio_skill": 0.013008261170074031,
             "summed_loss_ratio_skill_ci95": [
-              -0.007497290759256641,
-              0.031181603916264355
+              -0.0061791700000096315,
+              0.03259719392518903
             ],
-            "patient_mean_brier_improvement": 0.0005613097160200406,
+            "patient_mean_brier_improvement": 0.0006442298733477339,
             "patient_mean_brier_improvement_ci95": [
-              -0.00040758510980653715,
-              0.0018520817350731074
+              -0.00037907951267738795,
+              0.0019887078057233376
             ]
           },
           "runin_rate": {
-            "summed_loss_ratio_skill": 0.08109030860761546,
+            "summed_loss_ratio_skill": 0.07744806338390176,
             "summed_loss_ratio_skill_ci95": [
-              0.027818259793875217,
-              0.14599760240237603
+              0.026193784816157452,
+              0.142167659019915
             ],
-            "patient_mean_brier_improvement": 0.004763116567954929,
+            "patient_mean_brier_improvement": 0.0044861305762967365,
             "patient_mean_brier_improvement_ci95": [
-              0.001643320807292168,
-              0.008351683849632903
+              0.0015142365044187032,
+              0.007986778739404234
             ]
           },
           "runin_rate_shrunk_10": {
-            "summed_loss_ratio_skill": 0.023082258000331812,
+            "summed_loss_ratio_skill": 0.021610467486261276,
             "summed_loss_ratio_skill_ci95": [
-              -0.0016030417277122506,
-              0.052730726111173506
+              -0.0029208006776208274,
+              0.051639642936991324
             ],
-            "patient_mean_brier_improvement": 0.0011898163112057235,
+            "patient_mean_brier_improvement": 0.0010793763104563515,
             "patient_mean_brier_improvement_ci95": [
-              -0.000150156859208436,
-              0.0027038590512969956
+              -0.00021239606625327086,
+              0.002604003544318569
             ]
           },
           "expanding_rate": {
-            "summed_loss_ratio_skill": -0.0185651886926812,
+            "summed_loss_ratio_skill": -0.018469538544084507,
             "summed_loss_ratio_skill_ci95": [
-              -0.024106166824481447,
-              -0.012726980801426199
+              -0.02383953004041407,
+              -0.012650949712449398
             ],
-            "patient_mean_brier_improvement": -0.0010202952042124237,
+            "patient_mean_brier_improvement": -0.0010175037224387621,
             "patient_mean_brier_improvement_ci95": [
-              -0.0014084792336423694,
-              -0.0006353487708257714
+              -0.0013977606253552386,
+              -0.0006396303393380388
             ]
           },
           "recent_28_night_rate": {
@@ -860,95 +860,95 @@
             ]
           },
           "persistence": {
-            "summed_loss_ratio_skill": 0.46696847759417937,
+            "summed_loss_ratio_skill": 0.46831451972090177,
             "summed_loss_ratio_skill_ci95": [
-              0.452202850415073,
-              0.4820065411247617
+              0.45353315438931463,
+              0.48314952419899915
             ],
-            "patient_mean_brier_improvement": 0.049677305347762324,
+            "patient_mean_brier_improvement": 0.050085814689656546,
             "patient_mean_brier_improvement_ci95": [
-              0.03810584482529522,
-              0.06181591440829071
+              0.03842790769814069,
+              0.06215539126906026
             ]
           },
           "retrospective_rate_reference": {
-            "summed_loss_ratio_skill": -0.040623102895203544,
+            "summed_loss_ratio_skill": -0.04008169993050559,
             "summed_loss_ratio_skill_ci95": [
-              -0.046784412235448616,
-              -0.03541911184585274
+              -0.04576069883657912,
+              -0.03534939578675367
             ],
-            "patient_mean_brier_improvement": -0.0021969205034849462,
+            "patient_mean_brier_improvement": -0.0021706234342730676,
             "patient_mean_brier_improvement_ci95": [
-              -0.0027738308372671863,
-              -0.0016681418739201495
+              -0.0026931021949700845,
+              -0.001665222717180076
             ]
           }
         }
       },
       "persistence": {
-        "brier_pooled": 0.10435791917273399,
-        "brier_patient_mean": 0.10596917210890562,
-        "log_loss_pooled": 1.4417588297791155,
-        "log_loss_patient_mean": 1.4640191101190687,
+        "brier_pooled": 0.10499103091695684,
+        "brier_patient_mean": 0.10654907703436418,
+        "log_loss_pooled": 1.4505055911326763,
+        "log_loss_patient_mean": 1.4720307921594438,
         "brier_skill_vs": {
           "training_cohort_rate": {
-            "summed_loss_ratio_skill": -0.8542796564572976,
+            "summed_loss_ratio_skill": -0.8563451052148787,
             "summed_loss_ratio_skill_ci95": [
-              -0.928693688875163,
-              -0.7827577502960729
+              -0.9292793942542515,
+              -0.7851714108966936
             ],
-            "patient_mean_brier_improvement": -0.04911599563174229,
+            "patient_mean_brier_improvement": -0.04944158481630882,
             "patient_mean_brier_improvement_ci95": [
-              -0.06037847135541524,
-              -0.037757934350636596
+              -0.06083025923041382,
+              -0.03805268271606182
             ]
           },
           "runin_rate": {
-            "summed_loss_ratio_skill": -0.7239312362708217,
+            "summed_loss_ratio_skill": -0.7351460042351015,
             "summed_loss_ratio_skill_ci95": [
-              -0.8349838260650797,
-              -0.5970209581089793
+              -0.8470095495064675,
+              -0.6064858902173518
             ],
-            "patient_mean_brier_improvement": -0.0449141887798074,
+            "patient_mean_brier_improvement": -0.045599684113359816,
             "patient_mean_brier_improvement_ci95": [
-              -0.056507830428523614,
-              -0.03263709027955861
+              -0.05754805488159653,
+              -0.03286376024269805
             ]
           },
           "runin_rate_shrunk_10": {
-            "summed_loss_ratio_skill": -0.832757915686452,
+            "summed_loss_ratio_skill": -0.8401659793307721,
             "summed_loss_ratio_skill_ci95": [
-              -0.9073884157142551,
-              -0.7552726630468318
+              -0.9154597691195514,
+              -0.7629596145567998
             ],
-            "patient_mean_brier_improvement": -0.04848748903655661,
+            "patient_mean_brier_improvement": -0.04900643837920019,
             "patient_mean_brier_improvement_ci95": [
-              -0.060470671829911074,
-              -0.036520925074454445
+              -0.061099235875290134,
+              -0.036783336908645825
             ]
           },
           "expanding_rate": {
-            "summed_loss_ratio_skill": -0.9108910934486951,
+            "summed_loss_ratio_skill": -0.915548903102372,
             "summed_loss_ratio_skill_ci95": [
-              -0.9679885945211955,
-              -0.8574735887486095
+              -0.9713029477016094,
+              -0.8628751429489121
             ],
-            "patient_mean_brier_improvement": -0.050697600551974746,
+            "patient_mean_brier_improvement": -0.05110331841209532,
             "patient_mean_brier_improvement_ci95": [
-              -0.06292330819212358,
-              -0.038947744288486734
+              -0.06330544690220109,
+              -0.03923845963605001
             ]
           },
           "recent_28_night_rate": {
-            "summed_loss_ratio_skill": -0.8760616548277147,
+            "summed_loss_ratio_skill": -0.8808111883647243,
             "summed_loss_ratio_skill_ci95": [
-              -0.9305263378957274,
-              -0.8254932538572087
+              -0.934795569606422,
+              -0.8299371833514417
             ],
-            "patient_mean_brier_improvement": -0.049677305347762324,
+            "patient_mean_brier_improvement": -0.050085814689656546,
             "patient_mean_brier_improvement_ci95": [
-              -0.06181591440829071,
-              -0.03810584482529523
+              -0.062155391269060264,
+              -0.03842790769814069
             ]
           },
           "persistence": {
@@ -964,95 +964,95 @@
             ]
           },
           "retrospective_rate_reference": {
-            "summed_loss_ratio_skill": -0.9522731004695268,
+            "summed_loss_ratio_skill": -0.9561972980426969,
             "summed_loss_ratio_skill_ci95": [
-              -1.0089306952445112,
-              -0.8973842101182405
+              -1.0108493248847068,
+              -0.9025701242852671
             ],
-            "patient_mean_brier_improvement": -0.05187422585124726,
+            "patient_mean_brier_improvement": -0.052256438123929626,
             "patient_mean_brier_improvement_ci95": [
-              -0.06433887795620766,
-              -0.03995669013274517
+              -0.06479133777892876,
+              -0.040155670972518216
             ]
           }
         }
       },
       "retrospective_rate_reference": {
-        "brier_pooled": 0.05345457003307357,
-        "brier_patient_mean": 0.054094946257658344,
-        "log_loss_pooled": 0.20242624610862484,
-        "log_loss_patient_mean": 0.20508386604216894,
+        "brier_pooled": 0.053670982483212316,
+        "brier_patient_mean": 0.054292638910434565,
+        "log_loss_pooled": 0.2029756093233935,
+        "log_loss_patient_mean": 0.2055847565054128,
         "brier_skill_vs": {
           "training_cohort_rate": {
-            "summed_loss_ratio_skill": 0.050194536813861435,
+            "summed_loss_ratio_skill": 0.05104402962202581,
             "summed_loss_ratio_skill_ci95": [
-              0.03357224298752897,
-              0.06686408480116618
+              0.03373034208637453,
+              0.06834096230988394
             ],
-            "patient_mean_brier_improvement": 0.002758230219504987,
+            "patient_mean_brier_improvement": 0.0028148533076208016,
             "patient_mean_brier_improvement_ci95": [
-              0.0015438056264365542,
-              0.004282017823409042
+              0.0015789112874421392,
+              0.004419068926889802
             ]
           },
           "runin_rate": {
-            "summed_loss_ratio_skill": 0.11696205010650829,
+            "summed_loss_ratio_skill": 0.11300051075051154,
             "summed_loss_ratio_skill_ci95": [
-              0.06522318347115473,
-              0.18078594841323792
+              0.06267589278658164,
+              0.1763739427182042
             ],
-            "patient_mean_brier_improvement": 0.006960037071439875,
+            "patient_mean_brier_improvement": 0.0066567540105698045,
             "patient_mean_brier_improvement_ci95": [
-              0.0036875636247127586,
-              0.01061931735493437
+              0.003534669240474806,
+              0.010037620109737482
             ]
           },
           "runin_rate_shrunk_10": {
-            "summed_loss_ratio_skill": 0.061218476428492985,
+            "summed_loss_ratio_skill": 0.059314732122379366,
             "summed_loss_ratio_skill_ci95": [
-              0.036318749391806064,
-              0.0915352220321816
+              0.035350061280556865,
+              0.0884406750683077
             ],
-            "patient_mean_brier_improvement": 0.00338673681469067,
+            "patient_mean_brier_improvement": 0.0032499997447294187,
             "patient_mean_brier_improvement_ci95": [
-              0.0019100047990757364,
-              0.004987103078751061
+              0.001871757110990593,
+              0.004819246984814954
             ]
           },
           "expanding_rate": {
-            "summed_loss_ratio_skill": 0.02119683307160214,
+            "summed_loss_ratio_skill": 0.02077929203817852,
             "summed_loss_ratio_skill_ci95": [
-              0.017310204547559358,
-              0.026204761857913293
+              0.017043544481573518,
+              0.025784131498671297
             ],
-            "patient_mean_brier_improvement": 0.001176625299272523,
+            "patient_mean_brier_improvement": 0.0011531197118343055,
             "patient_mean_brier_improvement_ci95": [
-              0.0008789952482783139,
-              0.001505503383921728
+              0.0008652520630335896,
+              0.001469582074692807
             ]
           },
           "recent_28_night_rate": {
-            "summed_loss_ratio_skill": 0.03903728716206911,
+            "summed_loss_ratio_skill": 0.038537068706413824,
             "summed_loss_ratio_skill_ci95": [
-              0.034207512143494566,
-              0.04469345510718079
+              0.03414247973706521,
+              0.04375828895407425
             ],
-            "patient_mean_brier_improvement": 0.0021969205034849462,
+            "patient_mean_brier_improvement": 0.0021706234342730676,
             "patient_mean_brier_improvement_ci95": [
-              0.0016681418739201493,
-              0.0027738308372671863
+              0.001665222717180076,
+              0.0026931021949700845
             ]
           },
           "persistence": {
-            "summed_loss_ratio_skill": 0.48777658220077025,
+            "summed_loss_ratio_skill": 0.48880411960462,
             "summed_loss_ratio_skill_ci95": [
-              0.47295861603445494,
-              0.5022227484663655
+              0.4743951933667906,
+              0.5026976970966311
             ],
-            "patient_mean_brier_improvement": 0.05187422585124726,
+            "patient_mean_brier_improvement": 0.052256438123929626,
             "patient_mean_brier_improvement_ci95": [
-              0.03995669013274517,
-              0.06433887795620764
+              0.040155670972518216,
+              0.06479133777892876
             ]
           },
           "retrospective_rate_reference": {
@@ -1070,442 +1070,442 @@
         }
       },
       "logistic_regression": {
-        "brier_pooled": 0.0495461979552326,
-        "brier_patient_mean": 0.0502340577370823,
-        "log_loss_pooled": 0.1846943164449477,
-        "log_loss_patient_mean": 0.18746169367291346,
+        "brier_pooled": 0.0495633126556363,
+        "brier_patient_mean": 0.05023563443844968,
+        "log_loss_pooled": 0.18467089456766253,
+        "log_loss_patient_mean": 0.18739064724203217,
         "brier_skill_vs": {
           "training_cohort_rate": {
-            "summed_loss_ratio_skill": 0.11964029513537988,
+            "summed_loss_ratio_skill": 0.12367168849596144,
             "summed_loss_ratio_skill_ci95": [
-              0.0813703256637648,
-              0.16119043801415708
+              0.0833530834763157,
+              0.16804516056196836
             ],
-            "patient_mean_brier_improvement": 0.0066191187400810175,
+            "patient_mean_brier_improvement": 0.006871857779605655,
             "patient_mean_brier_improvement_ci95": [
-              0.0038224451382005194,
-              0.009934007008587585
+              0.003920961383816634,
+              0.010411130297205938
             ]
           },
           "runin_rate": {
-            "summed_loss_ratio_skill": 0.18152605024536062,
+            "summed_loss_ratio_skill": 0.1808863751504245,
             "summed_loss_ratio_skill_ci95": [
-              0.125109183769855,
-              0.24139475842716718
+              0.12391961402374824,
+              0.2413988659730506
             ],
-            "patient_mean_brier_improvement": 0.010820925592015904,
+            "patient_mean_brier_improvement": 0.010713758482554656,
             "patient_mean_brier_improvement_ci95": [
-              0.006794319626335168,
-              0.015309799525441887
+              0.006834287712155953,
+              0.01499188273252363
             ]
           },
           "runin_rate_shrunk_10": {
-            "summed_loss_ratio_skill": 0.12985821091049732,
+            "summed_loss_ratio_skill": 0.13130939876211878,
             "summed_loss_ratio_skill_ci95": [
-              0.08990196039865647,
-              0.17406330203872347
+              0.09059277781033506,
+              0.17562198676489202
             ],
-            "patient_mean_brier_improvement": 0.007247625335266701,
+            "patient_mean_brier_improvement": 0.007307004216714272,
             "patient_mean_brier_improvement_ci95": [
-              0.004435789234570629,
-              0.010467350890349477
+              0.004495677060531086,
+              0.010549895690461374
             ]
           },
           "expanding_rate": {
-            "summed_loss_ratio_skill": 0.09276278084666256,
+            "summed_loss_ratio_skill": 0.09572324071455185,
             "summed_loss_ratio_skill_ci95": [
-              0.05956467682505973,
-              0.12779914110133056
+              0.0615155331005934,
+              0.13283727334910303
             ],
-            "patient_mean_brier_improvement": 0.005037513819848553,
+            "patient_mean_brier_improvement": 0.005210124183819159,
             "patient_mean_brier_improvement_ci95": [
-              0.002897723619443293,
-              0.007623389331824676
+              0.00297141970114308,
+              0.007994123976469923
             ]
           },
           "recent_28_night_rate": {
-            "summed_loss_ratio_skill": 0.10929881638919181,
+            "summed_loss_ratio_skill": 0.11212193878854382,
             "summed_loss_ratio_skill_ci95": [
-              0.0760315358510655,
-              0.14555489657512347
+              0.07718353251694872,
+              0.15027151600102173
             ],
-            "patient_mean_brier_improvement": 0.006057809024060976,
+            "patient_mean_brier_improvement": 0.006227627906257921,
             "patient_mean_brier_improvement_ci95": [
-              0.003735336122972006,
-              0.00890347122197812
+              0.003825625825671513,
+              0.009210729996054792
             ]
           },
           "persistence": {
-            "summed_loss_ratio_skill": 0.5252281920912645,
+            "summed_loss_ratio_skill": 0.5279281265955122,
             "summed_loss_ratio_skill_ci95": [
-              0.5062363808264926,
-              0.5454280504852543
+              0.5085644187426677,
+              0.548757828022837
             ],
-            "patient_mean_brier_improvement": 0.05573511437182331,
+            "patient_mean_brier_improvement": 0.05631344259591447,
             "patient_mean_brier_improvement_ci95": [
-              0.04261354224084518,
-              0.06937384557107155
+              0.04303812669006873,
+              0.07030016407718986
             ]
           },
           "retrospective_rate_reference": {
-            "summed_loss_ratio_skill": 0.07311577055849039,
+            "summed_loss_ratio_skill": 0.07653427676418711,
             "summed_loss_ratio_skill_ci95": [
-              0.03999089424792289,
-              0.10860638535632024
+              0.04197891848904839,
+              0.11398385082332872
             ],
-            "patient_mean_brier_improvement": 0.0038608885205760305,
+            "patient_mean_brier_improvement": 0.004057004471984853,
             "patient_mean_brier_improvement_ci95": [
-              0.0019335246894443454,
-              0.006319283066287309
+              0.001962384694214178,
+              0.0066505951994899675
             ]
           }
         }
       },
       "gradient_boosting": {
-        "brier_pooled": 0.047963325082300105,
-        "brier_patient_mean": 0.0485280285093282,
-        "log_loss_pooled": 0.17992120051262345,
-        "log_loss_patient_mean": 0.18218163481611707,
+        "brier_pooled": 0.04787285110584452,
+        "brier_patient_mean": 0.048439608084404895,
+        "log_loss_pooled": 0.17960306733917852,
+        "log_loss_patient_mean": 0.18180136210359793,
         "brier_skill_vs": {
           "training_cohort_rate": {
-            "summed_loss_ratio_skill": 0.1477655106466117,
+            "summed_loss_ratio_skill": 0.15356071802641735,
             "summed_loss_ratio_skill_ci95": [
-              0.1041015290093126,
-              0.19564529843908188
+              0.10624063500222694,
+              0.20650545024280378
             ],
-            "patient_mean_brier_improvement": 0.008325147967835109,
+            "patient_mean_brier_improvement": 0.008667884133650446,
             "patient_mean_brier_improvement_ci95": [
-              0.00508355079397596,
-              0.012377961210119437
+              0.005196851573770578,
+              0.012946498859427174
             ]
           },
           "runin_rate": {
-            "summed_loss_ratio_skill": 0.20767417594895377,
+            "summed_loss_ratio_skill": 0.20882397684665244,
             "summed_loss_ratio_skill_ci95": [
-              0.14867128641580266,
-              0.26885650732715205
+              0.14774184388285358,
+              0.2694016671760534
             ],
-            "patient_mean_brier_improvement": 0.012526954819769993,
+            "patient_mean_brier_improvement": 0.012509784836599449,
             "patient_mean_brier_improvement_ci95": [
-              0.008086197879723016,
-              0.017079865109185167
+              0.00806255391027873,
+              0.0170454595872589
             ]
           },
           "runin_rate_shrunk_10": {
-            "summed_loss_ratio_skill": 0.15765699044145565,
+            "summed_loss_ratio_skill": 0.16093792803862483,
             "summed_loss_ratio_skill_ci95": [
-              0.1122862503122156,
-              0.20512988338396124
+              0.1132004041340285,
+              0.2113905116911038
             ],
-            "patient_mean_brier_improvement": 0.00895365456302079,
+            "patient_mean_brier_improvement": 0.009103030570759063,
             "patient_mean_brier_improvement_ci95": [
-              0.00569493981548543,
-              0.012492489215485866
+              0.005710222405048231,
+              0.012820845440225498
             ]
           },
           "expanding_rate": {
-            "summed_loss_ratio_skill": 0.12174666342045903,
+            "summed_loss_ratio_skill": 0.12656551113669512,
             "summed_loss_ratio_skill_ci95": [
-              0.08098646869263947,
-              0.16761165713853185
+              0.0826576465739196,
+              0.17496838088751324
             ],
-            "patient_mean_brier_improvement": 0.006743543047602643,
+            "patient_mean_brier_improvement": 0.00700615053786395,
             "patient_mean_brier_improvement_ci95": [
-              0.004092066856524659,
-              0.009968348526753197
+              0.004139859902855806,
+              0.010426372522220933
             ]
           },
           "recent_28_night_rate": {
-            "summed_loss_ratio_skill": 0.1377544153980259,
+            "summed_loss_ratio_skill": 0.14240489694773695,
             "summed_loss_ratio_skill_ci95": [
-              0.09530305713820904,
-              0.1850825688919204
+              0.09797544357638194,
+              0.1921903616896029
             ],
-            "patient_mean_brier_improvement": 0.007763838251815066,
+            "patient_mean_brier_improvement": 0.008023654260302713,
             "patient_mean_brier_improvement_ci95": [
-              0.004883794417001306,
-              0.011245839692257021
+              0.004919657884686538,
+              0.01177417427573872
             ]
           },
           "persistence": {
-            "summed_loss_ratio_skill": 0.5403959233519129,
+            "summed_loss_ratio_skill": 0.5440291357486547,
             "summed_loss_ratio_skill_ci95": [
-              0.516944649045682,
-              0.5650141219700477
+              0.5182371118598443,
+              0.5711309586265273
             ],
-            "patient_mean_brier_improvement": 0.05744114359957739,
+            "patient_mean_brier_improvement": 0.05810946894995927,
             "patient_mean_brier_improvement_ci95": [
-              0.04394862486050106,
-              0.07102627465800763
+              0.04421965024486247,
+              0.0722567922979621
             ]
           },
           "retrospective_rate_reference": {
-            "summed_loss_ratio_skill": 0.10272732429380504,
+            "summed_loss_ratio_skill": 0.1080310273653251,
             "summed_loss_ratio_skill_ci95": [
-              0.06028735967327597,
-              0.1494628869111177
+              0.06254483660856996,
+              0.15860354185032885
             ],
-            "patient_mean_brier_improvement": 0.005566917748330121,
+            "patient_mean_brier_improvement": 0.005853030826029644,
             "patient_mean_brier_improvement_ci95": [
-              0.0029917295695520837,
-              0.008622714102429466
+              0.0031206074451211084,
+              0.009132425393713993
             ]
           }
         }
       },
       "within_patient_centred_gradient_boosting": {
-        "brier_pooled": 0.05066735305856736,
-        "brier_patient_mean": 0.051284887161684216,
-        "log_loss_pooled": 0.19255758464971048,
-        "log_loss_patient_mean": 0.19482677164812737,
+        "brier_pooled": 0.05097890814575136,
+        "brier_patient_mean": 0.05159037862744635,
+        "log_loss_pooled": 0.19357461388729147,
+        "log_loss_patient_mean": 0.19581222751519156,
         "brier_skill_vs": {
           "training_cohort_rate": {
-            "summed_loss_ratio_skill": 0.0997190939814373,
+            "summed_loss_ratio_skill": 0.09864256233071933,
             "summed_loss_ratio_skill_ci95": [
-              0.06251049214523036,
-              0.1363606563679836
+              0.061072751590819555,
+              0.13683653087060135
             ],
-            "patient_mean_brier_improvement": 0.005568289315479086,
+            "patient_mean_brier_improvement": 0.005517113590608995,
             "patient_mean_brier_improvement_ci95": [
-              0.0032126952001897734,
-              0.008295007979911532
+              0.003121702121204069,
+              0.008242018379999052
             ]
           },
           "runin_rate": {
-            "summed_loss_ratio_skill": 0.16300522960553876,
+            "summed_loss_ratio_skill": 0.15749137810320857,
             "summed_loss_ratio_skill_ci95": [
-              0.10478168416499711,
-              0.2199815020574256
+              0.10132961744872244,
+              0.21380286893552117
             ],
-            "patient_mean_brier_improvement": 0.009770096167413974,
+            "patient_mean_brier_improvement": 0.009359014293557996,
             "patient_mean_brier_improvement_ci95": [
-              0.006072726681911905,
-              0.0136622409455792
+              0.005827461942302849,
+              0.013168403051009749
             ]
           },
           "runin_rate_shrunk_10": {
-            "summed_loss_ratio_skill": 0.11016822564979178,
+            "summed_loss_ratio_skill": 0.10649841597003451,
             "summed_loss_ratio_skill_ci95": [
-              0.07288183832731002,
-              0.14899326229806184
+              0.06922317894726301,
+              0.1450244653108017
             ],
-            "patient_mean_brier_improvement": 0.00619679591066477,
+            "patient_mean_brier_improvement": 0.005952260027717611,
             "patient_mean_brier_improvement_ci95": [
-              0.0038927296850039123,
-              0.008739599991556888
+              0.0036381147959695646,
+              0.008478049164440307
             ]
           },
           "expanding_rate": {
-            "summed_loss_ratio_skill": 0.07223338242323474,
+            "summed_loss_ratio_skill": 0.06989586894151578,
             "summed_loss_ratio_skill_ci95": [
-              0.03215501926825552,
-              0.1092683442522243
+              0.0284275964794122,
+              0.10846688898761972
             ],
-            "patient_mean_brier_improvement": 0.003986684395246622,
+            "patient_mean_brier_improvement": 0.003855379994822498,
             "patient_mean_brier_improvement_ci95": [
-              0.0017881473691924818,
-              0.006249867340026725
+              0.0016399884982020259,
+              0.006134302397088395
             ]
           },
           "recent_28_night_rate": {
-            "summed_loss_ratio_skill": 0.08914360329990767,
+            "summed_loss_ratio_skill": 0.0867629360932285,
             "summed_loss_ratio_skill_ci95": [
-              0.046569932057984355,
-              0.12778378961643014
+              0.04257074454756825,
+              0.1261683796362731
             ],
-            "patient_mean_brier_improvement": 0.005006979599459047,
+            "patient_mean_brier_improvement": 0.00487288371726126,
             "patient_mean_brier_improvement_ci95": [
-              0.0026436789240550746,
-              0.007536457608201642
+              0.0025097900226158476,
+              0.007400888315012236
             ]
           },
           "persistence": {
-            "summed_loss_ratio_skill": 0.5144848281738696,
+            "summed_loss_ratio_skill": 0.5144451130680546,
             "summed_loss_ratio_skill_ci95": [
-              0.4914394943086683,
-              0.5350618398169316
+              0.4913202664571743,
+              0.5353327187543019
             ],
-            "patient_mean_brier_improvement": 0.05468428494722138,
+            "patient_mean_brier_improvement": 0.05495869840691781,
             "patient_mean_brier_improvement_ci95": [
-              0.041849800243893696,
-              0.06736380147447836
+              0.04196364268666899,
+              0.06774056306905907
             ]
           },
           "retrospective_rate_reference": {
-            "summed_loss_ratio_skill": 0.05214179017400555,
+            "summed_loss_ratio_skill": 0.05015884213230137,
             "summed_loss_ratio_skill_ci95": [
-              0.009012558637191326,
-              0.09111890595006256
+              0.005831498498524756,
+              0.08979622162875034
             ],
-            "patient_mean_brier_improvement": 0.002810059095974099,
+            "patient_mean_brier_improvement": 0.002702260282988192,
             "patient_mean_brier_improvement_ci95": [
-              0.000602814087288875,
-              0.005008753836739776
+              0.0004777825097991107,
+              0.0049298851068427145
             ]
           }
         }
       }
     },
-    "retrospective_rate_day_weighted_expected_brier_optimism": 0.00025686109334120764
+    "retrospective_rate_day_weighted_expected_brier_optimism": 0.0002577998048928516
   },
   "7_calibration_test": {
     "logistic_regression": {
       "day_weighted": {
-        "pooled_intercept": 0.45321584212865373,
-        "pooled_slope": 1.1525336417817802,
-        "joint_intercept": 1.4108479615539091,
-        "between_slope": 1.43983562045042,
-        "within_slope": 1.0281811203274895,
+        "pooled_intercept": 0.4520109554069905,
+        "pooled_slope": 1.154582886128714,
+        "joint_intercept": 1.3955571457018092,
+        "between_slope": 1.4373831333682132,
+        "within_slope": 1.031724292334079,
         "ci95": {
           "pooled_intercept": [
-            0.19197999004569882,
-            0.7664908524973868
+            0.18239165864314502,
+            0.7565830869716766
           ],
           "pooled_slope": [
-            1.0281239166954146,
-            1.3022643177537179
+            1.029512304763082,
+            1.304510663233683
           ],
           "joint_intercept": [
-            0.7258277459462518,
-            2.7142776967863638
+            0.7263456974009171,
+            2.6771975496535494
           ],
           "between_slope": [
-            1.2429248017029337,
-            1.84028185033244
+            1.2505866211670684,
+            1.831658065794349
           ],
           "within_slope": [
-            0.8503196341754743,
-            1.2575425178694817
+            0.8535564834862684,
+            1.26083745014222
           ]
         }
       },
       "equal_patient": {
-        "pooled_intercept": 0.41004829845736374,
-        "pooled_slope": 1.132839985607363,
-        "joint_intercept": 1.424343142881851,
-        "between_slope": 1.438425953991157,
-        "within_slope": 1.0090028504671296,
+        "pooled_intercept": 0.40765530984302345,
+        "pooled_slope": 1.1346379975256078,
+        "joint_intercept": 1.4041457979689287,
+        "between_slope": 1.4345979000585816,
+        "within_slope": 1.0124769879742466,
         "ci95": {
           "pooled_intercept": [
-            0.1017783967127613,
-            0.7432959199159394
+            0.10513712524095233,
+            0.7257650094989335
           ],
           "pooled_slope": [
-            0.9903874716873821,
-            1.26872914197664
+            0.9931784179584017,
+            1.2710067357044323
           ],
           "joint_intercept": [
-            0.737317117571997,
-            2.504982428277097
+            0.7386182540993421,
+            2.492113677424696
           ],
           "between_slope": [
-            1.2570680762388038,
-            1.7798566577458967
+            1.2605199732864072,
+            1.7781586993822425
           ],
           "within_slope": [
-            0.8194727344594233,
-            1.206745664184008
+            0.8239101242909308,
+            1.2093756519755323
           ]
         }
       },
-      "forecast_logit_variance_between_share": 0.3015231865242092,
-      "forecast_logit_variance_within_share": 0.6984768134757908
+      "forecast_logit_variance_between_share": 0.298777194751699,
+      "forecast_logit_variance_within_share": 0.701222805248301
     },
     "gradient_boosting": {
       "day_weighted": {
-        "pooled_intercept": 0.20078937688341805,
-        "pooled_slope": 1.0592481201856472,
-        "joint_intercept": 1.6623123451406787,
-        "between_slope": 1.5242569490825126,
-        "within_slope": 0.9515557101478844,
+        "pooled_intercept": 0.2039271775580788,
+        "pooled_slope": 1.0631441622304512,
+        "joint_intercept": 1.6788798194307029,
+        "between_slope": 1.5335483961506173,
+        "within_slope": 0.954578903179195,
         "ci95": {
           "pooled_intercept": [
-            -0.11332837448416404,
-            0.45576372546568833
+            -0.11584191654109478,
+            0.4680662272731576
           ],
           "pooled_slope": [
-            0.944954056667394,
-            1.1788414771875653
+            0.94585954996676,
+            1.1879843213912262
           ],
           "joint_intercept": [
-            0.9266520008486581,
-            2.670523966040029
+            0.9292803002569024,
+            2.6769650015815944
           ],
           "between_slope": [
-            1.3129545862523317,
-            1.843328848610403
+            1.3199769347445882,
+            1.8519203604401766
           ],
           "within_slope": [
-            0.8100543236408432,
-            1.1018665599751942
+            0.8127729028668134,
+            1.1103255086579296
           ]
         }
       },
       "equal_patient": {
-        "pooled_intercept": 0.19266623559916277,
-        "pooled_slope": 1.0536695426678124,
-        "joint_intercept": 1.6368494860626999,
-        "between_slope": 1.5134473594370164,
-        "within_slope": 0.9505919684130587,
+        "pooled_intercept": 0.19626476048851216,
+        "pooled_slope": 1.057678842269102,
+        "joint_intercept": 1.6439436487441317,
+        "between_slope": 1.5195553316529387,
+        "within_slope": 0.9540200234747348,
         "ci95": {
           "pooled_intercept": [
-            -0.0700294284210931,
-            0.47537903964872696
+            -0.08114433424309789,
+            0.49335724175640244
           ],
           "pooled_slope": [
-            0.9455421197750136,
-            1.1643996929474414
+            0.9440925775130632,
+            1.1718255016130041
           ],
           "joint_intercept": [
-            0.9139114393982035,
-            2.5586872483025442
+            0.9332138337342306,
+            2.5552939530613963
           ],
           "between_slope": [
-            1.291092507522516,
-            1.8129663277104815
+            1.2995432616888063,
+            1.804681942919383
           ],
           "within_slope": [
-            0.8137327228988549,
-            1.090807976025715
+            0.8183246214453156,
+            1.1015010231088949
           ]
         }
       },
-      "forecast_logit_variance_between_share": 0.35909978031161605,
-      "forecast_logit_variance_within_share": 0.640900219688384
+      "forecast_logit_variance_between_share": 0.3517778975398301,
+      "forecast_logit_variance_within_share": 0.64822210246017
     }
   },
   "8_history_bias_test": {
     "recent_28_night_rate": {
       "permutations": 200,
       "patients": 42,
-      "observed_within_auc": 0.46921323437513557,
-      "permutation_reference": 0.4575107165502806,
-      "observed_minus_reference": 0.011702517824854949,
+      "observed_within_auc": 0.47019979550668367,
+      "permutation_reference": 0.4574482601038805,
+      "observed_minus_reference": 0.012751535402803129,
       "difference_ci95": [
-        -0.012008400971730126,
-        0.03271910734024064
+        -0.009932747079641452,
+        0.033153104427094245
       ]
     },
     "expanding_rate": {
       "permutations": 200,
       "patients": 42,
-      "observed_within_auc": 0.38706641408619463,
-      "permutation_reference": 0.3733306848508288,
-      "observed_minus_reference": 0.013735729235365802,
+      "observed_within_auc": 0.387534378704246,
+      "permutation_reference": 0.37321437802003155,
+      "observed_minus_reference": 0.01432000068421442,
       "difference_ci95": [
-        -0.014363782229527989,
-        0.03942693993181379
+        -0.013067410566789627,
+        0.03981546635095562
       ]
     },
     "persistence": {
       "permutations": 200,
       "patients": 42,
-      "observed_within_auc": 0.5062029783623405,
-      "permutation_reference": 0.49787760471147585,
-      "observed_minus_reference": 0.00832537365086476,
+      "observed_within_auc": 0.5057970923834995,
+      "permutation_reference": 0.49787423538748854,
+      "observed_minus_reference": 0.007922856996010955,
       "difference_ci95": [
-        -0.0022972093976762007,
-        0.02026463159522114
+        -0.0026433340053885652,
+        0.01997060747165916
       ]
     }
   },
@@ -1513,51 +1513,51 @@
     "recent_28_night_rate": {
       "permutations": 200,
       "patients": 212,
-      "observed_within_auc": 0.48664263679803044,
-      "permutation_reference": 0.45603354823480224,
-      "observed_minus_reference": 0.030609088563228196,
+      "observed_within_auc": 0.48640767097845206,
+      "permutation_reference": 0.455752716673494,
+      "observed_minus_reference": 0.03065495430495803,
       "difference_ci95": [
-        0.017982299653207915,
-        0.04477042812105794
+        0.017864771969933687,
+        0.04394986248332909
       ]
     },
     "expanding_rate": {
       "permutations": 200,
       "patients": 212,
-      "observed_within_auc": 0.4003781593097279,
-      "permutation_reference": 0.3677015047399617,
-      "observed_minus_reference": 0.03267665456976623,
+      "observed_within_auc": 0.400338036213984,
+      "permutation_reference": 0.3678888534086858,
+      "observed_minus_reference": 0.032449182805298286,
       "difference_ci95": [
-        0.017879563735079273,
-        0.049549281302349764
+        0.017875131022578025,
+        0.04939681470754047
       ]
     },
     "persistence": {
       "permutations": 200,
       "patients": 212,
-      "observed_within_auc": 0.5079616972863811,
-      "permutation_reference": 0.4973627268588898,
-      "observed_minus_reference": 0.010598970427491248,
+      "observed_within_auc": 0.5074108259263885,
+      "permutation_reference": 0.4975691254167908,
+      "observed_minus_reference": 0.009841700509597633,
       "difference_ci95": [
-        0.005088759380103645,
-        0.016561819563916585
+        0.004589040030131214,
+        0.015444248146575166
       ]
     }
   },
   "9_average_precision_test": {
     "gradient_boosting": {
       "eligible_patients": 42,
-      "mean_average_precision": 0.30024804806302485,
-      "mean_prevalence": 0.06479219677820741,
-      "mean_tie_matched_expectation": 0.08740767315924682,
-      "mean_ap_minus_expectation": 0.21284037490377808
+      "mean_average_precision": 0.29927578730450427,
+      "mean_prevalence": 0.06510286013113166,
+      "mean_tie_matched_expectation": 0.08771186159899035,
+      "mean_ap_minus_expectation": 0.2115639257055139
     },
     "runin_rate": {
       "eligible_patients": 42,
-      "mean_average_precision": 0.06479219677820741,
-      "mean_prevalence": 0.06479219677820741,
-      "mean_tie_matched_expectation": 0.06479219677820743,
-      "mean_ap_minus_expectation": -5.782411586589357e-19
+      "mean_average_precision": 0.06510286013113166,
+      "mean_prevalence": 0.06510286013113166,
+      "mean_tie_matched_expectation": 0.06510286013113166,
+      "mean_ap_minus_expectation": 8.260587980841938e-20
     }
   },
   "10_output": {

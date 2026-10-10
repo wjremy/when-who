@@ -17,13 +17,13 @@ Primary: weekly next-week opioid-positive UDS; missing target weeks excluded. Se
 | weekly_missing_excluded | training_cohort_rate | 0.500 | [0.500, 0.500] | 0.500 | [0.500, 0.500] |
 | weekly_missing_excluded | runin_rate | 0.801 | [0.762, 0.838] | 0.500 | [0.500, 0.500] |
 | weekly_missing_excluded | runin_shrunk | 0.813 | [0.777, 0.848] | 0.500 | [0.500, 0.500] |
-| weekly_missing_excluded | updating_rate | 0.889 | [0.865, 0.909] | 0.436 | [0.399, 0.477] |
+| weekly_missing_excluded | updating_rate | 0.891 | [0.868, 0.910] | 0.444 | [0.408, 0.482] |
 | weekly_missing_excluded | recent_window_rate | 0.882 | [0.862, 0.899] | 0.574 | [0.539, 0.608] |
 | weekly_missing_excluded | persistence | 0.817 | [0.795, 0.836] | 0.618 | [0.588, 0.647] |
 | weekly_missing_excluded | retrospective_rate | 0.932 | [0.916, 0.946] | 0.500 | [0.500, 0.500] |
-| weekly_missing_excluded | logistic_regression | 0.923 | [0.907, 0.937] | 0.653 | [0.611, 0.693] |
-| weekly_missing_excluded | gradient_boosting | 0.929 | [0.915, 0.943] | 0.638 | [0.595, 0.682] |
-| weekly_missing_excluded | within_centred_gradient_boosting | 0.918 | [0.902, 0.933] | 0.644 | [0.597, 0.687] |
+| weekly_missing_excluded | logistic_regression | 0.923 | [0.906, 0.937] | 0.647 | [0.605, 0.688] |
+| weekly_missing_excluded | gradient_boosting | 0.929 | [0.914, 0.943] | 0.638 | [0.593, 0.681] |
+| weekly_missing_excluded | within_centred_gradient_boosting | 0.918 | [0.903, 0.933] | 0.625 | [0.574, 0.668] |
 | weekly_missing_excluded | normal approximation, observed SD | 0.872 | NA | NA | NA |
 | weekly_missing_excluded | normal approximation, sampling-corrected SD | 0.866 | NA | NA | NA |
 | weekly_missing_positive | training_cohort_rate | 0.500 | [0.500, 0.500] | 0.500 | [0.500, 0.500] |
@@ -55,16 +55,16 @@ Primary: weekly next-week opioid-positive UDS; missing target weeks excluded. Se
 
 | Analysis | Forecast | Brier | Log loss | Brier skill: run-in / updating / retrospective | Log-loss skill: run-in / updating / retrospective |
 |---|---|---:|---:|---|---|
-| weekly_missing_excluded | training_cohort_rate | 0.210 | 0.612 | -0.141 / -0.770 / -1.193 | 0.651 / -0.165 / -1.082 |
-| weekly_missing_excluded | runin_rate | 0.184 | 1.755 | 0.000 / -0.551 / -0.923 | 0.000 / -2.343 / -4.976 |
-| weekly_missing_excluded | runin_shrunk | 0.174 | 0.530 | 0.056 / -0.464 / -0.814 | 0.698 / -0.009 / -0.804 |
-| weekly_missing_excluded | updating_rate | 0.119 | 0.525 | 0.355 / 0.000 / -0.239 | 0.701 / 0.000 / -0.787 |
-| weekly_missing_excluded | recent_window_rate | 0.119 | 0.983 | 0.354 / -0.002 / -0.242 | 0.440 / -0.872 / -2.346 |
-| weekly_missing_excluded | persistence | 0.160 | 1.601 | 0.135 / -0.342 / -0.663 | 0.088 / -2.049 / -4.450 |
-| weekly_missing_excluded | retrospective_rate | 0.096 | 0.294 | 0.480 / 0.193 / 0.000 | 0.833 / 0.441 / 0.000 |
-| weekly_missing_excluded | logistic_regression | 0.097 | 0.323 | 0.474 / 0.185 / -0.011 | 0.816 / 0.386 / -0.098 |
-| weekly_missing_excluded | gradient_boosting | 0.093 | 0.306 | 0.496 / 0.219 / 0.032 | 0.826 / 0.417 / -0.042 |
-| weekly_missing_excluded | within_centred_gradient_boosting | 0.102 | 0.333 | 0.447 / 0.142 / -0.064 | 0.810 / 0.366 / -0.133 |
+| weekly_missing_excluded | training_cohort_rate | 0.210 | 0.612 | -0.141 / -0.741 / -1.193 | 0.651 / -0.039 / -1.082 |
+| weekly_missing_excluded | runin_rate | 0.184 | 1.755 | 0.000 / -0.526 / -0.923 | 0.000 / -1.981 / -4.976 |
+| weekly_missing_excluded | runin_shrunk | 0.174 | 0.530 | 0.056 / -0.440 / -0.814 | 0.698 / 0.100 / -0.804 |
+| weekly_missing_excluded | updating_rate | 0.121 | 0.589 | 0.345 / 0.000 / -0.260 | 0.665 / 0.000 / -1.004 |
+| weekly_missing_excluded | recent_window_rate | 0.119 | 0.983 | 0.354 / 0.014 / -0.242 | 0.440 / -0.670 / -2.346 |
+| weekly_missing_excluded | persistence | 0.160 | 1.601 | 0.135 / -0.320 / -0.663 | 0.088 / -1.719 / -4.450 |
+| weekly_missing_excluded | retrospective_rate | 0.096 | 0.294 | 0.480 / 0.206 / 0.000 | 0.833 / 0.501 / 0.000 |
+| weekly_missing_excluded | logistic_regression | 0.097 | 0.322 | 0.476 / 0.200 / -0.008 | 0.817 / 0.453 / -0.096 |
+| weekly_missing_excluded | gradient_boosting | 0.093 | 0.307 | 0.496 / 0.230 / 0.031 | 0.825 / 0.479 / -0.044 |
+| weekly_missing_excluded | within_centred_gradient_boosting | 0.102 | 0.332 | 0.447 / 0.157 / -0.062 | 0.811 / 0.436 / -0.131 |
 | weekly_missing_positive | training_cohort_rate | 0.247 | 0.688 | 0.045 / -0.189 / -0.335 | 0.620 / 0.061 / -0.271 |
 | weekly_missing_positive | runin_rate | 0.259 | 1.808 | 0.000 / -0.245 / -0.398 | 0.000 / -1.469 / -2.342 |
 | weekly_missing_positive | runin_shrunk | 0.225 | 0.641 | 0.131 / -0.082 / -0.214 | 0.645 / 0.124 / -0.185 |
@@ -90,9 +90,9 @@ Primary: weekly next-week opioid-positive UDS; missing target weeks excluded. Se
 
 | Analysis | Model/reference | Day-weighted pooled/between/within slopes | Equal-person pooled/between/within slopes | Between-logit variance share | History AUC observed / permutation / difference |
 |---|---|---|---|---:|---|
-| weekly_missing_excluded | logistic_regression | 1.084 / 1.179 / 0.713 | 1.095 / 1.192 / 0.714 | 0.810 | NA |
-| weekly_missing_excluded | gradient_boosting | 1.069 / 1.194 / 0.747 | 1.080 / 1.206 / 0.756 | 0.832 | NA |
-| weekly_missing_excluded | updating_rate | NA | NA | NA | 0.436 / 0.296 / 0.141 |
+| weekly_missing_excluded | logistic_regression | 1.082 / 1.172 / 0.715 | 1.091 / 1.184 / 0.715 | 0.813 | NA |
+| weekly_missing_excluded | gradient_boosting | 1.081 / 1.210 / 0.757 | 1.091 / 1.218 / 0.769 | 0.837 | NA |
+| weekly_missing_excluded | updating_rate | NA | NA | NA | 0.444 / 0.296 / 0.148 |
 | weekly_missing_excluded | recent_window_rate | NA | NA | NA | 0.574 / 0.426 / 0.148 |
 | weekly_missing_excluded | persistence | NA | NA | NA | 0.618 / 0.475 / 0.142 |
 | weekly_missing_positive | logistic_regression | 1.036 / 1.187 / 0.893 | 1.028 / 1.195 / 0.860 | 0.542 | NA |

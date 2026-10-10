@@ -1,0 +1,124 @@
+{
+  "title": "Table 1. One forecast, two patients",
+  "threshold_for_net_benefit": 0.37,
+  "record_summary": [
+    {
+      "patient": "A",
+      "days": 30,
+      "events": 20,
+      "non_events": 10,
+      "forecast_probability": 0.666667,
+      "forecast_as_printed": 0.67
+    },
+    {
+      "patient": "B",
+      "days": 30,
+      "events": 2,
+      "non_events": 28,
+      "forecast_probability": 0.066667,
+      "forecast_as_printed": 0.07
+    }
+  ],
+  "population_event_rate": 0.366667,
+  "ap_patient_chance_references": {
+    "A": 0.701,
+    "B": 0.163
+  },
+  "metrics": [
+    {
+      "metric": "AUC",
+      "unit": "value",
+      "patient_A": 0.5,
+      "patient_B": 0.5,
+      "per_patient_mean": 0.5,
+      "pooled": 0.82
+    },
+    {
+      "metric": "AP",
+      "unit": "value",
+      "patient_A": 0.667,
+      "patient_B": 0.067,
+      "per_patient_mean": 0.367,
+      "pooled": 0.639
+    },
+    {
+      "metric": "Sensitivity",
+      "unit": "%",
+      "patient_A": 100.0,
+      "patient_B": 0.0,
+      "per_patient_mean": 50.0,
+      "pooled": 91.0
+    },
+    {
+      "metric": "Specificity",
+      "unit": "%",
+      "patient_A": 0.0,
+      "patient_B": 100.0,
+      "per_patient_mean": 50.0,
+      "pooled": 74.0
+    },
+    {
+      "metric": "PPV",
+      "unit": "value",
+      "patient_A": {
+        "value": 0.67,
+        "excess_over_reference": 0.0
+      },
+      "patient_B": "n/a",
+      "per_patient_mean": {
+        "value": 0.67,
+        "excess_over_reference": 0.0
+      },
+      "pooled": {
+        "value": 0.67,
+        "excess_over_reference": 0.3
+      }
+    },
+    {
+      "metric": "NPV",
+      "unit": "value",
+      "patient_A": "n/a",
+      "patient_B": {
+        "value": 0.93,
+        "excess_over_reference": 0.0
+      },
+      "per_patient_mean": {
+        "value": 0.93,
+        "excess_over_reference": 0.0
+      },
+      "pooled": {
+        "value": 0.93,
+        "excess_over_reference": 0.3
+      }
+    },
+    {
+      "metric": "Net benefit",
+      "unit": "value",
+      "patient_A": 0.0,
+      "patient_B": 0.0,
+      "per_patient_mean": 0.0,
+      "pooled": 0.235
+    },
+    {
+      "metric": "Brier skill",
+      "unit": "%",
+      "patient_A": 0.0,
+      "patient_B": 0.0,
+      "per_patient_mean": 0.0,
+      "pooled": 39.0
+    },
+    {
+      "metric": "Calibration slope",
+      "unit": "value",
+      "patient_A": "n/a",
+      "patient_B": "n/a",
+      "per_patient_mean": "n/a",
+      "pooled": 1.0
+    }
+  ],
+  "footnotes": [
+    "n/a: PPV is undefined for patient B because no days are alarmed; NPV is undefined for patient A because no days are unalarmed. Per-patient calibration slopes and their mean are undefined because each patient's forecast is constant, so there is no within-patient forecast variation.",
+    "Record detail: the manuscript reports 30 days with 20 events for A and 30 days with 2 events for B, and forecasts equal to each patient's own rate (2/3 and 2/30; displayed as 0.67 and 0.07). It does not report event-day labels or their order. The grouped counts are sufficient because forecasts are constant within patient; no day order has been imputed.",
+    "Definitions: AP is non-interpolated average precision at distinct forecast levels; its expected chance references for random orderings without ties are 0.701 for A and 0.163 for B (per-patient mean 0.432). PPV/NPV cells show the value and its excess over the patient's own event/non-event rate (pooled: over the population rate). Per-patient net benefit is the model's net benefit minus the best policy supported by that patient's own event rate; pooled net benefit is standard net benefit at t = 0.37. Per-patient Brier skill uses each own rate as reference; pooled Brier skill uses the population rate. The population event rate is 0.37 when rounded as in the manuscript. The high forecast group (shown as 0.67) is the alarm group; threshold t = 0.37 selects the same days for net benefit. Youden's index is 0 in each patient, as printed in Table 1."
+  ]
+}

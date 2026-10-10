@@ -1,7 +1,7 @@
 {
-  "title": "when-who: code for “Which patients or which days? Separating within-patient and between-patient performance of clinical forecasts”",
+  "title": "when-who: code for “Which patients or which days? Pooling distorts every common measure of repeated clinical forecasts, and per-patient scores need a chance level of their own”",
   "upload_type": "software",
-  "description": "Analysis scripts, simulation code, the scripts that produce every table and figure, and the withinpatient Python package for the paper “Which patients or which days? Separating within-patient and between-patient performance of clinical forecasts”.",
+  "description": "The withinpatient Python package and its R port, the simulations, the cohort analyses, and the scripts that produce every table and figure of the paper “Which patients or which days? Pooling distorts every common measure of repeated clinical forecasts, and per-patient scores need a chance level of their own”.",
   "creators": [
     {
       "name": "Remy, Wesley",
@@ -14,7 +14,8 @@
     "clinical prediction",
     "repeated forecasts",
     "model evaluation",
-    "within-patient discrimination"
+    "within-patient evaluation",
+    "permutation chance level"
   ],
-  "version": "1.0.1"
+  "version": "2.0.0"
 }

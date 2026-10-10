@@ -1,6 +1,0 @@
-__pycache__/
-*.pyc
-*.dll
-*.so
-results/calibration_known_sim_build/
-open_data/results/fit_core/

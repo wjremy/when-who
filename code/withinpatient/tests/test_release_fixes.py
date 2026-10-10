@@ -7,7 +7,7 @@ import pandas as pd
 
 from withinpatient import (
     auc,
-    evaluate,
+    evaluate_v1 as evaluate,
     expanding_patient_rate,
     pooled_auc_permutation_test,
     population_a0_moment_corrected,
@@ -198,12 +198,12 @@ class TestReleaseMetadata(unittest.TestCase):
     def test_distribution_metadata_and_license(self):
         root = Path(__file__).resolve().parents[1]
         project = (root / "pyproject.toml").read_text()
-        self.assertIn('version = "1.0.0"', project)
+        self.assertIn('version = "2.0.0"', project)
         self.assertIn('readme = "README.md"', project)
         self.assertTrue((root / "LICENSE").is_file())
         self.assertIn("Copyright (c) 2026 Wesley Remy", (root / "LICENSE").read_text())
         readme = (root / "README.md").read_text()
-        self.assertIn("Minimal simulated example", readme)
+        self.assertIn("## Quickstart", readme)
         self.assertIn("expanding_patient_rate", readme)
 
 

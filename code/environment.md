@@ -1,9 +1,17 @@
-# Reproducible software environment
+# Software environment
 
-- Python: 3.12.14 (the editor's analysis runtime; package metadata in `withinpatient/pyproject.toml` permits Python 3.9+).
-- NumPy: 2.3.5; pandas: 3.0.1. These versions were recorded from the editor runtime on 6 October 2026.
-- scikit-learn and Matplotlib: the installed `.dist-info` directories under `%LOCALAPPDATA%\Programs\Python\Python312\Lib\site-packages` could not be read in this environment (access denied), so their exact installed versions could not be verified. `requirements.txt` leaves these two dependencies unpinned rather than guessing.
+Versions of the interpreter used for the analyses of paper v11 (recorded 11 October 2026):
 
-Install the recorded numeric dependencies and the unpinned plotting/model dependencies with `python -m pip install -r code/requirements.txt`, then install the local package with `python -m pip install ./code/withinpatient`. For strict archival reproduction, record the actual scikit-learn and Matplotlib versions from the machine used for the run and pin them before execution.
+| Software | Version |
+|---|---|
+| Python | 3.12.10 |
+| NumPy | 2.5.3 |
+| pandas | 3.0.6 |
+| scikit-learn | 1.9.1 |
+| SciPy | 1.18.1 |
+| Matplotlib | 3.11.2 |
+| numba (optional; speeds up the exact conditional calibration slope, results are identical without it) | 0.68.0 |
+| statsmodels (optional; cross-check of the conditional slope in the tests) | 0.15.0 |
+| R (for withinpatientR) | 4.6.1, with testthat 3.3.2 |
 
-Versions read from the interpreter used for all reported runs (6 Oct 2026): Python, numpy, pandas, scikit-learn, matplotlib = 3.12.10 2.5.3 3.0.6 1.9.1 3.11.2.
+`withinpatient` itself needs only NumPy and pandas and runs on Python 3.9 or later. Install the pinned versions with `python -m pip install -r code/requirements.txt`, then the package with `python -m pip install ./code/withinpatient`.

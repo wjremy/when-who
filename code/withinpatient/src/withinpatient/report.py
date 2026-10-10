@@ -1,6 +1,8 @@
 """High-level reporting for repeated binary forecasts."""
 from __future__ import annotations
 
+import inspect
+import warnings
 from typing import Any, Optional
 
 import numpy as np
@@ -32,7 +34,7 @@ from .metrics import (
 )
 
 
-def evaluate(
+def evaluate_v1(
     df: pd.DataFrame,
     patient: str = "patient",
     y: str = "y",
@@ -50,7 +52,7 @@ def evaluate(
     n_boot: int = 0,
     _include_optional: bool = True,
 ) -> dict[str, Any]:
-    """Compute the When-Who quantities from a long-format dataframe.
+    """Deprecated version 1 report API; use :func:`evaluate` for the paper's fix.
 
     If ``runin_days`` is given, rows with ``time < runin_days`` are history only and
     are excluded from every reported score. Run-in and expanding-rate references may
@@ -71,6 +73,12 @@ def evaluate(
     run-in first, and returns one forecast per outcome. Its per-patient reference
     scores only post-run-in rows.
     """
+    warnings.warn(
+        "evaluate_v1() preserves the withinpatient 1.x report API; use evaluate() "
+        "for the within-patient permutation procedure.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
     if n_perm < 1 and _include_optional:
         raise ValueError("n_perm must be at least 1")
     if n_boot < 0:
@@ -267,11 +275,13 @@ def _patient_bootstrap_intervals(
         ix = np.concatenate(parts)
         boot = df.iloc[ix].copy().reset_index(drop=True)
         boot[patient] = np.concatenate([np.full(len(part), j) for j, part in enumerate(parts)])
-        draw = evaluate(
-            boot, patient=patient, y=y, forecast=forecast, time=time, threshold=threshold,
-            runin_days=runin_days, time_col=time_col, n_perm=0, seed=seed,
-            prior_rate=prior_rate, prior_weight=prior_weight, n_boot=0, _include_optional=False,
-        )
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", DeprecationWarning)
+            draw = evaluate_v1(
+                boot, patient=patient, y=y, forecast=forecast, time=time, threshold=threshold,
+                runin_days=runin_days, time_col=time_col, n_perm=0, seed=seed,
+                prior_rate=prior_rate, prior_weight=prior_weight, n_boot=0, _include_optional=False,
+            )
         add("auc.pooled", draw["auc"]["pooled"]["value"])
         add("auc.within_patient", draw["auc"]["within_patient"]["value"])
         add("auc.per_patient_mean", draw["auc"]["per_patient_summary"]["mean"])
@@ -315,7 +325,7 @@ def _patient_bootstrap_intervals(
     return {"n_boot": int(n_boot), "seed": int(seed), "intervals": intervals}
 
 
-def to_markdown(result: dict[str, Any]) -> str:
+def to_markdown_v1(result: dict[str, Any]) -> str:
     """Render the main evaluate results as a compact three-decimal Markdown table."""
     c, a, b = result["cohort"], result["auc"], result["brier"]
     rows: list[tuple[str, Any]] = [
@@ -404,3 +414,7 @@ def to_markdown(result: dict[str, Any]) -> str:
     lines = ["| Quantity | Value |", "|---|---:|"]
     lines.extend(f"| {key} | {display(value)} |" for key, value in rows)
     return "\n".join(lines)
+
+
+# Keep the v1 report callable under its explicit name while making Section 3 the default.
+from .evaluation import evaluate, to_markdown  # noqa: E402

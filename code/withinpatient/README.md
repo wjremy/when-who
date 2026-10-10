@@ -1,110 +1,87 @@
 # withinpatient
 
-`withinpatient` computes reporting quantities for repeated binary forecasts in long format: one row per patient and time point, with a patient identifier, elapsed time, binary outcome, and forecast probability. The quantities follow the When-Who reporting checklist for repeated forecasts.
+`withinpatient` applies the two-step fix in Section 3 to repeated binary forecasts.
+
+1. Score every measure separately within each patient; sensitivity and specificity use the same patients with both outcomes.
+2. For each patient, shuffle scored outcomes while keeping run-in outcomes fixed.
+3. Rebuild any forecast that uses outcome history after every shuffle; fitted models stay fixed.
+4. Rebuild outcome-based yardsticks too, then recompute the same measure to estimate chance and its permutation p-value.
+5. Report patient-level excesses and equal-weight summaries, with pooled and usual per-patient values beside them.
 
 ## Install
 
 ```console
-python -m pip install withinpatient
+python -m pip install ./code/withinpatient
 ```
 
-Or install this source tree with `python -m pip install ./code/withinpatient`. Python 3.9 or later is required. NumPy and pandas provide the core metrics; statsmodels is used for the conditional within-patient calibration slope.
+Python 3.9 or later is required. NumPy and pandas provide the metrics; the exact conditional calibration-slope calculation uses the package's numba kernel when available and a Python fallback otherwise.
 
-## Minimal simulated example
+## Quickstart
+
+The default metrics are AUC, average precision, sensitivity, specificity, PPV, NPV, net benefit, Brier skill, and calibration slope. The default threshold is the cohort's scored event rate, `n_perm=200`, and `seed=0`. `runin` is a time cutoff; earlier outcomes remain available to history builders but are not scored. The default `yardstick=None` is the patient's scored-period event rate, recalculated in each shuffle. `chance="mean"` (default) takes each patient's chance level as the mean of their shuffle distribution; `chance="median"` uses the median. Calibration is summarised by one conditional within-patient slope (patient intercepts conditioned out) against its own chance level from the same shuffles; per-patient slopes are reported but are noisy on short records and serve as description only.
 
 ```python
-import numpy as np
 import pandas as pd
 from withinpatient import evaluate, to_markdown
 
-rng = np.random.default_rng(17)
-n_patients, n_times = 40, 35
-patient = np.repeat(np.arange(n_patients), n_times)
-time = np.tile(np.arange(n_times), n_patients)
-patient_rate = np.repeat(rng.beta(3, 12, n_patients), n_times)
-forecast = np.clip(patient_rate + rng.normal(0, 0.08, len(patient)), 0.01, 0.99)
-y = rng.binomial(1, forecast)
-data = pd.DataFrame({"patient": patient, "time": time, "y": y, "forecast": forecast})
-
-def history_forecast(outcomes):
-    """Simple rate forecast using outcomes strictly before each row."""
-    outcomes = np.asarray(outcomes, dtype=float)
-    earlier_events = np.r_[0.0, np.cumsum(outcomes[:-1])]
-    return (0.25 + earlier_events) / (1.0 + np.arange(len(outcomes)))
-
-result = evaluate(
-    data, time="time", threshold=0.25, runin_days=7,
-    history_forecast_fn=history_forecast,
-    n_perm=199, n_boot=100, seed=17,
-)
+data = pd.read_csv("forecasts.csv")  # patient, time, y, forecast columns
+result = evaluate(data, patient="patient", time="time", outcome="y",
+                  forecast="forecast", runin=7, threshold=0.25,
+                  n_perm=200, seed=17)
 print(to_markdown(result))
 ```
 
-Rows before day 7 supply history and are excluded from every scored quantity. `evaluate` returns the values as a nested dictionary; `to_markdown` renders its main summaries. For smaller or larger cohorts, adjust `n_perm` and `n_boot` to the desired computation and precision.
+The returned `result["metrics"][name]["per_patient"]` maps each eligible patient to `observed`, `chance_level`, `excess`, and `p_value`. The summary gives median excess, its IQR, the share with `p < 0.05`, the share with positive excess, and the eligible count. Markdown and the CLI list these tailored columns first.
 
-## `evaluate` inputs and reference rates
+## User metric
+
+Supply any callable `f(y, p) -> float`. Higher values should mean better performance because the permutation p-value is the upper-tail probability.
 
 ```python
-evaluate(
-    df, patient="patient", y="y", forecast="forecast", time="time",
-    threshold=None, runin_days=None, prior_rate=None, prior_weight=1.0,
-    n_perm=2000, n_boot=0, seed=0,
-)
+import numpy as np
+from withinpatient import auc, evaluate
+
+def auc_copy(y, p):
+    return auc(y, p)
+
+result = evaluate(data, metrics={"auc_copy": auc_copy}, n_perm=200, seed=17)
 ```
 
-`time` is a numeric elapsed-time column. If `runin_days` is set, the run-in consists of rows with `time < runin_days`; all reported scores use rows at or after the cutoff. Run-in outcomes can initialize the patient's run-in rate and the expanding rate. The expanding rate at each time uses strictly earlier rows, so same-time, current, and future outcomes never enter that row's reference.
+Built-in names can be selected with `metrics=["auc", "average_precision"]`; custom metrics can be mixed into that list or supplied in a `{name: function}` mapping.
 
-`prior_rate` is optional and must be supplied from outside the evaluation records, typically from a training cohort. It seeds only the expanding reference with `prior_weight` pseudo-observations. With no `prior_rate`, the expanding reference uses earlier outcomes only and is undefined until an earlier row exists; rows with an undefined reference are excluded from that skill calculation. When a run-in is supplied, its earlier outcomes provide the patient's own initial rate. `population_rate` and `retrospective_patient_rate` are included as descriptive hindsight comparisons; they use scored outcomes and are not prospective forecasts.
+## Forecasts that use history
 
-The `skill` result maps each reference name to pooled Brier skill, equal-patient mean skill, patient-specific skill ratios, positive share, and eligibility counts. A patient ratio is omitted if its reference is unavailable or has zero Brier loss. Reference arrays are included only with `return_references=True`; these arrays align with the scored rows.
+For `rebuild="running_rate"`, the default builder uses strictly earlier outcomes and a 0.5 prior rate with one pseudo-observation. To set them explicitly, pass a mapping. The observed forecast column must match the configured builder on scored rows. Use `yardstick="running_rate"` to rebuild an updated-rate reference in every draw.
 
-## Quantities returned
+```python
+import numpy as np
 
-- **Intended use:** checklist item 1 remains an author-supplied description of the decision; patient, time, outcome, and forecast columns cannot determine it.
-- **Discrimination:** pooled AUC; per-patient AUC and its equal-patient mean, median, IQR, and share above 0.5; per-time-point AUC with equal-weight, comparison-weighted, median, IQR, and used/excluded counts. Per-patient AUC requires both outcomes. Per-time-point AUC also requires both outcomes and at least five patients by default.
-- **Rate benchmarks:** retrospective `A0` is the pooled AUC from each patient's scored event rate. `A0_population` subtracts the S4 binomial sampling-noise moment from the day-weighted variance of patient rates and maps the corrected SD with the normal-CDF approximation. This population value is an approximate benchmark.
-- **Pooled-AUC references:** `pooled_auc_permutation` shuffles each patient's forecasts among their scored rows while outcomes stay fixed. It reports the observed pooled AUC, null mean, 2.5th and 97.5th percentiles, and one-sided `(count + 1) / (B + 1)` p-value. `auc.patient_mean` gives the pooled AUC of each patient's mean forecast and its share of the model pooled AUC above 0.5.
-- **Thresholds:** pooled and equal-patient sensitivity/specificity/Youden, predictive-value excess over each patient's own rate, alarm counts for every patient, and alarms per patient per elapsed time unit. Alarm rates divide each count by `max(time) - min(time)` over that patient's scored rows; the rate is undefined for zero elapsed duration.
-- **Scores and calibration:** pooled and patient-mean Brier/log-loss; Brier skill against each named reference, pooled and by patient; calibration-in-the-large per patient; pooled, between-patient and joint within-deviation calibration slopes; and a conditional within-patient slope (requires statsmodels).
-- **History permutation:** if `history_forecast_fn`, `time`, and `runin_days` are given, `permutation_reference` fixes run-in outcomes, permutes each patient's scored outcomes, rebuilds forecasts from each permuted history, and reports cohort and per-patient observed values beside their reference means and percentiles.
-- **Intervals:** `n_boot > 0` adds `bootstrap.intervals`, percentile intervals from resampling whole patient records. Each sampled copy of a patient is treated as a separate patient. Intervals are off by default.
+data = data.sort_values(["patient", "time"]).copy()
+data["forecast"] = np.nan
+for _, rows in data.groupby("patient", sort=False):
+    y = rows["y"].to_numpy(float)
+    t = rows["time"].to_numpy()
+    stops = np.searchsorted(t, t, side="left")  # same-time outcomes are not past outcomes
+    previous = np.r_[0.0, np.cumsum(y)][stops]
+    data.loc[rows.index, "forecast"] = (0.5 + previous) / (1 + stops)
 
-## Functions
+result = evaluate(data, runin=7, rebuild="running_rate", yardstick="running_rate",
+                  threshold=0.25, n_perm=200, seed=17)
+```
 
-Every public function is also exported from `withinpatient`.
+Other builders are `{"name": "window_count", "w": 7, "as_rate": True}` and `{"name": "lagged_outcomes", "lags": L, "predict": fixed_model_predict}`. For `lagged_outcomes`, the predict function receives the patient's ordered data frame with `outcome_lag1` through `outcome_lagL`; it must call an already fitted model and return probabilities. `window_count` can return counts with `as_rate=False`; count mode supports ranking measures (AUC/AP) and user metrics. A custom `rebuild(y_history)` function can return a forecast for every row, or scored rows only. When it accepts a second argument, it also receives the Boolean scored-row mask.
 
-| Function | Purpose |
-|---|---|
-| `evaluate` | Compute the checklist quantities from a dataframe and optionally add permutation tests and patient-bootstrap intervals. |
-| `to_markdown` | Render the main `evaluate` summaries as a Markdown table. |
-| `auc` | Compute tie-aware binary AUC; return NaN if either outcome class is absent. |
-| `pooled_auc` | Compute pooled AUC and per-patient AUCs with eligibility counts; optional summaries can weight patients, pairs, or days. |
-| `within_patient_auc` | Average patient-specific AUCs, with patient, pair, or day weighting. |
-| `per_patient_auc_summary` | Summarize eligible patient AUCs by mean, median, IQR, and share above 0.5. |
-| `per_time_point_auc` | Compute AUC within each time value and summarize equal-weight, comparison-weighted, median, and IQR results. |
-| `rate_benchmark` | Compute the pooled AUC of patient-rate scores; by default uses retrospective scored-period rates. |
-| `rate_benchmark_from_summary` | Apply the first-order normal-rate approximation from a supplied mean and SD. |
-| `population_a0_moment_corrected` | Estimate population A0 after the S4 binomial-noise moment correction. |
-| `pooled_auc_permutation_test` | Permute forecasts within patients with outcomes fixed and test the pooled AUC against that null. |
-| `threshold_metrics` | Compute pooled/patient-level classification measures, alarm counts, and elapsed-time alarm rates when time is supplied. |
-| `predictive_value_excess` | Compute each patient's PPV above own event rate and NPV above own non-event rate, plus pooled values. |
-| `brier_scores` | Compute pooled and equal-patient Brier score and log-loss. |
-| `brier_skill` | Compute Brier skill for one forecast/reference pair using summed losses. |
-| `brier_skill_summary` | Compute pooled skill and patient-specific skill ratios, omitting rows with missing references. |
-| `population_rate` | Repeat the supplied outcomes' overall rate; descriptive and retrospective when called on evaluation outcomes. |
-| `retrospective_patient_rate` | Repeat each patient's rate over the supplied outcomes; a hindsight reference. |
-| `runin_patient_rate` | Estimate each patient's rate on rows before a cutoff and repeat it across their rows. |
-| `expanding_patient_rate` | Compute each row's rate from strictly earlier rows, with an optional scalar or row-specific prior. |
-| `calibration_slopes` | Fit pooled and joint between-patient/within-deviation logistic calibration slopes. |
-| `conditional_within_slope` | Fit the conditional logistic within-patient calibration slope with statsmodels. |
-| `patient_calibration_in_the_large` | Return observed-minus-mean-forecast differences per patient and cohort summaries. |
-| `permutation_reference` | Rebuild history-based forecasts after within-patient outcome permutations, preserving run-in history. |
-| `patient_bootstrap` | Apply a caller-supplied statistic to whole-patient bootstrap resamples. |
-
-## CSV command
+## CLI
 
 ```console
-python -m withinpatient cohort.csv --patient patient_id --y event --forecast risk --time day --threshold 0.2 --runin 14 --prior-rate 0.18 --permutations 2000 --bootstrap 500
+python -m withinpatient forecasts.csv --patient patient --time time --outcome y --forecast forecast --runin 7 --threshold 0.25 --permutations 200 --seed 17
 ```
 
-`--prior-rate` is optional; omit it to use only earlier patient outcomes for the expanding reference. The command prints a Markdown summary to standard output.
+Add `--rebuild running_rate` to rebuild a running rate, or `--rebuild window_count --window 7` for a rolling rate. The CLI prints the tailored results first.
+
+## Compatibility and version history
+
+The v2 `evaluate` API is a breaking change. The previous reporting API remains as `evaluate_v1(...)` and raises a `DeprecationWarning`; lower-level metric helpers such as `expanding_patient_rate` remain available. The `code/withinpatientR` package was not changed in this version.
+
+- **2.0.0** — Add within-patient outcome permutations, history and yardstick rebuilding, custom metrics, and tailored-first reports. Retain the old report function as `evaluate_v1`.
+- **1.0.0** — Original pooled and within-patient reporting quantities, permutation helpers, and patient bootstrap intervals.

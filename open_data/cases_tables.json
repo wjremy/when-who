@@ -940,17 +940,17 @@
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.06981435042805974,
-        "brier_patient_mean": 0.07550785780701524,
+        "brier_pooled": 0.06981435042805972,
+        "brier_patient_mean": 0.07550785780701523,
         "brier_skill": {
-          "runin_rate": 0.9071122688900942,
-          "updating_rate": 0.6348990438081468,
-          "retrospective_rate": 0.3066760153230539
+          "runin_rate": 0.9071122688900943,
+          "updating_rate": 0.634899043808147,
+          "retrospective_rate": 0.306676015323054
         },
         "calibration_slopes": {
-          "pooled_slope": 0.9638238428328634,
-          "between_slope": 1.3635459333348645,
-          "within_slope": 0.8353124103152652
+          "pooled_slope": 0.9638238428328635,
+          "between_slope": 1.363545933334864,
+          "within_slope": 0.8353124103152654
         }
       },
       "gradient_boosting": {
@@ -1124,7 +1124,7 @@
         },
         "calibration_slopes": {
           "pooled_slope": 0.9793851901040388,
-          "between_slope": 1.212854509459101,
+          "between_slope": 1.2128545094591012,
           "within_slope": 0.8932935377449789
         }
       }
@@ -1892,7 +1892,7 @@
         "brier_patient_mean": 0.17994635472892734,
         "brier_skill": {
           "runin_rate": 0.056316242339202516,
-          "updating_rate": -0.463841474234324,
+          "updating_rate": -0.4404606935583577,
           "retrospective_rate": -0.814416947118475
         },
         "calibration_slopes": {
@@ -1902,27 +1902,27 @@
         }
       },
       "updating_rate": {
-        "pooled_auc": 0.889027520395057,
-        "within_patient_auc": 0.43647609856889114,
+        "pooled_auc": 0.8905788020858478,
+        "within_patient_auc": 0.44390745992796954,
         "within_auc_eligible_patients": 154,
         "within_auc_excluded_patients": 92,
         "threshold": {
           "threshold": 0.3195704057279236,
           "pooled": {
-            "sensitivity": 0.8056648308418568,
-            "specificity": 0.8091706001348618,
-            "ppv": 0.6440251572327044,
-            "npv": 0.9066868152625613,
-            "youden": 0.6148354309767186
+            "sensitivity": 0.8292682926829268,
+            "specificity": 0.7859069453809845,
+            "ppv": 0.6240378922439314,
+            "npv": 0.9148351648351648,
+            "youden": 0.6151752380639113
           },
           "patient_mean": {
-            "sensitivity": 0.5759678871548619,
-            "specificity": 0.6405206128136363
+            "sensitivity": 0.6106168856431461,
+            "specificity": 0.613185071033435
           },
           "within_patient": {
-            "sensitivity": 0.5374195132598495,
-            "specificity": 0.4661297520536192,
-            "youden": 0.003549265313468594
+            "sensitivity": 0.575218420701614,
+            "specificity": 0.4267719791321576,
+            "youden": 0.0019903998337716267
           },
           "eligible": {
             "sensitivity": 168,
@@ -1930,18 +1930,18 @@
             "both": 154
           },
           "alarms_per_patient_30_days": {
-            "mean": 11.936269656699071,
-            "median": 3.541666666666667
+            "mean": 12.680452598574027,
+            "median": 4.75
           },
           "alarm_counts": {
-            "mean": 6.463414634146342,
-            "median": 2.0,
-            "total": 1590
+            "mean": 6.865853658536586,
+            "median": 3.0,
+            "total": 1689
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.11888766935589001,
-        "brier_patient_mean": 0.12240373651682987,
+        "brier_pooled": 0.1208173898506716,
+        "brier_patient_mean": 0.12378272424328672,
         "brier_skill": {},
         "calibration_slopes": {}
       },
@@ -2078,27 +2078,27 @@
         "calibration_slopes": {}
       },
       "logistic_regression": {
-        "pooled_auc": 0.9231643387714846,
-        "within_patient_auc": 0.652668351654235,
+        "pooled_auc": 0.9232476326242391,
+        "within_patient_auc": 0.6469516078689742,
         "within_auc_eligible_patients": 154,
         "within_auc_excluded_patients": 92,
         "threshold": {
           "threshold": 0.3195704057279236,
           "pooled": {
-            "sensitivity": 0.8214004720692368,
-            "specificity": 0.8803101820633851,
-            "ppv": 0.7462473195139385,
-            "npv": 0.9200140944326991,
-            "youden": 0.7017106541326219
+            "sensitivity": 0.8198269079464988,
+            "specificity": 0.8806473364801078,
+            "ppv": 0.7464183381088825,
+            "npv": 0.91939457937346,
+            "youden": 0.7004742444266068
           },
           "patient_mean": {
-            "sensitivity": 0.6252668744265384,
-            "specificity": 0.7237313054555434
+            "sensitivity": 0.6233557564439918,
+            "specificity": 0.7231854576955729
           },
           "within_patient": {
-            "sensitivity": 0.5912002266471327,
-            "specificity": 0.5852974670422701,
-            "youden": 0.1764976936894029
+            "sensitivity": 0.5891153706661727,
+            "specificity": 0.5848571219065469,
+            "youden": 0.17397249257271974
           },
           "eligible": {
             "sensitivity": 168,
@@ -2106,51 +2106,51 @@
             "both": 154
           },
           "alarms_per_patient_30_days": {
-            "mean": 10.668043478919571,
+            "mean": 10.669421265806683,
             "median": 4.0
           },
           "alarm_counts": {
-            "mean": 5.686991869918699,
+            "mean": 5.67479674796748,
             "median": 2.0,
-            "total": 1399
+            "total": 1396
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.09692519900337772,
-        "brier_patient_mean": 0.0989462198571309,
+        "brier_pooled": 0.09670672316960624,
+        "brier_patient_mean": 0.0986943093263389,
         "brier_skill": {
-          "runin_rate": 0.4744278782763566,
-          "updating_rate": 0.18473295398505685,
-          "retrospective_rate": -0.010515394428524338
+          "runin_rate": 0.4756125527333739,
+          "updating_rate": 0.1995628833801638,
+          "retrospective_rate": -0.008237625637675494
         },
         "calibration_slopes": {
-          "pooled_slope": 1.0836350289522803,
-          "between_slope": 1.1786535994109641,
-          "within_slope": 0.7126008053796414
+          "pooled_slope": 1.0816209332654512,
+          "between_slope": 1.1719469639055973,
+          "within_slope": 0.715347809938255
         }
       },
       "gradient_boosting": {
-        "pooled_auc": 0.9292642871505173,
-        "within_patient_auc": 0.6378571868165637,
+        "pooled_auc": 0.9292925380910216,
+        "within_patient_auc": 0.638022582804176,
         "within_auc_eligible_patients": 154,
         "within_auc_excluded_patients": 92,
         "threshold": {
           "threshold": 0.3195704057279236,
           "pooled": {
-            "sensitivity": 0.8481510621557828,
-            "specificity": 0.8718813216453135,
-            "ppv": 0.7393689986282579,
-            "npv": 0.930550557754588,
-            "youden": 0.7200323838010965
+            "sensitivity": 0.8544453186467349,
+            "specificity": 0.870869858395145,
+            "ppv": 0.7392784206943499,
+            "npv": 0.9331647398843931,
+            "youden": 0.72531517704188
           },
           "patient_mean": {
-            "sensitivity": 0.6978880693691618,
-            "specificity": 0.7227559569891694
+            "sensitivity": 0.7018500076798396,
+            "specificity": 0.720666143137819
           },
           "within_patient": {
-            "sensitivity": 0.6704233484027219,
-            "specificity": 0.5876686637336591,
-            "youden": 0.25809201213638105
+            "sensitivity": 0.6747454629234613,
+            "specificity": 0.5849835125381946,
+            "youden": 0.2597289754616561
           },
           "eligible": {
             "sensitivity": 168,
@@ -2158,94 +2158,94 @@
             "both": 154
           },
           "alarms_per_patient_30_days": {
-            "mean": 11.09864439864005,
-            "median": 5.970394736842105
+            "mean": 11.183836221271502,
+            "median": 6.214285714285714
           },
           "alarm_counts": {
-            "mean": 5.926829268292683,
+            "mean": 5.971544715447155,
             "median": 3.5,
-            "total": 1458
+            "total": 1469
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.09286839763992741,
-        "brier_patient_mean": 0.09471468202055595,
+        "brier_pooled": 0.09297621540668634,
+        "brier_patient_mean": 0.09460115990327057,
         "brier_skill": {
-          "runin_rate": 0.496425684026806,
-          "updating_rate": 0.21885593230088451,
-          "retrospective_rate": 0.03177969778750833
+          "runin_rate": 0.4958410474924717,
+          "updating_rate": 0.23044012520380153,
+          "retrospective_rate": 0.030655619485651986
         },
         "calibration_slopes": {
-          "pooled_slope": 1.068731793828635,
-          "between_slope": 1.1944702500797235,
-          "within_slope": 0.7471684699148508
+          "pooled_slope": 1.0809419810205698,
+          "between_slope": 1.209614165997293,
+          "within_slope": 0.757149570982069
         },
         "patient_bootstrap_95": {
           "pooled_auc": [
-            0.9129781336230596,
-            0.9417888754537386
+            0.9132861662651522,
+            0.942087367699346
           ],
           "within_patient_auc": [
-            0.5947565149060842,
-            0.6832694135559025
+            0.5947986979791884,
+            0.6831720007107432
           ],
           "pooled_sensitivity": [
-            0.811119131095843,
-            0.8794172539205399
+            0.8169319285582705,
+            0.8850950224196513
           ],
           "pooled_specificity": [
-            0.8464870936786341,
-            0.8935453070654622
+            0.847013838097552,
+            0.8942374844025645
           ],
           "within_patient_sensitivity": [
-            0.6098151954678883,
-            0.7276748004741368
+            0.6157393813901436,
+            0.7328501489918062
           ],
           "within_patient_specificity": [
-            0.5233575466271956,
-            0.6534423885168109
+            0.5202828315608881,
+            0.65220658463204
           ],
           "pooled_youden": [
-            0.6784232434102274,
-            0.7592865346694275
+            0.6832470710058071,
+            0.7630706386081808
           ],
           "within_patient_youden": [
-            0.20395681289514753,
-            0.31648738701233126
+            0.20406208589265154,
+            0.3155997963069109
           ],
           "brier_skill_vs": {
             "runin_rate": [
-              0.4343705125501985,
-              0.5556556252063806
+              0.4342037560824517,
+              0.5560486693934555
             ],
             "updating_rate": [
-              0.17790556333028593,
-              0.26340586853258446
+              0.18700694265447135,
+              0.2798352565185575
             ],
             "retrospective_rate": [
-              -0.01944330826020012,
-              0.0831245086626168
+              -0.022698597211004767,
+              0.0809895404357322
             ]
           },
           "calibration_slopes": {
             "pooled_slope": {
               "ci95": [
-                1.0053341234111512,
-                1.1407193181258337
+                1.0173684594976458,
+                1.1555138932300895
               ],
               "skipped": 0
             },
             "between_slope": {
               "ci95": [
-                1.1275862027676096,
-                1.2797306386805625
+                1.1411644089825914,
+                1.2964000075611581
               ],
               "skipped": 0
             },
             "within_slope": {
               "ci95": [
-                0.6332501682587862,
-                0.8570206286954317
+                0.6415611677200679,
+                0.8665294728408717
               ],
               "skipped": 0
             }
@@ -2253,27 +2253,27 @@
         }
       },
       "within_centred_gradient_boosting": {
-        "pooled_auc": 0.9181632591346034,
-        "within_patient_auc": 0.6444767062946171,
+        "pooled_auc": 0.9184431158691767,
+        "within_patient_auc": 0.6246801323366213,
         "within_auc_eligible_patients": 154,
         "within_auc_excluded_patients": 92,
         "threshold": {
           "threshold": 0.3195704057279236,
           "pooled": {
-            "sensitivity": 0.8214004720692368,
-            "specificity": 0.8654753877275793,
-            "ppv": 0.7234927234927235,
-            "npv": 0.9187544738725841,
-            "youden": 0.6868758597968161
+            "sensitivity": 0.8166797797010228,
+            "specificity": 0.8735670937289278,
+            "ppv": 0.7346072186836518,
+            "npv": 0.9174929178470255,
+            "youden": 0.6902468734299507
           },
           "patient_mean": {
-            "sensitivity": 0.6815171304535801,
-            "specificity": 0.7316713592083575
+            "sensitivity": 0.674910801053133,
+            "specificity": 0.7388111152293253
           },
           "within_patient": {
-            "sensitivity": 0.6538357873346414,
-            "specificity": 0.6036440861462976,
-            "youden": 0.257479873480939
+            "sensitivity": 0.6462230383783096,
+            "specificity": 0.6123915515448325,
+            "youden": 0.25861458992314207
           },
           "eligible": {
             "sensitivity": 168,
@@ -2281,27 +2281,27 @@
             "both": 154
           },
           "alarms_per_patient_30_days": {
-            "mean": 10.956615973259918,
-            "median": 7.211538461538462
+            "mean": 10.767680040129965,
+            "median": 6.157894736842105
           },
           "alarm_counts": {
-            "mean": 5.865853658536586,
+            "mean": 5.7439024390243905,
             "median": 4.0,
-            "total": 1443
+            "total": 1413
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.10204741691049773,
-        "brier_patient_mean": 0.10426963443504858,
+        "brier_pooled": 0.10189266122130272,
+        "brier_patient_mean": 0.10425165514277379,
         "brier_skill": {
-          "runin_rate": 0.44665290374901934,
-          "updating_rate": 0.14164843618038314,
-          "retrospective_rate": -0.06391822570444305
+          "runin_rate": 0.4474920588578595,
+          "updating_rate": 0.15663911174342982,
+          "retrospective_rate": -0.06230478556797747
         },
         "calibration_slopes": {
-          "pooled_slope": 1.1070962393714312,
-          "between_slope": 1.3601377101541596,
-          "within_slope": 0.6631084726133156
+          "pooled_slope": 1.1044789604170755,
+          "between_slope": 1.3557373373136734,
+          "within_slope": 0.6559736583609415
         }
       }
     }
@@ -2480,7 +2480,7 @@
         "brier_patient_mean": 0.17994635472892734,
         "brier_skill": {
           "runin_rate": 0.056316242339202516,
-          "updating_rate": -0.463841474234324,
+          "updating_rate": -0.4404606935583577,
           "retrospective_rate": -0.814416947118475
         },
         "calibration_slopes": {
@@ -2490,27 +2490,27 @@
         }
       },
       "updating_rate": {
-        "pooled_auc": 0.889027520395057,
-        "within_patient_auc": 0.43647609856889114,
+        "pooled_auc": 0.8905788020858478,
+        "within_patient_auc": 0.44390745992796954,
         "within_auc_eligible_patients": 154,
         "within_auc_excluded_patients": 92,
         "threshold": {
           "threshold": 0.3195704057279236,
           "pooled": {
-            "sensitivity": 0.8056648308418568,
-            "specificity": 0.8091706001348618,
-            "ppv": 0.6440251572327044,
-            "npv": 0.9066868152625613,
-            "youden": 0.6148354309767186
+            "sensitivity": 0.8292682926829268,
+            "specificity": 0.7859069453809845,
+            "ppv": 0.6240378922439314,
+            "npv": 0.9148351648351648,
+            "youden": 0.6151752380639113
           },
           "patient_mean": {
-            "sensitivity": 0.5759678871548619,
-            "specificity": 0.6405206128136363
+            "sensitivity": 0.6106168856431461,
+            "specificity": 0.613185071033435
           },
           "within_patient": {
-            "sensitivity": 0.5374195132598495,
-            "specificity": 0.4661297520536192,
-            "youden": 0.003549265313468594
+            "sensitivity": 0.575218420701614,
+            "specificity": 0.4267719791321576,
+            "youden": 0.0019903998337716267
           },
           "eligible": {
             "sensitivity": 168,
@@ -2518,18 +2518,18 @@
             "both": 154
           },
           "alarms_per_patient_30_days": {
-            "mean": 11.936269656699071,
-            "median": 3.541666666666667
+            "mean": 12.680452598574027,
+            "median": 4.75
           },
           "alarm_counts": {
-            "mean": 6.463414634146342,
-            "median": 2.0,
-            "total": 1590
+            "mean": 6.865853658536586,
+            "median": 3.0,
+            "total": 1689
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.11888766935589001,
-        "brier_patient_mean": 0.12240373651682987,
+        "brier_pooled": 0.1208173898506716,
+        "brier_patient_mean": 0.12378272424328672,
         "brier_skill": {},
         "calibration_slopes": {}
       },
@@ -2666,27 +2666,27 @@
         "calibration_slopes": {}
       },
       "logistic_regression": {
-        "pooled_auc": 0.9230091575489962,
-        "within_patient_auc": 0.6543212871532591,
+        "pooled_auc": 0.923131180390611,
+        "within_patient_auc": 0.6494835561298846,
         "within_auc_eligible_patients": 154,
         "within_auc_excluded_patients": 92,
         "threshold": {
           "threshold": 0.3195704057279236,
           "pooled": {
-            "sensitivity": 0.8269079464988198,
-            "specificity": 0.8809844908968307,
-            "ppv": 0.7485754985754985,
-            "npv": 0.9223438051535475,
-            "youden": 0.7078924373956506
+            "sensitivity": 0.8206136900078678,
+            "specificity": 0.8813216453135536,
+            "ppv": 0.7476702508960573,
+            "npv": 0.9197748064743139,
+            "youden": 0.7019353353214215
           },
           "patient_mean": {
-            "sensitivity": 0.6366521987582912,
-            "specificity": 0.7247308028451271
+            "sensitivity": 0.6301017881900235,
+            "specificity": 0.7237620201065675
           },
           "within_patient": {
-            "sensitivity": 0.6036205804635905,
-            "specificity": 0.586803203369435,
-            "youden": 0.1904237838330255
+            "sensitivity": 0.5964746780254802,
+            "specificity": 0.5857257094347983,
+            "youden": 0.18220038746027847
           },
           "eligible": {
             "sensitivity": 168,
@@ -2694,51 +2694,51 @@
             "both": 154
           },
           "alarms_per_patient_30_days": {
-            "mean": 10.695967138172046,
+            "mean": 10.654844259837999,
             "median": 4.0
           },
           "alarm_counts": {
-            "mean": 5.7073170731707314,
+            "mean": 5.670731707317073,
             "median": 2.0,
-            "total": 1404
+            "total": 1395
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.09688219254142034,
-        "brier_patient_mean": 0.09891425764530895,
+        "brier_pooled": 0.09663785832330425,
+        "brier_patient_mean": 0.09862866260835725,
         "brier_skill": {
-          "runin_rate": 0.47466107869989127,
-          "updating_rate": 0.1850946942916033,
-          "retrospective_rate": -0.010067020916633584
+          "runin_rate": 0.4759859689734772,
+          "updating_rate": 0.2001328745576516,
+          "retrospective_rate": -0.007519659741926477
         },
         "calibration_slopes": {
-          "pooled_slope": 1.0834104498478587,
-          "between_slope": 1.1746611919577512,
-          "within_slope": 0.7181325252285331
+          "pooled_slope": 1.0817584965204525,
+          "between_slope": 1.1684518631764786,
+          "within_slope": 0.7215288345272594
         }
       },
       "gradient_boosting": {
-        "pooled_auc": 0.9288358808696303,
-        "within_patient_auc": 0.6469098008674841,
+        "pooled_auc": 0.9294840608989475,
+        "within_patient_auc": 0.6448199090696208,
         "within_auc_eligible_patients": 154,
         "within_auc_excluded_patients": 92,
         "threshold": {
           "threshold": 0.3195704057279236,
           "pooled": {
             "sensitivity": 0.8512981904012589,
-            "specificity": 0.8674983142279163,
-            "ppv": 0.7335593220338983,
-            "npv": 0.9315713251267198,
-            "youden": 0.7187965046291751
+            "specificity": 0.8718813216453135,
+            "ppv": 0.7400820793433652,
+            "npv": 0.9318918918918919,
+            "youden": 0.7231795120465723
           },
           "patient_mean": {
-            "sensitivity": 0.6924254045052364,
-            "specificity": 0.7149557668423767
+            "sensitivity": 0.6979736591606339,
+            "specificity": 0.7226214872077675
           },
           "within_patient": {
-            "sensitivity": 0.6644640776420762,
-            "specificity": 0.5762996988983077,
-            "youden": 0.24076377654038386
+            "sensitivity": 0.670516719084328,
+            "specificity": 0.5882539010072081,
+            "youden": 0.258770620091536
           },
           "eligible": {
             "sensitivity": 168,
@@ -2746,94 +2746,94 @@
             "both": 154
           },
           "alarms_per_patient_30_days": {
-            "mean": 11.232025061559904,
-            "median": 6.157894736842105
+            "mean": 11.136541132989626,
+            "median": 6.0
           },
           "alarm_counts": {
-            "mean": 5.995934959349594,
-            "median": 3.5,
-            "total": 1475
+            "mean": 5.943089430894309,
+            "median": 3.0,
+            "total": 1462
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.09307770982513192,
-        "brier_patient_mean": 0.09501126530690768,
+        "brier_pooled": 0.09303118263035227,
+        "brier_patient_mean": 0.0946712067014561,
         "brier_skill": {
-          "runin_rate": 0.49529069900318257,
-          "updating_rate": 0.21709534445911316,
-          "retrospective_rate": 0.029597466669434858
+          "runin_rate": 0.4955429904271841,
+          "updating_rate": 0.22998516401209002,
+          "retrospective_rate": 0.030082546370770014
         },
         "calibration_slopes": {
-          "pooled_slope": 1.0729562970954782,
-          "between_slope": 1.1931551363783555,
-          "within_slope": 0.7577501334947611
+          "pooled_slope": 1.092764014502745,
+          "between_slope": 1.2235135371532817,
+          "within_slope": 0.7703895995849088
         },
         "patient_bootstrap_95": {
           "pooled_auc": [
-            0.9117961996386248,
-            0.9419559368329762
+            0.9132269994778499,
+            0.9423089060433424
           ],
           "within_patient_auc": [
-            0.6049877372766271,
-            0.6916433698908294
+            0.6011819915318508,
+            0.689451915909643
           ],
           "pooled_sensitivity": [
-            0.8150554974647071,
-            0.8831077746741154
+            0.8138819436125843,
+            0.8832379901715937
           ],
           "pooled_specificity": [
-            0.8420326010585976,
-            0.8898052940196222
+            0.8469647077669635,
+            0.8938081420414515
           ],
           "within_patient_sensitivity": [
-            0.6015698637365446,
-            0.7203281685565995
+            0.6100243852495232,
+            0.7285036746706258
           ],
           "within_patient_specificity": [
-            0.5091775388050783,
-            0.6436168858324675
+            0.524359922601994,
+            0.6528898935584122
           ],
           "pooled_youden": [
-            0.6779449583238114,
-            0.7568965443360585
+            0.6829336503602655,
+            0.7624864230017209
           ],
           "within_patient_youden": [
-            0.18664756890008113,
-            0.29617359229391754
+            0.20316055401701044,
+            0.31781580162422846
           ],
           "brier_skill_vs": {
             "runin_rate": [
-              0.43433695909435344,
-              0.5538706358380889
+              0.43290310916692815,
+              0.5554965060063681
             ],
             "updating_rate": [
-              0.17252225366344062,
-              0.26110504809592666
+              0.18644259507905045,
+              0.2785783998341656
             ],
             "retrospective_rate": [
-              -0.022523373458406232,
-              0.08040581036579224
+              -0.02218312393586665,
+              0.0818558509924244
             ]
           },
           "calibration_slopes": {
             "pooled_slope": {
               "ci95": [
-                1.0087309376660163,
-                1.1483628622147006
+                1.0302749837879057,
+                1.1679926729684473
               ],
               "skipped": 0
             },
             "between_slope": {
               "ci95": [
-                1.1248448262644566,
-                1.2765718322233934
+                1.1533118856297446,
+                1.3153219530484093
               ],
               "skipped": 0
             },
             "within_slope": {
               "ci95": [
-                0.6426647291003306,
-                0.8673419146373521
+                0.6498866682501594,
+                0.887612894520195
               ],
               "skipped": 0
             }
@@ -2841,27 +2841,27 @@
         }
       },
       "within_centred_gradient_boosting": {
-        "pooled_auc": 0.9175329846309578,
-        "within_patient_auc": 0.6477234818986233,
+        "pooled_auc": 0.9177352507542869,
+        "within_patient_auc": 0.6362032103975386,
         "within_auc_eligible_patients": 154,
         "within_auc_excluded_patients": 92,
         "threshold": {
           "threshold": 0.3195704057279236,
           "pooled": {
-            "sensitivity": 0.8276947285601888,
-            "specificity": 0.8627781523937964,
-            "ppv": 0.7210418094585332,
-            "npv": 0.9211663066954644,
-            "youden": 0.6904728809539851
+            "sensitivity": 0.8206136900078678,
+            "specificity": 0.8732299393122049,
+            "ppv": 0.7350246652572234,
+            "npv": 0.9190915542938254,
+            "youden": 0.6938436293200727
           },
           "patient_mean": {
-            "sensitivity": 0.6865130934852575,
-            "specificity": 0.7305071551315012
+            "sensitivity": 0.6746018011905617,
+            "specificity": 0.7495855437110308
           },
           "within_patient": {
-            "sensitivity": 0.6592859288237439,
-            "specificity": 0.6029299543397288,
-            "youden": 0.2622158831634727
+            "sensitivity": 0.6454530471862405,
+            "specificity": 0.6293382168394733,
+            "youden": 0.27479126402571374
           },
           "eligible": {
             "sensitivity": 168,
@@ -2869,27 +2869,27 @@
             "both": 154
           },
           "alarms_per_patient_30_days": {
-            "mean": 11.033800467025854,
-            "median": 6.623376623376624
+            "mean": 10.757865029264357,
+            "median": 5.857142857142858
           },
           "alarm_counts": {
-            "mean": 5.930894308943089,
+            "mean": 5.7682926829268295,
             "median": 4.0,
-            "total": 1459
+            "total": 1419
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.1027206105482821,
-        "brier_patient_mean": 0.10507077356997663,
+        "brier_pooled": 0.10245585772430083,
+        "brier_patient_mean": 0.10499618792424065,
         "brier_skill": {
-          "runin_rate": 0.4430025443772645,
-          "updating_rate": 0.13598600170394337,
-          "retrospective_rate": -0.07093675691621515
+          "runin_rate": 0.4444381535363163,
+          "updating_rate": 0.15197756009350427,
+          "retrospective_rate": -0.0681765169878743
         },
         "calibration_slopes": {
-          "pooled_slope": 1.1035715865773477,
-          "between_slope": 1.3486778486290498,
-          "within_slope": 0.6738755371229943
+          "pooled_slope": 1.1168179400377745,
+          "between_slope": 1.3743516632596116,
+          "within_slope": 0.6784135253017282
         }
       }
     }
@@ -3293,7 +3293,7 @@
           "alarms_per_patient_per_time_unit": null
         },
         "brier_pooled": 0.15794080290911347,
-        "brier_patient_mean": 0.1603953882860767,
+        "brier_patient_mean": 0.16039538828607672,
         "brier_skill": {
           "runin_rate": 0.3899451344999587,
           "updating_rate": 0.24036885631954075,
@@ -3301,7 +3301,7 @@
         },
         "calibration_slopes": {
           "pooled_slope": 1.0355307247394923,
-          "between_slope": 1.1872472930643068,
+          "between_slope": 1.187247293064307,
           "within_slope": 0.8926959803815864
         }
       },
@@ -3413,7 +3413,7 @@
             },
             "between_slope": {
               "ci95": [
-                1.2002161537611367,
+                1.2002161537611369,
                 1.3985419242995742
               ],
               "skipped": 0
@@ -4074,10 +4074,10 @@
     "file": "forecasts_replace_bg.csv",
     "patients": 45,
     "scored_observations": 9477,
-    "event_rate": 0.05982905982905983,
-    "patient_event_rate_mean": 0.060472716992993586,
-    "patient_event_rate_sd": 0.052750905973892925,
-    "threshold": 0.0543564285200374,
+    "event_rate": 0.06014561570117126,
+    "patient_event_rate_mean": 0.06076266945572288,
+    "patient_event_rate_sd": 0.05330162554352825,
+    "threshold": 0.0546860946213347,
     "forecasts": {
       "training_cohort_rate": {
         "pooled_auc": 0.5,
@@ -4085,11 +4085,11 @@
         "within_auc_eligible_patients": 42,
         "within_auc_excluded_patients": 3,
         "threshold": {
-          "threshold": 0.0543564285200374,
+          "threshold": 0.0546860946213347,
           "pooled": {
             "sensitivity": 1.0,
             "specificity": 0.0,
-            "ppv": 0.05982905982905983,
+            "ppv": 0.06014561570117126,
             "npv": null,
             "youden": 0.0
           },
@@ -4118,32 +4118,32 @@
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.0562794931224751,
-        "brier_patient_mean": 0.0568531764771633,
+        "brier_pooled": 0.05655792698351946,
+        "brier_patient_mean": 0.057107492218055354,
         "brier_skill": {},
         "calibration_slopes": {}
       },
       "runin_rate": {
-        "pooled_auc": 0.5971073660374072,
+        "pooled_auc": 0.6085700385464616,
         "within_patient_auc": 0.5,
         "within_auc_eligible_patients": 42,
         "within_auc_excluded_patients": 3,
         "threshold": {
-          "threshold": 0.0543564285200374,
+          "threshold": 0.0546860946213347,
           "pooled": {
-            "sensitivity": 0.6807760141093474,
-            "specificity": 0.5132435465768799,
-            "ppv": 0.0817277154351048,
-            "npv": 0.9619267984854859,
-            "youden": 0.19401956068622717
+            "sensitivity": 0.7263157894736842,
+            "specificity": 0.49657572695632646,
+            "ppv": 0.08452429563086974,
+            "npv": 0.9659314260755624,
+            "youden": 0.2228915164300107
           },
           "patient_mean": {
-            "sensitivity": 0.5238095238095238,
-            "specificity": 0.5111111111111111
+            "sensitivity": 0.5476190476190477,
+            "specificity": 0.4888888888888889
           },
           "within_patient": {
-            "sensitivity": 0.5238095238095238,
-            "specificity": 0.47619047619047616,
+            "sensitivity": 0.5476190476190477,
+            "specificity": 0.4523809523809524,
             "youden": 0.0
           },
           "eligible": {
@@ -4152,48 +4152,48 @@
             "both": 42
           },
           "alarms_per_patient_30_days": {
-            "mean": 14.666666666666666,
-            "median": 0.0
+            "mean": 15.333333333333334,
+            "median": 30.0
           },
           "alarm_counts": {
-            "mean": 104.95555555555555,
-            "median": 0.0,
-            "total": 4723
+            "mean": 108.84444444444445,
+            "median": 150.0,
+            "total": 4898
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.060534812020149625,
-        "brier_patient_mean": 0.06105494201833755,
+        "brier_pooled": 0.06050843764005308,
+        "brier_patient_mean": 0.060949357959427825,
         "brier_skill": {},
         "calibration_slopes": {},
         "patient_bootstrap_95": {
           "pooled_auc": [
-            0.531598119087495,
-            0.6601009865536864
+            0.5438864618886567,
+            0.6685679702227195
           ],
           "within_patient_auc": [
             0.5,
             0.5
           ],
           "pooled_sensitivity": [
-            0.5044319299626204,
-            0.8269589084369466
+            0.5742246762499476,
+            0.8552980566231796
           ],
           "pooled_specificity": [
-            0.3656541947723972,
-            0.657385250267496
+            0.3572077518076341,
+            0.6362520043616935
           ],
           "within_patient_sensitivity": [
-            0.3670731707317073,
-            0.6666666666666666
+            0.3923780487804878,
+            0.6904761904761905
           ],
           "within_patient_specificity": [
-            0.3333333333333333,
-            0.6329268292682926
+            0.30952380952380953,
+            0.6076219512195121
           ],
           "pooled_youden": [
-            0.07064008202642809,
-            0.2997358543118619
+            0.1054775843552891,
+            0.32055702324208357
           ],
           "within_patient_youden": [
             0.0,
@@ -4202,26 +4202,26 @@
         }
       },
       "runin_rate_shrunk_10": {
-        "pooled_auc": 0.5971073660374072,
+        "pooled_auc": 0.6085700385464616,
         "within_patient_auc": 0.5,
         "within_auc_eligible_patients": 42,
         "within_auc_excluded_patients": 3,
         "threshold": {
-          "threshold": 0.0543564285200374,
+          "threshold": 0.0546860946213347,
           "pooled": {
-            "sensitivity": 0.6807760141093474,
-            "specificity": 0.5132435465768799,
-            "ppv": 0.0817277154351048,
-            "npv": 0.9619267984854859,
-            "youden": 0.19401956068622717
+            "sensitivity": 0.7263157894736842,
+            "specificity": 0.49657572695632646,
+            "ppv": 0.08452429563086974,
+            "npv": 0.9659314260755624,
+            "youden": 0.2228915164300107
           },
           "patient_mean": {
-            "sensitivity": 0.5238095238095238,
-            "specificity": 0.5111111111111111
+            "sensitivity": 0.5476190476190477,
+            "specificity": 0.4888888888888889
           },
           "within_patient": {
-            "sensitivity": 0.5238095238095238,
-            "specificity": 0.47619047619047616,
+            "sensitivity": 0.5476190476190477,
+            "specificity": 0.4523809523809524,
             "youden": 0.0
           },
           "eligible": {
@@ -4230,43 +4230,43 @@
             "both": 42
           },
           "alarms_per_patient_30_days": {
-            "mean": 14.666666666666666,
-            "median": 0.0
+            "mean": 15.333333333333334,
+            "median": 30.0
           },
           "alarm_counts": {
-            "mean": 104.95555555555555,
-            "median": 0.0,
-            "total": 4723
+            "mean": 108.84444444444445,
+            "median": 150.0,
+            "total": 4898
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.05694037290988708,
-        "brier_patient_mean": 0.057481683072349,
+        "brier_pooled": 0.05705519615960935,
+        "brier_patient_mean": 0.05754263865516396,
         "brier_skill": {},
         "calibration_slopes": {}
       },
       "expanding_rate": {
-        "pooled_auc": 0.7066441408005194,
-        "within_patient_auc": 0.38706641408619463,
+        "pooled_auc": 0.7092734080626513,
+        "within_patient_auc": 0.387534378704246,
         "within_auc_eligible_patients": 42,
         "within_auc_excluded_patients": 3,
         "threshold": {
-          "threshold": 0.0543564285200374,
+          "threshold": 0.0546860946213347,
           "pooled": {
-            "sensitivity": 0.7336860670194003,
-            "specificity": 0.5875420875420876,
-            "ppv": 0.10168662918601809,
-            "npv": 0.9719643520237653,
-            "youden": 0.3212281545614879
+            "sensitivity": 0.7368421052631579,
+            "specificity": 0.5893117772538453,
+            "ppv": 0.10299166257969593,
+            "npv": 0.9722170772365253,
+            "youden": 0.32615388251700317
           },
           "patient_mean": {
-            "sensitivity": 0.4543766163878946,
-            "specificity": 0.559932408257546
+            "sensitivity": 0.45549906536748647,
+            "specificity": 0.5614014743630048
           },
           "within_patient": {
-            "sensitivity": 0.4543766163878946,
-            "specificity": 0.5284990088473707,
-            "youden": -0.017124374764734735
+            "sensitivity": 0.45549906536748647,
+            "specificity": 0.5300730082460765,
+            "youden": -0.01442792638643701
           },
           "eligible": {
             "sensitivity": 42,
@@ -4274,43 +4274,43 @@
             "both": 42
           },
           "alarms_per_patient_30_days": {
-            "mean": 13.173194432644198,
+            "mean": 13.134855702806531,
             "median": 8.035714285714286
           },
           "alarm_counts": {
-            "mean": 90.91111111111111,
-            "median": 60.0,
-            "total": 4091
+            "mean": 90.62222222222222,
+            "median": 57.0,
+            "total": 4078
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.05461217097374628,
-        "brier_patient_mean": 0.0552715669659848,
+        "brier_pooled": 0.05480988925232037,
+        "brier_patient_mean": 0.05544575428529068,
         "brier_skill": {},
         "calibration_slopes": {}
       },
       "recent_28_night_rate": {
-        "pooled_auc": 0.6837289215890039,
-        "within_patient_auc": 0.46921323437513557,
+        "pooled_auc": 0.686379331060333,
+        "within_patient_auc": 0.47019979550668367,
         "within_auc_eligible_patients": 42,
         "within_auc_excluded_patients": 3,
         "threshold": {
-          "threshold": 0.0543564285200374,
+          "threshold": 0.0546860946213347,
           "pooled": {
-            "sensitivity": 0.6649029982363316,
-            "specificity": 0.6240179573512907,
-            "ppv": 0.10115374295680171,
-            "npv": 0.9669565217391304,
-            "youden": 0.28892095558762243
+            "sensitivity": 0.6719298245614035,
+            "specificity": 0.6223195239699113,
+            "ppv": 0.10221510541766747,
+            "npv": 0.9673647469458988,
+            "youden": 0.2942493485313147
           },
           "patient_mean": {
-            "sensitivity": 0.41512310701342364,
-            "specificity": 0.6026101899246211
+            "sensitivity": 0.4188005785886831,
+            "specificity": 0.6007403849097448
           },
           "within_patient": {
-            "sensitivity": 0.41512310701342364,
-            "specificity": 0.5742252034906654,
-            "youden": -0.010651689495911028
+            "sensitivity": 0.4188005785886831,
+            "specificity": 0.5722218409747265,
+            "youden": -0.008977580436590431
           },
           "eligible": {
             "sensitivity": 42,
@@ -4318,43 +4318,43 @@
             "both": 42
           },
           "alarms_per_patient_30_days": {
-            "mean": 11.934084597944803,
+            "mean": 11.993983763464813,
             "median": 9.348837209302326
           },
           "alarm_counts": {
-            "mean": 82.82222222222222,
+            "mean": 83.26666666666667,
             "median": 67.0,
-            "total": 3727
+            "total": 3747
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.05562604196082227,
-        "brier_patient_mean": 0.056291847991678426,
+        "brier_pooled": 0.05582218833819306,
+        "brier_patient_mean": 0.05646324382921063,
         "brier_skill": {},
         "calibration_slopes": {}
       },
       "persistence": {
-        "pooled_auc": 0.5365961199294532,
-        "within_patient_auc": 0.5062029783623405,
+        "pooled_auc": 0.5360795471332424,
+        "within_patient_auc": 0.5057970923834995,
         "within_auc_eligible_patients": 42,
         "within_auc_excluded_patients": 3,
         "threshold": {
-          "threshold": 0.0543564285200374,
+          "threshold": 0.0546860946213347,
           "pooled": {
-            "sensitivity": 0.12874779541446207,
-            "specificity": 0.9444444444444444,
-            "ppv": 0.12852112676056338,
-            "npv": 0.9445504545964755,
-            "youden": 0.07319223985890644
+            "sensitivity": 0.1280701754385965,
+            "specificity": 0.9440889188278881,
+            "ppv": 0.12784588441331,
+            "npv": 0.9441949247698181,
+            "youden": 0.0721590942664847
           },
           "patient_mean": {
-            "sensitivity": 0.07586041365167401,
-            "specificity": 0.9407758402014732
+            "sensitivity": 0.07547661550947692,
+            "specificity": 0.9403763979736872
           },
           "within_patient": {
-            "sensitivity": 0.07586041365167401,
-            "specificity": 0.9365455430730072,
-            "youden": 0.012405956724681174
+            "sensitivity": 0.07547661550947692,
+            "specificity": 0.936117569257522,
+            "youden": 0.011594184766999024
           },
           "eligible": {
             "sensitivity": 42,
@@ -4362,34 +4362,34 @@
             "both": 42
           },
           "alarms_per_patient_30_days": {
-            "mean": 1.8169056013947689,
+            "mean": 1.8256041752766474,
             "median": 1.3407821229050279
           },
           "alarm_counts": {
-            "mean": 12.622222222222222,
+            "mean": 12.688888888888888,
             "median": 7.0,
-            "total": 568
+            "total": 571
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.10435771045789563,
-        "brier_patient_mean": 0.10596896017156138,
+        "brier_pooled": 0.104990820935895,
+        "brier_patient_mean": 0.1065488639372101,
         "brier_skill": {},
         "calibration_slopes": {}
       },
       "retrospective_rate_reference": {
-        "pooled_auc": 0.7518087003683711,
+        "pooled_auc": 0.7527413881059447,
         "within_patient_auc": 0.5,
         "within_auc_eligible_patients": 42,
         "within_auc_excluded_patients": 3,
         "threshold": {
-          "threshold": 0.0543564285200374,
+          "threshold": 0.0546860946213347,
           "pooled": {
-            "sensitivity": 0.7372134038800705,
-            "specificity": 0.6472502805836139,
-            "ppv": 0.11738275765234485,
+            "sensitivity": 0.7385964912280701,
+            "specificity": 0.6474682833726283,
+            "ppv": 0.11822521763549565,
             "npv": 0.9748140635564571,
-            "youden": 0.3844636844636844
+            "youden": 0.38606477460069843
           },
           "patient_mean": {
             "sensitivity": 0.40476190476190477,
@@ -4416,33 +4416,33 @@
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.05345457003314785,
-        "brier_patient_mean": 0.05409494625772499,
+        "brier_pooled": 0.053670982483286604,
+        "brier_patient_mean": 0.05429263891050123,
         "brier_skill": {},
         "calibration_slopes": {}
       },
       "logistic_regression": {
-        "pooled_auc": 0.8181307489949465,
-        "within_patient_auc": 0.750388338185026,
+        "pooled_auc": 0.8194930460765139,
+        "within_patient_auc": 0.7513418508829075,
         "within_auc_eligible_patients": 42,
         "within_auc_excluded_patients": 3,
         "threshold": {
-          "threshold": 0.0543564285200374,
+          "threshold": 0.0546860946213347,
           "pooled": {
-            "sensitivity": 0.7724867724867724,
-            "specificity": 0.7204264870931537,
-            "ppv": 0.1495390918402185,
-            "npv": 0.9802993280390959,
-            "youden": 0.49291325957992616
+            "sensitivity": 0.775438596491228,
+            "specificity": 0.7207814078814415,
+            "ppv": 0.15090474564697848,
+            "npv": 0.9804520464263897,
+            "youden": 0.49622000437266944
           },
           "patient_mean": {
-            "sensitivity": 0.6444567875313181,
-            "specificity": 0.7047408089730648
+            "sensitivity": 0.6468602480454936,
+            "specificity": 0.7049081631953849
           },
           "within_patient": {
-            "sensitivity": 0.6444567875313181,
-            "specificity": 0.6852995807781124,
-            "youden": 0.32975636830943056
+            "sensitivity": 0.6468602480454936,
+            "specificity": 0.6854788888734552,
+            "youden": 0.33233913691894895
           },
           "eligible": {
             "sensitivity": 42,
@@ -4450,51 +4450,51 @@
             "both": 42
           },
           "alarms_per_patient_30_days": {
-            "mean": 9.439188463103395,
+            "mean": 9.440274557996066,
             "median": 7.819148936170213
           },
           "alarm_counts": {
             "mean": 65.08888888888889,
-            "median": 55.0,
+            "median": 54.0,
             "total": 2929
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.04954619795523261,
-        "brier_patient_mean": 0.0502340577370823,
+        "brier_pooled": 0.0495633126556363,
+        "brier_patient_mean": 0.0502356344384497,
         "brier_skill": {
-          "runin_rate": 0.1815260502453605,
-          "updating_rate": 0.09276278084666267,
-          "retrospective_rate": 0.07311577055849028
+          "runin_rate": 0.18088637515042438,
+          "updating_rate": 0.09572324071455185,
+          "retrospective_rate": 0.07653427676418723
         },
         "calibration_slopes": {
-          "pooled_slope": 1.1525336417817786,
-          "between_slope": 1.4398356204504204,
-          "within_slope": 1.0281811203274887
+          "pooled_slope": 1.1545828861287133,
+          "between_slope": 1.43738313336821,
+          "within_slope": 1.0317242923340781
         }
       },
       "gradient_boosting": {
-        "pooled_auc": 0.8285656882364701,
-        "within_patient_auc": 0.7586922688546607,
+        "pooled_auc": 0.8300423085332057,
+        "within_patient_auc": 0.7593517215709531,
         "within_auc_eligible_patients": 42,
         "within_auc_excluded_patients": 3,
         "threshold": {
-          "threshold": 0.0543564285200374,
+          "threshold": 0.0546860946213347,
           "pooled": {
-            "sensitivity": 0.7019400352733686,
-            "specificity": 0.7797979797979798,
-            "ppv": 0.16864406779661018,
-            "npv": 0.9762540396234368,
-            "youden": 0.4817380150713484
+            "sensitivity": 0.7017543859649122,
+            "specificity": 0.7843269338722353,
+            "ppv": 0.17233950883239982,
+            "npv": 0.9762437115707099,
+            "youden": 0.4860813198371474
           },
           "patient_mean": {
-            "sensitivity": 0.596734782866881,
-            "specificity": 0.7680244126766608
+            "sensitivity": 0.5852328823842088,
+            "specificity": 0.7722842533988438
           },
           "within_patient": {
-            "sensitivity": 0.596734782866881,
-            "specificity": 0.7526334171653519,
-            "youden": 0.34936820003223296
+            "sensitivity": 0.5852328823842088,
+            "specificity": 0.7570796632950836,
+            "youden": 0.3423125456792923
           },
           "eligible": {
             "sensitivity": 42,
@@ -4502,94 +4502,94 @@
             "both": 42
           },
           "alarms_per_patient_30_days": {
-            "mean": 7.570125427104029,
-            "median": 6.8493150684931505
+            "mean": 7.459684168140607,
+            "median": 6.301369863013699
           },
           "alarm_counts": {
-            "mean": 52.44444444444444,
+            "mean": 51.577777777777776,
             "median": 44.0,
-            "total": 2360
+            "total": 2321
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.047963325082300105,
-        "brier_patient_mean": 0.0485280285093282,
+        "brier_pooled": 0.04787285110584453,
+        "brier_patient_mean": 0.048439608084404895,
         "brier_skill": {
-          "runin_rate": 0.20767417594895377,
-          "updating_rate": 0.12174666342045914,
-          "retrospective_rate": 0.10272732429380504
+          "runin_rate": 0.20882397684665222,
+          "updating_rate": 0.126565511136695,
+          "retrospective_rate": 0.1080310273653251
         },
         "calibration_slopes": {
-          "pooled_slope": 1.0592481201856465,
-          "between_slope": 1.5242569490825109,
-          "within_slope": 0.9515557101478839
+          "pooled_slope": 1.0631441622304507,
+          "between_slope": 1.5335483961506142,
+          "within_slope": 0.9545789031791944
         },
         "patient_bootstrap_95": {
           "pooled_auc": [
-            0.8008182898444242,
-            0.8538629897140955
+            0.8017002542560746,
+            0.8563129375502526
           ],
           "within_patient_auc": [
-            0.7275953053219141,
-            0.7890523710326691
+            0.729171812322725,
+            0.7899254287607713
           ],
           "pooled_sensitivity": [
-            0.633809690193338,
-            0.7587158359303015
+            0.6396465082172281,
+            0.7589052287581699
           ],
           "pooled_specificity": [
-            0.7319026504065717,
-            0.8246493680433031
+            0.7374160294494434,
+            0.828155656045944
           ],
           "within_patient_sensitivity": [
-            0.5303174581529329,
-            0.6582299346160674
+            0.5072742586705449,
+            0.6581722396690316
           ],
           "within_patient_specificity": [
-            0.7056511592240888,
-            0.8010287980416685
+            0.7118212912123716,
+            0.8055990719082252
           ],
           "pooled_youden": [
-            0.4338883756079611,
-            0.5299042476023865
+            0.4381044499587294,
+            0.5310894187565317
           ],
           "within_patient_youden": [
-            0.3035244009605573,
-            0.39804613347390666
+            0.2889915950496027,
+            0.39617917312873957
           ],
           "brier_skill_vs": {
             "runin_rate": [
-              0.15315153013766714,
-              0.2733898431330069
+              0.1514325274577728,
+              0.27269690334173935
             ],
             "updating_rate": [
-              0.07865744581314532,
-              0.1663920604510621
+              0.08167002395446407,
+              0.17324142816382226
             ],
             "retrospective_rate": [
-              0.059686791255691894,
-              0.14777095991099015
+              0.06276734587361732,
+              0.1559387609766928
             ]
           },
           "calibration_slopes": {
             "pooled_slope": {
               "ci95": [
-                0.9512007842182811,
-                1.1737722971926075
+                0.947517634488165,
+                1.1800386195116355
               ],
               "skipped": 0
             },
             "between_slope": {
               "ci95": [
-                1.3109902866527836,
-                1.8438996987828553
+                1.3205516781959006,
+                1.8439178451312601
               ],
               "skipped": 0
             },
             "within_slope": {
               "ci95": [
-                0.8143129106732577,
-                1.0875166330760861
+                0.8198726882293095,
+                1.0947064311672687
               ],
               "skipped": 0
             }
@@ -4597,27 +4597,27 @@
         }
       },
       "within_patient_centred_gradient_boosting": {
-        "pooled_auc": 0.784827799848376,
-        "within_patient_auc": 0.759824908588073,
+        "pooled_auc": 0.7847478525661858,
+        "within_patient_auc": 0.7590742109189456,
         "within_auc_eligible_patients": 42,
         "within_auc_excluded_patients": 3,
         "threshold": {
-          "threshold": 0.0543564285200374,
+          "threshold": 0.0546860946213347,
           "pooled": {
-            "sensitivity": 0.6649029982363316,
-            "specificity": 0.7548821548821549,
-            "ppv": 0.14720812182741116,
-            "npv": 0.9725274725274725,
-            "youden": 0.4197851531184864
+            "sensitivity": 0.6649122807017543,
+            "specificity": 0.7570450207701808,
+            "ppv": 0.14903657097915848,
+            "npv": 0.9724545716758004,
+            "youden": 0.4219573014719351
           },
           "patient_mean": {
-            "sensitivity": 0.6232540102080125,
-            "specificity": 0.7486863009705469
+            "sensitivity": 0.6298158328027588,
+            "specificity": 0.7504581274787188
           },
           "within_patient": {
-            "sensitivity": 0.6232540102080125,
-            "specificity": 0.7381964302324915,
-            "youden": 0.361450440440504
+            "sensitivity": 0.6298158328027588,
+            "specificity": 0.7394778947004571,
+            "youden": 0.3692937275032159
           },
           "eligible": {
             "sensitivity": 42,
@@ -4625,27 +4625,27 @@
             "both": 42
           },
           "alarms_per_patient_30_days": {
-            "mean": 8.19089632063526,
-            "median": 7.885714285714286
+            "mean": 8.144876070426218,
+            "median": 8.115942028985508
           },
           "alarm_counts": {
-            "mean": 56.91111111111111,
-            "median": 52.0,
-            "total": 2561
+            "mean": 56.51111111111111,
+            "median": 56.0,
+            "total": 2543
           },
           "alarms_per_patient_per_time_unit": null
         },
-        "brier_pooled": 0.05066735305856736,
-        "brier_patient_mean": 0.05128488716168423,
+        "brier_pooled": 0.050978908145751366,
+        "brier_patient_mean": 0.05159037862744635,
         "brier_skill": {
-          "runin_rate": 0.16300522960553876,
-          "updating_rate": 0.07223338242323496,
-          "retrospective_rate": 0.05214179017400555
+          "runin_rate": 0.15749137810320823,
+          "updating_rate": 0.06989586894151567,
+          "retrospective_rate": 0.05015884213230126
         },
         "calibration_slopes": {
-          "pooled_slope": 1.1381140716342406,
-          "between_slope": 1.365489259195994,
-          "within_slope": 1.0980266489701564
+          "pooled_slope": 1.1351650226334251,
+          "between_slope": 1.3671265124684735,
+          "within_slope": 1.0932747210250704
         }
       }
     }
