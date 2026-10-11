@@ -1,6 +1,6 @@
 # Results 5.3: the CTN-0094 gradient-boosting model, evaluated with withinpatient 2.0
 
-Test patients 246, scored weeks 4237 (weeks 4 onward; the four run-in weeks enter only through the fixed history features). Threshold = training-cohort event rate 0.320. 200 within-patient shuffles per patient, seed 20261010; fitted model fixed, history features rebuilt in every shuffle; yardstick = patient's own scored rate, rebuilt per shuffle; chance level = mean over shuffles. Run time 34.2 min.
+Test patients 246, scored weeks 4237 (weeks 4 onward; the four run-in weeks enter only through the fixed history features). Threshold = training-cohort event rate 0.320. 200 within-patient shuffles per patient, seed 20261010; fitted model fixed, history features rebuilt in every shuffle; yardstick = patient's own scored rate, rebuilt per shuffle; chance level = mean over shuffles. Run time 19.5 min.
 
 | Measure | Pooled | Usual per patient, mean (median) | Fixed: mean observed | Mean chance | Median excess [IQR] | Patients above chance (p < 0.05) | n |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -18,8 +18,9 @@ Pooled and usual per-patient values are the package's comparison columns (usual 
 
 ## Check against Table 4
 
-AUC chance level here: mean 0.3995, median over patients 0.426.
-Table 4 CTN-0094 gradient-boosting AUC chance (mean over 200 model-fixed draws of the mean per-patient AUC): 0.3996 [2.5-97.5%: 0.365, 0.431]. Package: 0.3995. Same estimand (mean over patients of each patient's mean over shuffles), different shuffle draws: agreement.
+AUC chance level here: mean 0.399, median over patients 0.426. Table 4 CTN-0094 AUC chance entry: see `table4.json` (key printed below).
+
+Table 4 CTN-0094 gradient-boosting AUC chance (mean over 200 model-fixed draws of the mean per-patient AUC): 0.3996 [2.5-97.5%: 0.365, 0.431]. Package: 0.3995. Same estimand (mean over patients of each patient's mean over shuffles), different shuffle draws.
 
 ## The call
 

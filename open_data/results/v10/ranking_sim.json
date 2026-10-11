@@ -70,9 +70,10 @@
     "power_replications_per_cell_and_test": 200,
     "power_shuffles": 200,
     "extra_pair_included": true,
-    "elapsed_seconds": 7200.396153799724,
-    "main_seconds": 3792.9418369997293,
-    "power_seconds": 3333.634236900136,
+    "elapsed_seconds": 5505.89253880037,
+    "b_chance": "shuffle",
+    "main_seconds": 3304.91405950021,
+    "power_seconds": 2154.564380099997,
     "full_runtime_estimate_hours": null,
     "default_extra_pair_rule": "For a full run, include the extra pair by default only if an internal 1-cell quick pilot extrapolates the base 12-cell run to under 3 hours; use --extra-pair to force it.",
     "calibrations": {
@@ -386,10 +387,7 @@
         "sd_error": -5.551115123125783e-17,
         "target_sd": 0.34
       }
-    },
-    "b_chance": "shuffle",
-    "tailored_only_last_rerun_seconds": 4502.277476100251,
-    "tailored_only_last_workers": 4
+    }
   },
   "ranking": [
     {
@@ -693,7 +691,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.25344533343776054,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.08615892767328472,
       "long_record_a_true_patient_auc": 0.7495593370065717,
       "long_record_b_true_patient_auc": 0.5838503253444943,
       "long_record_true_auc_a_minus_b": 0.1657090116620774
@@ -1084,7 +1082,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.16798592139152935,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.12857775379591754,
       "long_record_a_true_patient_auc": 0.6678472338204301,
       "long_record_b_true_patient_auc": 0.6267522013378231,
       "long_record_true_auc_a_minus_b": 0.04109503248260704
@@ -1475,7 +1473,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.25208289091843294,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.08444529458898734,
       "long_record_a_true_patient_auc": 0.7495593370065717,
       "long_record_b_true_patient_auc": 0.5838503253444943,
       "long_record_true_auc_a_minus_b": 0.1657090116620774
@@ -1866,7 +1864,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.16624323067318653,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.12682973711785603,
       "long_record_a_true_patient_auc": 0.6678472338204301,
       "long_record_b_true_patient_auc": 0.6267522013378231,
       "long_record_true_auc_a_minus_b": 0.04109503248260704
@@ -2257,7 +2255,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.24954210857277342,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.0870618037311375,
       "long_record_a_true_patient_auc": 0.7490777628996768,
       "long_record_b_true_patient_auc": 0.5838503253444943,
       "long_record_true_auc_a_minus_b": 0.16522743755518243
@@ -2648,7 +2646,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.16284534846774565,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.12956504808133137,
       "long_record_a_true_patient_auc": 0.6669665429334826,
       "long_record_b_true_patient_auc": 0.6267522013378231,
       "long_record_true_auc_a_minus_b": 0.04021434159565951
@@ -3039,7 +3037,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.24972249798762294,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.08606130612888264,
       "long_record_a_true_patient_auc": 0.7490777628996768,
       "long_record_b_true_patient_auc": 0.5838503253444943,
       "long_record_true_auc_a_minus_b": 0.16522743755518243
@@ -3430,7 +3428,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.16255246481307684,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.12884489733073512,
       "long_record_a_true_patient_auc": 0.6669665429334826,
       "long_record_b_true_patient_auc": 0.6267522013378231,
       "long_record_true_auc_a_minus_b": 0.04021434159565951
@@ -3821,7 +3819,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.2460330980523114,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.0872449677316607,
       "long_record_a_true_patient_auc": 0.7479267787161777,
       "long_record_b_true_patient_auc": 0.5838503253444943,
       "long_record_true_auc_a_minus_b": 0.16407645337168342
@@ -4212,7 +4210,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.15994880518716792,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.1300010347580063,
       "long_record_a_true_patient_auc": 0.6651977050445058,
       "long_record_b_true_patient_auc": 0.6267522013378231,
       "long_record_true_auc_a_minus_b": 0.03844550370668276
@@ -4603,7 +4601,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.24579408524827168,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.08694845470972033,
       "long_record_a_true_patient_auc": 0.7479267787161777,
       "long_record_b_true_patient_auc": 0.5838503253444943,
       "long_record_true_auc_a_minus_b": 0.16407645337168342
@@ -4994,7 +4992,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.15967939137703513,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.12969399467597767,
       "long_record_a_true_patient_auc": 0.6651977050445058,
       "long_record_b_true_patient_auc": 0.6267522013378231,
       "long_record_true_auc_a_minus_b": 0.03844550370668276
@@ -5385,7 +5383,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.19463035925678684,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.07401923017081666,
       "long_record_a_true_patient_auc": 0.7262553126178211,
       "long_record_b_true_patient_auc": 0.5799250004990216,
       "long_record_true_auc_a_minus_b": 0.14633031211879943
@@ -5774,9 +5772,9 @@
       "metric": "auc",
       "replications": 500,
       "valid_replications": 500,
-      "share_a_ranks_above_b": 1.0,
+      "share_a_ranks_above_b": 0.48,
       "mean_a_score": 0.11124967417834122,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.11166007454082404,
       "long_record_a_true_patient_auc": 0.646986826886918,
       "long_record_b_true_patient_auc": 0.6189375559065937,
       "long_record_true_auc_a_minus_b": 0.02804927098032428
@@ -6167,7 +6165,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.19618978719248006,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.07570268293906188,
       "long_record_a_true_patient_auc": 0.7262553126178211,
       "long_record_b_true_patient_auc": 0.5799250004990216,
       "long_record_true_auc_a_minus_b": 0.14633031211879943
@@ -6556,9 +6554,9 @@
       "metric": "auc",
       "replications": 500,
       "valid_replications": 500,
-      "share_a_ranks_above_b": 1.0,
+      "share_a_ranks_above_b": 0.47,
       "mean_a_score": 0.11322486740574514,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.11336054087441415,
       "long_record_a_true_patient_auc": 0.646986826886918,
       "long_record_b_true_patient_auc": 0.6189375559065937,
       "long_record_true_auc_a_minus_b": 0.02804927098032428
@@ -6949,7 +6947,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.20901528220636814,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.07671651338684767,
       "long_record_a_true_patient_auc": 0.7277444229999074,
       "long_record_b_true_patient_auc": 0.5799250004990216,
       "long_record_true_auc_a_minus_b": 0.14781942250088576
@@ -7338,9 +7336,9 @@
       "metric": "auc",
       "replications": 500,
       "valid_replications": 500,
-      "share_a_ranks_above_b": 1.0,
+      "share_a_ranks_above_b": 0.884,
       "mean_a_score": 0.12751333644023588,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.11511958205394208,
       "long_record_a_true_patient_auc": 0.6489202687030459,
       "long_record_b_true_patient_auc": 0.6189375559065937,
       "long_record_true_auc_a_minus_b": 0.02998271279645215
@@ -7731,7 +7729,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.20951892710987846,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.07733188464379023,
       "long_record_a_true_patient_auc": 0.7277444229999074,
       "long_record_b_true_patient_auc": 0.5799250004990216,
       "long_record_true_auc_a_minus_b": 0.14781942250088576
@@ -8120,9 +8118,9 @@
       "metric": "auc",
       "replications": 500,
       "valid_replications": 500,
-      "share_a_ranks_above_b": 1.0,
+      "share_a_ranks_above_b": 0.992,
       "mean_a_score": 0.1281604465036527,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.11568848203472851,
       "long_record_a_true_patient_auc": 0.6489202687030459,
       "long_record_b_true_patient_auc": 0.6189375559065937,
       "long_record_true_auc_a_minus_b": 0.02998271279645215
@@ -8513,7 +8511,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.21938639981333335,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.07780787503775592,
       "long_record_a_true_patient_auc": 0.7283952159119669,
       "long_record_b_true_patient_auc": 0.5799250004990216,
       "long_record_true_auc_a_minus_b": 0.14847021541294525
@@ -8904,7 +8902,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.13998187644639956,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.11648625554628624,
       "long_record_a_true_patient_auc": 0.6499299677344317,
       "long_record_b_true_patient_auc": 0.6189375559065937,
       "long_record_true_auc_a_minus_b": 0.030992411827837962
@@ -9295,7 +9293,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.21945359101941037,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.07776227575835236,
       "long_record_a_true_patient_auc": 0.7283952159119669,
       "long_record_b_true_patient_auc": 0.5799250004990216,
       "long_record_true_auc_a_minus_b": 0.14847021541294525
@@ -9686,7 +9684,7 @@
       "valid_replications": 500,
       "share_a_ranks_above_b": 1.0,
       "mean_a_score": 0.13990073239573408,
-      "mean_b_score": 0.0,
+      "mean_b_score": 0.11653618525289766,
       "long_record_a_true_patient_auc": 0.6499299677344317,
       "long_record_b_true_patient_auc": 0.6189375559065937,
       "long_record_true_auc_a_minus_b": 0.030992411827837962

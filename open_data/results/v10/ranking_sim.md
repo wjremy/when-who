@@ -2,8 +2,6 @@
 
 Run profile: **full**; seed base **20261011**; workers **4**.
 
-> **Note.** In the AUC rows labelled `tailored (B against its level-only forecast)`, forecast B's per-patient AUC was set to 0.5, so these rows show only whether A's excess over its chance level was positive. They are not used in the paper; the comparison of the two forecasts is the `tailored_excess` row (B's AUC against its shuffle chance level, which equals B's AUC against 0.5 within shuffle noise). The other rows of that scoring are unaffected. The code has since been corrected.
-
 ## Design and interpretation
 
 - Latent outcomes use `logit P(Y_kt=1) = level + b_k + x_kt`, daily SD 2, with REPLACE-BG and CTN-0094 cohort fits from `cohort_curves.py`; each fit is recentered to its cohort population rate.
@@ -339,7 +337,7 @@ Share of valid replications where A scores above B; the long-record AUC columns 
 | high | 30 | 50 | A daily rho=0.4 vs B daily rho=0.3 | tailored_excess | brier_skill_oracle | 1.000 | 0.647 | 0.619 |
 | high | 30 | 50 | A daily rho=0.4 vs B daily rho=0.3 | tailored_excess | ppv | 0.536 | 0.647 | 0.619 |
 | high | 30 | 50 | A daily rho=0.4 vs B daily rho=0.3 | tailored_excess | net_benefit | 0.934 | 0.647 | 0.619 |
-| high | 30 | 50 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | auc | 1.000 | 0.647 | 0.619 |
+| high | 30 | 50 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | auc | 0.480 | 0.647 | 0.619 |
 | high | 30 | 50 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | average_precision | 0.000 | 0.647 | 0.619 |
 | high | 30 | 50 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | brier_skill_updated_rate | 1.000 | 0.647 | 0.619 |
 | high | 30 | 50 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | brier_skill_oracle | 1.000 | 0.647 | 0.619 |
@@ -385,7 +383,7 @@ Share of valid replications where A scores above B; the long-record AUC columns 
 | high | 30 | 150 | A daily rho=0.4 vs B daily rho=0.3 | tailored_excess | brier_skill_oracle | 1.000 | 0.647 | 0.619 |
 | high | 30 | 150 | A daily rho=0.4 vs B daily rho=0.3 | tailored_excess | ppv | 0.496 | 0.647 | 0.619 |
 | high | 30 | 150 | A daily rho=0.4 vs B daily rho=0.3 | tailored_excess | net_benefit | 0.992 | 0.647 | 0.619 |
-| high | 30 | 150 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | auc | 1.000 | 0.647 | 0.619 |
+| high | 30 | 150 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | auc | 0.470 | 0.647 | 0.619 |
 | high | 30 | 150 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | average_precision | 0.000 | 0.647 | 0.619 |
 | high | 30 | 150 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | brier_skill_updated_rate | 1.000 | 0.647 | 0.619 |
 | high | 30 | 150 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | brier_skill_oracle | 1.000 | 0.647 | 0.619 |
@@ -431,7 +429,7 @@ Share of valid replications where A scores above B; the long-record AUC columns 
 | high | 100 | 50 | A daily rho=0.4 vs B daily rho=0.3 | tailored_excess | brier_skill_oracle | 1.000 | 0.649 | 0.619 |
 | high | 100 | 50 | A daily rho=0.4 vs B daily rho=0.3 | tailored_excess | ppv | 0.506 | 0.649 | 0.619 |
 | high | 100 | 50 | A daily rho=0.4 vs B daily rho=0.3 | tailored_excess | net_benefit | 0.998 | 0.649 | 0.619 |
-| high | 100 | 50 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | auc | 1.000 | 0.649 | 0.619 |
+| high | 100 | 50 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | auc | 0.884 | 0.649 | 0.619 |
 | high | 100 | 50 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | average_precision | 0.002 | 0.649 | 0.619 |
 | high | 100 | 50 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | brier_skill_updated_rate | 1.000 | 0.649 | 0.619 |
 | high | 100 | 50 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | brier_skill_oracle | 1.000 | 0.649 | 0.619 |
@@ -477,7 +475,7 @@ Share of valid replications where A scores above B; the long-record AUC columns 
 | high | 100 | 150 | A daily rho=0.4 vs B daily rho=0.3 | tailored_excess | brier_skill_oracle | 1.000 | 0.649 | 0.619 |
 | high | 100 | 150 | A daily rho=0.4 vs B daily rho=0.3 | tailored_excess | ppv | 0.488 | 0.649 | 0.619 |
 | high | 100 | 150 | A daily rho=0.4 vs B daily rho=0.3 | tailored_excess | net_benefit | 1.000 | 0.649 | 0.619 |
-| high | 100 | 150 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | auc | 1.000 | 0.649 | 0.619 |
+| high | 100 | 150 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | auc | 0.992 | 0.649 | 0.619 |
 | high | 100 | 150 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | average_precision | 0.000 | 0.649 | 0.619 |
 | high | 100 | 150 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | brier_skill_updated_rate | 1.000 | 0.649 | 0.619 |
 | high | 100 | 150 | A daily rho=0.4 vs B daily rho=0.3 | tailored (B against its level-only forecast) | brier_skill_oracle | 1.000 | 0.649 | 0.619 |
@@ -621,5 +619,4 @@ One-sided model-fixed within-patient AUC permutation test, alpha 0.05.
 
 ## Runtime
 
-Full-profile elapsed time: **7200.4 seconds**.
-Last tailored-only replay: **4502.3 seconds** with 4 workers.
+Full-profile elapsed time: **5505.9 seconds**.
