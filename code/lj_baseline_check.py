@@ -15,8 +15,8 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "code" / "withinpatient" / "src"))
-from withinpatient.metrics import auc  # noqa: E402
+sys.path.insert(0, str(ROOT / "code" / "wheneval" / "src"))
+from wheneval.metrics import auc  # noqa: E402
 
 
 N_PERSONS = 150

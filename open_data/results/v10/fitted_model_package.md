@@ -1,4 +1,4 @@
-# Results 5.3: the CTN-0094 gradient-boosting model, evaluated with withinpatient 2.0
+# Results 5.3: the CTN-0094 gradient-boosting model, evaluated with wheneval 2.0
 
 Test patients 246, scored weeks 4237 (weeks 4 onward; the four run-in weeks enter only through the fixed history features). Threshold = training-cohort event rate 0.320. 200 within-patient shuffles per patient, seed 20261010; fitted model fixed, history features rebuilt in every shuffle; yardstick = patient's own scored rate, rebuilt per shuffle; chance level = mean over shuffles. Run time 19.5 min.
 

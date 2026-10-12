@@ -1,0 +1,13 @@
+result_type,statistic,forecast,value,numerator,denominator,eligible_patients,eligible_weeks,n_scored_rows,n_event_rows,n_event_free_rows,shuffle_seed
+pair_share,same_patient,,0.0018982509882523836,7156,3769786,,,4237,1271,2966,
+pair_share,same_study_week_different_patients,,0.042441135915937934,159994,3769786,,,4237,1271,2966,
+pair_share,other,,0.9556606130958096,3602636,3769786,,,4237,1271,2966,
+auc,pooled_auc,run-in rate,0.8010020993234098,,,,,4237,1271,2966,
+auc,per_patient_auc,run-in rate,0.5,,,154,,4237,1271,2966,
+auc,per_week_auc,run-in rate,0.7651783691968962,,,,33,4237,1271,2966,
+auc,pooled_auc,shuffled rate so far,0.8854334171754047,,,,,4237,1271,2966,20261009
+auc,per_patient_auc,shuffled rate so far,0.29487811792496765,,,154,,4237,1271,2966,20261009
+auc,per_week_auc,shuffled rate so far,0.884858534906471,,,,33,4237,1271,2966,20261009
+auc,pooled_auc,fitted gradient-boosting model,0.9292925380910216,,,,,4237,1271,2966,
+auc,per_patient_auc,fitted gradient-boosting model,0.6380225828041761,,,154,,4237,1271,2966,
+auc,per_week_auc,fitted gradient-boosting model,0.9261567946536308,,,,33,4237,1271,2966,

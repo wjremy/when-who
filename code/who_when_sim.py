@@ -23,16 +23,16 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 CODE = ROOT / "code"
-WITHINPATIENT_SRC = CODE / "withinpatient" / "src"
-for import_path in (str(CODE), str(WITHINPATIENT_SRC)):
+WHENEVAL_SRC = CODE / "wheneval" / "src"
+for import_path in (str(CODE), str(WHENEVAL_SRC)):
     if import_path not in sys.path:
         sys.path.insert(0, import_path)
 
 import cohort_curves as cohort_sim  # noqa: E402
-from withinpatient.metrics import auc as withinpatient_auc  # noqa: E402
-from withinpatient.metrics import _irls as metrics_irls  # noqa: E402
-from withinpatient.metrics import within_patient_auc  # noqa: E402
-from withinpatient.nine import nine_metrics  # noqa: E402
+from wheneval.metrics import auc as wheneval_auc  # noqa: E402
+from wheneval.metrics import _irls as metrics_irls  # noqa: E402
+from wheneval.metrics import within_patient_auc  # noqa: E402
+from wheneval.nine import nine_metrics  # noqa: E402
 
 
 SEED = 20261010
@@ -323,7 +323,7 @@ def auc_pair(y: np.ndarray, forecast: np.ndarray) -> tuple[float, float]:
     """Return pooled and equal-patient AUCs through the package functions."""
     k, n = y.shape
     patient_id = np.repeat(np.arange(k), n)
-    pooled = withinpatient_auc(y.ravel(), forecast.ravel())
+    pooled = wheneval_auc(y.ravel(), forecast.ravel())
     within = within_patient_auc(patient_id, y.ravel(), forecast.ravel(), weights="patient")
     return float(pooled), float(within["value"])
 

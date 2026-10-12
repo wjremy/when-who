@@ -1,0 +1,31 @@
+cohort,spread,record_days,patients,pair,forecast,mean_excess_auc,true_skill_auc_minus_half,source
+REPLACE-BG,low,30,50,A daily rho=0.6 vs B daily rho=0.2,A,0.2534453334,0.249559337,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+REPLACE-BG,low,30,50,A daily rho=0.6 vs B daily rho=0.2,B,0.08593659542,0.08385032534,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+REPLACE-BG,low,30,50,A daily rho=0.4 vs B daily rho=0.3,A,0.1679859214,0.1678472338,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+REPLACE-BG,low,30,50,A daily rho=0.4 vs B daily rho=0.3,B,0.1283505893,0.1267522013,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+REPLACE-BG,low,100,50,A daily rho=0.6 vs B daily rho=0.2,A,0.2495421086,0.2490777629,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+REPLACE-BG,low,100,50,A daily rho=0.6 vs B daily rho=0.2,B,0.08708786913,0.08385032534,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+REPLACE-BG,low,100,50,A daily rho=0.4 vs B daily rho=0.3,A,0.1628453485,0.1669665429,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+REPLACE-BG,low,100,50,A daily rho=0.4 vs B daily rho=0.3,B,0.1295548878,0.1267522013,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+REPLACE-BG,low,365,50,A daily rho=0.6 vs B daily rho=0.2,A,0.2460330981,0.2479267787,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+REPLACE-BG,low,365,50,A daily rho=0.6 vs B daily rho=0.2,B,0.0873183894,0.08385032534,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+REPLACE-BG,low,365,50,A daily rho=0.4 vs B daily rho=0.3,A,0.1599488052,0.165197705,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+REPLACE-BG,low,365,50,A daily rho=0.4 vs B daily rho=0.3,B,0.1300740941,0.1267522013,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+CTN-0094,high,30,50,A daily rho=0.6 vs B daily rho=0.2,A,0.1946303593,0.2262553126,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+CTN-0094,high,30,50,A daily rho=0.6 vs B daily rho=0.2,B,0.07363899645,0.0799250005,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+CTN-0094,high,30,50,A daily rho=0.4 vs B daily rho=0.3,A,0.1112496742,0.1469868269,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+CTN-0094,high,30,50,A daily rho=0.4 vs B daily rho=0.3,B,0.1112526386,0.1189375559,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+CTN-0094,high,100,50,A daily rho=0.6 vs B daily rho=0.2,A,0.2090152822,0.227744423,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+CTN-0094,high,100,50,A daily rho=0.6 vs B daily rho=0.2,B,0.07662943186,0.0799250005,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+CTN-0094,high,100,50,A daily rho=0.4 vs B daily rho=0.3,A,0.1275133364,0.1489202687,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+CTN-0094,high,100,50,A daily rho=0.4 vs B daily rho=0.3,B,0.1150355609,0.1189375559,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+CTN-0094,high,365,50,A daily rho=0.6 vs B daily rho=0.2,A,0.2193863998,0.2283952159,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+CTN-0094,high,365,50,A daily rho=0.6 vs B daily rho=0.2,B,0.07775652032,0.0799250005,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+CTN-0094,high,365,50,A daily rho=0.4 vs B daily rho=0.3,A,0.1399818764,0.1499299677,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+CTN-0094,high,365,50,A daily rho=0.4 vs B daily rho=0.3,B,0.1164425125,0.1189375559,open_data/results/v10/ranking_sim.json; scoring=tailored_excess; metric=auc
+REPLACE-BG,low,30,50,none,no-skill,-0.0003241505683,0,"rate so far; ranking_sim._context/_recentered_levels/_draw_outcomes; 200 replications x 50 rebuilt shuffles; SeedSequence base=20261011, stream=1304"
+REPLACE-BG,low,100,50,none,no-skill,0.001016313747,0,"rate so far; ranking_sim._context/_recentered_levels/_draw_outcomes; 200 replications x 50 rebuilt shuffles; SeedSequence base=20261011, stream=1304"
+REPLACE-BG,low,365,50,none,no-skill,0.0004412926441,0,"rate so far; ranking_sim._context/_recentered_levels/_draw_outcomes; 200 replications x 50 rebuilt shuffles; SeedSequence base=20261011, stream=1304"
+CTN-0094,high,30,50,none,no-skill,0.0004970862046,0,"rate so far; ranking_sim._context/_recentered_levels/_draw_outcomes; 200 replications x 50 rebuilt shuffles; SeedSequence base=20261011, stream=1304"
+CTN-0094,high,100,50,none,no-skill,0.0009010700079,0,"rate so far; ranking_sim._context/_recentered_levels/_draw_outcomes; 200 replications x 50 rebuilt shuffles; SeedSequence base=20261011, stream=1304"
+CTN-0094,high,365,50,none,no-skill,0.0001253667316,0,"rate so far; ranking_sim._context/_recentered_levels/_draw_outcomes; 200 replications x 50 rebuilt shuffles; SeedSequence base=20261011, stream=1304"

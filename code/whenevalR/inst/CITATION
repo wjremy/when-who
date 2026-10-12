@@ -1,0 +1,16 @@
+bibentry(
+  bibtype = "Unpublished",
+  title = "Why pooled and per-patient scores of repeated clinical forecasts both mislead, and how to fix them",
+  author = person("Wesley", "Remy"),
+  year = "2026",
+  note = "Preprint"
+)
+
+bibentry(
+  bibtype = "Manual",
+  title = "wheneval: Within-Patient Evaluation of Repeated Binary Forecasts",
+  author = person("Wesley", "Remy"),
+  year = "2026",
+  note = "R package version 3.0.0",
+  address = "Department of Computer Science, ETH Zurich"
+)

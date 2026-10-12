@@ -63,10 +63,10 @@ def _load_dependencies():
     # Table 4's dependency loader imports no estimators; model-fitting remains
     # local to the unused fit_* functions in cases_model_fixed_permutation.py.
     table4._load_modeling_dependencies()
-    code_src = ROOT / "code" / "withinpatient" / "src"
+    code_src = ROOT / "code" / "wheneval" / "src"
     if str(code_src) not in sys.path:
         sys.path.insert(0, str(code_src))
-    from withinpatient.nine import naive_metrics
+    from wheneval.nine import naive_metrics
 
     return table4, table4.np, table4.pd, table4.nine_metrics, naive_metrics
 
@@ -664,7 +664,7 @@ def run(n_draws: int, quick: bool) -> dict[str, Any]:
             "permutation_seed": int(pm.SEED),
             "permutation_rng_stream": "cases_model_fixed_permutation.generate_permuted_targets, with Table 4 cohort order REPLACE-BG, CTN-0094, College Experience",
             "permutation_method": "Within-patient shuffle of scored outcomes; run-in outcomes fixed; updated/expanding rate rebuilt with table4_v10.rebuild_updated_rate; no model fitting or model rescoring.",
-            "metrics_source": "withinpatient.nine.nine_metrics and naive_metrics",
+            "metrics_source": "wheneval.nine.nine_metrics and naive_metrics",
             "pooled_brier_skill_reference": "training_cohort_rate, as in Table 4",
             "pooled_chance_definitions": "AUC 0.5; AP/PPV scored-set event rate; NPV scored-set non-event rate; sensitivity/specificity training-cohort rate/complement; NB treat-none/treat-all; Brier skill 0; calibration slope 1.",
             "naive_slope_chance_definition": "n/a for the constant run-in forecast; slope 1 (calibrated twin) when the shuffled running forecast yields an estimable within-patient slope",

@@ -26,23 +26,23 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 CODE = ROOT / "code"
-WITHINPATIENT_SRC = CODE / "withinpatient" / "src"
-for import_path in (str(CODE), str(WITHINPATIENT_SRC)):
+WHENEVAL_SRC = CODE / "wheneval" / "src"
+for import_path in (str(CODE), str(WHENEVAL_SRC)):
     if import_path not in sys.path:
         sys.path.insert(0, import_path)
 
 # This script uses only the package's metrics and nine submodules. Register its
 # source directory directly so an unrelated stale top-level report export does
 # not prevent those submodules from being imported.
-withinpatient_package = types.ModuleType("withinpatient")
-withinpatient_package.__path__ = [str(WITHINPATIENT_SRC / "withinpatient")]
-withinpatient_package.__package__ = "withinpatient"
-sys.modules.setdefault("withinpatient", withinpatient_package)
+wheneval_package = types.ModuleType("wheneval")
+wheneval_package.__path__ = [str(WHENEVAL_SRC / "wheneval")]
+wheneval_package.__package__ = "wheneval"
+sys.modules.setdefault("wheneval", wheneval_package)
 
 import cohort_curves as cohort_sim  # noqa: E402
 import who_when_sim as who_when  # noqa: E402
-from withinpatient.metrics import auc as metrics_auc  # noqa: E402
-from withinpatient.nine import average_precision  # noqa: E402
+from wheneval.metrics import auc as metrics_auc  # noqa: E402
+from wheneval.nine import average_precision  # noqa: E402
 
 
 BASE_SEED = 20261011

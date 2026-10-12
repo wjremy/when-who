@@ -1,0 +1,7 @@
+patient_group,n_patients,measure,median,q1,q3,unit
+both_outcomes,154,event_rate,0.39230769230769236,0.1548582995951417,0.6666666666666666,proportion
+both_outcomes,154,scored_weeks,18.0,15.0,20.0,weeks
+all_events,14,event_rate,1.0,1.0,1.0,proportion
+all_events,14,scored_weeks,15.0,11.25,16.0,weeks
+no_events,78,event_rate,0.0,0.0,0.0,proportion
+no_events,78,scored_weeks,19.0,16.0,20.0,weeks

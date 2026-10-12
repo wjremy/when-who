@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build paper tables from exported forecasts using the withinpatient package."""
+"""Build paper tables from exported forecasts using the wheneval package."""
 from __future__ import annotations
 
 import argparse
@@ -12,8 +12,8 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT.parent / "code" / "withinpatient" / "src"))
-from withinpatient import (auc, brier_scores, brier_skill, calibration_slopes,
+sys.path.insert(0, str(ROOT.parent / "code" / "wheneval" / "src"))
+from wheneval import (auc, brier_scores, brier_skill, calibration_slopes,
                            pooled_auc, threshold_metrics, within_patient_auc)
 
 RATE_COLUMNS = {"training_cohort_rate", "runin_rate", "runin_rate_shrunk",

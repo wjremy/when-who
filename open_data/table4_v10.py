@@ -81,8 +81,8 @@ def _load_modeling_dependencies():
     import numpy
     import pandas
 
-    sys.path.insert(0, str(ROOT.parent / "code" / "withinpatient" / "src"))
-    from withinpatient.nine import nine_metrics as metrics_function
+    sys.path.insert(0, str(ROOT.parent / "code" / "wheneval" / "src"))
+    from wheneval.nine import nine_metrics as metrics_function
 
     np = numpy
     pd = pandas
@@ -806,7 +806,7 @@ def run(quick=False):
         "metadata": {
             "title": "Pooled versus per-patient clinical forecast performance",
             "metric_order": list(METRIC_ORDER),
-            "metric_source": "withinpatient.nine.nine_metrics, with pooled Brier skill re-referenced to training_cohort_rate",
+            "metric_source": "wheneval.nine.nine_metrics, with pooled Brier skill re-referenced to training_cohort_rate",
             "updated_rate_yardsticks": {
                 config["key"]: config["updated_rate_column"] for config in COHORTS
             },

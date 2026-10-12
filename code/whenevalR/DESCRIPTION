@@ -1,0 +1,19 @@
+Package: wheneval
+Title: Within-Patient Evaluation of Repeated Binary Forecasts
+Version: 3.0.0
+Authors@R: person("Wesley", "Remy", email = "wesley.j.remy@gmail.com", role = c("aut", "cre"),
+    comment = c(ORCID = "0009-0007-6431-4200", affiliation = "Department of Computer Science, ETH Zurich"))
+Description: Computes pooled, per-patient, and per-time-point discrimination,
+    retrospective and moment-corrected rate benchmarks, calibration-in-the-large,
+    Brier scores and skill against patient-specific references, exact conditional
+    calibration slopes, and patient-wise permutation evaluation for repeated
+    binary forecasts.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Imports:
+    stats
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.1.0

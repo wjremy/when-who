@@ -1,4 +1,4 @@
-"""Results 5.3: the CTN-0094 gradient-boosting model of Table 4, evaluated with withinpatient 2.0.
+"""Results 5.3: the CTN-0094 gradient-boosting model of Table 4, evaluated with wheneval 3.0.
 
 The fitted model is held fixed; in each within-patient shuffle of a test patient's scored weeks its
 outcome-history features (expanding rate, recent rate, previous result) are rebuilt from the shuffled
@@ -6,7 +6,7 @@ outcomes, as in Table 4 (`cases_model_fixed_permutation.fit_ctn`). The four run-
 the scored data: they enter only through the patient's history features and stay fixed.
 
 Outputs: open_data/results/v10/fitted_model_package.md and .json.
-Run: PYTHONPATH=code/withinpatient/src python open_data/fitted_model_package.py [--n-perm 200]
+Run: PYTHONPATH=code/wheneval/src python open_data/fitted_model_package.py [--n-perm 200]
 """
 from __future__ import annotations
 
@@ -21,8 +21,8 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT.parent / "code" / "withinpatient" / "src"))
-from withinpatient import evaluate, to_markdown  # noqa: E402
+sys.path.insert(0, str(ROOT.parent / "code" / "wheneval" / "src"))
+from wheneval import evaluate, to_markdown  # noqa: E402
 
 OUT = ROOT / "results" / "v10"
 SEED = 20261010
@@ -92,30 +92,30 @@ def main():
         return forecast[position.loc[rows.row].to_numpy()]
 
     started = time.time()
-    result = evaluate(data, patient="patient", time="week", outcome="y", forecast="forecast",
-                      threshold=threshold, rebuild=rebuild_gb, n_perm=args.n_perm, seed=SEED)
+    result = evaluate(data, patient_id="patient", time="week", outcome="y", prediction="forecast",
+                      threshold=threshold, history_rule=rebuild_gb, n_shuffles=args.n_perm, seed=SEED)
     seconds = time.time() - started
 
     table4 = json.loads((OUT / "table4.json").read_text(encoding="utf-8"))
     rows = []
     for name, metric in result["metrics"].items():
         s, c = metric["summary"], metric["comparison"]
-        chances = [e["chance_level"] for e in metric["per_patient"].values()]
+        chances = [e["shuffled_baseline"] for e in metric["per_patient"].values()]
         rows.append({
             "metric": name, "pooled": c.get("pooled"),
-            "usual_mean": c.get("usual_per_patient_mean"), "usual_median": c.get("usual_per_patient_median"),
-            "mean_observed": s["mean_observed"], "mean_chance": s["mean_chance_level"],
+            "usual_mean": c.get("per_patient_mean"), "usual_median": c.get("per_patient_median"),
+            "mean_observed": s["mean_score"], "mean_chance": s["mean_shuffled_baseline"],
             "median_chance": float(np.median(chances)) if chances else float("nan"),
             "median_excess": s["median_excess"], "iqr_excess": s["iqr_excess"],
             "share_above_p05": s["share_p_below_0_05"], "share_excess_positive": s["share_excess_positive"],
             "n_eligible": s["n_eligible"],
             "conditional_slope": c.get("conditional_within_slope"),
-            "conditional_slope_chance": c.get("conditional_within_slope_chance"),
+            "conditional_slope_chance": c.get("conditional_within_slope_shuffled_baseline"),
             "conditional_slope_excess": c.get("conditional_within_slope_excess"),
             "conditional_slope_p": c.get("conditional_within_slope_p"),
         })
 
-    lines = ["# Results 5.3: the CTN-0094 gradient-boosting model, evaluated with withinpatient 2.0", "",
+    lines = ["# Results 5.3: the CTN-0094 gradient-boosting model, evaluated with wheneval 3.0", "",
              f"Test patients {result['settings']['patients']}, scored weeks {result['settings']['scored_rows']} "
              f"(weeks 4 onward; the four run-in weeks enter only through the fixed history features). "
              f"Threshold = training-cohort event rate {threshold:.3f}. {args.n_perm} within-patient shuffles per patient, "
@@ -144,8 +144,8 @@ def main():
                  f"{t4['mean_over_draws']:.4f} [2.5-97.5%: {t4['percentiles_2_5_97_5'][0]:.3f}, {t4['percentiles_2_5_97_5'][1]:.3f}]. "
                  f"Package: {auc['mean_chance']:.4f}. Same estimand (mean over patients of each patient's mean over shuffles), different shuffle draws.")
     lines += ["", "## The call", "", "```python",
-              "result = evaluate(data, patient=\"patient\", time=\"week\", outcome=\"y\", forecast=\"forecast\",",
-              f"                  threshold={threshold:.5f}, rebuild=rebuild_gb, n_perm={args.n_perm}, seed={SEED})",
+              "result = evaluate(data, patient_id=\"patient\", time=\"week\", outcome=\"y\", prediction=\"forecast\",",
+              f"                  threshold={threshold:.5f}, history_rule=rebuild_gb, n_shuffles={args.n_perm}, seed={SEED})",
               "print(to_markdown(result))", "```", "",
               "`rebuild_gb(y, scored, rows)` receives one patient's time-ordered outcomes and rows, rebuilds the history "
               "features with `ctn_rebuild_histories` and returns the fixed model's predictions; the package checks that it "

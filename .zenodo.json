@@ -1,7 +1,7 @@
 {
-  "title": "when-who: code for “Why pooled and per-patient scores of repeated clinical forecasts both mislead, and how to fix them”",
+  "title": "when-eval: code for “Evaluating repeated clinical forecasts from longitudinal data: between-patient bias, finite-record bias, and how to correct them”",
   "upload_type": "software",
-  "description": "The withinpatient Python package and its R port, the simulations, the cohort analyses, and the scripts that produce every table and figure of the paper “Why pooled and per-patient scores of repeated clinical forecasts both mislead, and how to fix them”.",
+  "description": "The wheneval Python package and its R port, the simulations, the cohort analyses, and the scripts that produce every table and figure of the paper “Evaluating repeated clinical forecasts from longitudinal data: between-patient bias, finite-record bias, and how to correct them”.",
   "creators": [
     {
       "name": "Remy, Wesley",
@@ -15,7 +15,9 @@
     "repeated forecasts",
     "model evaluation",
     "within-patient evaluation",
-    "permutation chance level"
+    "longitudinal data",
+    "shuffled baseline",
+    "finite-record bias"
   ],
-  "version": "2.0.0"
+  "version": "3.0.0"
 }

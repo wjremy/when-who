@@ -11,7 +11,7 @@ The [GitHub repository](https://github.com/AnnaLangener/Justintime_Paper) is pub
 - Draw each of 150 person probabilities independently from Beta(α,β), with mean 0.1 and SD 0.25; then draw 200 independent Bernoulli outcomes per person conditional on that probability. This matches the outcome generator described in the article. The contemporaneous feature variables used by its random forest are omitted because they are not used by the rate baseline.
 - Use days 1–30 as initial history, then score days 31–200 one at a time. For each scored day, the primary forecast is the mean of that person's preceding 30 outcomes; each scored outcome joins the history for later forecasts. The published text illustrates a 30-day window but does not establish the code's default.
 - For the expanding-mean variant, average all prior outcomes starting on day 1. For the leak variant, use the most recent 30 outcomes ending on the scored day, including the target outcome.
-- Compute AUC separately for each person with both classes in the 170 scored outcomes, then average eligible people equally. Use `withinpatient.metrics.auc` for half-concordant ties. In the ties-dropped variant, omit tied event/non-event pairs; in the constant-score exclusion variant, omit people whose forecast is constant throughout the test period.
+- Compute AUC separately for each person with both classes in the 170 scored outcomes, then average eligible people equally. Use `wheneval.metrics.auc` for half-concordant ties. In the ties-dropped variant, omit tied event/non-event pairs; in the constant-score exclusion variant, omit people whose forecast is constant throughout the test period.
 - The logit-scale sensitivity uses a logistic-normal person probability with logit SD 0.25; its center is calibrated so the mean probability remains 0.1. The diagnostic automatic-direction row selects ROC direction from test-set medians, as in [pROC's documented `direction = "auto"` behavior](https://search.r-project.org/CRAN/refmans/pROC/html/roc.html); the source code does not establish that the authors used this convention.
 - The MC SD is the sample SD across the 200 replication-level mean within-person AUCs. NumPy's generator is seeded with 20261011; its random stream does not reproduce R's.
 
@@ -35,7 +35,7 @@ The fixed-direction, past-only running rate averages 0.4491, below chance, in th
 ## Run
 
 ```powershell
-$env:PYTHONPATH = 'code/withinpatient/src'
+$env:PYTHONPATH = 'code/wheneval/src'
 & "$env:USERPROFILE\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" code/lj_baseline_check.py
 ```
 

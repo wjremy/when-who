@@ -1,0 +1,22 @@
+error_id,bias,location,measure,direction,magnitude
+1,Between-patient bias,Moves the score,AUC,score_up,schematic only
+1,Between-patient bias,Moves the score,AP,score_up,schematic only
+1,Between-patient bias,Moves the score,Sensitivity + specificity − 1,score_up,schematic only
+1,Between-patient bias,Moves the score,PPV,score_up,schematic only
+1,Between-patient bias,Moves the score,NPV,score_up,schematic only
+1,Between-patient bias,Moves the score,Calibration slope,score_up,schematic only
+2,Between-patient bias,Moves the baseline,AP,baseline_varies,schematic only
+2,Between-patient bias,Moves the baseline,PPV,baseline_varies,schematic only
+2,Between-patient bias,Moves the baseline,NPV,baseline_varies,schematic only
+2,Between-patient bias,Moves the baseline,Net benefit,baseline_varies,schematic only
+2,Between-patient bias,Moves the baseline,Brier skill,baseline_varies,schematic only
+3,Finite-record bias,Moves the score,AUC,score_down,schematic only
+3,Finite-record bias,Moves the score,AP,score_down,schematic only
+3,Finite-record bias,Moves the score,Sensitivity + specificity − 1,score_down,schematic only
+3,Finite-record bias,Moves the score,PPV,score_down,schematic only
+3,Finite-record bias,Moves the score,NPV,score_down,schematic only
+3,Finite-record bias,Moves the score,Net benefit,score_down,schematic only
+3,Finite-record bias,Moves the score,Brier skill,score_down,schematic only
+3,Finite-record bias,Moves the score,Calibration slope,score_down,schematic only
+4,Finite-record bias,Moves the baseline,Net benefit,baseline_up,schematic only
+4,Finite-record bias,Moves the baseline,Brier skill,baseline_up,schematic only
