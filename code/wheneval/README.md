@@ -10,7 +10,40 @@ python -m pip install ./code/wheneval
 
 Python 3.9 or later is required. NumPy and pandas provide the metrics; the exact conditional calibration-slope calculation uses the package's numba kernel when available and a Python fallback otherwise.
 
-## Quickstart
+## Quickstart: a fitted model
+
+Give the data, the fitted model and the columns it uses as inputs. wheneval computes the model's forecasts, shuffles each patient's scored outcomes, rebuilds the forecasts and returns each patient's score, shuffled baseline, excess and permutation p value.
+
+```python
+import pandas as pd
+import wheneval as we
+
+data = pd.read_csv("diary.csv")  # patient_id, time, outcome and the model's input columns
+result = we.evaluate(data, patient_id="patient_id", time="time", outcome="outcome",
+                     model=fitted_model, features=["glucose", "steps", "rate_7", "last"],
+                     history={"rate_7": we.window_rate(7), "last": we.lag(1)})
+print(we.to_markdown(result))
+```
+
+`model` is any fitted model with `predict_proba` (scikit-learn and similar), a model with `predict` returning probabilities, or a function `f(X)`.
+
+**Which inputs need `history`?** Every input computed from the patient's earlier outcomes: the last outcome, an event rate or count over recent occasions, time since the last event. On every shuffle these must be recomputed from the shuffled outcomes; otherwise the shuffled baseline misses the finite-record bias. Name each such column in `history` with its recipe:
+
+| Recipe | Value at each row |
+|---|---|
+| `we.lag(k)` | the outcome `k` occasions earlier |
+| `we.rate_so_far()` | event rate over all earlier occasions, run-in included |
+| `we.window_rate(w)` | event rate over the last `w` earlier occasions |
+| `we.window_count(w)` | number of events over the last `w` earlier occasions |
+| `we.time_since_event()` | time since the last earlier event, in units of the time column |
+
+Recipes count occasions (rows) in time order and use only rows strictly before the current one. wheneval first checks each declared column against its recipe on the real outcomes and stops with the first mismatch. Rows without history (the first occasions) keep their value from the data, since it does not depend on the outcomes. All other input columns are kept fixed: sensor readings, questionnaire items, time of day. `history` is optional; if a column you did not declare equals a standard recipe, wheneval warns and prints the line to add.
+
+For inputs no recipe covers, pass your own feature function as `features`: `features=make_features` receives one patient's rows in time order, with the (shuffled) outcome column filled in, and returns the model's inputs. It is called again on every shuffle.
+
+A model fitted on each patient's own record (rather than on other patients) needs refitting on every shuffle: use `history_rule=we.refit(fit_predict)` below.
+
+## Quickstart: saved forecasts
 
 The default metrics are AUC, average precision, sensitivity, specificity, PPV, NPV, net benefit, Brier skill, and calibration slope. The threshold defaults to the cohort's scored event rate, `n_shuffles=200`, and `seed=0`. `runin` is a time cutoff: earlier outcomes remain available to history rules but are not scored. The default `yardstick=None` is each patient's scored-period event rate, recalculated in every shuffle. `baseline="mean"` (default) or `baseline="median"` summarizes each patient's shuffled score distribution.
 
@@ -57,6 +90,10 @@ python -m wheneval forecasts.csv --patient patient_id --time time --outcome outc
 ```
 
 Use `--rebuild running_rate` or `--rebuild window_count --window 7` to rebuild a history forecast. The CLI prints patient score and shuffled-baseline results first.
+
+## Changes in 3.1.0
+
+`evaluate()` takes a fitted `model` with its `features` (a column list or a feature function) and an optional `history` mapping of outcome-derived columns to recipes (`lag`, `rate_so_far`, `window_rate`, `window_count`, `time_since_event`). Declared history columns are checked against the data and rebuilt on every shuffle; undeclared columns that equal a standard recipe raise a warning. The summary table leads with the mean excess, with median [IQR] beside it, and permutation p values use only shuffles on which the score is defined. The R port does not yet have the `model`/`features` interface; there, pass a rebuild function.
 
 ## Changes in 3.0.0
 

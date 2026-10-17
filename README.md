@@ -49,7 +49,38 @@ Threshold 0.153; 200 within-patient shuffles per patient (seed 1); history rule:
 
 The rate so far knows nothing about the days. Pooled, its AUC is 0.65; per patient it is 0.36, below 0.5 because the record is finished; against its shuffled baseline the excess is zero.
 
+## A fitted model in one call
+
+For a fitted model (scikit-learn or anything with `predict_proba`), give the data, the model and its input columns. Name every input computed from the patient's earlier outcomes in `history`; wheneval checks each against the data, recomputes it on every shuffle and keeps all other inputs fixed.
+
+```python
+result = we.evaluate(data, patient_id="patient_id", time="day", outcome="outcome",
+                     model=fitted_model, features=["glucose", "steps", "rate_7", "last"],
+                     history={"rate_7": we.window_rate(7), "last": we.lag(1)})
+```
+
+Recipes: `we.lag(k)`, `we.rate_so_far()`, `we.window_rate(w)`, `we.window_count(w)`, `we.time_since_event()`. `history` is optional; an undeclared column that equals a standard recipe raises a warning. Inputs no recipe covers: pass a feature function, `features=make_features`, which receives one patient's rows with the shuffled outcomes and returns the model's inputs. See `code/wheneval/README.md`.
+
 `history_rule` takes the built-in rules `"rate_so_far"`, `"window_count"` (with `window=`) and `"lagged_outcomes"` (history inputs for a model trained on other patients); `we.refit(fit_predict, folds=5)` for a model fitted on the patient's own record by cross-validation, which is refitted in every shuffle; or any function `f(y, scored, rows)` that predicts again from one patient's shuffled outcomes (`open_data/fitted_model_package.py` does this for the CTN-0094 model). With `prediction=None` the package makes the predictions itself from the rule. The default measures are the AUC, average precision, sensitivity, specificity, PPV, NPV, net benefit, Brier skill and the calibration slope; any function `f(y, p)` can be added. Pooled and per-patient scores are reported for comparison only. See `code/wheneval/README.md` and, for R (`library(wheneval)`), `code/whenevalR/README.md`.
+
+## Figures and tables of the posted version (v32)
+
+| Paper item | Script | Inputs and outputs |
+|---|---|---|
+| Figure 1 (who and when, invented example) | `figures/v19/fig_F1.py`, then `figures/v22/revise_figures.py` | `results/v19/F1_numbers.csv`; `figures/v22/F1` |
+| Figure 2 (Clara's record, rate so far) | `figures/v19/fig_F2.py`, then `figures/v21/make_figures.py` | `results/v19/F2_numbers.csv`, `results/v13/A2b_flip_curve.csv`; `figures/v21/F2` |
+| Figure 3 (rebuilding procedure, worked example) | `figures/v19/fig_F4.py`, then `figures/v20/draw_figures.py` | `results/v19/F4_numbers.csv`; `figures/v20/F3` |
+| Figure 4 (two no-skill forecasts, four references, CTN-0094) | `figures/v19/fig_F5.py`, then `figures/v22/revise_figures.py` | `results/v19/F5_numbers.csv` (from the cohort outputs in `open_data/results/v10/`); `figures/v22/F4` |
+| Figure 5 (fitted model and its patient baselines) | `code/v19_fitted_patient_baselines.py` (needs the provider data), then `figures/v23/draw_f5.py` | `results/v19/F9_patients.csv` (not distributed: one row per patient), `figures/v23/mean_auc_numbers.json`; `figures/v23/F5` |
+| Figure 6, Supplement Figure S3 (seizure forecast reconstruction) | `code/v19_goldenholz_cohorts.py`, then `figures/v20/draw_figures.py` | `results/v19/F6_cohorts.csv`, `results/v14/B1_goldenholz_pooled.csv`; `figures/v20/F6`, `S3` |
+| Figures 7 and 8, Supplement Tables S10-S13 (ranking simulation) | `code/ranking_sim.py --extra-pair`, `code/v19_long_record_truth.py`, `code/v19_finite_horizon.py`, `code/v19_finite_horizon_measures.py`, `code/v19_ranking_mc.py`; then `figures/v20/draw_figures.py` | `open_data/results/v10/ranking_sim.json`, `results/v19/A2_*`, `A3_*`, `A4_*`, `S6_*`; `figures/v20/F7`, `F8` |
+| Mean excess with standard error (Table S14) | `code/v19_mean_excess.py` | `results/v19/A1_mean_excess.csv` |
+| Block shuffles (Table S15) | `open_data/block_shuffle.py` | `open_data/results/v16/block_results.md` |
+| Supplement Figure S1 (size of the finite-record bias) | `figures/v19/fig_F3.py` | `results/history_bias_grid.json`, `results/v19/F3_numbers.csv`; `figures/v19/F3` |
+| Supplement Figure S2 (flipped rate so far) | `figures/v20/draw_figures.py` | `results/v13/A2b_flip_curve.csv`; `figures/v20/S2` |
+| PubMed counts (Supplement S9) | `code/v19_pubmed_totals.py` | `results/v19/F8_numbers.csv` |
+
+Earlier analyses, listed by content:
 
 ## Analyses, tables and figures
 

@@ -198,7 +198,7 @@ class TestReleaseMetadata(unittest.TestCase):
     def test_distribution_metadata_and_license(self):
         root = Path(__file__).resolve().parents[1]
         project = (root / "pyproject.toml").read_text()
-        self.assertIn('version = "3.0.0"', project)
+        self.assertIn('version = "3.1.0"', project)
         self.assertIn('readme = "README.md"', project)
         self.assertTrue((root / "LICENSE").is_file())
         self.assertIn("Copyright (c) 2026 Wesley Remy", (root / "LICENSE").read_text())

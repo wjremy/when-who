@@ -129,8 +129,8 @@ print.wheneval_evaluation <- function(x, ...) {
       if (length(value) != 1L || is.na(value) || !is.finite(value)) return(as.character(value))
       formatC(value, digits = 3, format = "f")
     }
-    cat("| Metric | Score (mean) | Shuffled baseline (mean) | Excess (median [IQR]) | Excess > 0 | p < 0.05 | Patients | Pooled score (for comparison) | Per-patient score (mean; for comparison) |\n")
-    cat("|---|---:|---:|---:|---:|---:|---:|---:|---:|\n")
+    cat("| Metric | Score (mean) | Shuffled baseline (mean) | Excess (mean) | Excess (median [IQR]) | Excess > 0 | p < 0.05 | Patients | Pooled score (for comparison) | Per-patient score (mean; for comparison) |\n")
+    cat("|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|\n")
     for (name in names(x$metrics)) {
       z <- x$metrics[[name]]
       s <- z$summary; comparison <- z$comparison
@@ -138,11 +138,11 @@ print.wheneval_evaluation <- function(x, ...) {
         row <- c("Calibration slope (conditional, all patients)", fmt(comparison$conditional_within_slope),
           fmt(comparison$conditional_within_slope_shuffled_baseline),
           paste0(fmt(comparison$conditional_within_slope_excess), " (p = ", fmt(comparison$conditional_within_slope_p), ")"),
-          "", "", as.character(s$n_eligible), fmt(comparison$pooled), "")
+          "", "", "", as.character(s$n_eligible), fmt(comparison$pooled), "")
         cat(paste0("| ", paste(row, collapse = " | "), " |\n"))
         next
       }
-      row <- c(name, fmt(s$mean_score), fmt(s$mean_shuffled_baseline),
+      row <- c(name, fmt(s$mean_score), fmt(s$mean_shuffled_baseline), fmt(s$mean_excess),
         paste0(fmt(s$median_excess), " [", fmt(s$iqr_excess[[1L]]), ", ", fmt(s$iqr_excess[[2L]]), "]"),
         if (is.finite(s$share_excess_positive)) sprintf("%.0f%%", 100 * s$share_excess_positive) else "nan",
         if (is.finite(s$share_p_below_0_05)) sprintf("%.0f%%", 100 * s$share_p_below_0_05) else "nan",

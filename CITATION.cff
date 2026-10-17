@@ -20,8 +20,8 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.23269933"
     description: "All versions (concept DOI)"
-version: "3.0.0"
-date-released: "2026-10-12"
+version: "3.1.0"
+date-released: "2026-10-17"
 keywords:
   - clinical prediction
   - repeated forecasts

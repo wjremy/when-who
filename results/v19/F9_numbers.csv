@@ -1,0 +1,4 @@
+cohort,patients,mean_auc,mean_shuffled_baseline,share_above_diagonal,share_baseline_below_0_5,share_auc_below_0_5,baseline_min,baseline_median,baseline_max
+CTN-0094,154,0.638,0.3996,0.8052,0.9935,0.3052,0.2308,0.4192,0.5073
+REPLACE-BG,42,0.7594,0.4847,0.9762,0.881,0.0238,0.4456,0.4858,0.5096
+College Experience Study,37,0.8003,0.4845,1.0,1.0,0.0541,0.4442,0.4875,0.4996

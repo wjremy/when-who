@@ -138,7 +138,7 @@ test_that("the v2 print method puts tailored results first", {
     runin = 4, n_shuffles = 3, metrics = "auc")
   printed <- capture.output(print(result))
   expect_true(grepl("Shuffled baseline", printed[[1L]], fixed = TRUE))
-  expect_true(grepl("| Metric | Score (mean) | Shuffled baseline (mean) | Excess (median [IQR]) |", printed[[1L]], fixed = TRUE))
+  expect_true(grepl("| Metric | Score (mean) | Shuffled baseline (mean) | Excess (mean) | Excess (median [IQR]) |", printed[[1L]], fixed = TRUE))
   expect_true(grepl("auc", printed[[3L]], fixed = TRUE))
   expect_true(grepl("Threshold", printed[[length(printed)]], fixed = TRUE))
 })

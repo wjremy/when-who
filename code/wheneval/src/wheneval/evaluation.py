@@ -11,6 +11,7 @@ import pandas as pd
 
 from .metrics import _check_missing, _outcomes, _probabilities, auc, conditional_within_slope
 from .nine import average_precision, naive_metrics, nine_metrics
+from .history import HistoryFeature, _candidates, _same
 
 METRICS = ("auc", "average_precision", "sensitivity", "specificity", "ppv", "npv",
            "net_benefit", "brier_skill", "calibration_slope")
@@ -39,6 +40,108 @@ def refit(fit_predict: Any, folds: int = 5) -> dict[str, Any]:
     if isinstance(folds, bool) or not isinstance(folds, Integral) or int(folds) < 2:
         raise ValueError("folds must be an integer of at least 2")
     return {"name": "refit", "fit_predict": fit_predict, "folds": int(folds)}
+
+
+def _predict(model: Any, X: Any) -> np.ndarray:
+    """Event probabilities from a fitted model: predict_proba (positive class), a callable, or predict."""
+    if hasattr(model, "predict_proba"):
+        out = np.asarray(model.predict_proba(X), dtype=float)
+        return out[:, -1] if out.ndim == 2 else out
+    if callable(model):
+        return np.asarray(model(X), dtype=float)
+    if hasattr(model, "predict"):
+        return np.asarray(model.predict(X), dtype=float)
+    raise TypeError("model needs predict_proba or predict, or must be a callable f(X)")
+
+
+def _model_rule(data: pd.DataFrame, patient_id: Any, time: Optional[str], outcome: str,
+                model: Any, features: Any, history: Any) -> tuple[Any, Optional[np.ndarray]]:
+    """Turn model + features (+ history) into a rebuild rule.
+
+    Returns (rule, fixed_predictions): a callable rule when some input depends on the
+    outcomes, otherwise fixed predictions for every row.
+    """
+    if features is None:
+        raise ValueError("model requires features: a list of columns or a function f(rows) -> inputs")
+    hist = {} if history is None else dict(history)
+    for col, recipe in hist.items():
+        if not isinstance(recipe, HistoryFeature):
+            raise TypeError(f"history[{col!r}] must be a recipe such as we.lag(1) or we.window_rate(7)")
+    if callable(features):
+        if hist:
+            raise ValueError("history applies to a list of feature columns; a features function "
+                             "must recompute its own history inputs from the outcome column")
+        if time is None:
+            raise ValueError("time is required with a features function")
+
+        def rule(y, scored, frame):
+            rows = frame.copy()
+            rows[outcome] = np.asarray(y)
+            return _predict(model, features(rows))
+        return rule, None
+    cols = [features] if isinstance(features, str) else list(features)
+    missing = [c for c in cols if c not in data]
+    if missing:
+        raise ValueError(f"missing feature columns: {', '.join(map(str, missing))}")
+    if outcome in cols:
+        raise ValueError("the outcome itself cannot be a feature")
+    stray = [c for c in hist if c not in cols]
+    if stray:
+        raise ValueError(f"history columns are not among the features: {', '.join(map(str, stray))}")
+    if time is None:
+        raise ValueError("time is required to check and rebuild history features")
+
+    # One pass over patients in time order: check declared recipes, look for undeclared ones.
+    undeclared = [c for c in cols if c not in hist and pd.api.types.is_numeric_dtype(data[c])]
+    cands = _candidates()
+    found: dict[Any, list[np.ndarray]] = {c: [] for c in undeclared}
+    built: dict[int, list[np.ndarray]] = {i: [] for i in range(len(cands))}
+    pid = data[patient_id].to_numpy()
+    times_all = data[time].to_numpy()
+    y_all = data[outcome].to_numpy()
+    for key in pd.unique(pid):
+        ix = np.flatnonzero(pid == key)
+        ix = ix[np.argsort(times_all[ix], kind="stable")]
+        y = y_all[ix].astype(float)
+        t = times_all[ix]
+        stops = np.searchsorted(t, t, side="left").astype(int)
+        for col, recipe in hist.items():
+            got = recipe.compute(y, stops, t)
+            have = data[col].to_numpy(dtype=float)[ix]
+            bad = np.isfinite(got) & ~(np.isfinite(have) & np.isclose(got, have, rtol=0, atol=1e-7))
+            if bad.any():
+                r = int(np.flatnonzero(bad)[0])
+                raise ValueError(f"history column {col!r} is not {recipe!r} of {outcome!r}: patient {key!r}, "
+                                 f"time {t[r]!r} has {have[r]!r}, the recipe gives {got[r]!r}")
+        if undeclared:
+            for c in undeclared:
+                found[c].append(data[c].to_numpy(dtype=float)[ix])
+            for i, recipe in enumerate(cands):
+                built[i].append(recipe.compute(y, stops, t))
+    for c in undeclared:
+        have = np.concatenate(found[c]) if found[c] else np.array([])
+        for i, recipe in enumerate(cands):
+            if len(have) and _same(np.concatenate(built[i]), have):
+                warnings.warn(f"feature column {c!r} equals the {recipe.label} ({recipe!r}): it looks computed "
+                              f"from the outcome. If so, pass history={{{c!r}: {recipe!r}}}; otherwise "
+                              f"the shuffled baseline keeps it fixed and misses the finite-record bias.",
+                              UserWarning, stacklevel=3)
+                break
+
+    if not hist:
+        return None, _predict(model, data[cols])
+
+    def rule(y, scored, frame):
+        rows = frame.copy()
+        t = rows[time].to_numpy()
+        stops = np.searchsorted(t, t, side="left").astype(int)
+        for col, recipe in hist.items():
+            new = recipe.compute(np.asarray(y, dtype=float), stops, t)
+            old = rows[col].to_numpy(dtype=float)
+            # Rows without history keep their value: it does not depend on the outcomes.
+            rows[col] = np.where(np.isfinite(new), new, old)
+        return _predict(model, rows[cols])
+    return rule, None
 
 def _select_metrics(metrics: Any) -> tuple[dict[str, Any], list[str]]:
     if metrics is None:
@@ -404,7 +507,8 @@ def evaluate(data: pd.DataFrame, patient_id: Any = _UNSET, time: Optional[str] =
              history_rule: Any = _UNSET, window: Optional[int] = None,
              runin: Optional[float] = None, threshold: Optional[float] = None,
              metrics: Any = None, n_shuffles: Any = _UNSET, seed: int = 0,
-             yardstick: Any = None, baseline: Any = _UNSET, **legacy: Any) -> dict[str, Any]:
+             yardstick: Any = None, baseline: Any = _UNSET, model: Any = None,
+             features: Any = None, history: Any = None, **legacy: Any) -> dict[str, Any]:
     """Score repeated forecasts against a within-patient shuffled baseline.
 
     ``runin`` is a time cutoff: earlier outcomes remain in history but are not
@@ -423,6 +527,15 @@ def evaluate(data: pd.DataFrame, patient_id: Any = _UNSET, time: Optional[str] =
     ``seed``. ``baseline`` is the mean (default) or median of each patient's
     shuffled score distribution. The old keyword names ``patient``,
     ``forecast``, ``rebuild``, ``n_perm`` and ``chance`` remain accepted.
+
+    The simplest call gives a fitted ``model`` and its ``features``: a list of
+    columns, or a function ``f(rows) -> inputs`` applied to one patient's rows in
+    time order with the outcome column filled in. Columns computed from the
+    outcome are named in ``history`` with a recipe, e.g.
+    ``history={"rate_7": we.window_rate(7), "last": we.lag(1)}``; they are checked
+    against the data and recomputed on every shuffle, and every other column is
+    kept fixed. Undeclared columns that match a standard recipe raise a warning.
+    Observed predictions are computed from the model.
     """
     alias_map = {"patient": "patient_id", "forecast": "prediction",
                  "rebuild": "history_rule", "n_perm": "n_shuffles", "chance": "baseline"}
@@ -442,6 +555,24 @@ def evaluate(data: pd.DataFrame, patient_id: Any = _UNSET, time: Optional[str] =
     history_rule = None if values["history_rule"] is _UNSET else values["history_rule"]
     n_shuffles = 200 if values["n_shuffles"] is _UNSET else values["n_shuffles"]
     baseline = "mean" if values["baseline"] is _UNSET else values["baseline"]
+    if model is not None:
+        if history_rule is not None:
+            raise ValueError("give either model (with features and history) or history_rule, not both")
+        if values["prediction"] is not _UNSET:
+            raise ValueError("with model, leave prediction out: predictions are computed from the model")
+        if not isinstance(data, pd.DataFrame):
+            raise TypeError("data must be a pandas DataFrame")
+        for col in [patient_id, outcome] + ([time] if time is not None else []):
+            if col not in data:
+                raise ValueError(f"missing dataframe columns: {col}")
+        rule, fixed = _model_rule(data, patient_id, time, outcome, model, features, history)
+        if fixed is not None:
+            prediction = "__wheneval_prediction"
+            data = data.assign(**{prediction: fixed})
+        else:
+            history_rule, prediction = rule, None
+    elif features is not None or history is not None:
+        raise ValueError("features and history need a model")
 
     if baseline not in {"mean", "median"}:
         raise ValueError("baseline must be 'mean' or 'median'")
@@ -651,7 +782,9 @@ def evaluate(data: pd.DataFrame, patient_id: Any = _UNSET, time: Optional[str] =
             if not np.isfinite(value) or not finite.any():
                 continue
             shuffled_baseline = float(np.mean(null[finite]) if baseline == "mean" else np.median(null[finite]))
-            p_value = float((int(np.sum(null[finite] >= value)) + 1) / (n_shuffles + 1))
+            # Denominator: the shuffles on which the measure is defined (B_D), the same shuffles
+            # the baseline averages (Proposition 2).
+            p_value = float((int(np.sum(null[finite] >= value)) + 1) / (int(finite.sum()) + 1))
             target = output.setdefault(name, {"per_patient": {}, "comparison": {}})
             target["per_patient"][key] = {
                 "score": float(value), "shuffled_baseline": shuffled_baseline,
@@ -715,7 +848,7 @@ def evaluate(data: pd.DataFrame, patient_id: Any = _UNSET, time: Optional[str] =
                         target["comparison"]["conditional_within_slope_shuffled_baseline"] = level
                         target["comparison"]["conditional_within_slope_excess"] = float(observed_slope - level)
                         target["comparison"]["conditional_within_slope_p"] = float(
-                            (int(np.sum(nulls[ok] >= observed_slope)) + 1) / (int(n_shuffles) + 1))
+                            (int(np.sum(nulls[ok] >= observed_slope)) + 1) / (int(ok.sum()) + 1))
         else:
             vals = [entry["score"] for entry in per]
             if name in custom:
@@ -780,7 +913,7 @@ def to_markdown(result: dict[str, Any]) -> str:
     def fmt(value: Any) -> str:
         return f"{value:.3f}" if isinstance(value, (float, np.floating)) and np.isfinite(value) else str(value)
 
-    headers = ("Metric", "Score (mean)", "Shuffled baseline (mean)", "Excess (median [IQR])",
+    headers = ("Metric", "Score (mean)", "Shuffled baseline (mean)", "Excess (mean)", "Excess (median [IQR])",
                "Excess > 0", "p < 0.05", "Patients", "Pooled score (for comparison)",
                "Per-patient score (mean; for comparison)")
     lines = ["| " + " | ".join(headers) + " |", "|---|" + "|".join(["---:"] * (len(headers) - 1)) + "|"]
@@ -789,6 +922,7 @@ def to_markdown(result: dict[str, Any]) -> str:
         q25, q75 = summary["iqr_excess"]
         row = [name, fmt(summary.get("mean_score", float("nan"))),
                fmt(summary.get("mean_shuffled_baseline", float("nan"))),
+               fmt(summary.get("mean_excess", float("nan"))),
                f"{fmt(summary['median_excess'])} [{fmt(q25)}, {fmt(q75)}]",
                f"{summary['share_excess_positive']:.0%}" if np.isfinite(summary["share_excess_positive"]) else "nan",
                f"{summary['share_p_below_0_05']:.0%}" if np.isfinite(summary["share_p_below_0_05"]) else "nan",
@@ -798,7 +932,7 @@ def to_markdown(result: dict[str, Any]) -> str:
             row = ["Calibration slope (conditional, all patients)", fmt(comparison["conditional_within_slope"]),
                    fmt(comparison["conditional_within_slope_shuffled_baseline"]),
                    f"{fmt(comparison['conditional_within_slope_excess'])} (p = {fmt(comparison['conditional_within_slope_p'])})",
-                   "", "", str(summary["n_eligible"]), fmt(comparison.get("pooled", float("nan"))), ""]
+                   "", "", "", str(summary["n_eligible"]), fmt(comparison.get("pooled", float("nan"))), ""]
         lines.append("| " + " | ".join(row) + " |")
     settings = result.get("settings", {})
     lines.append("")

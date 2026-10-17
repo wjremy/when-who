@@ -77,7 +77,7 @@ class TestWithinPatient(unittest.TestCase):
                 output = StringIO()
                 with patch.object(sys, "argv", argv), redirect_stdout(output):
                     runpy.run_module("wheneval", run_name="__main__")
-                self.assertIn("| Metric | Score (mean) | Shuffled baseline (mean) | Excess (median [IQR]) |", output.getvalue())
+                self.assertIn("| Metric | Score (mean) | Shuffled baseline (mean) | Excess (mean) | Excess (median [IQR]) |", output.getvalue())
 
 
 class TestChecklistAdditions(unittest.TestCase):

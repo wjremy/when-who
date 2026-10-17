@@ -673,7 +673,7 @@ evaluate <- function(data, patient_id = "patient_id", time = "time", outcome = "
       finite <- is.finite(null)
       if (!is.finite(value) || !any(finite)) next
       shuffled_baseline <- if (baseline == "mean") mean(null[finite]) else median(null[finite])
-      pvalue <- (sum(null[finite] >= value) + 1) / (as.integer(n_shuffles) + 1)
+      pvalue <- (sum(null[finite] >= value) + 1) / (sum(finite) + 1)  # B_D: shuffles on which the measure is defined (Proposition 2)
       result_metrics[[name]]$per_patient[[key]] <- list(score = value, shuffled_baseline = shuffled_baseline,
         excess = value - shuffled_baseline, p_value = pvalue, n_scored = ns)
     }
@@ -713,7 +713,7 @@ evaluate <- function(data, patient_id = "patient_id", time = "time", outcome = "
             level <- if (baseline == "mean") mean(null_slopes[ok]) else median(null_slopes[ok])
             comparison$conditional_within_slope_shuffled_baseline <- level
             comparison$conditional_within_slope_excess <- observed_slope - level
-            comparison$conditional_within_slope_p <- (sum(null_slopes[ok] >= observed_slope) + 1) / (as.integer(n_shuffles) + 1)
+            comparison$conditional_within_slope_p <- (sum(null_slopes[ok] >= observed_slope) + 1) / (sum(ok) + 1)
           }
         }
       }

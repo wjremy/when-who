@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "wheneval"
-version = "3.0.0"
+version = "3.1.0"
 description = "Pooled and within-patient evaluation quantities for repeated binary forecasts"
 readme = "README.md"
 requires-python = ">=3.9"

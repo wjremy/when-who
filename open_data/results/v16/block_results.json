@@ -1,0 +1,504 @@
+{
+  "metadata": {
+    "seed": 20261009,
+    "permutations": 200,
+    "quick": false,
+    "model_fit_policy": "Reuse the existing fit functions, splits, model seeds, preprocessing, and fitted estimators; fit once and keep models fixed for all shuffles.",
+    "p_value_convention": "One-sided upper-tail empirical p=(1 + count(shuffled patient AUC >= observed patient AUC))/(N_PERM + 1); the reported share is the fraction strictly below 0.05.",
+    "block_definition": "Within each patient, sort scored rows by the cohort time index and chunk into consecutive blocks of the specified scored-row length; the last block may be shorter. Outcomes are shuffled only within each block.",
+    "history_rebuild": "Each shuffled target vector is passed to the existing score_permutation callback, which invokes the unchanged cohort-specific history rebuild function and rescoring pipeline with fixed fitted estimators.",
+    "history_rebuild_functions": {
+      "replace_bg": "replace_build_histories",
+      "ctn0094": "ctn_rebuild_histories",
+      "ces": "ces_rebuild_histories"
+    },
+    "shuffle_units": {
+      "replace_bg": {
+        "time_column": "night_index",
+        "time_unit": "scored night (night_index; daily/nightly steps)",
+        "block_lengths": [
+          7,
+          14
+        ]
+      },
+      "ctn0094": {
+        "time_column": "study_week",
+        "time_unit": "observed scored study week",
+        "block_lengths": [
+          4,
+          8
+        ]
+      },
+      "ces": {
+        "time_column": "date",
+        "time_unit": "scored complete-report row (date-ordered; nominally daily)",
+        "block_lengths": [
+          7,
+          14
+        ]
+      }
+    },
+    "ctn_full_shuffle_check": {
+      "passed": true,
+      "rounded_observed": [
+        0.64,
+        0.4,
+        0.26,
+        0.05,
+        0.46,
+        36
+      ],
+      "expected": [
+        0.64,
+        0.4,
+        0.26,
+        0.05,
+        0.46,
+        36
+      ]
+    }
+  },
+  "cohorts": {
+    "replace_bg": {
+      "label": "REPLACE-BG",
+      "time_column": "night_index",
+      "time_unit": "scored night (night_index; daily/nightly steps)",
+      "test_patients": 45,
+      "test_scored_rows": 9477,
+      "selected_gb_iterations": 200,
+      "observed_reproduction_checks": {
+        "logistic_regression": {
+          "recomputed": {
+            "mean": 0.7513418508829076,
+            "median": 0.7789232202262142,
+            "share_gt_0_5": 0.9761904761904762,
+            "eligible": 42
+          },
+          "cases_extra_results": {
+            "mean": 0.7513418508829076,
+            "median": 0.7789232202262142,
+            "share_gt_0_5": 0.9761904761904762,
+            "eligible": 42
+          }
+        },
+        "gradient_boosting": {
+          "recomputed": {
+            "mean": 0.7593517215709531,
+            "median": 0.7752923639899687,
+            "share_gt_0_5": 0.9761904761904762,
+            "eligible": 42
+          },
+          "cases_extra_results": {
+            "mean": 0.7593517215709531,
+            "median": 0.7752923639899687,
+            "share_gt_0_5": 0.9761904761904762,
+            "eligible": 42
+          }
+        },
+        "table4_gradient_boosting_rounded": {
+          "recomputed": {
+            "median_auc": 0.78,
+            "share_gt_0_5": 0.98,
+            "mean_auc": 0.76
+          },
+          "expected": {
+            "median_auc": 0.78,
+            "share_gt_0_5": 0.98,
+            "mean_auc": 0.76
+          },
+          "passed": true
+        }
+      },
+      "models": {
+        "logistic_regression": {
+          "eligible_patients": 42,
+          "shuffles": {
+            "full": {
+              "n_patients": 42,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.7513418508829076,
+              "mean_shuffled_baseline": 0.491423389389817,
+              "mean_excess": 0.25991846149309056,
+              "median_excess": 0.2947553517665131,
+              "excess_iqr": [
+                0.17197797411155216,
+                0.34130348100175667
+              ],
+              "share_permutation_p_below_0_05": 0.8095238095238095,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            },
+            "block_7": {
+              "n_patients": 42,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.7513418508829076,
+              "mean_shuffled_baseline": 0.5456007006451978,
+              "mean_excess": 0.20574115023770975,
+              "median_excess": 0.22839454945054938,
+              "excess_iqr": [
+                0.13460763316801436,
+                0.26994131723146664
+              ],
+              "share_permutation_p_below_0_05": 0.6666666666666666,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            },
+            "block_14": {
+              "n_patients": 42,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.7513418508829076,
+              "mean_shuffled_baseline": 0.5251286589270716,
+              "mean_excess": 0.22621319195583597,
+              "median_excess": 0.24059844336824887,
+              "excess_iqr": [
+                0.15465464517688177,
+                0.2988758931811992
+              ],
+              "share_permutation_p_below_0_05": 0.7380952380952381,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            }
+          }
+        },
+        "gradient_boosting": {
+          "eligible_patients": 42,
+          "shuffles": {
+            "full": {
+              "n_patients": 42,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.7593517215709531,
+              "mean_shuffled_baseline": 0.4846744543388748,
+              "mean_excess": 0.2746772672320783,
+              "median_excess": 0.2921093869002285,
+              "excess_iqr": [
+                0.18916412346215938,
+                0.35101058308696886
+              ],
+              "share_permutation_p_below_0_05": 0.8333333333333334,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            },
+            "block_7": {
+              "n_patients": 42,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.7593517215709531,
+              "mean_shuffled_baseline": 0.5504858015724932,
+              "mean_excess": 0.2088659199984598,
+              "median_excess": 0.22237093124482235,
+              "excess_iqr": [
+                0.13493732985480963,
+                0.2769484572222366
+              ],
+              "share_permutation_p_below_0_05": 0.7142857142857143,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            },
+            "block_14": {
+              "n_patients": 42,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.7593517215709531,
+              "mean_shuffled_baseline": 0.52355427994964,
+              "mean_excess": 0.23579744162131305,
+              "median_excess": 0.24908411900599403,
+              "excess_iqr": [
+                0.1721659384498482,
+                0.29972205382309525
+              ],
+              "share_permutation_p_below_0_05": 0.7619047619047619,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            }
+          }
+        }
+      }
+    },
+    "ctn0094": {
+      "label": "CTN-0094 weekly",
+      "time_column": "study_week",
+      "time_unit": "observed scored study week",
+      "test_patients": 246,
+      "test_scored_rows": 4237,
+      "selected_gb_iterations": 100,
+      "observed_reproduction_checks": {
+        "logistic_regression": {
+          "recomputed": {
+            "mean": 0.6469516078689742,
+            "median": 0.6837719298245615,
+            "share_gt_0_5": 0.7012987012987013,
+            "eligible": 154
+          },
+          "cases_extra_results": {
+            "mean": 0.6469516078689742,
+            "median": 0.6837719298245615,
+            "share_gt_0_5": 0.7012987012987013,
+            "eligible": 154
+          }
+        },
+        "gradient_boosting": {
+          "recomputed": {
+            "mean": 0.638022582804176,
+            "median": 0.6899038461538461,
+            "share_gt_0_5": 0.6623376623376623,
+            "eligible": 154
+          },
+          "cases_extra_results": {
+            "mean": 0.638022582804176,
+            "median": 0.6899038461538461,
+            "share_gt_0_5": 0.6623376623376623,
+            "eligible": 154
+          }
+        },
+        "table4_gradient_boosting_rounded": {
+          "recomputed": {
+            "median_auc": 0.69,
+            "share_gt_0_5": 0.66,
+            "mean_auc": 0.64
+          },
+          "expected": {
+            "median_auc": 0.69,
+            "share_gt_0_5": 0.66,
+            "mean_auc": 0.64
+          },
+          "passed": true
+        }
+      },
+      "models": {
+        "logistic_regression": {
+          "eligible_patients": 154,
+          "shuffles": {
+            "full": {
+              "n_patients": 154,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.6469516078689742,
+              "mean_shuffled_baseline": 0.40471715655633905,
+              "mean_excess": 0.24223445131263516,
+              "median_excess": 0.2780238095238096,
+              "excess_iqr": [
+                0.04166666666666678,
+                0.43367234848484837
+              ],
+              "share_permutation_p_below_0_05": 0.38961038961038963,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            },
+            "block_4": {
+              "n_patients": 154,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.6469516078689742,
+              "mean_shuffled_baseline": 0.5623333126849225,
+              "mean_excess": 0.08461829518405173,
+              "median_excess": 0.07147549019607834,
+              "excess_iqr": [
+                -1.1102230246251565e-15,
+                0.16018973214285742
+              ],
+              "share_permutation_p_below_0_05": 0.07792207792207792,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            },
+            "block_8": {
+              "n_patients": 154,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.6469516078689742,
+              "mean_shuffled_baseline": 0.50929056352206,
+              "mean_excess": 0.13766104434691417,
+              "median_excess": 0.09408333333333319,
+              "excess_iqr": [
+                0.00806082589285706,
+                0.2852388392857143
+              ],
+              "share_permutation_p_below_0_05": 0.22077922077922077,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            }
+          }
+        },
+        "gradient_boosting": {
+          "eligible_patients": 154,
+          "shuffles": {
+            "full": {
+              "n_patients": 154,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.638022582804176,
+              "mean_shuffled_baseline": 0.3995840012252755,
+              "mean_excess": 0.23843858157890055,
+              "median_excess": 0.26345486111111116,
+              "excess_iqr": [
+                0.05029947916666662,
+                0.4573684210526312
+              ],
+              "share_permutation_p_below_0_05": 0.35714285714285715,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            },
+            "block_4": {
+              "n_patients": 154,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.638022582804176,
+              "mean_shuffled_baseline": 0.540064337642121,
+              "mean_excess": 0.09795824516205505,
+              "median_excess": 0.07185185185185178,
+              "excess_iqr": [
+                -0.014431547619047722,
+                0.1764311079545454
+              ],
+              "share_permutation_p_below_0_05": 0.07792207792207792,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            },
+            "block_8": {
+              "n_patients": 154,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.638022582804176,
+              "mean_shuffled_baseline": 0.48589067854458784,
+              "mean_excess": 0.15213190425958825,
+              "median_excess": 0.13504901960784294,
+              "excess_iqr": [
+                0.008470737390350813,
+                0.29021875000000014
+              ],
+              "share_permutation_p_below_0_05": 0.18831168831168832,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            }
+          }
+        }
+      }
+    },
+    "ces": {
+      "label": "College Experience",
+      "time_column": "date",
+      "time_unit": "scored complete-report row (date-ordered; nominally daily)",
+      "test_patients": 38,
+      "test_scored_rows": 6361,
+      "selected_gb_iterations": 200,
+      "observed_reproduction_checks": {
+        "logistic_regression": {
+          "recomputed": {
+            "mean": 0.8055983136687709,
+            "median": 0.8196649029982364,
+            "share_gt_0_5": 0.9459459459459459,
+            "eligible": 37
+          },
+          "cases_extra_results": {
+            "mean": 0.8055983136687709,
+            "median": 0.8196649029982364,
+            "share_gt_0_5": 0.9459459459459459,
+            "eligible": 37
+          }
+        },
+        "gradient_boosting": {
+          "recomputed": {
+            "mean": 0.800308448089229,
+            "median": 0.8174603174603174,
+            "share_gt_0_5": 0.9459459459459459,
+            "eligible": 37
+          },
+          "cases_extra_results": {
+            "mean": 0.800308448089229,
+            "median": 0.8174603174603174,
+            "share_gt_0_5": 0.9459459459459459,
+            "eligible": 37
+          }
+        },
+        "table4_gradient_boosting_rounded": {
+          "recomputed": {
+            "median_auc": 0.82,
+            "share_gt_0_5": 0.95,
+            "mean_auc": 0.8
+          },
+          "expected": {
+            "median_auc": 0.82,
+            "share_gt_0_5": 0.95,
+            "mean_auc": 0.8
+          },
+          "passed": true
+        }
+      },
+      "models": {
+        "logistic_regression": {
+          "eligible_patients": 37,
+          "shuffles": {
+            "full": {
+              "n_patients": 37,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.8055983136687709,
+              "mean_shuffled_baseline": 0.48926958165618445,
+              "mean_excess": 0.3163287320125866,
+              "median_excess": 0.33708020050125315,
+              "excess_iqr": [
+                0.27535351089588367,
+                0.4031746031746033
+              ],
+              "share_permutation_p_below_0_05": 0.8648648648648649,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            },
+            "block_7": {
+              "n_patients": 37,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.8055983136687709,
+              "mean_shuffled_baseline": 0.7834726945083546,
+              "mean_excess": 0.022125619160416516,
+              "median_excess": 0.0192577452667817,
+              "excess_iqr": [
+                0.0032495590828927057,
+                0.06334395903010037
+              ],
+              "share_permutation_p_below_0_05": 0.24324324324324326,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            },
+            "block_14": {
+              "n_patients": 37,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.8055983136687709,
+              "mean_shuffled_baseline": 0.7304836597680759,
+              "mean_excess": 0.0751146539006949,
+              "median_excess": 0.047415254237287985,
+              "excess_iqr": [
+                0.03030034046692609,
+                0.1113788335847159
+              ],
+              "share_permutation_p_below_0_05": 0.5135135135135135,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            }
+          }
+        },
+        "gradient_boosting": {
+          "eligible_patients": 37,
+          "shuffles": {
+            "full": {
+              "n_patients": 37,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.800308448089229,
+              "mean_shuffled_baseline": 0.48447330109838216,
+              "mean_excess": 0.31583514699084686,
+              "median_excess": 0.33470160953177264,
+              "excess_iqr": [
+                0.27983568948412674,
+                0.4051067193675888
+              ],
+              "share_permutation_p_below_0_05": 0.8648648648648649,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            },
+            "block_7": {
+              "n_patients": 37,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.800308448089229,
+              "mean_shuffled_baseline": 0.7833610674661108,
+              "mean_excess": 0.016947380623118118,
+              "median_excess": 0.02016585514303093,
+              "excess_iqr": [
+                0.0008636363636370659,
+                0.058038793103448394
+              ],
+              "share_permutation_p_below_0_05": 0.24324324324324326,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            },
+            "block_14": {
+              "n_patients": 37,
+              "n_permutations": 200,
+              "mean_per_patient_auc": 0.800308448089229,
+              "mean_shuffled_baseline": 0.7297048515455429,
+              "mean_excess": 0.07060359654368616,
+              "median_excess": 0.05366525423728763,
+              "excess_iqr": [
+                0.03015568181818251,
+                0.1131070889894421
+              ],
+              "share_permutation_p_below_0_05": 0.4594594594594595,
+              "permutation_p_value_convention": "(1 + count(shuffled patient AUC >= observed patient AUC)) / (N_PERM + 1); one-sided upper tail"
+            }
+          }
+        }
+      }
+    }
+  }
+}

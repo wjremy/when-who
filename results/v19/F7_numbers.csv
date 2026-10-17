@@ -1,0 +1,19 @@
+cohort,patient_spread,record_days,patients,pair,metric,scoring,scoring_label,replications,share_a_ranks_above_b,equal_ranking_reference,mean_a_score,mean_b_score,seed,chance_shuffles_per_replication
+REPLACE-BG,low,30,50,A daily rho=0.4 vs B daily rho=0.3,auc,pooled,Pooled,500,0.11,0.5,0.6784928788124708,0.7068115775523358,20261011,50
+REPLACE-BG,low,30,50,A daily rho=0.4 vs B daily rho=0.3,auc,per_patient,Per-patient,500,0.004,0.5,0.599751544679751,0.6285777537959175,20261011,50
+REPLACE-BG,low,30,50,A daily rho=0.4 vs B daily rho=0.3,auc,shuffled_baseline,Shuffled-baseline,500,1.0,0.5,0.16798592139152935,0.12835058932261414,20261011,50
+REPLACE-BG,low,100,50,A daily rho=0.4 vs B daily rho=0.3,auc,pooled,Pooled,500,0.074,0.5,0.6909541467729446,0.7055904661537254,20261011,50
+REPLACE-BG,low,100,50,A daily rho=0.4 vs B daily rho=0.3,auc,per_patient,Per-patient,500,0.024,0.5,0.6131655522141904,0.6295650480813314,20261011,50
+REPLACE-BG,low,100,50,A daily rho=0.4 vs B daily rho=0.3,auc,shuffled_baseline,Shuffled-baseline,500,1.0,0.5,0.16284534846774565,0.1295548878490527,20261011,50
+REPLACE-BG,low,365,50,A daily rho=0.4 vs B daily rho=0.3,auc,pooled,Pooled,500,0.782,0.5,0.7074578955827185,0.7044958437216351,20261011,50
+REPLACE-BG,low,365,50,A daily rho=0.4 vs B daily rho=0.3,auc,per_patient,Per-patient,500,0.938,0.5,0.6381700964398808,0.6300010347580062,20261011,50
+REPLACE-BG,low,365,50,A daily rho=0.4 vs B daily rho=0.3,auc,shuffled_baseline,Shuffled-baseline,500,1.0,0.5,0.15994880518716792,0.13007409410415785,20261011,50
+CTN-0094,high,30,50,A daily rho=0.4 vs B daily rho=0.3,auc,pooled,Pooled,500,0.0,0.5,0.8249659101771378,0.8557241204911101,20261011,50
+CTN-0094,high,30,50,A daily rho=0.4 vs B daily rho=0.3,auc,per_patient,Per-patient,500,0.0,0.5,0.5229197292225048,0.611660074540824,20261011,50
+CTN-0094,high,30,50,A daily rho=0.4 vs B daily rho=0.3,auc,shuffled_baseline,Shuffled-baseline,500,0.486,0.5,0.11124967417834122,0.11125263859370466,20261011,50
+CTN-0094,high,100,50,A daily rho=0.4 vs B daily rho=0.3,auc,pooled,Pooled,500,0.0,0.5,0.8496141347865717,0.8581437135269355,20261011,50
+CTN-0094,high,100,50,A daily rho=0.4 vs B daily rho=0.3,auc,per_patient,Per-patient,500,0.006,0.5,0.5872179403130112,0.6151195820539421,20261011,50
+CTN-0094,high,100,50,A daily rho=0.4 vs B daily rho=0.3,auc,shuffled_baseline,Shuffled-baseline,500,0.886,0.5,0.12751333644023588,0.1150355609472168,20261011,50
+CTN-0094,high,365,50,A daily rho=0.4 vs B daily rho=0.3,auc,pooled,Pooled,500,0.952,0.5,0.8580305449256652,0.856712280052071,20261011,50
+CTN-0094,high,365,50,A daily rho=0.4 vs B daily rho=0.3,auc,per_patient,Per-patient,500,0.84,0.5,0.6230386718055759,0.6164862555462862,20261011,50
+CTN-0094,high,365,50,A daily rho=0.4 vs B daily rho=0.3,auc,shuffled_baseline,Shuffled-baseline,500,1.0,0.5,0.13998187644639956,0.11644251247880767,20261011,50
